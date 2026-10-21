@@ -1,0 +1,2309 @@
+{
+  "lessonDesktop": {
+    "path": "/experiment/B05",
+    "dom": {
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "doc": {
+        "scrollH": 900,
+        "scrollW": 1440
+      },
+      "kids": [
+        {
+          "cls": "lesson-heading",
+          "y": 90,
+          "h": 72,
+          "w": 1368,
+          "font": "14px"
+        },
+        {
+          "cls": "lesson-stage",
+          "y": 179,
+          "h": 531,
+          "w": 1368,
+          "font": "14px"
+        },
+        {
+          "cls": "lesson-playbar",
+          "y": 710,
+          "h": 65,
+          "w": 1368,
+          "font": "14px"
+        },
+        {
+          "cls": "lesson-chapters",
+          "y": 775,
+          "h": 50,
+          "w": 1368,
+          "font": "14px"
+        },
+        {
+          "cls": "lesson-bottom",
+          "y": 825,
+          "h": 32,
+          "w": 1368,
+          "font": "10px"
+        }
+      ],
+      "nav": {
+        "y": 0,
+        "h": 68,
+        "w": 1440,
+        "bottom": 68
+      },
+      "stage": {
+        "y": 179,
+        "h": 531,
+        "w": 1368,
+        "bottom": 710
+      },
+      "canvasArea": {
+        "y": 219,
+        "h": 420,
+        "w": 1366,
+        "bottom": 639
+      },
+      "svg": {
+        "y": 219,
+        "h": 420,
+        "w": 1366,
+        "bottom": 639
+      },
+      "explanation": {
+        "y": 639,
+        "h": 70,
+        "w": 1366,
+        "bottom": 709
+      },
+      "playbar": {
+        "y": 710,
+        "h": 65,
+        "w": 1368,
+        "bottom": 775
+      },
+      "chapters": {
+        "y": 775,
+        "h": 50,
+        "w": 1368,
+        "bottom": 825
+      },
+      "footer": {
+        "y": 865,
+        "h": 35,
+        "w": 1440,
+        "bottom": 900
+      },
+      "h1": {
+        "text": "Base File 与 Log File 的版本关系",
+        "font": "27px",
+        "y": 118,
+        "h": 43,
+        "w": 391,
+        "bottom": 162
+      },
+      "svgVisibleAboveFold": 420
+    },
+    "type": [
+      {
+        "sel": ".vl-brand",
+        "font": "17px",
+        "color": "rgb(226, 234, 228)",
+        "weight": "600",
+        "h": 31,
+        "text": "h. Hudi Visual Lab"
+      },
+      {
+        "sel": ".vl-breadcrumb",
+        "font": "12px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 19,
+        "text": "基础原理 / B05"
+      },
+      {
+        "sel": ".vl-eyebrow",
+        "font": "10px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 12,
+        "text": "B05 · 基础原理"
+      },
+      {
+        "sel": "h1",
+        "font": "27px",
+        "color": "rgb(226, 234, 228)",
+        "weight": "600",
+        "h": 43,
+        "text": "Base File 与 Log File 的版本关系"
+      },
+      {
+        "sel": ".lesson-stage-bar",
+        "font": "10px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 39,
+        "text": "准备就绪点击图形查看数据技术详情 ↗"
+      },
+      {
+        "sel": ".lesson-stage-bar span",
+        "font": "10px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 16,
+        "text": "准备就绪"
+      },
+      {
+        "sel": ".lesson-stage-bar button",
+        "font": "10px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 16,
+        "text": "技术详情 ↗"
+      },
+      {
+        "sel": ".lesson-explanation p",
+        "font": "13px",
+        "color": "rgb(226, 234, 228)",
+        "weight": "400",
+        "h": 21,
+        "text": "点击“开始演示”，先观察初始 Base。"
+      },
+      {
+        "sel": ".lesson-explanation small",
+        "font": "11px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 15,
+        "text": "先看见变化，再展开原理"
+      },
+      {
+        "sel": ".lesson-step",
+        "font": "27px",
+        "color": "rgb(191, 231, 177)",
+        "weight": "400",
+        "h": 32,
+        "text": "01"
+      },
+      {
+        "sel": ".lesson-primary",
+        "font": "12px",
+        "color": "rgb(21, 28, 32)",
+        "weight": "600",
+        "h": 35,
+        "text": "▶ 开始演示"
+      },
+      {
+        "sel": ".lesson-playbar button",
+        "font": "12px",
+        "color": "rgb(21, 28, 32)",
+        "weight": "600",
+        "h": 35,
+        "text": "▶ 开始演示"
+      },
+      {
+        "sel": ".lesson-playbar select",
+        "font": "12px",
+        "color": "rgb(226, 234, 228)",
+        "weight": "400",
+        "h": 34,
+        "text": "0.5×1×2×"
+      },
+      {
+        "sel": ".lesson-chapters button",
+        "font": "11px",
+        "color": "rgb(226, 234, 228)",
+        "weight": "400",
+        "h": 36,
+        "text": "1初始 Base"
+      },
+      {
+        "sel": ".lesson-bottom",
+        "font": "10px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 32,
+        "text": "可见记录 3 · 有效文件 1 · Log 0← 上一主题下一主题 →"
+      },
+      {
+        "sel": ".vl-footer",
+        "font": "9px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 35,
+        "text": "HUAWEI MRS r26 · 纯浏览器模拟教学模型 · r26 行为边界 ↗"
+      },
+      {
+        "sel": ".vl-footer button",
+        "font": "9px",
+        "color": "rgb(147, 164, 158)",
+        "weight": "400",
+        "h": 14,
+        "text": "教学模型 · r26 行为边界 ↗"
+      }
+    ],
+    "a11y": {
+      "live": [
+        {
+          "live": "polite",
+          "role": null,
+          "textLen": 38
+        }
+      ],
+      "roleStatus": 0,
+      "svgRoleImg": [
+        {
+          "aria": "B05 初始 Base 动画",
+          "hasTitle": false
+        }
+      ],
+      "svgRoleButton": 2,
+      "svgTabindex0": 1,
+      "inputs": [
+        {
+          "tag": "input",
+          "type": "range",
+          "aria": "动画进度",
+          "inLabel": false,
+          "min": "0",
+          "max": "5"
+        },
+        {
+          "tag": "select",
+          "type": null,
+          "aria": "播放速度",
+          "inLabel": false,
+          "min": null,
+          "max": null
+        }
+      ],
+      "lang": "zh-CN",
+      "dialogs": 1,
+      "skipLinks": 0
+    },
+    "domClickables": {
+      "count": 31,
+      "canvasFocusable": 1,
+      "playIdx": 8,
+      "firstCanvasIdx": 7,
+      "first18": [
+        {
+          "i": 0,
+          "tag": "a",
+          "cls": "vl-brand",
+          "label": "h. Hudi Visual Lab",
+          "inCanvas": false,
+          "font": "17px"
+        },
+        {
+          "i": 1,
+          "tag": "a",
+          "cls": "lesson-nav-link",
+          "label": "← 全部动画",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 2,
+          "tag": "button",
+          "cls": "",
+          "label": "基础模式",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 3,
+          "tag": "button",
+          "cls": "",
+          "label": "切换深浅主题",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 4,
+          "tag": "button",
+          "cls": "",
+          "label": "⚙ 参数",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 5,
+          "tag": "button",
+          "cls": "lesson-model",
+          "label": "引擎驱动 ↗",
+          "inCanvas": false,
+          "font": "11px"
+        },
+        {
+          "i": 6,
+          "tag": "button",
+          "cls": "",
+          "label": "技术详情 ↗",
+          "inCanvas": false,
+          "font": "10px"
+        },
+        {
+          "i": 7,
+          "tag": "g",
+          "cls": "file-glyph",
+          "label": "BASE 20240101120000_0-0_202401",
+          "inCanvas": true,
+          "font": "14px"
+        },
+        {
+          "i": 8,
+          "tag": "button",
+          "cls": "lesson-primary",
+          "label": "播放演示",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 9,
+          "tag": "button",
+          "cls": "",
+          "label": "上一步",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 10,
+          "tag": "button",
+          "cls": "",
+          "label": "下一步",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 11,
+          "tag": "input",
+          "cls": "",
+          "label": "动画进度",
+          "inCanvas": false,
+          "font": "14px"
+        },
+        {
+          "i": 12,
+          "tag": "select",
+          "cls": "",
+          "label": "播放速度",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 13,
+          "tag": "button",
+          "cls": "",
+          "label": "重置",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 14,
+          "tag": "button",
+          "cls": "",
+          "label": "跳到结果",
+          "inCanvas": false,
+          "font": "12px"
+        },
+        {
+          "i": 15,
+          "tag": "button",
+          "cls": "",
+          "label": "1初始 Base",
+          "inCanvas": false,
+          "font": "11px"
+        },
+        {
+          "i": 16,
+          "tag": "button",
+          "cls": "",
+          "label": "2追加一版 Log",
+          "inCanvas": false,
+          "font": "11px"
+        },
+        {
+          "i": 17,
+          "tag": "button",
+          "cls": "",
+          "label": "3追加更多记录",
+          "inCanvas": false,
+          "font": "11px"
+        }
+      ]
+    },
+    "svgClickables": {
+      "rawTotal": 9,
+      "groups": [
+        {
+          "tag": "g",
+          "cls": "file-glyph",
+          "role": "button",
+          "tab": "0",
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "BASE 20240101120000_0-0_2024",
+          "title": "",
+          "text": "▤ BASE FILE.parquet · 3 条记录100",
+          "w": 174,
+          "h": 109,
+          "fill": "rgb(0, 0, 0)",
+          "count": 2
+        },
+        {
+          "tag": "rect",
+          "cls": "file-body base-body",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 174,
+          "h": 109,
+          "fill": "rgb(32, 62, 53)",
+          "count": 1
+        },
+        {
+          "tag": "g",
+          "cls": "",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "1001 ¥ 100.5",
+          "w": 153,
+          "h": 16,
+          "fill": "rgb(0, 0, 0)",
+          "count": 3
+        },
+        {
+          "tag": "rect",
+          "cls": "record-bg",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 153,
+          "h": 16,
+          "fill": "rgb(27, 36, 41)",
+          "count": 3
+        }
+      ]
+    },
+    "contrastDark": {
+      "low": [],
+      "tokenPairs": [
+        {
+          "pair": "--vl-muted / --vl-bg",
+          "a": "#93a49e",
+          "b": "#151c20",
+          "ratio": 6.6
+        },
+        {
+          "pair": "--vl-muted / --vl-panel",
+          "a": "#93a49e",
+          "b": "#1b2429",
+          "ratio": 6.04
+        },
+        {
+          "pair": "--vl-line / --vl-bg",
+          "a": "#34413f",
+          "b": "#151c20",
+          "ratio": 1.62
+        },
+        {
+          "pair": "--vl-ink / --vl-panel",
+          "a": "#e2eae4",
+          "b": "#1b2429",
+          "ratio": 12.87
+        },
+        {
+          "pair": "--vl-accent / --vl-bg",
+          "a": "#bfe7b1",
+          "b": "#151c20",
+          "ratio": 12.54
+        },
+        {
+          "pair": "--vl-bg / --vl-accent",
+          "a": "#151c20",
+          "b": "#bfe7b1",
+          "ratio": 12.54
+        }
+      ]
+    }
+  },
+  "cursorSemantics": [
+    {
+      "sel": ".ac-worker",
+      "cls": "ac-worker",
+      "cursor": "auto",
+      "role": null,
+      "tab": null,
+      "aria": null,
+      "w": 182,
+      "h": 57,
+      "fill": "rgb(32, 62, 53)"
+    },
+    {
+      "sel": ".ac-section",
+      "cls": "ac-section",
+      "cursor": "auto",
+      "role": null,
+      "tab": null,
+      "aria": null,
+      "w": 127,
+      "h": 17,
+      "fill": "rgb(147, 164, 158)"
+    },
+    {
+      "sel": ".ac-section",
+      "cls": "ac-section",
+      "cursor": "auto",
+      "role": null,
+      "tab": null,
+      "aria": null,
+      "w": 166,
+      "h": 17,
+      "fill": "rgb(147, 164, 158)"
+    },
+    {
+      "sel": ".ac-meta",
+      "cls": "ac-meta",
+      "cursor": "auto",
+      "role": null,
+      "tab": null,
+      "aria": null,
+      "w": 73,
+      "h": 14,
+      "fill": "rgb(147, 164, 158)"
+    },
+    {
+      "sel": ".ac-meta",
+      "cls": "ac-meta",
+      "cursor": "auto",
+      "role": null,
+      "tab": null,
+      "aria": null,
+      "w": 309,
+      "h": 14,
+      "fill": "rgb(147, 164, 158)"
+    }
+  ],
+  "clickBeforePlay": [
+    {
+      "name": "B05 file glyph",
+      "selector": ".lesson-canvas .file-glyph",
+      "pre": {
+        "cursor": "pointer",
+        "aria": "BASE 20240101120000_0-0_20240101120000.parquet",
+        "title": null,
+        "disabled": null
+      },
+      "clicked": true,
+      "dialog": {
+        "open": true,
+        "title": "20240101120000_0-0_20240101120000.pa",
+        "tabs": [],
+        "bodyLen": 343
+      }
+    },
+    {
+      "name": "B05 disabled output glyph",
+      "selector": ".lesson-canvas .file-glyph[aria-disabled=\"true\"]",
+      "pre": {
+        "cursor": "default",
+        "aria": "BASE 20240101120000_0-0_20240101120000.parquet",
+        "title": null,
+        "disabled": "true"
+      },
+      "clicked": true,
+      "dialog": {
+        "open": false
+      }
+    },
+    {
+      "name": "B05 worker box",
+      "selector": ".lesson-canvas .ac-worker",
+      "pre": {
+        "cursor": "auto",
+        "aria": null,
+        "title": null,
+        "disabled": null
+      },
+      "clicked": true,
+      "dialog": {
+        "open": false
+      }
+    },
+    {
+      "name": "B05 section label",
+      "selector": ".lesson-canvas .ac-section",
+      "pre": {
+        "cursor": "auto",
+        "aria": null,
+        "title": null,
+        "disabled": null
+      },
+      "clicked": true,
+      "dialog": {
+        "open": false
+      }
+    }
+  ],
+  "clickAfterPlay": [
+    {
+      "name": "B05 file glyph after commit",
+      "err": "not-found"
+    },
+    {
+      "name": "B05 worker box after commit",
+      "err": "not-found"
+    }
+  ],
+  "keyboard": {
+    "spaceOnBody": {
+      "label": "Ⅱ 暂停"
+    },
+    "arrowAfterButtonClick": {
+      "beforePos": "0.17",
+      "afterPos": "0.17",
+      "changed": false
+    },
+    "focusSeq": [
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": "上一步",
+        "text": "|◀",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": "下一步",
+        "text": "▶|",
+        "inCanvas": false
+      },
+      {
+        "tag": "input",
+        "cls": "",
+        "aria": "动画进度",
+        "text": "",
+        "inCanvas": false
+      },
+      {
+        "tag": "select",
+        "cls": "",
+        "aria": "播放速度",
+        "text": "0.5×1×2×",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": null,
+        "text": "重置",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": null,
+        "text": "跳到结果",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "active",
+        "aria": null,
+        "text": "1初始 Base",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": null,
+        "text": "2追加一版 Log",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": null,
+        "text": "3追加更多记录",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": null,
+        "text": "4计划合并",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": null,
+        "text": "5产生新 Base",
+        "inCanvas": false
+      },
+      {
+        "tag": "a",
+        "cls": "",
+        "aria": null,
+        "text": "← 上一主题",
+        "inCanvas": false
+      },
+      {
+        "tag": "a",
+        "cls": "",
+        "aria": null,
+        "text": "下一主题 →",
+        "inCanvas": false
+      },
+      {
+        "tag": "button",
+        "cls": "",
+        "aria": null,
+        "text": "教学模型 · r26 行为边界 ↗",
+        "inCanvas": false
+      }
+    ],
+    "escClosed": {
+      "closed": true,
+      "focus": "⚙ 参数"
+    },
+    "dialogTrap": {
+      "escaped": true,
+      "pattern": "1111011111011111"
+    }
+  },
+  "paramDrawer": {
+    "open": true,
+    "title": "参数",
+    "tabs": [],
+    "focused": "关闭详情",
+    "hasForm": true,
+    "controls": [
+      {
+        "type": "text",
+        "aria": null,
+        "label": "记录主键"
+      },
+      {
+        "type": "number",
+        "aria": null,
+        "label": "更新金额"
+      },
+      {
+        "type": "checkbox",
+        "aria": null,
+        "label": "减少动态效果，改用单步观察"
+      }
+    ]
+  },
+  "modeToggleLesson": {
+    "labelBefore": "基础模式",
+    "labelAfter": "工程师模式",
+    "textChanged": true,
+    "nodeDelta": 0,
+    "addedTokens": [
+      "工程师模式",
+      "SQL",
+      "HDFS",
+      "Timeline"
+    ],
+    "removedTokens": [
+      "基础模式",
+      "技术详情"
+    ],
+    "newButtons": [
+      "工程师模式",
+      "SQL / HDFS / Timeline ↗"
+    ]
+  },
+  "timelinePath": {
+    "landing": {
+      "details": [
+        {
+          "text": "SQL / HDFS / Timeline ↗",
+          "font": "10px",
+          "color": "rgb(147, 164, 158)"
+        },
+        {
+          "text": "技术详情",
+          "font": "12px",
+          "color": "rgb(226, 234, 228)"
+        }
+      ],
+      "params": [
+        {
+          "text": "⚙ 参数",
+          "font": "12px"
+        }
+      ]
+    },
+    "drawer": {
+      "open": true,
+      "tabs": [
+        "技术详情",
+        "运行日志",
+        "HDFS",
+        "Timeline",
+        "SQL",
+        "源码透视",
+        "证据"
+      ],
+      "timelineIdx": 3,
+      "width": 620
+    },
+    "clicksToTimeline": 2
+  },
+  "reducedMotion": {
+    "rootClass": "visual-lab lesson-page vl-reduced",
+    "matches": true
+  },
+  "kinds": {
+    "T01": {
+      "kind": "schema",
+      "startLabel": "▶ 开始演示",
+      "invRawTotal": 6,
+      "invGroups": [
+        {
+          "tag": "g",
+          "cls": "ac-clickable",
+          "role": "button",
+          "tab": "0",
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "配置 COPY_ON_WRITE",
+          "title": "",
+          "text": "COPY_ON_WRITE表类型 / 配置选项",
+          "w": 391,
+          "h": 127,
+          "fill": "rgb(0, 0, 0)",
+          "count": 3
+        },
+        {
+          "tag": "rect",
+          "cls": "ac-node",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 267,
+          "h": 63,
+          "fill": "rgb(27, 36, 41)",
+          "count": 3
+        }
+      ],
+      "tests": [
+        {
+          "name": "T01 first svg button",
+          "selector": "svg g[role=\"button\"]",
+          "pre": {
+            "cursor": "pointer",
+            "aria": "配置 COPY_ON_WRITE",
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": false
+          }
+        },
+        {
+          "name": "T01 plain rect",
+          "selector": ".lesson-canvas rect:not(.file-body)",
+          "pre": {
+            "cursor": "auto",
+            "aria": null,
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": false
+          }
+        }
+      ]
+    },
+    "S01": {
+      "kind": "timeline",
+      "startLabel": "▶ 开始演示",
+      "invRawTotal": 7,
+      "invGroups": [
+        {
+          "tag": "g",
+          "cls": "ac-clickable",
+          "role": "button",
+          "tab": "0",
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "输入版本 1001 BASE 100.5",
+          "title": "",
+          "text": "1001100.520240101100000",
+          "w": 393,
+          "h": 33,
+          "fill": "rgb(0, 0, 0)",
+          "count": 3
+        },
+        {
+          "tag": "rect",
+          "cls": "td-focus-row",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 393,
+          "h": 33,
+          "fill": "rgb(66, 110, 88)",
+          "count": 1
+        },
+        {
+          "tag": "rect",
+          "cls": "td-row",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 393,
+          "h": 33,
+          "fill": "rgb(27, 36, 41)",
+          "count": 2
+        },
+        {
+          "tag": "g",
+          "cls": "",
+          "role": "button",
+          "tab": "-1",
+          "cursor": "auto",
+          "disabled": "true",
+          "aria": "输出记录 1001",
+          "title": "",
+          "text": "1001200本次更新",
+          "w": 366,
+          "h": 33,
+          "fill": "rgb(0, 0, 0)",
+          "count": 1
+        }
+      ],
+      "tests": [
+        {
+          "name": "S01 first svg button",
+          "selector": "svg g[role=\"button\"]",
+          "pre": {
+            "cursor": "pointer",
+            "aria": "Instant 20240101120000",
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": true,
+            "title": "20240101120000 · DELTA_COMMIT",
+            "tabs": [],
+            "bodyLen": 178
+          }
+        },
+        {
+          "name": "S01 plain rect",
+          "selector": ".lesson-canvas rect:not(.file-body)",
+          "pre": {
+            "cursor": "auto",
+            "aria": null,
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": true,
+            "title": "20240101120003 · COMPACTION",
+            "tabs": [],
+            "bodyLen": 157
+          }
+        }
+      ]
+    },
+    "F04": {
+      "kind": "flow",
+      "startLabel": "▶ 开始探索",
+      "invRawTotal": 10,
+      "invGroups": [
+        {
+          "tag": "g",
+          "cls": "ac-clickable",
+          "role": "button",
+          "tab": "0",
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "流程节点 Source offset",
+          "title": "",
+          "text": "01Source offset点击查看",
+          "w": 168,
+          "h": 95,
+          "fill": "rgb(0, 0, 0)",
+          "count": 5
+        },
+        {
+          "tag": "rect",
+          "cls": "ac-node",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 168,
+          "h": 95,
+          "fill": "rgb(27, 36, 41)",
+          "count": 5
+        }
+      ],
+      "tests": [
+        {
+          "name": "F04 first svg button",
+          "selector": "svg g[role=\"button\"]",
+          "pre": {
+            "cursor": "pointer",
+            "aria": "流程节点 Source offset",
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": true,
+            "title": "Source offset",
+            "tabs": [],
+            "bodyLen": 78
+          }
+        },
+        {
+          "name": "F04 plain rect",
+          "selector": ".lesson-canvas rect:not(.file-body)",
+          "pre": {
+            "cursor": "auto",
+            "aria": null,
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": true,
+            "title": "Checkpoint barrier",
+            "tabs": [],
+            "bodyLen": 83
+          }
+        }
+      ]
+    },
+    "A01": {
+      "kind": "metrics",
+      "startLabel": "▶ 开始演示",
+      "invRawTotal": 12,
+      "invGroups": [
+        {
+          "tag": "g",
+          "cls": "ac-clickable",
+          "role": "button",
+          "tab": "0",
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "指标 物理文件",
+          "title": "",
+          "text": "6 → 6物理文件",
+          "w": 88,
+          "h": 206,
+          "fill": "rgb(0, 0, 0)",
+          "count": 6
+        },
+        {
+          "tag": "rect",
+          "cls": "ac-before-bar",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 42,
+          "h": 139,
+          "fill": "rgb(52, 65, 63)",
+          "count": 3
+        },
+        {
+          "tag": "rect",
+          "cls": "ac-after-bar",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 42,
+          "h": 139,
+          "fill": "rgb(132, 172, 139)",
+          "count": 3
+        }
+      ],
+      "tests": [
+        {
+          "name": "A01 first svg button",
+          "selector": "svg g[role=\"button\"]",
+          "pre": {
+            "cursor": "pointer",
+            "aria": "指标 物理文件",
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": false
+          }
+        },
+        {
+          "name": "A01 plain rect",
+          "selector": ".lesson-canvas rect:not(.file-body)",
+          "pre": {
+            "cursor": "auto",
+            "aria": null,
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": false
+          }
+        }
+      ]
+    },
+    "B07": {
+      "kind": "query",
+      "startLabel": "▶ 开始演示",
+      "invRawTotal": 6,
+      "invGroups": [
+        {
+          "tag": "g",
+          "cls": "ac-clickable",
+          "role": "button",
+          "tab": "0",
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "读取文件 20240101120000_0-0_2024",
+          "title": "",
+          "text": "Base · 3 条✓ 打开文件",
+          "w": 373,
+          "h": 63,
+          "fill": "rgb(0, 0, 0)",
+          "count": 3
+        },
+        {
+          "tag": "rect",
+          "cls": "td-file",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 373,
+          "h": 63,
+          "fill": "rgb(32, 62, 53)",
+          "count": 1
+        },
+        {
+          "tag": "rect",
+          "cls": "td-row",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 429,
+          "h": 59,
+          "fill": "rgb(27, 36, 41)",
+          "count": 2
+        }
+      ],
+      "tests": [
+        {
+          "name": "B07 first svg button",
+          "selector": "svg g[role=\"button\"]",
+          "pre": {
+            "cursor": "pointer",
+            "aria": "读取文件 20240101120000_0-0_20240101120000.parquet",
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": true,
+            "title": "20240101120000_0-0_20240101120000.pa",
+            "tabs": [],
+            "bodyLen": 351
+          }
+        },
+        {
+          "name": "B07 plain rect",
+          "selector": ".lesson-canvas rect:not(.file-body)",
+          "pre": {
+            "cursor": "auto",
+            "aria": null,
+            "title": null,
+            "disabled": null
+          },
+          "clicked": true,
+          "dialog": {
+            "open": false
+          }
+        }
+      ]
+    }
+  },
+  "visualLab": {
+    "dom": {
+      "viewport": {
+        "w": 1440,
+        "h": 900
+      },
+      "doc": {
+        "scrollH": 900,
+        "scrollW": 1440
+      },
+      "kids": [
+        {
+          "cls": "vl-title-row",
+          "y": 90,
+          "h": 87,
+          "w": 1368,
+          "font": "14px"
+        },
+        {
+          "cls": "vl-stage",
+          "y": 196,
+          "h": 543,
+          "w": 1368,
+          "font": "14px"
+        },
+        {
+          "cls": "vl-controls",
+          "y": 740,
+          "h": 59,
+          "w": 1368,
+          "font": "14px"
+        },
+        {
+          "cls": "vl-action-bar",
+          "y": 799,
+          "h": 52,
+          "w": 1368,
+          "font": "14px"
+        }
+      ],
+      "nav": {
+        "y": 0,
+        "h": 68,
+        "w": 1440,
+        "bottom": 68
+      },
+      "stage": {
+        "y": 196,
+        "h": 543,
+        "w": 1368,
+        "bottom": 740
+      },
+      "canvasArea": {
+        "y": 237,
+        "h": 428,
+        "w": 1366,
+        "bottom": 666
+      },
+      "svg": {
+        "y": 237,
+        "h": 428,
+        "w": 1366,
+        "bottom": 666
+      },
+      "explanation": {
+        "y": 666,
+        "h": 73,
+        "w": 1366,
+        "bottom": 739
+      },
+      "playbar": {
+        "y": 740,
+        "h": 59,
+        "w": 1368,
+        "bottom": 799
+      },
+      "chapters": null,
+      "footer": {
+        "y": 865,
+        "h": 35,
+        "w": 1440,
+        "bottom": 900
+      },
+      "h1": {
+        "text": "更新一条记录，文件会怎样变化？",
+        "font": "27px",
+        "y": 111,
+        "h": 43,
+        "w": 395,
+        "bottom": 154
+      },
+      "svgVisibleAboveFold": 428
+    },
+    "type": [
+      {
+        "sel": ".vl-title-row h1",
+        "font": "27px",
+        "color": "rgb(226, 234, 228)",
+        "text": "更新一条记录，文件会怎样变化？"
+      },
+      {
+        "sel": ".vl-title-row p",
+        "font": "12px",
+        "color": "rgb(147, 164, 158)",
+        "text": "同一份数据，两种策略。亲手写入，看见区别。"
+      },
+      {
+        "sel": ".vl-stage-top",
+        "font": "10px",
+        "color": "rgb(147, 164, 158)",
+        "text": "交互画布● Base File ● Log File ●"
+      },
+      {
+        "sel": ".vl-caption p",
+        "font": "13px",
+        "color": "rgb(226, 234, 228)",
+        "text": "准备好了吗？更新同一条记录，观察两种文件策略。"
+      },
+      {
+        "sel": ".vl-caption small",
+        "font": "10px",
+        "color": "rgb(147, 164, 158)",
+        "text": "从这里开始 · 约 1 分钟"
+      },
+      {
+        "sel": ".vl-controls button",
+        "font": "15px",
+        "color": "rgb(226, 234, 228)",
+        "text": "|◀"
+      },
+      {
+        "sel": ".vl-action-bar button",
+        "font": "12px",
+        "color": "rgb(21, 28, 32)",
+        "text": "↑ Upsert 更新记录"
+      },
+      {
+        "sel": ".vl-footer",
+        "font": "9px",
+        "color": "rgb(147, 164, 158)",
+        "text": "HUAWEI MRS 3.5.0 · r26  / 纯浏"
+      },
+      {
+        "sel": ".vl-nav button",
+        "font": "12px",
+        "color": "rgb(226, 234, 228)",
+        "text": "基础模式"
+      }
+    ],
+    "inv": {
+      "rawTotal": 16,
+      "groups": [
+        {
+          "tag": "g",
+          "cls": "file-glyph",
+          "role": "button",
+          "tab": "0",
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "BASE 20240101120000_0-0_2024",
+          "title": "",
+          "text": "▤ BASE FILE.parquet · 3 条记录100",
+          "w": 210,
+          "h": 132,
+          "fill": "rgb(0, 0, 0)",
+          "count": 2
+        },
+        {
+          "tag": "rect",
+          "cls": "file-body base-body",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 210,
+          "h": 132,
+          "fill": "rgb(32, 62, 53)",
+          "count": 2
+        },
+        {
+          "tag": "g",
+          "cls": "",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "1001 ¥ 100.5",
+          "w": 185,
+          "h": 20,
+          "fill": "rgb(0, 0, 0)",
+          "count": 6
+        },
+        {
+          "tag": "rect",
+          "cls": "record-bg",
+          "role": null,
+          "tab": null,
+          "cursor": "pointer",
+          "disabled": null,
+          "aria": "",
+          "title": "",
+          "text": "",
+          "w": 185,
+          "h": 20,
+          "fill": "rgb(27, 36, 41)",
+          "count": 6
+        }
+      ]
+    },
+    "tests": [
+      {
+        "name": "B02 file glyph",
+        "selector": "svg .file-glyph",
+        "pre": {
+          "cursor": "pointer",
+          "aria": "BASE 20240101120000_0-0_20240101120000.parquet",
+          "title": null,
+          "disabled": null
+        },
+        "clicked": true,
+        "dialog": {
+          "open": true,
+          "title": "文件记录",
+          "tabs": [],
+          "bodyLen": 199
+        }
+      },
+      {
+        "name": "B02 writer box",
+        "selector": ".vl-writer",
+        "pre": {
+          "cursor": "auto",
+          "aria": null,
+          "title": null,
+          "disabled": null
+        },
+        "clicked": true,
+        "dialog": {
+          "open": false
+        }
+      },
+      {
+        "name": "B02 input box",
+        "selector": ".vl-input",
+        "pre": {
+          "cursor": "auto",
+          "aria": null,
+          "title": null,
+          "disabled": null
+        },
+        "clicked": true,
+        "dialog": {
+          "open": false
+        }
+      },
+      {
+        "name": "B02 lane title",
+        "selector": ".vl-lane-title",
+        "pre": {
+          "cursor": "auto",
+          "aria": null,
+          "title": null,
+          "disabled": null
+        },
+        "clicked": true,
+        "dialog": {
+          "open": false
+        }
+      }
+    ],
+    "testsAfterPlay": [
+      {
+        "name": "B02 file glyph after play",
+        "selector": "svg .file-glyph",
+        "pre": {
+          "cursor": "pointer",
+          "aria": "BASE 20240101120000_0-0_20240101120000.parquet",
+          "title": null,
+          "disabled": null
+        },
+        "clicked": true,
+        "dialog": {
+          "open": true,
+          "title": "文件记录",
+          "tabs": [],
+          "bodyLen": 203
+        }
+      }
+    ],
+    "mode": {
+      "labelBefore": "基础模式",
+      "labelAfter": "工程师模式",
+      "textChanged": true,
+      "nodeDelta": 1,
+      "addedTokens": [
+        "工程师模式",
+        "SQL",
+        "HDFS",
+        "Timeline",
+        "模拟失败"
+      ],
+      "removedTokens": [
+        "基础模式",
+        "技术详情"
+      ],
+      "newButtons": [
+        "工程师模式",
+        "SQL / HDFS / Timeline ↗",
+        "模拟失败"
+      ]
+    }
+  },
+  "mobile": {
+    "B05": {
+      "viewport": {
+        "w": 375,
+        "h": 812
+      },
+      "doc": {
+        "scrollW": 375,
+        "scrollH": 812,
+        "horizontalOverflow": false
+      },
+      "h1": {
+        "y": 108,
+        "h": 29,
+        "w": 255,
+        "bottom": 137
+      },
+      "svg": {
+        "y": 194,
+        "h": 312,
+        "w": 349,
+        "bottom": 506
+      },
+      "svgMinH": "auto",
+      "playbar": {
+        "y": 582,
+        "h": 88,
+        "w": 351,
+        "bottom": 670
+      },
+      "playbarChildren": [
+        {
+          "tag": "button",
+          "cls": "lesson-primary",
+          "y": 591,
+          "h": 32,
+          "w": 110,
+          "bottom": 622
+        },
+        {
+          "tag": "button",
+          "cls": "",
+          "y": 591,
+          "h": 32,
+          "w": 26,
+          "bottom": 622
+        },
+        {
+          "tag": "button",
+          "cls": "",
+          "y": 591,
+          "h": 32,
+          "w": 26,
+          "bottom": 622
+        },
+        {
+          "tag": "input",
+          "cls": "",
+          "y": 604,
+          "h": 4,
+          "w": 106,
+          "bottom": 608
+        },
+        {
+          "tag": "select",
+          "cls": "",
+          "y": 589,
+          "h": 34,
+          "w": 62,
+          "bottom": 623
+        },
+        {
+          "tag": "button",
+          "cls": "",
+          "y": 631,
+          "h": 32,
+          "w": 36,
+          "bottom": 663
+        },
+        {
+          "tag": "button",
+          "cls": "",
+          "y": 631,
+          "h": 32,
+          "w": 58,
+          "bottom": 663
+        }
+      ],
+      "chapters": {
+        "y": 670,
+        "h": 50,
+        "w": 351,
+        "bottom": 720,
+        "scrollW": 636,
+        "clientW": 351,
+        "overflowX": "auto"
+      },
+      "stageBar": {
+        "y": 155,
+        "h": 39,
+        "w": 349,
+        "bottom": 194
+      },
+      "explanation": {
+        "y": 506,
+        "h": 75,
+        "w": 349,
+        "bottom": 581
+      },
+      "navActions": [
+        {
+          "tag": "button",
+          "text": "基础模式",
+          "y": 19,
+          "h": 30,
+          "w": 54,
+          "bottom": 49
+        },
+        {
+          "tag": "button",
+          "text": "☀",
+          "y": 19,
+          "h": 30,
+          "w": 22,
+          "bottom": 49
+        },
+        {
+          "tag": "button",
+          "text": "⚙ 参数",
+          "y": 19,
+          "h": 30,
+          "w": 45,
+          "bottom": 49
+        }
+      ],
+      "smallTargets": {
+        "total": 22,
+        "sample": [
+          {
+            "label": "h. Hudi Visual Lab",
+            "w": 79,
+            "h": 31
+          },
+          {
+            "label": "← 全部动画",
+            "w": 53,
+            "h": 16
+          },
+          {
+            "label": "基础模式",
+            "w": 54,
+            "h": 30
+          },
+          {
+            "label": "切换深浅主题",
+            "w": 22,
+            "h": 30
+          },
+          {
+            "label": "⚙ 参数",
+            "w": 45,
+            "h": 30
+          },
+          {
+            "label": "引擎驱动 ↗",
+            "w": 64,
+            "h": 30
+          },
+          {
+            "label": "技术详情 ↗",
+            "w": 53,
+            "h": 16
+          },
+          {
+            "label": "播放演示",
+            "w": 110,
+            "h": 32
+          },
+          {
+            "label": "上一步",
+            "w": 26,
+            "h": 32
+          },
+          {
+            "label": "下一步",
+            "w": 26,
+            "h": 32
+          }
+        ]
+      }
+    },
+    "B02": {
+      "viewport": {
+        "w": 375,
+        "h": 812
+      },
+      "doc": {
+        "scrollW": 375,
+        "scrollH": 812,
+        "horizontalOverflow": false
+      },
+      "h1": {
+        "y": 103,
+        "h": 70,
+        "w": 251,
+        "bottom": 173
+      },
+      "svg": {
+        "y": 255,
+        "h": 287,
+        "w": 341,
+        "bottom": 542
+      },
+      "svgMinH": "260px",
+      "playbar": {
+        "y": 616,
+        "h": 59,
+        "w": 343,
+        "bottom": 675
+      },
+      "playbarChildren": [
+        {
+          "tag": "div",
+          "cls": "vl-playback",
+          "y": 628,
+          "h": 36,
+          "w": 194,
+          "bottom": 664
+        },
+        {
+          "tag": "div",
+          "cls": "vl-progress",
+          "y": 630,
+          "h": 31,
+          "w": 69,
+          "bottom": 661
+        },
+        {
+          "tag": "button",
+          "cls": "vl-reset",
+          "y": 630,
+          "h": 31,
+          "w": 60,
+          "bottom": 661
+        }
+      ],
+      "chapters": null,
+      "stageBar": {
+        "y": 215,
+        "h": 40,
+        "w": 341,
+        "bottom": 255
+      },
+      "explanation": {
+        "y": 542,
+        "h": 73,
+        "w": 341,
+        "bottom": 615
+      },
+      "navActions": [
+        {
+          "tag": "a",
+          "text": "全部动画 ↗",
+          "y": -6,
+          "h": 80,
+          "w": 11,
+          "bottom": 74
+        },
+        {
+          "tag": "button",
+          "text": "基础模式",
+          "y": -6,
+          "h": 80,
+          "w": 74,
+          "bottom": 74
+        },
+        {
+          "tag": "button",
+          "text": "☀",
+          "y": -6,
+          "h": 80,
+          "w": 36,
+          "bottom": 74
+        },
+        {
+          "tag": "button",
+          "text": "⚙ 设置",
+          "y": -6,
+          "h": 80,
+          "w": 64,
+          "bottom": 74
+        }
+      ],
+      "smallTargets": {
+        "total": 17,
+        "sample": [
+          {
+            "label": "全部动画 ↗",
+            "w": 11,
+            "h": 80
+          },
+          {
+            "label": "切换深浅主题",
+            "w": 36,
+            "h": 80
+          },
+          {
+            "label": "技术详情 ↗",
+            "w": 92,
+            "h": 37
+          },
+          {
+            "label": "上一步",
+            "w": 29,
+            "h": 36
+          },
+          {
+            "label": "播放",
+            "w": 34,
+            "h": 34
+          },
+          {
+            "label": "下一步",
+            "w": 29,
+            "h": 36
+          },
+          {
+            "label": "重放",
+            "w": 24,
+            "h": 36
+          },
+          {
+            "label": "播放速度",
+            "w": 54,
+            "h": 27
+          },
+          {
+            "label": "动画进度",
+            "w": 4,
+            "h": 3
+          },
+          {
+            "label": "跳过动画",
+            "w": 60,
+            "h": 31
+          }
+        ]
+      }
+    },
+    "catalog": {
+      "viewport": {
+        "w": 375,
+        "h": 812
+      },
+      "doc": {
+        "scrollW": 375,
+        "scrollH": 21458,
+        "horizontalOverflow": false
+      },
+      "h1": {
+        "y": 130,
+        "h": 45,
+        "w": 335,
+        "bottom": 175
+      },
+      "svg": null,
+      "svgMinH": null,
+      "playbar": null,
+      "playbarChildren": [],
+      "chapters": null,
+      "stageBar": null,
+      "explanation": null,
+      "navActions": [
+        {
+          "tag": "a",
+          "text": "返回主题首页",
+          "y": 0,
+          "h": 0,
+          "w": 0,
+          "bottom": 0
+        },
+        {
+          "tag": "button",
+          "text": "☀",
+          "y": 16,
+          "h": 35,
+          "w": 36,
+          "bottom": 51
+        }
+      ],
+      "smallTargets": {
+        "total": 14,
+        "sample": [
+          {
+            "label": "h. Hudi Visual Lab",
+            "w": 170,
+            "h": 31
+          },
+          {
+            "label": "切换深浅主题",
+            "w": 36,
+            "h": 35
+          },
+          {
+            "label": "搜索动画实验",
+            "w": 279,
+            "h": 19
+          },
+          {
+            "label": "全部 80",
+            "w": 60,
+            "h": 34
+          },
+          {
+            "label": "基础原理 8",
+            "w": 77,
+            "h": 34
+          },
+          {
+            "label": "建表与分区 8",
+            "w": 88,
+            "h": 34
+          },
+          {
+            "label": "数据写入 10",
+            "w": 82,
+            "h": 34
+          },
+          {
+            "label": "索引机制 8",
+            "w": 77,
+            "h": 34
+          },
+          {
+            "label": "数据查询 8",
+            "w": 77,
+            "h": 34
+          },
+          {
+            "label": "Timeline 与表服务 12",
+            "w": 130,
+            "h": 34
+          }
+        ]
+      }
+    }
+  },
+  "progress": {
+    "linksToProgressOnLesson": {
+      "progressLinks": 0,
+      "allLinks": [
+        "/",
+        "/catalog",
+        "/experiment/B04",
+        "/experiment/B06"
+      ]
+    },
+    "storageAfter3Lessons": {
+      "keys": [],
+      "progress": null
+    },
+    "catalogNav": {
+      "progressLinks": 0,
+      "headerLinks": [
+        "/",
+        "/"
+      ]
+    },
+    "page": {
+      "hasEmptyState": true,
+      "rows": 0,
+      "text": "H | Hudi Lab | 总览 | 证据库 | 学习进度 | MRS 3.1.0-350-r26 | | | Hudi 0.15.0-h0.cbu.mrs.350.r26 | Spark 3.3.1-h0.cbu.mrs.350.r26 · Flink 1.17.x | 纯浏览器模拟 · 未连接真实集群 | 浅色 | 实验目录 | « | A | 基础原理 | 2/8 | ▾ | B01 | Hudi 与 Hive 普通 Parquet 表的区别 | B02 | COW 表的数据写入与文件重写 | B03 | MOR 表的数据写入与 Log 合并 | B04 | File Group、File ID、File Slice 结构 | B05 | Base File 与 Log File 的版本关系 | B06 | Record Key、Partition Path、HoodieKey | B07 | Hudi 的 MVCC 与 Snapshot 可见性 | B08 | Hudi 表在 HDFS 中的完整目"
+    }
+  },
+  "lightContrast": {
+    "low": [
+      {
+        "ratio": 3.75,
+        "font": "17px",
+        "cls": "b",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "Visual Lab"
+      },
+      {
+        "ratio": 3.75,
+        "font": "12px",
+        "cls": "a.lesson-nav-link",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "← 全部动画"
+      },
+      {
+        "ratio": 3.75,
+        "font": "12px",
+        "cls": "span.vl-breadcrumb",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "基础原理 / B05"
+      },
+      {
+        "ratio": 3.75,
+        "font": "10px",
+        "cls": "span.vl-eyebrow",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "B05 · 基础原理"
+      },
+      {
+        "ratio": 3.75,
+        "font": "11px",
+        "cls": "button.lesson-model",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "引擎驱动 ↗"
+      },
+      {
+        "ratio": 3.75,
+        "font": "11px",
+        "cls": "small",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "先看见变化，再展开原理"
+      },
+      {
+        "ratio": 3.75,
+        "font": "11px",
+        "cls": "span",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "1 / 5"
+      },
+      {
+        "ratio": 3.75,
+        "font": "10px",
+        "cls": "span",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "可见记录 3 · 有效文件 1 · Log 0"
+      },
+      {
+        "ratio": 3.75,
+        "font": "10px",
+        "cls": "a",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "← 上一主题"
+      },
+      {
+        "ratio": 3.75,
+        "font": "10px",
+        "cls": "a",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "下一主题 →"
+      },
+      {
+        "ratio": 3.75,
+        "font": "9px",
+        "cls": "span",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "HUAWEI MRS r26 · 纯浏览器模拟"
+      },
+      {
+        "ratio": 3.75,
+        "font": "9px",
+        "cls": "button",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "教学模型 · r26 行为边界 ↗"
+      },
+      {
+        "ratio": 3.75,
+        "font": "10px",
+        "cls": "span",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "text": "空格播放 / 暂停 · ← → 单步"
+      },
+      {
+        "ratio": 4.09,
+        "font": "10px",
+        "cls": "span",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "text": "准备就绪"
+      },
+      {
+        "ratio": 4.09,
+        "font": "10px",
+        "cls": "span",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "text": "点击图形查看数据"
+      },
+      {
+        "ratio": 4.09,
+        "font": "10px",
+        "cls": "button",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "text": "技术详情 ↗"
+      },
+      {
+        "ratio": 4.09,
+        "font": "13px",
+        "cls": "text",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "text": "操作前 · 1 个物理文件"
+      },
+      {
+        "ratio": 4.09,
+        "font": "17px",
+        "cls": "text",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "text": "Hudi Engine"
+      },
+      {
+        "ratio": 4.09,
+        "font": "12px",
+        "cls": "text",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "text": "执行过程示意"
+      },
+      {
+        "ratio": 4.09,
+        "font": "13px",
+        "cls": "text",
+        "fg": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "text": "目标文件预览 · 提交前不生效"
+      }
+    ],
+    "tokenPairs": [
+      {
+        "pair": "--vl-muted / --vl-bg",
+        "a": "#738178",
+        "b": "#f4f6f0",
+        "ratio": 3.75
+      },
+      {
+        "pair": "--vl-muted / --vl-panel",
+        "a": "#738178",
+        "b": "#fff",
+        "ratio": null
+      },
+      {
+        "pair": "--vl-line / --vl-bg",
+        "a": "#d9e1d7",
+        "b": "#f4f6f0",
+        "ratio": 1.23
+      },
+      {
+        "pair": "--vl-ink / --vl-panel",
+        "a": "#263d34",
+        "b": "#fff",
+        "ratio": null
+      },
+      {
+        "pair": "--vl-accent / --vl-bg",
+        "a": "#38634a",
+        "b": "#f4f6f0",
+        "ratio": 6.32
+      },
+      {
+        "pair": "--vl-bg / --vl-accent",
+        "a": "#f4f6f0",
+        "b": "#38634a",
+        "ratio": 6.32
+      }
+    ]
+  },
+  "e01caption": {
+    "stageBar": "演示完成修改作业选项，重演并比较两种策略技术详情 ↗",
+    "wrap": {
+      "y": 639,
+      "h": 70,
+      "w": 1366,
+      "bottom": 709,
+      "scrollH": 69,
+      "clientH": 69
+    },
+    "inner": {
+      "y": 650,
+      "h": 48,
+      "w": 576,
+      "bottom": 699,
+      "scrollH": 48,
+      "clientH": 48
+    },
+    "p": {
+      "y": 678,
+      "h": 21,
+      "w": 576,
+      "bottom": 699,
+      "scrollH": 21,
+      "clientH": 21
+    },
+    "overflow": false
+  },
+  "pageErrors": []
+}

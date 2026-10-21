@@ -1,0 +1,3408 @@
+{
+ "causalN": 3,
+ "instrN": 50,
+ "total": 315,
+ "scored": [
+  {
+   "id": "W05",
+   "avg": 13.3,
+   "min": 12,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 53
+  },
+  {
+   "id": "I04",
+   "avg": 13.3,
+   "min": 11,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 53
+  },
+  {
+   "id": "E02",
+   "avg": 14.3,
+   "min": 10,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 57
+  },
+  {
+   "id": "E06",
+   "avg": 14.8,
+   "min": 13,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 59
+  },
+  {
+   "id": "S07",
+   "avg": 15,
+   "min": 10,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 60
+  },
+  {
+   "id": "A06",
+   "avg": 15,
+   "min": 10,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 0,
+   "totalChars": 60
+  },
+  {
+   "id": "A01",
+   "avg": 15.5,
+   "min": 11,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 62
+  },
+  {
+   "id": "A05",
+   "avg": 17,
+   "min": 13,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 2,
+   "totalChars": 68
+  },
+  {
+   "id": "W06",
+   "avg": 17.3,
+   "min": 12,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 69
+  },
+  {
+   "id": "E09",
+   "avg": 17.8,
+   "min": 8,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 71
+  },
+  {
+   "id": "F08",
+   "avg": 18,
+   "min": 15,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 72
+  },
+  {
+   "id": "A02",
+   "avg": 18,
+   "min": 12,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 72
+  },
+  {
+   "id": "T06",
+   "avg": 18.3,
+   "min": 14,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 2,
+   "totalChars": 73
+  },
+  {
+   "id": "I01",
+   "avg": 18.3,
+   "min": 15,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 1,
+   "totalChars": 73
+  },
+  {
+   "id": "T04",
+   "avg": 18.5,
+   "min": 12,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 2,
+   "totalChars": 74
+  },
+  {
+   "id": "S05",
+   "avg": 18.5,
+   "min": 13,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 74
+  },
+  {
+   "id": "F05",
+   "avg": 18.5,
+   "min": 15,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 74
+  },
+  {
+   "id": "A08",
+   "avg": 18.5,
+   "min": 12,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 2,
+   "totalChars": 74
+  },
+  {
+   "id": "Q05",
+   "avg": 18.5,
+   "min": 17,
+   "causal": 1,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 74
+  },
+  {
+   "id": "S11",
+   "avg": 18.8,
+   "min": 14,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 75
+  },
+  {
+   "id": "F07",
+   "avg": 18.8,
+   "min": 17,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 75
+  },
+  {
+   "id": "B06",
+   "avg": 19,
+   "min": 18,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 76
+  },
+  {
+   "id": "Q06",
+   "avg": 19,
+   "min": 10,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 76
+  },
+  {
+   "id": "E04",
+   "avg": 19,
+   "min": 13,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 76
+  },
+  {
+   "id": "E10",
+   "avg": 19,
+   "min": 16,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 2,
+   "totalChars": 76
+  },
+  {
+   "id": "A04",
+   "avg": 19,
+   "min": 15,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 76
+  },
+  {
+   "id": "W01",
+   "avg": 19.3,
+   "min": 10,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 77
+  },
+  {
+   "id": "W02",
+   "avg": 19.3,
+   "min": 9,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 77
+  },
+  {
+   "id": "Q08",
+   "avg": 19.3,
+   "min": 17,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 1,
+   "totalChars": 77
+  },
+  {
+   "id": "S06",
+   "avg": 19.3,
+   "min": 17,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 77
+  },
+  {
+   "id": "E03",
+   "avg": 19.3,
+   "min": 11,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 77
+  },
+  {
+   "id": "I02",
+   "avg": 19.5,
+   "min": 15,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 2,
+   "totalChars": 78
+  },
+  {
+   "id": "F06",
+   "avg": 19.5,
+   "min": 13,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 78
+  },
+  {
+   "id": "Q01",
+   "avg": 19.8,
+   "min": 15,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 0,
+   "totalChars": 79
+  },
+  {
+   "id": "E08",
+   "avg": 19.8,
+   "min": 19,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 2,
+   "totalChars": 79
+  },
+  {
+   "id": "I05",
+   "avg": 19.8,
+   "min": 15,
+   "causal": 1,
+   "instr": 2,
+   "hedge": 0,
+   "totalChars": 79
+  },
+  {
+   "id": "T07",
+   "avg": 20,
+   "min": 13,
+   "causal": 0,
+   "instr": 3,
+   "hedge": 1,
+   "totalChars": 80
+  },
+  {
+   "id": "W10",
+   "avg": 20,
+   "min": 14,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 80
+  },
+  {
+   "id": "Q03",
+   "avg": 20,
+   "min": 16,
+   "causal": 1,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 80
+  },
+  {
+   "id": "B08",
+   "avg": 20.3,
+   "min": 15,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 81
+  },
+  {
+   "id": "T02",
+   "avg": 20.3,
+   "min": 13,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 81
+  },
+  {
+   "id": "T03",
+   "avg": 20.3,
+   "min": 12,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 81
+  },
+  {
+   "id": "Q02",
+   "avg": 20.3,
+   "min": 14,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 81
+  },
+  {
+   "id": "S10",
+   "avg": 20.3,
+   "min": 14,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 81
+  },
+  {
+   "id": "A03",
+   "avg": 20.5,
+   "min": 14,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 82
+  },
+  {
+   "id": "A07",
+   "avg": 20.5,
+   "min": 19,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 82
+  },
+  {
+   "id": "T08",
+   "avg": 20.8,
+   "min": 12,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 83
+  },
+  {
+   "id": "E07",
+   "avg": 20.8,
+   "min": 16,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 83
+  },
+  {
+   "id": "W08",
+   "avg": 21,
+   "min": 15,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 0,
+   "totalChars": 84
+  },
+  {
+   "id": "B07",
+   "avg": 21.3,
+   "min": 11,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 85
+  },
+  {
+   "id": "W03",
+   "avg": 21.5,
+   "min": 16,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 86
+  },
+  {
+   "id": "W09",
+   "avg": 21.8,
+   "min": 15,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 2,
+   "totalChars": 87
+  },
+  {
+   "id": "B05",
+   "avg": 22.2,
+   "min": 15,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 111
+  },
+  {
+   "id": "I06",
+   "avg": 22.3,
+   "min": 18,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 89
+  },
+  {
+   "id": "F04",
+   "avg": 22.5,
+   "min": 13,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 90
+  },
+  {
+   "id": "S02",
+   "avg": 22.8,
+   "min": 20,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 91
+  },
+  {
+   "id": "I08",
+   "avg": 23,
+   "min": 17,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 92
+  },
+  {
+   "id": "S03",
+   "avg": 23,
+   "min": 15,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 92
+  },
+  {
+   "id": "S01",
+   "avg": 23.2,
+   "min": 12,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 116
+  },
+  {
+   "id": "I07",
+   "avg": 23.3,
+   "min": 15,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 93
+  },
+  {
+   "id": "Q04",
+   "avg": 23.3,
+   "min": 20,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 93
+  },
+  {
+   "id": "F01",
+   "avg": 23.3,
+   "min": 12,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 93
+  },
+  {
+   "id": "E05",
+   "avg": 23.5,
+   "min": 16,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 94
+  },
+  {
+   "id": "B04",
+   "avg": 23.6,
+   "min": 6,
+   "causal": 0,
+   "instr": 3,
+   "hedge": 0,
+   "totalChars": 118
+  },
+  {
+   "id": "S12",
+   "avg": 24,
+   "min": 19,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 96
+  },
+  {
+   "id": "F02",
+   "avg": 24,
+   "min": 18,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 96
+  },
+  {
+   "id": "E01",
+   "avg": 24,
+   "min": 21,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 96
+  },
+  {
+   "id": "S04",
+   "avg": 25.3,
+   "min": 16,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 101
+  },
+  {
+   "id": "Q07",
+   "avg": 25.8,
+   "min": 18,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 103
+  },
+  {
+   "id": "S08",
+   "avg": 25.8,
+   "min": 23,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 103
+  },
+  {
+   "id": "T01",
+   "avg": 26,
+   "min": 24,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 104
+  },
+  {
+   "id": "F03",
+   "avg": 26,
+   "min": 18,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 104
+  },
+  {
+   "id": "I03",
+   "avg": 26.3,
+   "min": 14,
+   "causal": 0,
+   "instr": 2,
+   "hedge": 1,
+   "totalChars": 105
+  },
+  {
+   "id": "W04",
+   "avg": 26.5,
+   "min": 18,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 0,
+   "totalChars": 106
+  },
+  {
+   "id": "S09",
+   "avg": 26.5,
+   "min": 23,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 106
+  },
+  {
+   "id": "B01",
+   "avg": 27.5,
+   "min": 18,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 0,
+   "totalChars": 110
+  },
+  {
+   "id": "T05",
+   "avg": 32.5,
+   "min": 15,
+   "causal": 0,
+   "instr": 1,
+   "hedge": 1,
+   "totalChars": 130
+  },
+  {
+   "id": "W07",
+   "avg": 32.8,
+   "min": 25,
+   "causal": 0,
+   "instr": 0,
+   "hedge": 1,
+   "totalChars": 131
+  }
+ ],
+ "flat": [
+  {
+   "id": "B07",
+   "step": 3,
+   "c": "Snapshot 读取当前 File Slice。",
+   "n": 25,
+   "zh": 4,
+   "causal": false
+  },
+  {
+   "id": "F05",
+   "step": 2,
+   "c": "引擎产生 REQUESTED。",
+   "n": 15,
+   "zh": 4,
+   "causal": false
+  },
+  {
+   "id": "B04",
+   "step": 4,
+   "c": "先生成计划。",
+   "n": 6,
+   "zh": 5,
+   "causal": false
+  },
+  {
+   "id": "W07",
+   "step": 2,
+   "c": "Append、Overwrite、ErrorIfExists、Ignore 走不同入口。",
+   "n": 44,
+   "zh": 5,
+   "causal": false
+  },
+  {
+   "id": "I07",
+   "step": 1,
+   "c": "本例测试 BUCKET 与 Bulk Insert。",
+   "n": 26,
+   "zh": 5,
+   "causal": false
+  },
+  {
+   "id": "S01",
+   "step": 2,
+   "c": "Schedule 将计划写为 REQUESTED。",
+   "n": 25,
+   "zh": 5,
+   "causal": false
+  },
+  {
+   "id": "W06",
+   "step": 2,
+   "c": "旧 File Group 全部被取代。",
+   "n": 19,
+   "zh": 6,
+   "causal": false
+  },
+  {
+   "id": "S12",
+   "step": 4,
+   "c": "Snapshot 仍由有效 Slice 计算。",
+   "n": 23,
+   "zh": 6,
+   "causal": false
+  },
+  {
+   "id": "T06",
+   "step": 3,
+   "c": "把分区定义传给 Metastore。",
+   "n": 18,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "T07",
+   "step": 2,
+   "c": "查看引擎创建的 table.properties。",
+   "n": 25,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "T08",
+   "step": 1,
+   "c": "先看旧文件的 id、amount、ts 和 dt。",
+   "n": 25,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "W03",
+   "step": 2,
+   "c": "本地模型写入 operation=D 的 tombstone。",
+   "n": 31,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "Q05",
+   "step": 2,
+   "c": "Base 和 Log 共同参与归并。",
+   "n": 18,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "Q08",
+   "step": 1,
+   "c": "让当前主键产生 tombstone。",
+   "n": 18,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "S02",
+   "step": 1,
+   "c": "MOR 的本次更新产生 DELTA_COMMIT。",
+   "n": 25,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "F02",
+   "step": 2,
+   "c": "SaveMode 与 operation 在不同层生效。",
+   "n": 28,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "F03",
+   "step": 3,
+   "c": "查询引擎归并 Base 与 Log。",
+   "n": 18,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "F04",
+   "step": 2,
+   "c": "观察 Checkpoint 边界传播到 Writer。",
+   "n": 27,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "E09",
+   "step": 3,
+   "c": "写入侧生成计划。",
+   "n": 8,
+   "zh": 7,
+   "causal": false
+  },
+  {
+   "id": "B04",
+   "step": 1,
+   "c": "先从分区进入一个 File Group。",
+   "n": 20,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "B05",
+   "step": 4,
+   "c": "计划记录待合并的 File Group。",
+   "n": 20,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "T05",
+   "step": 2,
+   "c": "NONE、HIVE_STYLE_PARTITIONING、STYLE_PARTITIONING_ONLY 在配置卡片中对比。",
+   "n": 62,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "W02",
+   "step": 1,
+   "c": "这次主键已经存在。",
+   "n": 9,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "W02",
+   "step": 2,
+   "c": "更新需要找到已有 File Group。",
+   "n": 20,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "I03",
+   "step": 1,
+   "c": "观察输入主键进入 Hash。",
+   "n": 14,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "I08",
+   "step": 2,
+   "c": "当前教学策略拒绝 BUCKET + Bulk Insert。",
+   "n": 30,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "Q02",
+   "step": 1,
+   "c": "读优化路径只读取 Base。",
+   "n": 14,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "Q04",
+   "step": 1,
+   "c": "读取初始 Base 建立后的 Checkpoint。",
+   "n": 26,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "Q04",
+   "step": 2,
+   "c": "历史快照有自己的 File Slice。",
+   "n": 20,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "S03",
+   "step": 1,
+   "c": "当前 File Slice 中已有待合并 Log。",
+   "n": 25,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "S03",
+   "step": 3,
+   "c": "只 Schedule，不改写数据文件。",
+   "n": 19,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "S04",
+   "step": 4,
+   "c": "Compaction 改引用，Cleaner 才物理回收。",
+   "n": 29,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "S05",
+   "step": 2,
+   "c": "引擎生成 REQUESTED，不产生新 Base。",
+   "n": 25,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "F01",
+   "step": 1,
+   "c": "SQL 入口在本地映射为 CREATE_TABLE。",
+   "n": 26,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "E05",
+   "step": 4,
+   "c": "当前 File Slice 没有成功的新 Base。",
+   "n": 26,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "E06",
+   "step": 2,
+   "c": "只回滚引擎识别的 pending。",
+   "n": 17,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "E07",
+   "step": 1,
+   "c": "先比较 Timeline、pending 与物理文件。",
+   "n": 27,
+   "zh": 8,
+   "causal": false
+  },
+  {
+   "id": "B05",
+   "step": 1,
+   "c": "Base 已由引擎的初始 Compaction 建立。",
+   "n": 27,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "W01",
+   "step": 2,
+   "c": "按分区定位写入范围。",
+   "n": 10,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "Q04",
+   "step": 4,
+   "c": "对比当前 Snapshot 的最新金额。",
+   "n": 20,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "Q06",
+   "step": 2,
+   "c": "高亮目标分区的文件。",
+   "n": 10,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "Q08",
+   "step": 3,
+   "c": "观察 operation=D 需要走删除通道。",
+   "n": 23,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "S02",
+   "step": 2,
+   "c": "当前更新在 Log，Base 尚未重写。",
+   "n": 20,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "S02",
+   "step": 3,
+   "c": "计划生成后可以看到 REQUESTED。",
+   "n": 20,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "S03",
+   "step": 2,
+   "c": "计划根据 Log 数阈值筛选。",
+   "n": 15,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "S07",
+   "step": 2,
+   "c": "保留数量由设置决定。",
+   "n": 10,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "S10",
+   "step": 4,
+   "c": "Snapshot 的业务记录保持一致。",
+   "n": 19,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "F01",
+   "step": 4,
+   "c": "查询直接读取生成的 File Slice。",
+   "n": 21,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "F02",
+   "step": 3,
+   "c": "演示相同 Upsert 的文件结果。",
+   "n": 18,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "F03",
+   "step": 2,
+   "c": "本地 MOR 场景追加 Log，不模拟 Flink runtime。",
+   "n": 34,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "F06",
+   "step": 1,
+   "c": "教学映射由现有 bucketOf 计算。",
+   "n": 20,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "E02",
+   "step": 2,
+   "c": "同键到了另一个分区。",
+   "n": 10,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "E03",
+   "step": 4,
+   "c": "使用当前模型允许的 Upsert。",
+   "n": 17,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "E05",
+   "step": 1,
+   "c": "有 Plan 才能演示执行失败。",
+   "n": 16,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "E05",
+   "step": 3,
+   "c": "以当前 Timeline 的非 COMPLETED 状态为准。",
+   "n": 31,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "A06",
+   "step": 1,
+   "c": "先更新一条已有记录。",
+   "n": 10,
+   "zh": 9,
+   "causal": false
+  },
+  {
+   "id": "B01",
+   "step": 1,
+   "c": "普通 Parquet 文件不携带 Hudi 的事务 Timeline。",
+   "n": 35,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "B01",
+   "step": 4,
+   "c": "Timeline 与当前 File Slice 一起指向新版本。",
+   "n": 32,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "B04",
+   "step": 3,
+   "c": "更新追加为 Log，仍属于当前 File Group。",
+   "n": 27,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "B05",
+   "step": 3,
+   "c": "第二次写入又增加一版 Log。",
+   "n": 15,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "B07",
+   "step": 2,
+   "c": "当前版本改为新的金额。",
+   "n": 11,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "T06",
+   "step": 1,
+   "c": "HDFS 有数据，并不代表 HMS 已同步。",
+   "n": 22,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "W01",
+   "step": 1,
+   "c": "新增主键从输入区进入 Writer。",
+   "n": 18,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "W07",
+   "step": 3,
+   "c": "Hudi operation 是后续独立的写入语义。",
+   "n": 26,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "I04",
+   "step": 2,
+   "c": "主键进入当前分区的桶。",
+   "n": 11,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "Q05",
+   "step": 3,
+   "c": "只读 Base，所以金额可能更旧。",
+   "n": 17,
+   "zh": 10,
+   "causal": true
+  },
+  {
+   "id": "Q07",
+   "step": 4,
+   "c": "展开结果可检查 _hoodie_record_key 等字段。",
+   "n": 31,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "S02",
+   "step": 4,
+   "c": "最终 Action 与 State 按引擎返回展示。",
+   "n": 26,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "S09",
+   "step": 2,
+   "c": "观察历史 Checkpoint 与现在的差异。",
+   "n": 23,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "S11",
+   "step": 4,
+   "c": "Cleaner 仍遵守自己的保留窗口。",
+   "n": 19,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "S12",
+   "step": 1,
+   "c": "Schedule 增加一个 REQUESTED，文件内容不变。",
+   "n": 31,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "S12",
+   "step": 2,
+   "c": "Pending 不等于新快照已经提交。",
+   "n": 19,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "F01",
+   "step": 3,
+   "c": "使用同一个 applyAction，未运行真实 Spark SQL。",
+   "n": 34,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "F02",
+   "step": 4,
+   "c": "本地模拟不执行 Scala 或连接 Spark。",
+   "n": 24,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "F03",
+   "step": 1,
+   "c": "记录从输入端连续流向 Writer。",
+   "n": 18,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "F03",
+   "step": 4,
+   "c": "真实 Checkpoint 与 Hudi 的对齐需在 r26 验证。",
+   "n": 34,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "E03",
+   "step": 1,
+   "c": "当前模型采用保守策略。",
+   "n": 11,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "E08",
+   "step": 4,
+   "c": "Cleaner 仍按本地保留窗口工作。",
+   "n": 19,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "A01",
+   "step": 2,
+   "c": "多份记录流向重组过程。",
+   "n": 11,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "A01",
+   "step": 3,
+   "c": "生成更集中的文件布局。",
+   "n": 11,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "A05",
+   "step": 3,
+   "c": "执行后当前有效 Log 数减少。",
+   "n": 16,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "A07",
+   "step": 1,
+   "c": "初始小批写入生成多个 Instant。",
+   "n": 19,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "A07",
+   "step": 2,
+   "c": "窗口决定迁移到 Archive 的范围。",
+   "n": 20,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "A08",
+   "step": 2,
+   "c": "看到 Log 堆积，选择安排合并。",
+   "n": 17,
+   "zh": 10,
+   "causal": false
+  },
+  {
+   "id": "B01",
+   "step": 2,
+   "c": "让更新记录进入 Hudi 写入路径。",
+   "n": 18,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "B05",
+   "step": 2,
+   "c": "Log 携带本次更新记录与写入 Instant。",
+   "n": 24,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "B07",
+   "step": 4,
+   "c": "选择初始 Checkpoint，查看更新前的值。",
+   "n": 24,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "T03",
+   "step": 2,
+   "c": "把记录写入设置中的分区。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "T04",
+   "step": 3,
+   "c": "相同主键写入有值的分区。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "T08",
+   "step": 2,
+   "c": "新消息可能携带可空字段。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W01",
+   "step": 3,
+   "c": "INSERT_RECORDS 产生真实模拟文件和提交。",
+   "n": 27,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W01",
+   "step": 4,
+   "c": "文件与 Snapshot 返回的行数可核对。",
+   "n": 22,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W04",
+   "step": 3,
+   "c": "当前教学引擎的 Bulk Insert 在 COW/MOR 均生成 Base。",
+   "n": 39,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W04",
+   "step": 4,
+   "c": "查询结果与新 Base 的记录一致。",
+   "n": 18,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W05",
+   "step": 1,
+   "c": "仅覆盖设置中的目标分区。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W05",
+   "step": 3,
+   "c": "灰色文件尚未被物理删除。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W06",
+   "step": 3,
+   "c": "查询只返回覆盖后的记录。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W06",
+   "step": 4,
+   "c": "旧文件仍需遵循 Cleaner 保留窗口。",
+   "n": 21,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W08",
+   "step": 2,
+   "c": "由引擎去重，只保留较大的 precombine。",
+   "n": 24,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "W10",
+   "step": 4,
+   "c": "并发及其他 operation 需要分别验证。",
+   "n": 23,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "I04",
+   "step": 4,
+   "c": "定位同时包含分区与桶号。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "I07",
+   "step": 2,
+   "c": "规则来自当前 Version Profile 与保守策略。",
+   "n": 29,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "I08",
+   "step": 4,
+   "c": "改为 Upsert 后查看实际桶和文件。",
+   "n": 20,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "Q01",
+   "step": 2,
+   "c": "高亮当前 File Slice 中仍有效的文件。",
+   "n": 24,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "Q03",
+   "step": 2,
+   "c": "根据记录 commitTime 选择窗口内版本。",
+   "n": 24,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "Q05",
+   "step": 4,
+   "c": "COW/MOR 双画布可从主题目录进入。",
+   "n": 20,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "S01",
+   "step": 5,
+   "c": "用查询核对最终文件引用。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "S04",
+   "step": 1,
+   "c": "为当前待合并的 File Group 生成计划。",
+   "n": 24,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "S06",
+   "step": 1,
+   "c": "更新记录生成被取代的旧 Base。",
+   "n": 17,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "S08",
+   "step": 4,
+   "c": "Timeline 增加 ROLLBACK，完成的其他记录保留。",
+   "n": 31,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "F01",
+   "step": 2,
+   "c": "记录开始沿写入链路移动。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "E03",
+   "step": 2,
+   "c": "执行 BULK_INSERT 进入索引兼容性检查。",
+   "n": 25,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "E09",
+   "step": 4,
+   "c": "实际文件结果由本地 Compaction 计算。",
+   "n": 24,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "A02",
+   "step": 2,
+   "c": "同键更新仍落向同一个桶。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "A07",
+   "step": 3,
+   "c": "只迁移元数据，不移动 Parquet 文件。",
+   "n": 22,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "A08",
+   "step": 3,
+   "c": "实际文件结果由引擎计算。",
+   "n": 12,
+   "zh": 11,
+   "causal": false
+  },
+  {
+   "id": "B01",
+   "step": 3,
+   "c": "本次只更新目标 File Group，保留旧文件。",
+   "n": 25,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "B04",
+   "step": 2,
+   "c": "当前 File Slice 引用一个 Base 与零个或多个 Log。",
+   "n": 35,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "B07",
+   "step": 1,
+   "c": "初始提交的 Checkpoint 记录旧文件版本。",
+   "n": 25,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "T01",
+   "step": 1,
+   "c": "主键、precombine 和分区字段进入表定义。",
+   "n": 25,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "T02",
+   "step": 1,
+   "c": "主键确定身份，precombine 确定版本顺序。",
+   "n": 25,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "T02",
+   "step": 4,
+   "c": "最终结果直接来自引擎归并。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "T07",
+   "step": 1,
+   "c": "主键、precombine、表类型共同形成表定义。",
+   "n": 25,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "T07",
+   "step": 3,
+   "c": "写入路径读取同一份表配置。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "W02",
+   "step": 3,
+   "c": "当前 COW 场景生成新 Base，旧版本变灰。",
+   "n": 24,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "W05",
+   "step": 4,
+   "c": "观察仍存在的其他分区记录。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "W10",
+   "step": 1,
+   "c": "更新已有主键，生成一次提交。",
+   "n": 14,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "I04",
+   "step": 3,
+   "c": "同名主键进入另一套分区桶。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "Q02",
+   "step": 3,
+   "c": "查询引擎返回 Base 中的较旧金额。",
+   "n": 19,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "Q02",
+   "step": 4,
+   "c": "切换为 Snapshot 可以读到 Log 的最新更新。",
+   "n": 28,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "Q05",
+   "step": 1,
+   "c": "已有 Base 之后又提交了一次更新。",
+   "n": 19,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "S03",
+   "step": 4,
+   "c": "Timeline 的 REQUESTED 和计划内容可在详情核对。",
+   "n": 33,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "S05",
+   "step": 1,
+   "c": "将写入链路与合并执行拆开。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "S06",
+   "step": 3,
+   "c": "按设置中的保留提交数调用 Cleaner。",
+   "n": 21,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "S07",
+   "step": 3,
+   "c": "Archive 移动元数据，不删除数据文件。",
+   "n": 22,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "S10",
+   "step": 2,
+   "c": "Clustering 改变文件布局，不改变业务值。",
+   "n": 25,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "F04",
+   "step": 1,
+   "c": "记录先进入缓冲和写入链路。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "F06",
+   "step": 2,
+   "c": "同一个键仍映射到同一个桶。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "F08",
+   "step": 2,
+   "c": "主键、分区、表类型等需要一致。",
+   "n": 15,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "E01",
+   "step": 1,
+   "c": "表定义 BUCKET，预期按主键分桶定位。",
+   "n": 21,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "E04",
+   "step": 2,
+   "c": "失败必须停在结果提交之前。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "E06",
+   "step": 1,
+   "c": "场景从已有未完成事务开始。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "E07",
+   "step": 3,
+   "c": "Rollback 不等于清除所有历史旧文件。",
+   "n": 22,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "A01",
+   "step": 4,
+   "c": "文件数变化，Snapshot 业务值保持一致。",
+   "n": 23,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "A05",
+   "step": 1,
+   "c": "先增加一次更新，观察模拟 Log 数。",
+   "n": 19,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "A05",
+   "step": 2,
+   "c": "当前演示满足最低候选条件。",
+   "n": 13,
+   "zh": 12,
+   "causal": false
+  },
+  {
+   "id": "T06",
+   "step": 2,
+   "c": "同步工具读取表和分区元信息。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "T06",
+   "step": 4,
+   "c": "这是同步链路示意，未连接真实 HMS。",
+   "n": 19,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "W02",
+   "step": 4,
+   "c": "切换表类型后重跑，可观察 MOR 追加 Log。",
+   "n": 24,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "W07",
+   "step": 4,
+   "c": "本页为 API 机制示意，不模拟 Spark SaveMode 的执行。",
+   "n": 36,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "W08",
+   "step": 4,
+   "c": "点击文件比较物理记录与最新 Snapshot。",
+   "n": 23,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "I02",
+   "step": 3,
+   "c": "候选仍需要精确确认，防止误判。",
+   "n": 15,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "I03",
+   "step": 3,
+   "c": "记录沿映射路径移动到对应 Bucket 与 File Group。",
+   "n": 33,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "Q01",
+   "step": 4,
+   "c": "点击结果行查看字段；结果来自 runQuery。",
+   "n": 24,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "Q02",
+   "step": 2,
+   "c": "更新已在 Log 中，但本次不参与读取。",
+   "n": 20,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "Q07",
+   "step": 3,
+   "c": "includeMetaFields 打开后，由引擎生成实际元字段。",
+   "n": 33,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "S04",
+   "step": 3,
+   "c": "执行引擎 Compaction，新 Base 包含归并后的记录。",
+   "n": 32,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "S07",
+   "step": 1,
+   "c": "每次写入都会增加元数据记录。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "S07",
+   "step": 4,
+   "c": "归档记录和活跃记录分开展示。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "S08",
+   "step": 1,
+   "c": "初始场景已通过故障注入留下 INFLIGHT。",
+   "n": 23,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "S10",
+   "step": 1,
+   "c": "多次小批量写入产生多个文件。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "S11",
+   "step": 3,
+   "c": "此时旧物理文件可能仍然存在。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "E02",
+   "step": 4,
+   "c": "分区路径和主键需要一起核对。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "E06",
+   "step": 3,
+   "c": "从仍有效的文件重新安排合并。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "E10",
+   "step": 4,
+   "c": "此页不操作 keytab，也不连接现场服务。",
+   "n": 22,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "A03",
+   "step": 3,
+   "c": "两条路径最终服务于文件发现。",
+   "n": 14,
+   "zh": 13,
+   "causal": false
+  },
+  {
+   "id": "B08",
+   "step": 2,
+   "c": "分区路径来自当前表的分区字段。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "B08",
+   "step": 4,
+   "c": "文件清单与 Timeline 可在技术详情中核对。",
+   "n": 25,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "T01",
+   "step": 3,
+   "c": "文件落点由所选 COW/MOR 及引擎规则决定。",
+   "n": 24,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "T01",
+   "step": 4,
+   "c": "点击生成的文件或打开 Timeline 查看状态。",
+   "n": 25,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "T03",
+   "step": 3,
+   "c": "同一个表可以拥有多个独立分区。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "T04",
+   "step": 1,
+   "c": "本地模型把空 dt 推导为空分区路径。",
+   "n": 19,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "T05",
+   "step": 3,
+   "c": "观察分区值从字段传到目录表示。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "W04",
+   "step": 1,
+   "c": "Bulk Insert 路径不用于定位和更新既有主键。",
+   "n": 27,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "W05",
+   "step": 2,
+   "c": "旧分区文件被取代，其他分区保留。",
+   "n": 16,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "W08",
+   "step": 1,
+   "c": "同批次输入同键的两个金额版本。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "W09",
+   "step": 1,
+   "c": "SQL 与 DataFrame 都需要明确表配置和写入语义。",
+   "n": 30,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "W09",
+   "step": 2,
+   "c": "观察上层参数汇入共同写入路径。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "W10",
+   "step": 2,
+   "c": "金额不增加，但文件和 Timeline 仍可能变化。",
+   "n": 26,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "I01",
+   "step": 1,
+   "c": "写入索引先确定需要查找的范围。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "I02",
+   "step": 1,
+   "c": "Bloom 的“可能包含”不代表主键一定存在。",
+   "n": 23,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "I02",
+   "step": 4,
+   "c": "最终更新仍由现有写入引擎处理。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "I03",
+   "step": 2,
+   "c": "调用现有 bucketOf；r26 的实际哈希算法待验证。",
+   "n": 29,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "I05",
+   "step": 2,
+   "c": "教学哈希分配每条记录到固定桶。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "I07",
+   "step": 4,
+   "c": "兼容路径可以通过同一引擎写入。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "Q01",
+   "step": 3,
+   "c": "由查询引擎归并并过滤删除记录。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "Q04",
+   "step": 3,
+   "c": "本例存在真实模拟 Checkpoint，避免近似回退。",
+   "n": 27,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "Q07",
+   "step": 1,
+   "c": "业务字段和 Hudi 元字段承担不同职责。",
+   "n": 21,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "S08",
+   "step": 3,
+   "c": "移除引擎识别的残留文件和对应 pending。",
+   "n": 23,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "S09",
+   "step": 1,
+   "c": "Restore 的目标是已经提交过的历史状态。",
+   "n": 23,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "S10",
+   "step": 3,
+   "c": "生成的新文件和实际 Action 从引擎读取。",
+   "n": 23,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "S11",
+   "step": 1,
+   "c": "初始场景包含一个较早日期分区。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "F05",
+   "step": 1,
+   "c": "Flink 侧计划生成与合并执行分工展示。",
+   "n": 21,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "F06",
+   "step": 3,
+   "c": "Writer 与桶数的真实调度关系尚未建模。",
+   "n": 22,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "E02",
+   "step": 3,
+   "c": "旧位置未被跨分区索引自动更新。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "E05",
+   "step": 2,
+   "c": "引擎日志模拟上层成功但 Hudi 未完成。",
+   "n": 21,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "E06",
+   "step": 4,
+   "c": "新计划正常执行后核对最终状态。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "A04",
+   "step": 1,
+   "c": "两条输入通道指向同一个文件组。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "A04",
+   "step": 3,
+   "c": "用高亮表示需要校验的冲突位置。",
+   "n": 15,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "A06",
+   "step": 2,
+   "c": "再添加提交，使窗口有可淘汰历史。",
+   "n": 16,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "A08",
+   "step": 1,
+   "c": "从模拟状态统计文件数、Log、旧版本和 pending。",
+   "n": 28,
+   "zh": 14,
+   "causal": false
+  },
+  {
+   "id": "B04",
+   "step": 5,
+   "c": "执行计划，新的 Base 取代旧 Slice 中的文件引用。",
+   "n": 30,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "B08",
+   "step": 3,
+   "c": "写入产生数据文件，并增加提交信息。",
+   "n": 17,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "T01",
+   "step": 2,
+   "c": "CREATE_TABLE 建立空表元信息，此时没有数据文件。",
+   "n": 30,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "T05",
+   "step": 1,
+   "c": "Hive Style 的目录命名和字段保留是不同维度。",
+   "n": 27,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "W03",
+   "step": 1,
+   "c": "删除消息仍然需要定位对应文件组。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "W03",
+   "step": 4,
+   "c": "增量结果保留 D 标记，供下游处理删除。",
+   "n": 20,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "W04",
+   "step": 2,
+   "c": "这一批数据直接进入 Base 文件生成过程。",
+   "n": 22,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "W06",
+   "step": 1,
+   "c": "和分区覆盖相比，这次处理所有分区。",
+   "n": 17,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "W07",
+   "step": 1,
+   "c": "SaveMode 决定上层数据源对已有目标的处理。",
+   "n": 25,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "I01",
+   "step": 3,
+   "c": "实际文件组和文件内容由引擎定位。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "I05",
+   "step": 3,
+   "c": "观察目标桶如何由 key 和桶数共同决定。",
+   "n": 21,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "I08",
+   "step": 3,
+   "c": "错误来自兼容性规则，而非文件内容。",
+   "n": 17,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "Q01",
+   "step": 1,
+   "c": "目标是当前已提交的完整逻辑视图。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "Q03",
+   "step": 1,
+   "c": "从初始种子提交之后开始读取变更。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "Q08",
+   "step": 2,
+   "c": "增量查询包含新增、更新与删除标记。",
+   "n": 17,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "S04",
+   "step": 2,
+   "c": "多个输入文件的数据流入合并过程。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "S05",
+   "step": 4,
+   "c": "本地引擎完成相同计划的文件合并。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "S08",
+   "step": 2,
+   "c": "Rollback 用于未完成事务，不撤销已完成提交。",
+   "n": 26,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "S11",
+   "step": 2,
+   "c": "仅支持 PARTITION，超期分区从有效引用中移除。",
+   "n": 27,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "F02",
+   "step": 1,
+   "c": "DataFrame 数据和写入选项进入两条输入通道。",
+   "n": 26,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "F04",
+   "step": 3,
+   "c": "这两个边界的先后需要由实际 connector 确认。",
+   "n": 27,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "F05",
+   "step": 3,
+   "c": "观察计划从写入端传给独立执行端。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "F05",
+   "step": 4,
+   "c": "本地模型生成新 Base，并保留旧物理文件。",
+   "n": 22,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "F06",
+   "step": 4,
+   "c": "本页不将桶数直接当成实际 Flink 并行度。",
+   "n": 23,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "F08",
+   "step": 4,
+   "c": "当前未执行真实跨引擎兼容性测试。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "E04",
+   "step": 3,
+   "c": "本地校验返回具体错误，保留原状态。",
+   "n": 17,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "E07",
+   "step": 4,
+   "c": "避免把旧版本和失败残留混为一谈。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "E10",
+   "step": 2,
+   "c": "成功认证不代表有目录或表的权限。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "A02",
+   "step": 1,
+   "c": "每个桶的数量由实际教学映射统计。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "A03",
+   "step": 4,
+   "c": "当前未实现 Metadata Table，不展示虚构的性能数字。",
+   "n": 32,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "A06",
+   "step": 4,
+   "c": "实际文件数和估算字节数来自引擎。",
+   "n": 16,
+   "zh": 15,
+   "causal": false
+  },
+  {
+   "id": "B05",
+   "step": 5,
+   "c": "旧文件仍物理存在，当前 Slice 已引用新文件。",
+   "n": 25,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "B06",
+   "step": 1,
+   "c": "主键区分记录，分区路径限定定位范围。",
+   "n": 18,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "T02",
+   "step": 2,
+   "c": "同批次写入两条同键记录，ts 较大的胜出。",
+   "n": 21,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "T02",
+   "step": 3,
+   "c": "再写入 ts 更小的版本，观察金额不会倒退。",
+   "n": 22,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "T07",
+   "step": 4,
+   "c": "修改结构性配置不能只修改界面文字。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "W08",
+   "step": 3,
+   "c": "写入 ts 较小的记录，观察已有值是否保持。",
+   "n": 22,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "W09",
+   "step": 4,
+   "c": "相同操作与参数得到同一个模拟状态。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "W10",
+   "step": 3,
+   "c": "逻辑幂等不等于没有写入和存储成本。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "I02",
+   "step": 2,
+   "c": "候选筛选是机制示意，未实现真实 Bloom 位图。",
+   "n": 25,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "I04",
+   "step": 1,
+   "c": "相同桶号在不同分区不是同一个定位。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "I06",
+   "step": 2,
+   "c": "当前模型为非全局索引，观察重复身份。",
+   "n": 18,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "I07",
+   "step": 3,
+   "c": "引擎拒绝该组合；这不是 r26 已证实的行为。",
+   "n": 23,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "Q03",
+   "step": 3,
+   "c": "只返回窗口内的新增、更新和删除标记。",
+   "n": 18,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "Q07",
+   "step": 2,
+   "c": "主键、分区和提交信息随记录流入查询。",
+   "n": 18,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "S01",
+   "step": 1,
+   "c": "已有 Base 后追加一条 Log，作为计划的候选文件。",
+   "n": 28,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "S12",
+   "step": 3,
+   "c": "制造未完成合并事务，Base 不发生成功替换。",
+   "n": 23,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "F07",
+   "step": 2,
+   "c": "目录读写权限和认证成功是不同检查。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "F07",
+   "step": 3,
+   "c": "库表权限可能在另一个关口阻止流程。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "E02",
+   "step": 1,
+   "c": "本地模型产生空路径分区，并给出警告。",
+   "n": 18,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "E04",
+   "step": 1,
+   "c": "使用缺少 primaryKey 配置的候选表测试写入校验。",
+   "n": 29,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "E04",
+   "step": 4,
+   "c": "回到配置完整的原表后可以正常写入。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "E09",
+   "step": 1,
+   "c": "实时写入与合并可能争用同一资源池。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "E10",
+   "step": 3,
+   "c": "高亮失败节点，不编造真实报错字符串。",
+   "n": 18,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "A01",
+   "step": 1,
+   "c": "图中大小和文件数来自当前模拟状态。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "A06",
+   "step": 3,
+   "c": "调整保留数后重新演示，比较文件占用。",
+   "n": 18,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "A08",
+   "step": 4,
+   "c": "维护建议不能替代真实集群健康诊断。",
+   "n": 17,
+   "zh": 16,
+   "causal": false
+  },
+  {
+   "id": "B06",
+   "step": 2,
+   "c": "观察主键和分区路径一起进入定位过程。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "B06",
+   "step": 4,
+   "c": "同名主键在两个分区形成不同定位信息。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "B08",
+   "step": 1,
+   "c": "根目录同时容纳数据目录与 Hudi 元数据目录。",
+   "n": 24,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "T03",
+   "step": 1,
+   "c": "当前实验使用 dt 分区；字段值生成分区路径。",
+   "n": 23,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "T08",
+   "step": 3,
+   "c": "删除列或修改类型需要单独验证兼容性。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "W09",
+   "step": 3,
+   "c": "这里调用同一模拟写入引擎，不运行真实 Spark。",
+   "n": 25,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "I01",
+   "step": 4,
+   "c": "写入索引和查询执行路径需要分开理解。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "I05",
+   "step": 4,
+   "c": "分布取决于键集合；不宣称是 r26 的实际分配。",
+   "n": 24,
+   "zh": 17,
+   "causal": true
+  },
+  {
+   "id": "I06",
+   "step": 4,
+   "c": "r26 全局迁移、删除旧位置等行为需单独实测。",
+   "n": 23,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "Q06",
+   "step": 1,
+   "c": "设置中的分区决定本次需要的数据范围。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "Q08",
+   "step": 4,
+   "c": "下游处理为机制示意，不连接外部数据库。",
+   "n": 19,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "S01",
+   "step": 4,
+   "c": "执行结果中的实际 Instant 状态显示在时间线上。",
+   "n": 27,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "S09",
+   "step": 4,
+   "c": "当前引擎没有 Restore 动作，本页不伪造恢复提交。",
+   "n": 28,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "F08",
+   "step": 3,
+   "c": "文件格式和提交协议是兼容性核对重点。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "E07",
+   "step": 2,
+   "c": "删除引擎判断属于该未完成事务的文件。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "A03",
+   "step": 1,
+   "c": "先看逐个列举目录获得文件信息的路径。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "A03",
+   "step": 2,
+   "c": "另一条路径从文件元信息索引取得清单。",
+   "n": 18,
+   "zh": 17,
+   "causal": false
+  },
+  {
+   "id": "T08",
+   "step": 4,
+   "c": "当前引擎未实现 Schema 演进，动画只展示校验关口。",
+   "n": 28,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "W03",
+   "step": 3,
+   "c": "删除在查询可见性和物理文件层面不同步。",
+   "n": 19,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "I05",
+   "step": 1,
+   "c": "修改设置中的桶数会从初始状态重新映射。",
+   "n": 19,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "Q03",
+   "step": 4,
+   "c": "下游必须识别 D，而不是把所有行都当作新增。",
+   "n": 22,
+   "zh": 18,
+   "causal": true
+  },
+  {
+   "id": "Q06",
+   "step": 4,
+   "c": "这里统计模拟候选文件数，不模拟 Spark 执行计划。",
+   "n": 27,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "S05",
+   "step": 3,
+   "c": "作业调度为机制示意，不连接真实调度平台。",
+   "n": 20,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "S06",
+   "step": 2,
+   "c": "再产生一次提交，让保留窗口有可比较范围。",
+   "n": 20,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "S06",
+   "step": 4,
+   "c": "被保留窗口保护的旧文件不会凭动画消失。",
+   "n": 19,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "F07",
+   "step": 1,
+   "c": "先获得有效身份，后续服务才能做授权判断。",
+   "n": 20,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "E03",
+   "step": 3,
+   "c": "不产生新文件或成功提交，r26 实际限制待验证。",
+   "n": 24,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "E08",
+   "step": 2,
+   "c": "真实阻塞条件需实测，本地不伪造服务停摆。",
+   "n": 20,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "E08",
+   "step": 3,
+   "c": "先通过现有回滚模型处理一个未完成事务。",
+   "n": 19,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "E10",
+   "step": 1,
+   "c": "参数里选择某一关口，观察后续流动被阻断。",
+   "n": 20,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "A02",
+   "step": 3,
+   "c": "记录数是本地示例，不能推断真实 r26 倾斜程度。",
+   "n": 25,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "A02",
+   "step": 4,
+   "c": "改变设置会清空过程并重新计算全部映射。",
+   "n": 19,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "A05",
+   "step": 4,
+   "c": "只展示模拟文件和字节数，不换算真实吞吐。",
+   "n": 20,
+   "zh": 18,
+   "causal": false
+  },
+  {
+   "id": "I03",
+   "step": 4,
+   "c": "点击 Bucket 查看本桶记录；改桶数会重置并重新计算。",
+   "n": 29,
+   "zh": 19,
+   "causal": false
+  },
+  {
+   "id": "F07",
+   "step": 4,
+   "c": "在参数里选择拦截位置，观察流动在哪里停止。",
+   "n": 21,
+   "zh": 19,
+   "causal": false
+  },
+  {
+   "id": "E01",
+   "step": 3,
+   "c": "类型差异是排查线索，不能据此断言异常根因。",
+   "n": 21,
+   "zh": 19,
+   "causal": false
+  },
+  {
+   "id": "E08",
+   "step": 1,
+   "c": "先检查是否有未完成事务，不能只看作业结束。",
+   "n": 21,
+   "zh": 19,
+   "causal": false
+  },
+  {
+   "id": "A04",
+   "step": 2,
+   "c": "两个写者都基于同一个旧版本产生候选更新。",
+   "n": 20,
+   "zh": 19,
+   "causal": false
+  },
+  {
+   "id": "A04",
+   "step": 4,
+   "c": "锁、OCC 与实际重试语义未建模，不能当成并发实测。",
+   "n": 26,
+   "zh": 19,
+   "causal": false
+  },
+  {
+   "id": "A07",
+   "step": 4,
+   "c": "查询结果与归档前一致，耗时不代表真实集群。",
+   "n": 21,
+   "zh": 19,
+   "causal": false
+  },
+  {
+   "id": "T04",
+   "step": 2,
+   "c": "引擎发出默认分区相关提示，具体目录名待实测。",
+   "n": 22,
+   "zh": 20,
+   "causal": false
+  },
+  {
+   "id": "T04",
+   "step": 4,
+   "c": "分区级索引不能把这两个定位自动当成同一个。",
+   "n": 21,
+   "zh": 20,
+   "causal": false
+  },
+  {
+   "id": "Q06",
+   "step": 3,
+   "c": "当前教学适配器选择分区后调用同一查询引擎。",
+   "n": 21,
+   "zh": 20,
+   "causal": false
+  },
+  {
+   "id": "E09",
+   "step": 2,
+   "c": "动画队列表示因果关系，不代表实测延迟或吞吐。",
+   "n": 22,
+   "zh": 20,
+   "causal": false
+  },
+  {
+   "id": "B06",
+   "step": 3,
+   "c": "本地非全局索引示例向另一个分区写入同名主键。",
+   "n": 22,
+   "zh": 21,
+   "causal": false
+  },
+  {
+   "id": "I06",
+   "step": 3,
+   "c": "全局索引的概念是扩大查找范围，不只是改变桶号。",
+   "n": 23,
+   "zh": 21,
+   "causal": false
+  },
+  {
+   "id": "S09",
+   "step": 3,
+   "c": "读旧快照不会修改当前表；真正 Restore 需要恢复执行模型。",
+   "n": 32,
+   "zh": 21,
+   "causal": false
+  },
+  {
+   "id": "F04",
+   "step": 4,
+   "c": "从最近的成功检查点回放消息；本页仅为机制示意。",
+   "n": 23,
+   "zh": 21,
+   "causal": false
+  },
+  {
+   "id": "F08",
+   "step": 1,
+   "c": "两个计算引擎共享表格式，不代表所有配置可互换。",
+   "n": 23,
+   "zh": 21,
+   "causal": false
+  },
+  {
+   "id": "I01",
+   "step": 2,
+   "c": "动画追踪候选文件，不将示意扫描速度当作性能实测。",
+   "n": 24,
+   "zh": 22,
+   "causal": false
+  },
+  {
+   "id": "S01",
+   "step": 3,
+   "c": "动画展示执行阶段，不虚构底层尚未返回的中间状态。",
+   "n": 24,
+   "zh": 22,
+   "causal": false
+  },
+  {
+   "id": "T03",
+   "step": 4,
+   "c": "多级路径按多个字段依次组合；真实目录可在 HDFS 详情查看。",
+   "n": 31,
+   "zh": 23,
+   "causal": false
+  },
+  {
+   "id": "I06",
+   "step": 1,
+   "c": "只在当前分区内查找，可能定位不到另一个分区的同键。",
+   "n": 25,
+   "zh": 23,
+   "causal": false
+  },
+  {
+   "id": "I08",
+   "step": 1,
+   "c": "表配置与运行时选项不一致，需要核对真正生效的索引。",
+   "n": 25,
+   "zh": 23,
+   "causal": false
+  },
+  {
+   "id": "T05",
+   "step": 4,
+   "c": "该动画为配置机制示意，不模拟三种模式下真实文件编码。",
+   "n": 26,
+   "zh": 24,
+   "causal": false
+  },
+  {
+   "id": "E01",
+   "step": 4,
+   "c": "亲手对齐作业选项，再观察定位策略；真实恢复需重跑验证。",
+   "n": 27,
+   "zh": 24,
+   "causal": false
+  },
+  {
+   "id": "E01",
+   "step": 2,
+   "c": "教学案例假设采用手动选择的作业选项，不推断真实优先级。",
+   "n": 27,
+   "zh": 25,
+   "causal": false
+  }
+ ],
+ "fwd": [
+  {
+   "term": "COW",
+   "usedIn": "T01",
+   "stepNo": 3,
+   "defId": "B02",
+   "defOrder": 1,
+   "useOrder": 8,
+   "text": "文件落点由所选 COW/MOR 及引擎规则决定。"
+  },
+  {
+   "term": "MOR",
+   "usedIn": "T01",
+   "stepNo": 3,
+   "defId": "B03",
+   "defOrder": 2,
+   "useOrder": 8,
+   "text": "文件落点由所选 COW/MOR 及引擎规则决定。"
+  },
+  {
+   "term": "ReplaceCommit",
+   "issue": "未在步骤/节点中出现",
+   "defId": "S10"
+  },
+  {
+   "term": "File ID",
+   "issue": "未在步骤/节点中出现",
+   "defId": "B05"
+  },
+  {
+   "term": "HDFS",
+   "usedIn": "T03",
+   "stepNo": 4,
+   "defId": "B08",
+   "defOrder": 7,
+   "useOrder": 10,
+   "text": "多级路径按多个字段依次组合；真实目录可在 HDFS 详情查看。"
+  }
+ ],
+ "mixedLessons": 60,
+ "hedgedLessons": [
+  "T04",
+  "T05",
+  "T06",
+  "T08",
+  "W01",
+  "W04",
+  "W07",
+  "W09",
+  "I01",
+  "I02",
+  "I03",
+  "I05",
+  "I08",
+  "Q04",
+  "Q06",
+  "Q08",
+  "S01",
+  "S05",
+  "S09",
+  "F02",
+  "F03",
+  "F04",
+  "F06",
+  "F08",
+  "E01",
+  "E03",
+  "E05",
+  "E08",
+  "E09",
+  "E10",
+  "A01",
+  "A02",
+  "A03",
+  "A04",
+  "A05",
+  "A07",
+  "A08"
+ ],
+ "hedgePerLesson": {
+  "T04": 1,
+  "T05": 2,
+  "T06": 3,
+  "T08": 2,
+  "W01": 1,
+  "W04": 1,
+  "W07": 2,
+  "W09": 2,
+  "I01": 1,
+  "I02": 3,
+  "I03": 1,
+  "I05": 1,
+  "I08": 1,
+  "Q04": 1,
+  "Q06": 2,
+  "Q08": 2,
+  "S01": 1,
+  "S05": 2,
+  "S09": 1,
+  "F02": 1,
+  "F03": 1,
+  "F04": 1,
+  "F06": 1,
+  "F08": 2,
+  "E01": 1,
+  "E03": 1,
+  "E05": 1,
+  "E08": 2,
+  "E09": 2,
+  "E10": 3,
+  "A01": 1,
+  "A02": 1,
+  "A03": 1,
+  "A04": 2,
+  "A05": 3,
+  "A07": 2,
+  "A08": 1
+ },
+ "seq": {
+  "observe>observe>upsert>snapshot": 5,
+  "observe>observe>upsert>schedule>compact": 1,
+  "observe>upsert>insert>schedule>compact": 1,
+  "observe>observe>cross-partition>snapshot": 1,
+  "observe>upsert>snapshot>history": 1,
+  "observe>observe>insert>metadata": 1,
+  "observe>create>insert>snapshot": 1,
+  "observe>duplicates>stale>snapshot": 2,
+  "observe>insert>cross-partition>observe": 1,
+  "observe>empty-partition>cross-partition>snapshot": 1,
+  "observe>observe>observe>observe": 11,
+  "observe>create>insert>observe": 1,
+  "observe>observe>insert>snapshot": 1,
+  "observe>delete>snapshot>incremental": 1,
+  "observe>bulk>observe>snapshot": 1,
+  "observe>overwrite-partition>observe>snapshot": 1,
+  "observe>overwrite-table>snapshot>observe": 1,
+  "upsert>upsert>observe>snapshot": 1,
+  "observe>observe>observe>upsert": 1,
+  "observe>observe>bucket-write>snapshot": 2,
+  "observe>bucket-write>cross-partition>snapshot": 1,
+  "observe>cross-partition>observe>snapshot": 1,
+  "observe>observe>invalid-bulk>bucket-write": 2,
+  "observe>invalid-bulk>observe>bucket-write": 1,
+  "observe>observe>snapshot>observe": 1,
+  "observe>observe>optimized>snapshot": 1,
+  "observe>observe>incremental>observe": 1,
+  "observe>observe>history>snapshot": 1,
+  "observe>snapshot>optimized>observe": 1,
+  "observe>observe>partition-read>observe": 1,
+  "observe>observe>metadata>observe": 1,
+  "delete>incremental>observe>observe": 1,
+  "upsert>schedule>observe>compact>snapshot": 1,
+  "upsert>observe>schedule>compact": 1,
+  "observe>observe>schedule>observe": 1,
+  "schedule>observe>compact>snapshot": 1,
+  "observe>schedule>observe>compact": 2,
+  "upsert>insert>clean>snapshot": 2,
+  "observe>observe>archive>observe": 1,
+  "observe>observe>rollback>snapshot": 1,
+  "observe>history>observe>snapshot": 1,
+  "observe>observe>cluster>snapshot": 2,
+  "observe>ttl>snapshot>clean": 1,
+  "schedule>observe>fail>snapshot": 1,
+  "create>observe>insert>snapshot": 1,
+  "observe>upsert>snapshot>observe": 1,
+  "observe>bucket-write>observe>observe": 2,
+  "empty-partition>cross-partition>observe>snapshot": 1,
+  "observe>observe>invalid-schema>upsert": 1,
+  "schedule>fail>observe>snapshot": 1,
+  "observe>rollback>schedule>compact": 1,
+  "observe>rollback>observe>snapshot": 1,
+  "observe>observe>rollback>clean": 1,
+  "observe>observe>schedule>compact": 1,
+  "upsert>schedule>compact>snapshot": 1,
+  "observe>observe>archive>snapshot": 1,
+  "observe>schedule>compact>snapshot": 1
+ }
+}

@@ -1,0 +1,76 @@
+﻿{
+ "catalogCards": 80,
+ "firstCardText": "B01 · 基础原理\n引擎驱动\nHudi 与 Hive 普通 Parquet 表的区别\n教学模型\n开始观察 →",
+ "catalogHasSummaryClass": 0,
+ "B01": {
+  "hasGoal": false,
+  "hasPrereq": false,
+  "hasQuiz": false,
+  "hasTakeaway": false,
+  "bodyLen": 545,
+  "h1": "Hudi 与 Hive 普通 Parquet 表的区别",
+  "chapters": [
+   "1\n同一份数据",
+   "2\n写入更新",
+   "3\n生成新版本",
+   "4\n提交快照"
+  ],
+  "explanation": "01\n先看见变化，再展开原理\n\n点击“开始演示”，先观察同一份数据。\n\n1 / 4",
+  "footer": "HUAWEI MRS r26 · 纯浏览器模拟\n教学模型 · r26 行为边界 ↗\n空格播放 / 暂停 · ← → 单步"
+ },
+ "B04": {
+  "hasGoal": false,
+  "hasPrereq": false,
+  "hasQuiz": false,
+  "hasTakeaway": false,
+  "bodyLen": 578,
+  "h1": "File Group、File ID、File Slice 结构",
+  "chapters": [
+   "1\n找到分区",
+   "2\n查看 File Slice",
+   "3\n追加新版本",
+   "4\n重建 Slice",
+   "5\n切换 Base"
+  ],
+  "explanation": "01\n先看见变化，再展开原理\n\n点击“开始演示”，先观察找到分区。\n\n1 / 5",
+  "footer": "HUAWEI MRS r26 · 纯浏览器模拟\n教学模型 · r26 行为边界 ↗\n空格播放 / 暂停 · ← → 单步"
+ },
+ "I03": {
+  "hasGoal": false,
+  "hasPrereq": false,
+  "hasQuiz": false,
+  "hasTakeaway": false,
+  "bodyLen": 652,
+  "h1": "BUCKET 索引与哈希分桶",
+  "chapters": [
+   "1\n读取主键",
+   "2\n计算教学桶号",
+   "3\n写入目标桶",
+   "4\n检查桶内记录"
+  ],
+  "explanation": "01\n先看见变化，再展开原理\n\n点击“开始演示”，先观察读取主键。\n\n1 / 4",
+  "footer": "HUAWEI MRS r26 · 纯浏览器模拟\n待验证 · 查看依据 ↗\n空格播放 / 暂停 · ← → 单步"
+ },
+ "S04": {
+  "hasGoal": false,
+  "hasPrereq": false,
+  "hasQuiz": false,
+  "hasTakeaway": false,
+  "bodyLen": 681,
+  "h1": "Compaction 执行与文件合并",
+  "chapters": [
+   "1\n准备计划",
+   "2\n读取 Base 与 Log",
+   "3\n生成新 Base",
+   "4\n旧文件仍在"
+  ],
+  "explanation": "01\n先看见变化，再展开原理\n\n点击“开始演示”，先观察准备计划。\n\n1 / 4 · 1 / 4 细节",
+  "footer": "HUAWEI MRS r26 · 纯浏览器模拟\n教学模型 · r26 行为边界 ↗\n空格播放 / 暂停 · ← → 单步"
+ },
+ "B02": {
+  "bodyLen": 902,
+  "hasQuiz": false,
+  "hasGoal": false,
+  "text": "h.\nHudi\nVisual Lab\n← 全部动画 / 02 · COW 与 MOR\n全部动画 ↗\n基础模式\n☀\n⚙ 设置\nTHE WRITE PATH · 写入路径\n更新一条记录，文件会怎样变化？\n\n同一份数据，两种策略。亲手写入，看见区别。\n\n技术详情 ↗\n 交互画布\n● Base File ● Log File ● 旧版本\n点击文件查看内部记录 ↗\nCOW\nCopy On Write\n写入时合并\nUPDATE · 1001\n¥ 100.5 → 200\nWriter\nHudi Engine\nINDEX → FILE GROUP\nFILE GROUP · dt=2024-01-01\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n当前版本 · 点击查看\nSNAPSHOT ¥ 100.5\nREAD OPTIMIZED ¥ 100.5\n重写受影响文件，读取直接得到最新值\nMOR\nMerge On Read\n读取时合并\nUPDATE · 1001\n¥ 100.5 → 200\nWriter\nHudi Engine\nINDEX → FILE GROUP\nFILE GROUP · dt=2024-01-01\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n当前版本 · 点击查看\nSNAPSHOT ¥ 100.5\nREAD OPTIMIZED ¥ 100.5\n追加更新日志，快照读取时归并最新值\n00\n从这里开始 · 约 1 分钟\n\n准备好了吗？更新同一条记录，观察两种文件策略。\n\nCOW ↔ MOR\n|◀\n▶\n▶|\n↺\n0.5×\n1×\n2×\n跳过动画\n重置实验\n现在试试看\n↑ Upsert 更新记录\nSnapshot 读取\n① Schedule\n② Compaction\nCleaner\nHUAWEI MRS 3.5.0 · r26 / 纯浏览器模拟\nMOR 更新路径待 r26 实测 · 查看依据 ↗\n先看见，再理解。"
+ }
+}

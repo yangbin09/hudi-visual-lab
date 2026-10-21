@@ -1,0 +1,536 @@
+﻿[
+  {
+    "name": "mine-B05-desktop",
+    "scrollW": 1440,
+    "innerW": 1440,
+    "scrollH": 900,
+    "fonts": [],
+    "small": {
+      "10px": [
+        "SPAN.vl-eyebrow :: B05 · 基础原理",
+        "SPAN. :: 点击图形查看数据",
+        "BUTTON. :: 技术详情 ↗"
+      ],
+      "11px": [
+        "BUTTON.lesson-model :: 引擎驱动 ↗",
+        "tspan.[object SVGAnimatedString] :: ¥ 100.5",
+        "tspan.[object SVGAnimatedString] :: ¥ 200"
+      ],
+      "9px": [
+        "SPAN. :: HUAWEI MRS r26 · 纯浏览器模拟",
+        "BUTTON. :: 教学模型 · r26 行为边界 ↗"
+      ]
+    },
+    "tap": {
+      "total": 28,
+      "small": 22,
+      "sample": [
+        {
+          "t": "h. Hudi Visual Lab",
+          "w": 170,
+          "h": 31
+        },
+        {
+          "t": "← 全部动画",
+          "w": 64,
+          "h": 19
+        },
+        {
+          "t": "基础模式",
+          "w": 74,
+          "h": 35
+        },
+        {
+          "t": "☀",
+          "w": 36,
+          "h": 35
+        },
+        {
+          "t": "⚙ 参数",
+          "w": 64,
+          "h": 35
+        },
+        {
+          "t": "引擎驱动 ↗",
+          "w": 86,
+          "h": 36
+        },
+        {
+          "t": "技术详情 ↗",
+          "w": 53,
+          "h": 16
+        },
+        {
+          "t": "▶ 开始演示",
+          "w": 127,
+          "h": 35
+        },
+        {
+          "t": "|◀",
+          "w": 40,
+          "h": 35
+        },
+        {
+          "t": "▶|",
+          "w": 40,
+          "h": 35
+        },
+        {
+          "t": "动画进度",
+          "w": 904,
+          "h": 4
+        },
+        {
+          "t": "0.5×1×2×",
+          "w": 62,
+          "h": 34
+        }
+      ]
+    },
+    "errs": []
+  },
+  {
+    "name": "mine-B05-mobile",
+    "scrollW": 390,
+    "innerW": 390,
+    "scrollH": 844,
+    "fonts": [],
+    "small": {
+      "10px": [
+        "A.lesson-nav-link :: ← 全部动画",
+        "BUTTON. :: 基础模式",
+        "BUTTON. :: ☀"
+      ],
+      "9px": [
+        "SPAN.vl-eyebrow :: B05 · 基础原理",
+        "BUTTON.lesson-model :: 引擎驱动 ↗",
+        "SPAN. :: 可见记录 3 · 有效文件 1 · Log 0"
+      ],
+      "11px": [
+        "tspan.[object SVGAnimatedString] :: ¥ 100.5",
+        "tspan.[object SVGAnimatedString] :: ¥ 200",
+        "tspan.[object SVGAnimatedString] :: ¥ 300.25"
+      ]
+    },
+    "tap": {
+      "total": 28,
+      "small": 22,
+      "sample": [
+        {
+          "t": "h. Hudi Visual Lab",
+          "w": 79,
+          "h": 31
+        },
+        {
+          "t": "← 全部动画",
+          "w": 53,
+          "h": 16
+        },
+        {
+          "t": "基础模式",
+          "w": 54,
+          "h": 30
+        },
+        {
+          "t": "☀",
+          "w": 22,
+          "h": 30
+        },
+        {
+          "t": "⚙ 参数",
+          "w": 45,
+          "h": 30
+        },
+        {
+          "t": "引擎驱动 ↗",
+          "w": 64,
+          "h": 30
+        },
+        {
+          "t": "技术详情 ↗",
+          "w": 53,
+          "h": 16
+        },
+        {
+          "t": "▶ 开始演示",
+          "w": 110,
+          "h": 32
+        },
+        {
+          "t": "|◀",
+          "w": 26,
+          "h": 32
+        },
+        {
+          "t": "▶|",
+          "w": 26,
+          "h": 32
+        },
+        {
+          "t": "动画进度",
+          "w": 121,
+          "h": 4
+        },
+        {
+          "t": "0.5×1×2×",
+          "w": 62,
+          "h": 34
+        }
+      ]
+    },
+    "errs": []
+  },
+  {
+    "name": "mine-progress",
+    "scrollW": 1440,
+    "innerW": 1440,
+    "scrollH": 900,
+    "fonts": [],
+    "small": {
+      "11px": [
+        "SPAN.font-mono text-[var(--color-hudi-text)] :: MRS 3.1.0-350-r26",
+        "SPAN.text-[var(--color-hudi-border)] :: |",
+        "SPAN.font-mono text-[var(--color-hudi-text)] :: Hudi 0.15.0-h0.cbu.mrs.350.r26"
+      ],
+      "10px": [
+        "SPAN.text-[10px] text-[var(--color-hudi-muted)] :: 2/8",
+        "SPAN.text-[10px] text-[var(--color-hudi-muted)] :: ▾",
+        "SPAN.text-[10px] text-[var(--color-hudi-muted)] :: 0/8"
+      ]
+    },
+    "tap": {
+      "total": 18,
+      "small": 18,
+      "sample": [
+        {
+          "t": "H Hudi Lab",
+          "w": 104,
+          "h": 28
+        },
+        {
+          "t": "总览",
+          "w": 44,
+          "h": 28
+        },
+        {
+          "t": "证据库",
+          "w": 58,
+          "h": 28
+        },
+        {
+          "t": "学习进度",
+          "w": 72,
+          "h": 28
+        },
+        {
+          "t": "浅色",
+          "w": 40,
+          "h": 20
+        },
+        {
+          "t": "«",
+          "w": 18,
+          "h": 20
+        },
+        {
+          "t": "A基础原理2/8▾",
+          "w": 243,
+          "h": 28
+        },
+        {
+          "t": "B02COW 表的数据写入与文件重写",
+          "w": 226,
+          "h": 23
+        },
+        {
+          "t": "B03MOR 表的数据写入与 Log 合并",
+          "w": 226,
+          "h": 23
+        },
+        {
+          "t": "B建表与分区0/8▾",
+          "w": 243,
+          "h": 28
+        },
+        {
+          "t": "C数据写入0/10▾",
+          "w": 243,
+          "h": 28
+        },
+        {
+          "t": "D索引机制0/8▾",
+          "w": 243,
+          "h": 28
+        }
+      ]
+    },
+    "errs": []
+  },
+  {
+    "name": "mine-evidence",
+    "scrollW": 1440,
+    "innerW": 1440,
+    "scrollH": 900,
+    "fonts": [],
+    "small": {
+      "11px": [
+        "SPAN.font-mono text-[var(--color-hudi-text)] :: MRS 3.1.0-350-r26",
+        "SPAN.text-[var(--color-hudi-border)] :: |",
+        "SPAN.font-mono text-[var(--color-hudi-text)] :: Hudi 0.15.0-h0.cbu.mrs.350.r26"
+      ],
+      "10px": [
+        "SPAN.text-[10px] text-[var(--color-hudi-muted)] :: 2/8",
+        "SPAN.text-[10px] text-[var(--color-hudi-muted)] :: ▾",
+        "SPAN.text-[10px] text-[var(--color-hudi-muted)] :: 0/8"
+      ]
+    },
+    "tap": {
+      "total": 35,
+      "small": 39,
+      "sample": [
+        {
+          "t": "H Hudi Lab",
+          "w": 104,
+          "h": 28
+        },
+        {
+          "t": "总览",
+          "w": 44,
+          "h": 28
+        },
+        {
+          "t": "证据库",
+          "w": 58,
+          "h": 28
+        },
+        {
+          "t": "学习进度",
+          "w": 72,
+          "h": 28
+        },
+        {
+          "t": "浅色",
+          "w": 40,
+          "h": 20
+        },
+        {
+          "t": "«",
+          "w": 18,
+          "h": 20
+        },
+        {
+          "t": "A基础原理2/8▾",
+          "w": 243,
+          "h": 28
+        },
+        {
+          "t": "B02COW 表的数据写入与文件重写",
+          "w": 226,
+          "h": 23
+        },
+        {
+          "t": "B03MOR 表的数据写入与 Log 合并",
+          "w": 226,
+          "h": 23
+        },
+        {
+          "t": "B建表与分区0/8▾",
+          "w": 243,
+          "h": 28
+        },
+        {
+          "t": "C数据写入0/10▾",
+          "w": 243,
+          "h": 28
+        },
+        {
+          "t": "D索引机制0/8▾",
+          "w": 243,
+          "h": 28
+        }
+      ]
+    },
+    "errs": []
+  },
+  {
+    "name": "mine-catalog-mobile",
+    "scrollW": 390,
+    "innerW": 390,
+    "scrollH": 21458,
+    "fonts": [],
+    "small": {
+      "9px": [
+        "SPAN.vl-eyebrow :: 80 个主题 · 9 个模块 · 先观察，再操作",
+        "SPAN. :: B01 · 基础原理",
+        "SPAN. :: 引擎驱动"
+      ],
+      "10px": [
+        "SPAN. :: 80",
+        "SPAN. :: 8",
+        "SPAN. :: 8"
+      ],
+      "11px": [
+        "SPAN. :: 80 个可播放主题",
+        "OPTION. :: 全部类型",
+        "OPTION. :: 引擎驱动"
+      ]
+    },
+    "tap": {
+      "total": 93,
+      "small": 14,
+      "sample": [
+        {
+          "t": "h. Hudi Visual Lab",
+          "w": 170,
+          "h": 31
+        },
+        {
+          "t": "☀",
+          "w": 36,
+          "h": 35
+        },
+        {
+          "t": "搜索动画实验",
+          "w": 294,
+          "h": 19
+        },
+        {
+          "t": "全部 80",
+          "w": 60,
+          "h": 34
+        },
+        {
+          "t": "基础原理 8",
+          "w": 77,
+          "h": 34
+        },
+        {
+          "t": "建表与分区 8",
+          "w": 88,
+          "h": 34
+        },
+        {
+          "t": "数据写入 10",
+          "w": 82,
+          "h": 34
+        },
+        {
+          "t": "索引机制 8",
+          "w": 77,
+          "h": 34
+        },
+        {
+          "t": "数据查询 8",
+          "w": 77,
+          "h": 34
+        },
+        {
+          "t": "Timeline 与表服务 12",
+          "w": 130,
+          "h": 34
+        },
+        {
+          "t": "Spark / Flink 集成 8",
+          "w": 123,
+          "h": 34
+        },
+        {
+          "t": "故障实验室 10",
+          "w": 93,
+          "h": 34
+        }
+      ]
+    },
+    "errs": []
+  },
+  {
+    "name": "mine-W05",
+    "scrollW": 1440,
+    "innerW": 1440,
+    "scrollH": 900,
+    "fonts": [],
+    "small": {
+      "10px": [
+        "SPAN.vl-eyebrow :: W05 · 数据写入",
+        "SPAN. :: 点击图形查看数据",
+        "BUTTON. :: 技术详情 ↗"
+      ],
+      "11px": [
+        "BUTTON.lesson-model :: 引擎驱动 ↗",
+        "tspan.[object SVGAnimatedString] :: ¥ 100.5",
+        "tspan.[object SVGAnimatedString] :: ¥ 200"
+      ],
+      "9px": [
+        "SPAN. :: HUAWEI MRS r26 · 纯浏览器模拟",
+        "BUTTON. :: 教学模型 · r26 行为边界 ↗"
+      ]
+    },
+    "tap": {
+      "total": 27,
+      "small": 21,
+      "sample": [
+        {
+          "t": "h. Hudi Visual Lab",
+          "w": 170,
+          "h": 31
+        },
+        {
+          "t": "← 全部动画",
+          "w": 64,
+          "h": 19
+        },
+        {
+          "t": "基础模式",
+          "w": 74,
+          "h": 35
+        },
+        {
+          "t": "☀",
+          "w": 36,
+          "h": 35
+        },
+        {
+          "t": "⚙ 参数",
+          "w": 64,
+          "h": 35
+        },
+        {
+          "t": "引擎驱动 ↗",
+          "w": 86,
+          "h": 36
+        },
+        {
+          "t": "技术详情 ↗",
+          "w": 53,
+          "h": 16
+        },
+        {
+          "t": "▶ 开始演示",
+          "w": 127,
+          "h": 35
+        },
+        {
+          "t": "|◀",
+          "w": 40,
+          "h": 35
+        },
+        {
+          "t": "▶|",
+          "w": 40,
+          "h": 35
+        },
+        {
+          "t": "动画进度",
+          "w": 904,
+          "h": 4
+        },
+        {
+          "t": "0.5×1×2×",
+          "w": 62,
+          "h": 34
+        }
+      ]
+    },
+    "errs": []
+  }
+]

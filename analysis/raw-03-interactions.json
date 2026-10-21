@@ -1,0 +1,3305 @@
+{
+  "b02": {
+    "title": "COW 与 MOR · 动画实验 · Hudi Lab",
+    "h1": "更新一条记录，文件会怎样变化？",
+    "doc": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "scrollHeight": 900,
+      "bodyScrollWidth": 1440,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "stageTop": {
+      "text": " 交互画布 ● Base File ● Log File ● 旧版本 点击文件查看内部记录 ↗",
+      "html": "<span data-v-2a1e45e7=\"\"><i data-v-2a1e45e7=\"\" class=\"vl-dot\"></i> 交互画布</span><span data-v-2a1e45e7=\"\">● Base File <span data-v-2a1e45e7=\"\" class=\"vl-log-legend\">● Log File</span> <span data-v-2a1e45e7=\"\" class=\"vl-old-legend\">● 旧版本</span></span><span data-v-2a1e45e7=\"\">点击文件查看内部记录 ↗</span>",
+      "spans": [
+        {
+          "t": " 交互画布",
+          "size": "10px",
+          "color": "rgb(147, 164, 158)",
+          "w": 56,
+          "h": 16,
+          "display": "block"
+        },
+        {
+          "t": "● Base File ● Log File ● 旧版本",
+          "size": "10px",
+          "color": "rgb(122, 180, 154)",
+          "w": 179,
+          "h": 16,
+          "display": "block"
+        },
+        {
+          "t": "点击文件查看内部记录 ↗",
+          "size": "10px",
+          "color": "rgb(147, 164, 158)",
+          "w": 113,
+          "h": 16,
+          "display": "block"
+        }
+      ]
+    },
+    "legendBox": {
+      "text": "● Base File ● Log File ● 旧版本",
+      "size": "10px",
+      "color": "rgb(122, 180, 154)",
+      "w": 179,
+      "h": 16,
+      "bg": "rgb(21, 28, 32)"
+    },
+    "svg": {
+      "w": 1366,
+      "h": 428,
+      "vb": "0 0 1120 290",
+      "aria": "COW 重写 Base，MOR 追加 Log 的双路径动画"
+    },
+    "glyphs": [
+      {
+        "aria": "BASE 20240101120000_0-0_20240101120000.parquet",
+        "w": 210,
+        "h": 132,
+        "cursor": "pointer",
+        "tabindex": "0",
+        "title": false
+      },
+      {
+        "aria": "BASE 20240101120000_0-0_20240101120002.parquet",
+        "w": 210,
+        "h": 132,
+        "cursor": "pointer",
+        "tabindex": "0",
+        "title": false
+      }
+    ],
+    "svgTextCount": 36,
+    "svgTextSmall": 20,
+    "svgTextSamples": [
+      {
+        "t": "UPDATE · 1001",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 88,
+        "y": 348,
+        "w": 101,
+        "h": 15
+      },
+      {
+        "t": "Hudi Engine",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 325,
+        "y": 370,
+        "w": 85,
+        "h": 15
+      },
+      {
+        "t": "INDEX → FILE GROUP",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 482,
+        "y": 342,
+        "w": 139,
+        "h": 15
+      },
+      {
+        "t": "FILE GROUP · dt=2024-01-01",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 78,
+        "y": 424,
+        "w": 201,
+        "h": 15
+      },
+      {
+        "t": ".parquet · 3 条记录",
+        "size": 10,
+        "color": "rgb(226, 234, 228)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 96,
+        "y": 480,
+        "w": 125,
+        "h": 14
+      },
+      {
+        "t": "1001 ¥ 100.5",
+        "size": 11,
+        "color": "rgb(226, 234, 228)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 100,
+        "y": 501,
+        "w": 152,
+        "h": 15
+      },
+      {
+        "t": "1002 ¥ 200",
+        "size": 11,
+        "color": "rgb(226, 234, 228)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 100,
+        "y": 521,
+        "w": 137,
+        "h": 15
+      },
+      {
+        "t": "1003 ¥ 300.25",
+        "size": 11,
+        "color": "rgb(226, 234, 228)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 100,
+        "y": 542,
+        "w": 159,
+        "h": 15
+      }
+    ],
+    "actionBar": {
+      "text": "现在试试看 ↑ Upsert 更新记录 Snapshot 读取 ① Schedule ② Compaction Cleaner",
+      "buttons": [
+        {
+          "t": "↑ Upsert 更新记录",
+          "w": 130,
+          "h": 37,
+          "size": "12px",
+          "disabled": false
+        },
+        {
+          "t": "Snapshot 读取",
+          "w": 109,
+          "h": 37,
+          "size": "12px",
+          "disabled": false
+        },
+        {
+          "t": "① Schedule",
+          "w": 96,
+          "h": 37,
+          "size": "12px",
+          "disabled": true
+        },
+        {
+          "t": "② Compaction",
+          "w": 113,
+          "h": 37,
+          "size": "12px",
+          "disabled": true
+        },
+        {
+          "t": "Cleaner",
+          "w": 71,
+          "h": 37,
+          "size": "12px",
+          "disabled": false
+        }
+      ]
+    },
+    "controls": {
+      "text": "|◀ ▶ ▶| ↺ 0.5× 1× 2× 跳过动画 重置实验",
+      "controls": [
+        {
+          "tag": "button",
+          "t": "上一步",
+          "w": 39,
+          "h": 36
+        },
+        {
+          "tag": "button",
+          "t": "播放",
+          "w": 34,
+          "h": 34
+        },
+        {
+          "tag": "button",
+          "t": "下一步",
+          "w": 39,
+          "h": 36
+        },
+        {
+          "tag": "button",
+          "t": "重放",
+          "w": 34,
+          "h": 36
+        },
+        {
+          "tag": "select",
+          "t": "播放速度",
+          "w": 54,
+          "h": 27
+        },
+        {
+          "tag": "input",
+          "t": "动画进度",
+          "w": 928,
+          "h": 3
+        },
+        {
+          "tag": "button",
+          "t": "跳过动画",
+          "w": 74,
+          "h": 35
+        },
+        {
+          "tag": "button",
+          "t": "重置实验",
+          "w": 74,
+          "h": 35
+        }
+      ]
+    },
+    "engineerBefore": "全部动画 ↗\n基础模式\n☀\n⚙ 设置",
+    "engineerBeforeActionBar": "现在试试看\n↑ Upsert 更新记录\nSnapshot 读取\n① Schedule\n② Compaction\nCleaner",
+    "engineerAfter": {
+      "nav": "全部动画 ↗\n工程师模式\n☀\n⚙ 设置",
+      "actionBar": "现在试试看\n↑ Upsert 更新记录\nSnapshot 读取\n① Schedule\n② Compaction\nCleaner\n模拟失败"
+    },
+    "glyphHover": {
+      "cursor": "pointer",
+      "aria": "BASE 20240101120000_0-0_20240101120000.parquet"
+    },
+    "glyphDialog": {
+      "cls": "vl-dialog",
+      "text": "文件记录 ✕ 20240101120000_0-0_20240101120000.parquet BASE · ACTIVE · 3 条 主键 金额 precombine 1001 100.5 20240101100000 1002 200 20240101100010 1003 300.25 20240101100020 这里展示所选物理文件自己的记录，旧版本不会被替换为最新查询结果。"
+    },
+    "contrast": [
+      {
+        "t": "/",
+        "size": 12,
+        "lh": "19.2px",
+        "color": "rgb(52, 65, 63)",
+        "bg": "rgb(21, 28, 32)",
+        "path": "header.vl-nav>span.vl-breadcrumb>span",
+        "top": 25,
+        "inFold": true,
+        "w": 5,
+        "h": 16,
+        "ratio": 1.62,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      }
+    ],
+    "contrastAll": 43,
+    "contrastFail": 1
+  },
+  "b02Mobile": {
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 844,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "svg": {
+      "w": 356,
+      "h": 319,
+      "vb": "0 0 1120 290",
+      "aria": "COW 重写 Base，MOR 追加 Log 的双路径动画"
+    },
+    "svgTextSamples": [
+      {
+        "t": "COW",
+        "size": 29,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 26,
+        "y": 370,
+        "w": 16,
+        "h": 10
+      },
+      {
+        "t": "Copy On Write",
+        "size": 14,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 49,
+        "y": 373,
+        "w": 33,
+        "h": 5
+      },
+      {
+        "t": "写入时合并",
+        "size": 13,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 155,
+        "y": 373,
+        "w": 23,
+        "h": 5
+      },
+      {
+        "t": "UPDATE · 1001",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 29,
+        "y": 388,
+        "w": 27,
+        "h": 4
+      },
+      {
+        "t": "¥ 100.5 → 200",
+        "size": 14,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 29,
+        "y": 392,
+        "w": 33,
+        "h": 5
+      },
+      {
+        "t": "Writer",
+        "size": 15,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 94,
+        "y": 387,
+        "w": 17,
+        "h": 5
+      },
+      {
+        "t": "Hudi Engine",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 91,
+        "y": 393,
+        "w": 23,
+        "h": 4
+      },
+      {
+        "t": "INDEX → FILE GROUP",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 132,
+        "y": 386,
+        "w": 37,
+        "h": 4
+      },
+      {
+        "t": "FILE GROUP · dt=2024-01-01",
+        "size": 11,
+        "color": "rgb(147, 164, 158)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 28,
+        "y": 407,
+        "w": 52,
+        "h": 4
+      },
+      {
+        "t": "▤  BASE FILE",
+        "size": 12,
+        "color": "rgb(226, 234, 228)",
+        "bg": "rgb(27, 36, 41)",
+        "x": 32,
+        "y": 416,
+        "w": 25,
+        "h": 5
+      }
+    ],
+    "legendSpans": [
+      {
+        "t": " 交互画布",
+        "w": 56,
+        "h": 16,
+        "size": "10px",
+        "display": "block"
+      },
+      {
+        "t": "● Base File ● Log File ● 旧版本",
+        "w": 179,
+        "h": 16,
+        "size": "10px",
+        "display": "block"
+      },
+      {
+        "t": "点击文件查看内部记录 ↗",
+        "w": 0,
+        "h": 0,
+        "size": "10px",
+        "display": "none"
+      }
+    ],
+    "actionButtons": [
+      {
+        "t": "↑ Upsert 更新记录",
+        "w": 101,
+        "h": 32
+      },
+      {
+        "t": "Snapshot 读取",
+        "w": 84,
+        "h": 32
+      },
+      {
+        "t": "① Schedule",
+        "w": 72,
+        "h": 32
+      },
+      {
+        "t": "② Compaction",
+        "w": 87,
+        "h": 32
+      },
+      {
+        "t": "Cleaner",
+        "w": 52,
+        "h": 32
+      }
+    ],
+    "controls": [
+      {
+        "tag": "button",
+        "t": "上一步",
+        "w": 29,
+        "h": 36
+      },
+      {
+        "tag": "button",
+        "t": "播放",
+        "w": 34,
+        "h": 34
+      },
+      {
+        "tag": "button",
+        "t": "下一步",
+        "w": 29,
+        "h": 36
+      },
+      {
+        "tag": "button",
+        "t": "重放",
+        "w": 24,
+        "h": 36
+      },
+      {
+        "tag": "input",
+        "t": "动画进度",
+        "w": 19,
+        "h": 3
+      },
+      {
+        "tag": "button",
+        "t": "跳过动画",
+        "w": 60,
+        "h": 31
+      },
+      {
+        "tag": "button",
+        "t": "重置实验",
+        "w": 60,
+        "h": 31
+      }
+    ],
+    "stageText": " 交互画布 ● Base File ● Log File ● 旧版本 COW Copy On Write 写入时合并 UPDATE · 1001 ¥ 100.5 → 200 Writer Hudi Engine INDEX → FILE GROUP FILE GROUP · dt=2024-01-01 ▤ BASE FILE .parquet · 3 条记录 1001 ¥ 100.5 1002 ¥ 200 1003 ¥ 300.25 当前版本 · 点击查看 SNAPSHOT ¥ 100.5 READ OPTIMIZED ¥ 100.5 重写受影响文件，读取直接得到最新值 MOR Merge O",
+    "caption": "00 从这里开始 · 约 1 分钟 准备好了吗？更新同一条记录，观察两种文件策略。",
+    "canvasBox": {
+      "w": 356,
+      "h": 319
+    },
+    "contrastFail": []
+  },
+  "mobile_B05": {
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 844,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "svg": {
+      "w": 364,
+      "h": 344,
+      "vb": "0 0 1080 425",
+      "scene": "files",
+      "aria": "B05 初始 Base 动画"
+    },
+    "svgScale": {
+      "scale": 0.337,
+      "rendered10px": 3.4,
+      "rendered12px": 4,
+      "contentW": 364,
+      "contentH": 143
+    },
+    "svgTexts": [
+      {
+        "t": "操作前 · 1 个物理文件",
+        "declared": 13
+      },
+      {
+        "t": "▤  BASE FILE",
+        "declared": 12
+      },
+      {
+        "t": ".parquet · 3 条记录",
+        "declared": 10
+      },
+      {
+        "t": "1001 ¥ 100.5",
+        "declared": 11
+      },
+      {
+        "t": "1002 ¥ 200",
+        "declared": 11
+      },
+      {
+        "t": "1003 ¥ 300.25",
+        "declared": 11
+      },
+      {
+        "t": "当前版本 · 点击查看",
+        "declared": 10
+      },
+      {
+        "t": "Hudi Engine",
+        "declared": 17
+      },
+      {
+        "t": "执行过程示意",
+        "declared": 12
+      },
+      {
+        "t": "目标文件预览 · 提交前不生效",
+        "declared": 13
+      },
+      {
+        "t": "▤  BASE FILE",
+        "declared": 12
+      },
+      {
+        "t": ".parquet · 3 条记录",
+        "declared": 10
+      }
+    ],
+    "tapUnder44": 24,
+    "tapTotal": 24,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "t": "h. Hudi Visual Lab",
+        "w": 79,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "t": "← 全部动画",
+        "w": 53,
+        "h": 16,
+        "y": 26
+      },
+      {
+        "tag": "button",
+        "t": "基础模式",
+        "w": 54,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "切换深浅主题",
+        "w": 22,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "⚙ 参数",
+        "w": 45,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "引擎驱动 ↗",
+        "w": 64,
+        "h": 30,
+        "y": 93
+      },
+      {
+        "tag": "button",
+        "t": "技术详情 ↗",
+        "w": 53,
+        "h": 16,
+        "y": 166
+      },
+      {
+        "tag": "g",
+        "t": "BASE 20240101120000_0-0_20240101120000.parquet",
+        "w": 59,
+        "h": 37,
+        "y": 309
+      },
+      {
+        "tag": "g",
+        "t": "BASE 20240101120000_0-0_20240101120000.parquet",
+        "w": 59,
+        "h": 37,
+        "y": 394
+      },
+      {
+        "tag": "button",
+        "t": "播放演示",
+        "w": 110,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "上一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "下一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "input",
+        "t": "动画进度",
+        "w": 121,
+        "h": 4,
+        "y": 636
+      },
+      {
+        "tag": "select",
+        "t": "播放速度",
+        "w": 62,
+        "h": 34,
+        "y": 621
+      },
+      {
+        "tag": "button",
+        "t": "重置",
+        "w": 36,
+        "h": 32,
+        "y": 663
+      },
+      {
+        "tag": "button",
+        "t": "跳到结果",
+        "w": 58,
+        "h": 32,
+        "y": 663
+      },
+      {
+        "tag": "button",
+        "t": "1初始 Base",
+        "w": 120,
+        "h": 36,
+        "y": 704
+      },
+      {
+        "tag": "button",
+        "t": "2追加一版 Log",
+        "w": 120,
+        "h": 36,
+        "y": 704
+      }
+    ],
+    "drawer": {
+      "dialog": {
+        "w": 367,
+        "h": 844,
+        "x": 23
+      },
+      "drawer": {
+        "w": 366,
+        "scrollH": 629,
+        "clientH": 629,
+        "scrollW": 366,
+        "clientW": 366
+      },
+      "tabs": [
+        {
+          "t": "技术详情",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "运行日志",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "HDFS",
+          "w": 60,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "Timeline",
+          "w": 77,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "SQL",
+          "w": 51,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "源码透视",
+          "w": 76,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "证据",
+          "w": 52,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        }
+      ],
+      "tabRows": 2,
+      "tabStripW": 76
+    },
+    "logTab": {
+      "scrollH": 225,
+      "clientH": 225,
+      "text": "运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"
+    },
+    "paramDlg": {
+      "w": 366,
+      "scrollH": 409,
+      "clientH": 409,
+      "inputs": [
+        {
+          "t": "记录主键",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "更新金额",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "减少动态效果，改用单步观察",
+          "w": 13,
+          "h": 13
+        }
+      ],
+      "html": "参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"
+    },
+    "overflowCount": 4,
+    "overflowEls": [
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 399,
+        "right": 519,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 424,
+        "right": 442,
+        "w": 18
+      },
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 528,
+        "right": 648,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 545,
+        "right": 563,
+        "w": 18
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "body > div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters",
+        "sw": 636,
+        "cw": 366,
+        "ox": "auto"
+      }
+    ],
+    "contrastFail": []
+  },
+  "mobile_I03": {
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 844,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "svg": {
+      "w": 364,
+      "h": 344,
+      "vb": "0 0 1080 425",
+      "scene": "index",
+      "aria": "I03 读取主键 动画"
+    },
+    "svgScale": {
+      "scale": 0.337,
+      "rendered10px": 3.4,
+      "rendered12px": 4,
+      "contentW": 364,
+      "contentH": 143
+    },
+    "svgTexts": [
+      {
+        "t": "待定位记录",
+        "declared": 12
+      },
+      {
+        "t": "key = 1001",
+        "declared": 20
+      },
+      {
+        "t": "教学 Hash → 取模",
+        "declared": 17
+      },
+      {
+        "t": "bucketOf(key, 4) = 3",
+        "declared": 12
+      },
+      {
+        "t": "2024-01-01",
+        "declared": 17
+      },
+      {
+        "t": "分区路径 · 定位范围",
+        "declared": 12
+      },
+      {
+        "t": "hash(\"1001\") = 2088288423 2088288423 % 4 = 3只能路由到 Bucket 3",
+        "declared": 14
+      },
+      {
+        "t": "h 从 5381 开始按字符累积 · 当前字符“1”编码 49：193431990 × 33 + 49 → 208828",
+        "declared": 11
+      },
+      {
+        "t": "Bucket 0",
+        "declared": 17
+      },
+      {
+        "t": "1 条记录",
+        "declared": 12
+      },
+      {
+        "t": "1002:200",
+        "declared": 11
+      },
+      {
+        "t": "Bucket 1",
+        "declared": 17
+      }
+    ],
+    "tapUnder44": 26,
+    "tapTotal": 26,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "t": "h. Hudi Visual Lab",
+        "w": 79,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "t": "← 全部动画",
+        "w": 53,
+        "h": 16,
+        "y": 26
+      },
+      {
+        "tag": "button",
+        "t": "基础模式",
+        "w": 54,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "切换深浅主题",
+        "w": 22,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "⚙ 参数",
+        "w": 45,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "引擎驱动 ↗",
+        "w": 64,
+        "h": 30,
+        "y": 93
+      },
+      {
+        "tag": "button",
+        "t": "技术详情 ↗",
+        "w": 53,
+        "h": 16,
+        "y": 166
+      },
+      {
+        "tag": "g",
+        "t": "查看哈希计算",
+        "w": 80,
+        "h": 28,
+        "y": 310
+      },
+      {
+        "tag": "g",
+        "t": "Bucket 0",
+        "w": 54,
+        "h": 27,
+        "y": 372
+      },
+      {
+        "tag": "g",
+        "t": "Bucket 1",
+        "w": 54,
+        "h": 27,
+        "y": 372
+      },
+      {
+        "tag": "g",
+        "t": "Bucket 2",
+        "w": 54,
+        "h": 27,
+        "y": 372
+      },
+      {
+        "tag": "g",
+        "t": "Bucket 3",
+        "w": 54,
+        "h": 27,
+        "y": 372
+      },
+      {
+        "tag": "button",
+        "t": "播放演示",
+        "w": 110,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "上一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "下一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "input",
+        "t": "动画进度",
+        "w": 121,
+        "h": 4,
+        "y": 636
+      },
+      {
+        "tag": "select",
+        "t": "播放速度",
+        "w": 62,
+        "h": 34,
+        "y": 621
+      },
+      {
+        "tag": "button",
+        "t": "重置",
+        "w": 36,
+        "h": 32,
+        "y": 663
+      }
+    ],
+    "drawer": {
+      "dialog": {
+        "w": 367,
+        "h": 844,
+        "x": 23
+      },
+      "drawer": {
+        "w": 366,
+        "scrollH": 654,
+        "clientH": 654,
+        "scrollW": 366,
+        "clientW": 366
+      },
+      "tabs": [
+        {
+          "t": "技术详情",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "运行日志",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "HDFS",
+          "w": 60,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "Timeline",
+          "w": 77,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "SQL",
+          "w": 51,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "源码透视",
+          "w": 76,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "证据",
+          "w": 52,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        }
+      ],
+      "tabRows": 2,
+      "tabStripW": 76
+    },
+    "logTab": {
+      "scrollH": 225,
+      "clientH": 225,
+      "text": "运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"
+    },
+    "paramDlg": {
+      "w": 366,
+      "scrollH": 488,
+      "clientH": 488,
+      "inputs": [
+        {
+          "t": "记录主键",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "Bucket 数量",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "分区值",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "减少动态效果，改用单步观察",
+          "w": 13,
+          "h": 13
+        }
+      ],
+      "html": "参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 Bucket 数量 分区值 减少动态效果，改用单步观察 应用参数并重置"
+    },
+    "overflowCount": 2,
+    "overflowEls": [
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 399,
+        "right": 519,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 413,
+        "right": 431,
+        "w": 18
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "body > div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters",
+        "sw": 507,
+        "cw": 366,
+        "ox": "auto"
+      }
+    ],
+    "contrastFail": []
+  },
+  "mobile_S04": {
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 844,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "svg": {
+      "w": 364,
+      "h": 344,
+      "vb": "0 0 1080 425",
+      "scene": "files",
+      "aria": "S04 准备计划 动画"
+    },
+    "svgScale": {
+      "scale": 0.337,
+      "rendered10px": 3.4,
+      "rendered12px": 4,
+      "contentW": 364,
+      "contentH": 143
+    },
+    "svgTexts": [
+      {
+        "t": "操作前 · 2 个物理文件",
+        "declared": 13
+      },
+      {
+        "t": "▤  BASE FILE",
+        "declared": 12
+      },
+      {
+        "t": ".parquet · 3 条记录",
+        "declared": 10
+      },
+      {
+        "t": "1001 ¥ 100.5",
+        "declared": 11
+      },
+      {
+        "t": "1002 ¥ 200",
+        "declared": 11
+      },
+      {
+        "t": "1003 ¥ 300.25",
+        "declared": 11
+      },
+      {
+        "t": "当前版本 · 点击查看",
+        "declared": 10
+      },
+      {
+        "t": "≡  LOG FILE",
+        "declared": 12
+      },
+      {
+        "t": ".log · 1 条记录",
+        "declared": 10
+      },
+      {
+        "t": "1001 ¥ 200",
+        "declared": 11
+      },
+      {
+        "t": "当前版本 · 点击查看",
+        "declared": 10
+      },
+      {
+        "t": "Compaction Plan",
+        "declared": 17
+      }
+    ],
+    "tapUnder44": 25,
+    "tapTotal": 25,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "t": "h. Hudi Visual Lab",
+        "w": 79,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "t": "← 全部动画",
+        "w": 53,
+        "h": 16,
+        "y": 26
+      },
+      {
+        "tag": "button",
+        "t": "基础模式",
+        "w": 54,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "切换深浅主题",
+        "w": 22,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "⚙ 参数",
+        "w": 45,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "引擎驱动 ↗",
+        "w": 64,
+        "h": 30,
+        "y": 93
+      },
+      {
+        "tag": "button",
+        "t": "技术详情 ↗",
+        "w": 53,
+        "h": 16,
+        "y": 166
+      },
+      {
+        "tag": "g",
+        "t": "BASE 20240101120000_0-0_20240101120000.parquet",
+        "w": 59,
+        "h": 37,
+        "y": 309
+      },
+      {
+        "tag": "g",
+        "t": "LOG 20240101120000_0-0_20240101120000.log.1_20240101120001",
+        "w": 59,
+        "h": 37,
+        "y": 309
+      },
+      {
+        "tag": "g",
+        "t": "BASE 20240101120000_0-0_20240101120000.parquet",
+        "w": 59,
+        "h": 37,
+        "y": 394
+      },
+      {
+        "tag": "g",
+        "t": "LOG 20240101120000_0-0_20240101120000.log.1_20240101120001",
+        "w": 59,
+        "h": 37,
+        "y": 394
+      },
+      {
+        "tag": "button",
+        "t": "播放演示",
+        "w": 110,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "上一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "下一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "input",
+        "t": "动画进度",
+        "w": 121,
+        "h": 4,
+        "y": 636
+      },
+      {
+        "tag": "select",
+        "t": "播放速度",
+        "w": 62,
+        "h": 34,
+        "y": 621
+      },
+      {
+        "tag": "button",
+        "t": "重置",
+        "w": 36,
+        "h": 32,
+        "y": 663
+      },
+      {
+        "tag": "button",
+        "t": "跳到结果",
+        "w": 58,
+        "h": 32,
+        "y": 663
+      }
+    ],
+    "drawer": {
+      "dialog": {
+        "w": 367,
+        "h": 844,
+        "x": 23
+      },
+      "drawer": {
+        "w": 366,
+        "scrollH": 629,
+        "clientH": 629,
+        "scrollW": 366,
+        "clientW": 366
+      },
+      "tabs": [
+        {
+          "t": "技术详情",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "运行日志",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "HDFS",
+          "w": 60,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "Timeline",
+          "w": 77,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "SQL",
+          "w": 51,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "源码透视",
+          "w": 76,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "证据",
+          "w": 52,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        }
+      ],
+      "tabRows": 2,
+      "tabStripW": 76
+    },
+    "logTab": {
+      "scrollH": 225,
+      "clientH": 225,
+      "text": "运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"
+    },
+    "paramDlg": {
+      "w": 366,
+      "scrollH": 409,
+      "clientH": 409,
+      "inputs": [
+        {
+          "t": "记录主键",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "更新金额",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "减少动态效果，改用单步观察",
+          "w": 13,
+          "h": 13
+        }
+      ],
+      "html": "参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"
+    },
+    "overflowCount": 2,
+    "overflowEls": [
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 399,
+        "right": 519,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 419,
+        "right": 437,
+        "w": 18
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "body > div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters",
+        "sw": 507,
+        "cw": 366,
+        "ox": "auto"
+      }
+    ],
+    "contrastFail": []
+  },
+  "mobile_Q02": {
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 844,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "svg": {
+      "w": 364,
+      "h": 344,
+      "vb": "0 0 1080 335",
+      "scene": "query",
+      "aria": "Q02 选择读优化 动画"
+    },
+    "svgScale": {
+      "scale": 0.337,
+      "rendered10px": 3.4,
+      "rendered12px": 4,
+      "contentW": 364,
+      "contentH": 113
+    },
+    "svgTexts": [
+      {
+        "t": "① 哪些文件真正参与读取？",
+        "declared": 15
+      },
+      {
+        "t": "② 同键的多个版本，谁胜出？",
+        "declared": 15
+      },
+      {
+        "t": "③ 返回记录",
+        "declared": 15
+      },
+      {
+        "t": "Base · 3 条",
+        "declared": 17
+      },
+      {
+        "t": "✓ 打开文件",
+        "declared": 12
+      },
+      {
+        "t": "Log · 1 条",
+        "declared": 17
+      },
+      {
+        "t": "✓ 打开文件",
+        "declared": 12
+      },
+      {
+        "t": "1001 · ¥100.5 BASE",
+        "declared": 14
+      },
+      {
+        "t": "ts 20240101100000 读取候选版本中…",
+        "declared": 11
+      },
+      {
+        "t": "1001 · ¥200 LOG",
+        "declared": 14
+      },
+      {
+        "t": "ts 20240101140000 读取候选版本中…",
+        "declared": 11
+      },
+      {
+        "t": "1002 · ¥200 BASE",
+        "declared": 14
+      }
+    ],
+    "tapUnder44": 26,
+    "tapTotal": 26,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "t": "h. Hudi Visual Lab",
+        "w": 79,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "t": "← 全部动画",
+        "w": 53,
+        "h": 16,
+        "y": 26
+      },
+      {
+        "tag": "button",
+        "t": "基础模式",
+        "w": 54,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "切换深浅主题",
+        "w": 22,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "⚙ 参数",
+        "w": 45,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "引擎驱动 ↗",
+        "w": 64,
+        "h": 30,
+        "y": 93
+      },
+      {
+        "tag": "button",
+        "t": "技术详情 ↗",
+        "w": 53,
+        "h": 16,
+        "y": 166
+      },
+      {
+        "tag": "g",
+        "t": "读取文件 20240101120000_0-0_20240101120000.parquet",
+        "w": 100,
+        "h": 17,
+        "y": 325
+      },
+      {
+        "tag": "g",
+        "t": "读取文件 20240101120000_0-0_20240101120000.log.1_20240101120001",
+        "w": 100,
+        "h": 17,
+        "y": 344
+      },
+      {
+        "tag": "g",
+        "t": "候选记录 1001 BASE 100.5",
+        "w": 115,
+        "h": 16,
+        "y": 330
+      },
+      {
+        "tag": "g",
+        "t": "候选记录 1001 LOG 200",
+        "w": 115,
+        "h": 16,
+        "y": 348
+      },
+      {
+        "tag": "g",
+        "t": "候选记录 1002 BASE 200",
+        "w": 115,
+        "h": 16,
+        "y": 367
+      },
+      {
+        "tag": "button",
+        "t": "播放演示",
+        "w": 110,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "上一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "下一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "input",
+        "t": "动画进度",
+        "w": 121,
+        "h": 4,
+        "y": 636
+      },
+      {
+        "tag": "select",
+        "t": "播放速度",
+        "w": 62,
+        "h": 34,
+        "y": 621
+      },
+      {
+        "tag": "button",
+        "t": "重置",
+        "w": 36,
+        "h": 32,
+        "y": 663
+      }
+    ],
+    "drawer": {
+      "dialog": {
+        "w": 367,
+        "h": 844,
+        "x": 23
+      },
+      "drawer": {
+        "w": 366,
+        "scrollH": 629,
+        "clientH": 629,
+        "scrollW": 366,
+        "clientW": 366
+      },
+      "tabs": [
+        {
+          "t": "技术详情",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "运行日志",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "HDFS",
+          "w": 60,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "Timeline",
+          "w": 77,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "SQL",
+          "w": 51,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "源码透视",
+          "w": 76,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "证据",
+          "w": 52,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        }
+      ],
+      "tabRows": 2,
+      "tabStripW": 76
+    },
+    "logTab": {
+      "scrollH": 225,
+      "clientH": 225,
+      "text": "运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"
+    },
+    "paramDlg": {
+      "w": 366,
+      "scrollH": 409,
+      "clientH": 409,
+      "inputs": [
+        {
+          "t": "记录主键",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "更新金额",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "减少动态效果，改用单步观察",
+          "w": 13,
+          "h": 13
+        }
+      ],
+      "html": "参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"
+    },
+    "overflowCount": 2,
+    "overflowEls": [
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 399,
+        "right": 519,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 408,
+        "right": 413,
+        "w": 6
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "body > div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters",
+        "sw": 507,
+        "cw": 366,
+        "ox": "auto"
+      }
+    ],
+    "contrastFail": []
+  },
+  "mobile_S01": {
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 844,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "svg": {
+      "w": 364,
+      "h": 344,
+      "vb": "0 0 1080 335",
+      "scene": "timeline",
+      "aria": "S01 先产生待合并更新 动画"
+    },
+    "svgScale": {
+      "scale": 0.337,
+      "rendered10px": 3.4,
+      "rendered12px": 4,
+      "contentW": 364,
+      "contentH": 113
+    },
+    "svgTexts": [
+      {
+        "t": "① 展开受影响的 Base",
+        "declared": 15
+      },
+      {
+        "t": "② 输入记录与旧版本比较",
+        "declared": 15
+      },
+      {
+        "t": "③ 只生成更新 Log",
+        "declared": 15
+      },
+      {
+        "t": "Base · 3 条记录",
+        "declared": 17
+      },
+      {
+        "t": "KEY 金额precombine / ts",
+        "declared": 12
+      },
+      {
+        "t": "1001100.520240101100000",
+        "declared": 14
+      },
+      {
+        "t": "100220020240101100010",
+        "declared": 14
+      },
+      {
+        "t": "1003300.2520240101100020",
+        "declared": 14
+      },
+      {
+        "t": "✓ Base 文件保持不变",
+        "declared": 12
+      },
+      {
+        "t": "本次真正输入的记录",
+        "declared": 12
+      },
+      {
+        "t": "1001 ¥ 200",
+        "declared": 17
+      },
+      {
+        "t": "ts = 20240101150000",
+        "declared": 11
+      }
+    ],
+    "tapUnder44": 26,
+    "tapTotal": 26,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "t": "h. Hudi Visual Lab",
+        "w": 79,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "t": "← 全部动画",
+        "w": 53,
+        "h": 16,
+        "y": 26
+      },
+      {
+        "tag": "button",
+        "t": "基础模式",
+        "w": 54,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "切换深浅主题",
+        "w": 22,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "⚙ 参数",
+        "w": 45,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "引擎驱动 ↗",
+        "w": 64,
+        "h": 30,
+        "y": 93
+      },
+      {
+        "tag": "button",
+        "t": "技术详情 ↗",
+        "w": 53,
+        "h": 16,
+        "y": 166
+      },
+      {
+        "tag": "g",
+        "t": "输入版本 1001 BASE 100.5",
+        "w": 105,
+        "h": 9,
+        "y": 344
+      },
+      {
+        "tag": "g",
+        "t": "输入版本 1002 BASE 200",
+        "w": 105,
+        "h": 9,
+        "y": 354
+      },
+      {
+        "tag": "g",
+        "t": "输入版本 1003 BASE 300.25",
+        "w": 105,
+        "h": 9,
+        "y": 365
+      },
+      {
+        "tag": "g",
+        "t": "输出记录 1001",
+        "w": 98,
+        "h": 9,
+        "y": 344
+      },
+      {
+        "tag": "button",
+        "t": "播放演示",
+        "w": 110,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "上一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "下一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "input",
+        "t": "动画进度",
+        "w": 121,
+        "h": 4,
+        "y": 636
+      },
+      {
+        "tag": "select",
+        "t": "播放速度",
+        "w": 62,
+        "h": 34,
+        "y": 621
+      },
+      {
+        "tag": "button",
+        "t": "重置",
+        "w": 36,
+        "h": 32,
+        "y": 663
+      },
+      {
+        "tag": "button",
+        "t": "跳到结果",
+        "w": 58,
+        "h": 32,
+        "y": 663
+      }
+    ],
+    "drawer": {
+      "dialog": {
+        "w": 367,
+        "h": 844,
+        "x": 23
+      },
+      "drawer": {
+        "w": 366,
+        "scrollH": 692,
+        "clientH": 692,
+        "scrollW": 366,
+        "clientW": 366
+      },
+      "tabs": [
+        {
+          "t": "技术详情",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "运行日志",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "HDFS",
+          "w": 60,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "Timeline",
+          "w": 77,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "SQL",
+          "w": 51,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "源码透视",
+          "w": 76,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "证据",
+          "w": 52,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        }
+      ],
+      "tabRows": 2,
+      "tabStripW": 76
+    },
+    "logTab": {
+      "scrollH": 225,
+      "clientH": 225,
+      "text": "运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"
+    },
+    "paramDlg": {
+      "w": 366,
+      "scrollH": 409,
+      "clientH": 409,
+      "inputs": [
+        {
+          "t": "记录主键",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "更新金额",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "减少动态效果，改用单步观察",
+          "w": 13,
+          "h": 13
+        }
+      ],
+      "html": "参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"
+    },
+    "overflowCount": 4,
+    "overflowEls": [
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 399,
+        "right": 519,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 419,
+        "right": 437,
+        "w": 18
+      },
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 528,
+        "right": 648,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 541,
+        "right": 550,
+        "w": 9
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "body > div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters",
+        "sw": 636,
+        "cw": 366,
+        "ox": "auto"
+      }
+    ],
+    "contrastFail": []
+  },
+  "mobile_E01": {
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 844,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "svg": {
+      "w": 364,
+      "h": 294,
+      "vb": "0 0 1080 280",
+      "scene": "flow",
+      "aria": "表索引与作业索引的定位方式对照"
+    },
+    "svgScale": {
+      "scale": 0.337,
+      "rendered10px": 3.4,
+      "rendered12px": 4,
+      "contentW": 364,
+      "contentH": 94
+    },
+    "svgTexts": [
+      {
+        "t": "① 两份配置从哪里来？",
+        "declared": 12
+      },
+      {
+        "t": "表定义 · 已有表的索引类型",
+        "declared": 12
+      },
+      {
+        "t": "BUCKET",
+        "declared": 24
+      },
+      {
+        "t": "预期：主键 → 桶 → File Group",
+        "declared": 12
+      },
+      {
+        "t": "作业选项 · 本案例手动选择",
+        "declared": 12
+      },
+      {
+        "t": "SIMPLE",
+        "declared": 24
+      },
+      {
+        "t": "预期：主键 → 匹配已有键与文件位置",
+        "declared": 12
+      },
+      {
+        "t": "vs",
+        "declared": 12
+      },
+      {
+        "t": "② 比较的结果",
+        "declared": 12
+      },
+      {
+        "t": "等待比对",
+        "declared": 17
+      },
+      {
+        "t": "播放或单步，沿配置来源观察",
+        "declared": 12
+      },
+      {
+        "t": "③ 为什么值得核对？两种索引的定位方式不同",
+        "declared": 12
+      }
+    ],
+    "tapUnder44": 24,
+    "tapTotal": 24,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "t": "h. Hudi Visual Lab",
+        "w": 79,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "t": "← 全部动画",
+        "w": 53,
+        "h": 16,
+        "y": 26
+      },
+      {
+        "tag": "button",
+        "t": "基础模式",
+        "w": 54,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "切换深浅主题",
+        "w": 22,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "⚙ 参数",
+        "w": 45,
+        "h": 30,
+        "y": 19
+      },
+      {
+        "tag": "button",
+        "t": "机制示意 ↗",
+        "w": 64,
+        "h": 30,
+        "y": 93
+      },
+      {
+        "tag": "button",
+        "t": "技术详情 ↗",
+        "w": 53,
+        "h": 16,
+        "y": 166
+      },
+      {
+        "tag": "select",
+        "t": "本次作业索引",
+        "w": 92,
+        "h": 30,
+        "y": 204
+      },
+      {
+        "tag": "button",
+        "t": "对齐为 BUCKET 并重演",
+        "w": 151,
+        "h": 33,
+        "y": 202
+      },
+      {
+        "tag": "g",
+        "t": "查看本案例分桶计算",
+        "w": 68,
+        "h": 16,
+        "y": 401
+      },
+      {
+        "tag": "button",
+        "t": "播放演示",
+        "w": 110,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "上一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "button",
+        "t": "下一步",
+        "w": 26,
+        "h": 32,
+        "y": 623
+      },
+      {
+        "tag": "input",
+        "t": "动画进度",
+        "w": 121,
+        "h": 4,
+        "y": 636
+      },
+      {
+        "tag": "select",
+        "t": "播放速度",
+        "w": 62,
+        "h": 34,
+        "y": 621
+      },
+      {
+        "tag": "button",
+        "t": "重置",
+        "w": 36,
+        "h": 32,
+        "y": 663
+      },
+      {
+        "tag": "button",
+        "t": "跳到结果",
+        "w": 58,
+        "h": 32,
+        "y": 663
+      },
+      {
+        "tag": "button",
+        "t": "1追踪表定义",
+        "w": 120,
+        "h": 36,
+        "y": 704
+      }
+    ],
+    "drawer": {
+      "dialog": {
+        "w": 367,
+        "h": 844,
+        "x": 23
+      },
+      "drawer": {
+        "w": 366,
+        "scrollH": 629,
+        "clientH": 629,
+        "scrollW": 366,
+        "clientW": 366
+      },
+      "tabs": [
+        {
+          "t": "技术详情",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "运行日志",
+          "w": 76,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "HDFS",
+          "w": 60,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "Timeline",
+          "w": 77,
+          "h": 37,
+          "top": 77,
+          "size": "12px"
+        },
+        {
+          "t": "SQL",
+          "w": 51,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "源码透视",
+          "w": 76,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        },
+        {
+          "t": "证据",
+          "w": 52,
+          "h": 37,
+          "top": 120,
+          "size": "12px"
+        }
+      ],
+      "tabRows": 2,
+      "tabStripW": 76
+    },
+    "logTab": {
+      "scrollH": 225,
+      "clientH": 225,
+      "text": "运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"
+    },
+    "paramDlg": {
+      "w": 366,
+      "scrollH": 409,
+      "clientH": 409,
+      "inputs": [
+        {
+          "t": "记录主键",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "Bucket 数量",
+          "w": 330,
+          "h": 35
+        },
+        {
+          "t": "减少动态效果，改用单步观察",
+          "w": 13,
+          "h": 13
+        }
+      ],
+      "html": "参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 Bucket 数量 减少动态效果，改用单步观察 应用参数并重置"
+    },
+    "overflowCount": 2,
+    "overflowEls": [
+      {
+        "tag": "button",
+        "path": "div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button",
+        "left": 399,
+        "right": 519,
+        "w": 120
+      },
+      {
+        "tag": "span",
+        "path": "div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span",
+        "left": 419,
+        "right": 437,
+        "w": 18
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "body > div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters",
+        "sw": 507,
+        "cw": 366,
+        "ox": "auto"
+      }
+    ],
+    "contrastFail": []
+  },
+  "homeLightAudit": {
+    "rootBg": "rgb(244, 246, 240)",
+    "fail": [
+      {
+        "t": "Visual Lab",
+        "size": 17,
+        "lh": "27.2px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "header.vl-nav>a.router-link-active>b",
+        "top": 20,
+        "inFold": true,
+        "w": 77,
+        "h": 27,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "LEARN BY SEEING. UNDERSTAND BY DOING.",
+        "size": 10,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-home>main.vh-main>div.vl-eyebrow",
+        "top": 132,
+        "inFold": true,
+        "w": 1096,
+        "h": 12,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "一个操作，一次变化。用交互动画建立你的 Hudi 直觉。",
+        "size": 14,
+        "lh": "22.4px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-home>main.vh-main>p.vh-intro",
+        "top": 314,
+        "inFold": true,
+        "w": 1096,
+        "h": 22,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "精选实验 / 约 1 分钟建立直觉",
+        "size": 10,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "a.vh-feature>div>span.vl-eyebrow",
+        "top": 416,
+        "inFold": true,
+        "w": 177,
+        "h": 12,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "并排观察 COW 重写 Base、MOR 追加 Log，",
+        "size": 13,
+        "lh": "23.4px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "a.vh-feature>div>p",
+        "top": 548,
+        "inFold": true,
+        "w": 290,
+        "h": 47,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "全部 80 个动画 →",
+        "size": 12,
+        "lh": "19.2px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "main.vh-main>div.vh-topics-head>a.vh-all-topics",
+        "top": 745,
+        "inFold": true,
+        "w": 97,
+        "h": 19,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "01 / 动画实验",
+        "size": 9,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.vh-topics>a>span.vl-eyebrow",
+        "top": 903,
+        "inFold": false,
+        "w": 65,
+        "h": 10,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "↗",
+        "size": 13,
+        "lh": "22.1px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "a>h3>span",
+        "top": 927,
+        "inFold": false,
+        "w": 13,
+        "h": 22,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "HUAWEI MRS r26 · 纯浏览器模拟",
+        "size": 9,
+        "lh": "14.4px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-home>footer.vl-footer>span",
+        "top": 1256,
+        "inFold": false,
+        "w": 137,
+        "h": 14,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "看动画 → 亲手操作 → 解释 → 代码",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-home>footer.vl-footer>span",
+        "top": 1255,
+        "inFold": false,
+        "w": 158,
+        "h": 16,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      }
+    ],
+    "failCount": 10,
+    "total": 21,
+    "svgFill": null
+  },
+  "catalogLightAudit": {
+    "rootBg": "rgb(244, 246, 240)",
+    "fail": [
+      {
+        "t": "Visual Lab",
+        "size": 17,
+        "lh": "27.2px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "header.vl-nav>a.vl-brand>b",
+        "top": 20,
+        "inFold": true,
+        "w": 77,
+        "h": 27,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "80 个主题 · 9 个模块 · 先观察，再操作",
+        "size": 10,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.catalog-heading>div>span.vl-eyebrow",
+        "top": 120,
+        "inFold": true,
+        "w": 238,
+        "h": 12,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "选一个你想弄懂的问题，从动画开始。",
+        "size": 13,
+        "lh": "20.8px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.catalog-heading>div>p",
+        "top": 210,
+        "inFold": true,
+        "w": 279,
+        "h": 21,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "80 个可播放主题",
+        "size": 11,
+        "lh": "17.6px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "main.catalog-main>div.catalog-status>span",
+        "top": 342,
+        "inFold": true,
+        "w": 82,
+        "h": 18,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "演示范围",
+        "size": 11,
+        "lh": "17.6px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "main.catalog-main>div.catalog-status>label",
+        "top": 336,
+        "inFold": true,
+        "w": 170,
+        "h": 29,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "B01 · 基础原理",
+        "size": 9,
+        "lh": "14.4px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "a.catalog-card>div.catalog-card-meta>span",
+        "top": 403,
+        "inFold": true,
+        "w": 60,
+        "h": 14,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "教学模型",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "a.catalog-card>div.catalog-card-bottom>span",
+        "top": 595,
+        "inFold": true,
+        "w": 40,
+        "h": 16,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "引擎驱动展示本地模拟结果；机制示意展示组件关系与处理关口，未执行真实集群服务。点击实验中的范围标签可查看边界。",
+        "size": 11,
+        "lh": "19.8px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-home>main.catalog-main>p.catalog-footnote",
+        "top": 7588,
+        "inFold": false,
+        "w": 1248,
+        "h": 20,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "HUAWEI MRS r26 · 纯浏览器模拟",
+        "size": 9,
+        "lh": "14.4px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-home>footer.vl-footer>span",
+        "top": 7663,
+        "inFold": false,
+        "w": 137,
+        "h": 14,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "看动画 → 亲手操作 → 解释 → 代码",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-home>footer.vl-footer>span",
+        "top": 7662,
+        "inFold": false,
+        "w": 158,
+        "h": 16,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      }
+    ],
+    "failCount": 10,
+    "total": 22,
+    "svgFill": null
+  },
+  "lessonLightAudit": {
+    "rootBg": "rgb(244, 246, 240)",
+    "fail": [
+      {
+        "t": "Visual Lab",
+        "size": 17,
+        "lh": "27.2px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "header.vl-nav>a.vl-brand>b",
+        "top": 20,
+        "inFold": true,
+        "w": 77,
+        "h": 27,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "← 全部动画",
+        "size": 12,
+        "lh": "19.2px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-lab>header.vl-nav>a.lesson-nav-link",
+        "top": 24,
+        "inFold": true,
+        "w": 64,
+        "h": 19,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "基础原理 / B05",
+        "size": 12,
+        "lh": "19.2px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-lab>header.vl-nav>span.vl-breadcrumb",
+        "top": 24,
+        "inFold": true,
+        "w": 82,
+        "h": 19,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "B05 · 基础原理",
+        "size": 10,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.lesson-heading>div>span.vl-eyebrow",
+        "top": 97,
+        "inFold": true,
+        "w": 93,
+        "h": 12,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "引擎驱动 ↗",
+        "size": 11,
+        "lh": "17.6px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "main.lesson-main>div.lesson-heading>button.lesson-model",
+        "top": 108,
+        "inFold": true,
+        "w": 86,
+        "h": 36,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "正在演示",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "section.lesson-stage>div.lesson-stage-bar>span",
+        "top": 191,
+        "inFold": true,
+        "w": 53,
+        "h": 16,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "技术详情 ↗",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "section.lesson-stage>div.lesson-stage-bar>button",
+        "top": 191,
+        "inFold": true,
+        "w": 53,
+        "h": 16,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "操作前 · 1 个物理文件",
+        "size": 13,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg>g>text",
+        "top": 230,
+        "inFold": true,
+        "w": 127,
+        "h": 17,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "Hudi Engine",
+        "size": 17,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg>g>text",
+        "top": 399,
+        "inFold": true,
+        "w": 103,
+        "h": 23,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "执行过程示意",
+        "size": 12,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg>g>text",
+        "top": 425,
+        "inFold": true,
+        "w": 73,
+        "h": 14,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "初始 Base",
+        "size": 11,
+        "lh": "17.6px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.lesson-explanation>div>small",
+        "top": 654,
+        "inFold": true,
+        "w": 50,
+        "h": 15,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "1 / 5",
+        "size": 11,
+        "lh": "normal",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "section.lesson-stage>div.lesson-explanation>span",
+        "top": 668,
+        "inFold": true,
+        "w": 30,
+        "h": 13,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "可见记录 3 · 有效文件 1 · Log 0",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "main.lesson-main>div.lesson-bottom>span",
+        "top": 833,
+        "inFold": true,
+        "w": 141,
+        "h": 16,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "← 上一主题",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.lesson-bottom>div>a",
+        "top": 833,
+        "inFold": true,
+        "w": 53,
+        "h": 16,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "HUAWEI MRS r26 · 纯浏览器模拟",
+        "size": 9,
+        "lh": "14.4px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-lab>footer.vl-footer>span",
+        "top": 875,
+        "inFold": true,
+        "w": 137,
+        "h": 14,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "教学模型 · r26 行为边界 ↗",
+        "size": 9,
+        "lh": "14.4px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-lab>footer.vl-footer>button",
+        "top": 875,
+        "inFold": true,
+        "w": 108,
+        "h": 14,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "空格播放 / 暂停 · ← → 单步",
+        "size": 10,
+        "lh": "16px",
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(244, 246, 240)",
+        "path": "div.visual-lab>footer.vl-footer>span",
+        "top": 875,
+        "inFold": true,
+        "w": 124,
+        "h": 16,
+        "ratio": 3.75,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "操作前 · 1 个物理文件",
+        "size": 12.859963235294117,
+        "declared": 13,
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg-text",
+        "top": 230,
+        "inFold": true,
+        "w": 127,
+        "h": 17,
+        "scale": 0.989,
+        "svg": true,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "Hudi Engine",
+        "size": 16.816875,
+        "declared": 17,
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg-text",
+        "top": 399,
+        "inFold": true,
+        "w": 103,
+        "h": 23,
+        "scale": 0.989,
+        "svg": true,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "执行过程示意",
+        "size": 11.870735294117647,
+        "declared": 12,
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg-text",
+        "top": 425,
+        "inFold": true,
+        "w": 73,
+        "h": 14,
+        "scale": 0.989,
+        "svg": true,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "目标文件预览 · 提交前不生效",
+        "size": 12.859963235294117,
+        "declared": 13,
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg-text",
+        "top": 475,
+        "inFold": true,
+        "w": 166,
+        "h": 17,
+        "scale": 0.989,
+        "svg": true,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      },
+      {
+        "t": "图中最多显示四个文件；完整文件清单与记录可按需展开。",
+        "size": 11.870735294117647,
+        "declared": 12,
+        "color": "rgb(115, 129, 120)",
+        "bg": "rgb(255, 255, 255)",
+        "path": "svg-text",
+        "top": 614,
+        "inFold": true,
+        "w": 309,
+        "h": 14,
+        "scale": 0.989,
+        "svg": true,
+        "ratio": 4.09,
+        "need": 4.5,
+        "pass": false,
+        "large": false
+      }
+    ],
+    "failCount": 22,
+    "total": 50,
+    "svgFill": {
+      "rects": [
+        {
+          "cls": null,
+          "fill": "url(\"#lesson-grid\")"
+        },
+        {
+          "cls": "file-body base-body",
+          "fill": "rgb(230, 242, 232)"
+        },
+        {
+          "cls": "record-highlight",
+          "fill": "rgb(188, 235, 210)"
+        },
+        {
+          "cls": "record-bg",
+          "fill": "rgb(255, 255, 255)"
+        },
+        {
+          "cls": "record-bg",
+          "fill": "rgb(255, 255, 255)"
+        },
+        {
+          "cls": "ac-worker",
+          "fill": "rgb(230, 242, 232)"
+        }
+      ],
+      "texts": [
+        {
+          "cls": "ac-section",
+          "fill": "rgb(115, 129, 120)",
+          "size": "13px"
+        },
+        {
+          "cls": "file-type",
+          "fill": "rgb(38, 61, 52)",
+          "size": "12px"
+        },
+        {
+          "cls": "file-format",
+          "fill": "rgb(115, 129, 120)",
+          "size": "10px"
+        },
+        {
+          "cls": "record-text",
+          "fill": "rgb(38, 61, 52)",
+          "size": "11px"
+        },
+        {
+          "cls": "record-text",
+          "fill": "rgb(38, 61, 52)",
+          "size": "11px"
+        },
+        {
+          "cls": "record-text",
+          "fill": "rgb(38, 61, 52)",
+          "size": "11px"
+        },
+        {
+          "cls": "file-format",
+          "fill": "rgb(115, 129, 120)",
+          "size": "10px"
+        },
+        {
+          "cls": "ac-worker-title",
+          "fill": "rgb(38, 61, 52)",
+          "size": "17px"
+        }
+      ]
+    }
+  },
+  "progressGap": {
+    "lsBefore": [],
+    "progBefore": null,
+    "progAfter": null,
+    "tableRows": 0,
+    "emptyText": "暂无数据",
+    "countCards": [
+      "0个",
+      "0个",
+      "0分",
+      "0个"
+    ],
+    "progressHead": "H Hudi Lab 总览 证据库 学习进度 MRS 3.1.0-350-r26 | Hudi 0.15.0-h0.cbu.mrs.350.r26 Spark 3.3.1-h0.cbu.mrs.350.r26 · Flink 1.17.x 纯浏览器模拟 · 未连接真实集群 浅色 实验目录 « A 基础原理 2/8 ▾ B01 Hudi 与 Hive 普通 Parquet 表的区别 B02 COW 表的数据写入与文件重写 B03 MOR 表的数据写入与 Log 合并 B04 File Group、File ID、File Slice 结构 B05 Base File 与 Log File 的版本关系 B06 Record Key、Partition Path、HoodieKey B07 Hudi 的 MVCC 与 Snapshot 可见性 B08 Hudi 表在 HDFS 中的完整目录结构 ",
+    "hasAnyVisited": true
+  },
+  "evidenceSearch": [
+    {
+      "q": "Log",
+      "rows": 2,
+      "hitText": "命中 2 / 15 条",
+      "empty": null
+    },
+    {
+      "q": "bucket",
+      "rows": 2,
+      "hitText": "命中 2 / 15 条",
+      "empty": null
+    },
+    {
+      "q": "r26",
+      "rows": 10,
+      "hitText": "命中 10 / 15 条",
+      "empty": null
+    },
+    {
+      "q": "zzzz",
+      "rows": 0,
+      "hitText": "命中 0 / 15 条",
+      "empty": "暂无数据"
+    }
+  ]
+}

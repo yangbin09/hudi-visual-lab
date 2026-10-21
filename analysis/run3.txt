@@ -1,0 +1,70 @@
+﻿=== 目录标题高度相似 ===
+0.79  F07「Kerberos、HDFS、HMS 权限链路」  ↔  E10「Kerberos、HMS、HDFS 权限故障」
+0.56  W05「Insert Overwrite 分区覆盖」  ↔  W06「Insert Overwrite Table 整表覆盖」
+0.5  I03「BUCKET 索引与哈希分桶」  ↔  I04「BUCKET 索引与分区路径」
+0.48  F05「Flink 写入与 Spark 异步 Compaction」  ↔  E09「Flink 写入积压与 Compaction 资源冲突」
+0.47  S03「Compaction Plan 生成」  ↔  S05「异步 Compaction 调度」
+0.45  S04「Compaction 执行与文件合并」  ↔  S05「异步 Compaction 调度」
+0.44  S05「异步 Compaction 调度」  ↔  F05「Flink 写入与 Spark 异步 Compaction」
+0.43  S05「异步 Compaction 调度」  ↔  A05「Compaction 策略与吞吐量分析」
+0.41  S03「Compaction Plan 生成」  ↔  S04「Compaction 执行与文件合并」
+0.39  W04「Bulk Insert 数据初始化」  ↔  E03「BUCKET 表 Bulk Insert 失败」
+0.39  S03「Compaction Plan 生成」  ↔  A05「Compaction 策略与吞吐量分析」
+0.38  T02「Hudi 主键与 Precombine 配置」  ↔  W08「Precombine 与相同主键冲突处理」
+0.38  S04「Compaction 执行与文件合并」  ↔  A05「Compaction 策略与吞吐量分析」
+0.38  S05「异步 Compaction 调度」  ↔  E05「Compaction 失败但 YARN 显示成功」
+0.36  T01「华为 Spark SQL 创建 COW / MOR 表」  ↔  F01「Spark SQL 创建与写入 Hudi」
+0.36  S07「Archive Timeline 归档」  ↔  A07「Timeline 规模与归档性能」
+0.35  S03「Compaction Plan 生成」  ↔  E05「Compaction 失败但 YARN 显示成功」
+
+步骤标题：315 条 / 309 种（去重率 98%）；重复≥2 的标题：
+查看结果×3  选项汇合×2  读取结果×2  完成合并×2  生成计划×2
+
+=== 节点列表完全相同的主题组 ===
+B07, Q01 → 读取请求|选择文件|归并版本|返回记录
+W01, W02, W10 → 输入记录|Writer|定位 File Group|写入文件|提交 Timeline
+S03, S04 → 当前文件|服务计划|执行合并|新 File Slice|提交 Timeline
+
+=== 旁白用词最接近的主题对 top12 ===
+[
+  { a: 'B07', b: 'Q04', sim: 0.3 },
+  { a: 'B05', b: 'S04', sim: 0.26 },
+  { a: 'S05', b: 'F05', sim: 0.24 },
+  { a: 'T02', b: 'W08', sim: 0.22 },
+  { a: 'W03', b: 'Q08', sim: 0.22 },
+  { a: 'S08', b: 'E07', sim: 0.21 },
+  { a: 'S03', b: 'S12', sim: 0.2 },
+  { a: 'S10', b: 'A01', sim: 0.18 },
+  { a: 'B04', b: 'B05', sim: 0.17 },
+  { a: 'B01', b: 'B04', sim: 0.16 },
+  { a: 'B01', b: 'B05', sim: 0.16 },
+  { a: 'B04', b: 'W02', sim: 0.16 }
+]
+
+=== 英文术语 token 最多的主题 ===
+[
+  { id: 'B04', n: 15, zh: 50 },
+  { id: 'B05', n: 11, zh: 54 },
+  { id: 'W07', n: 11, zh: 43 },
+  { id: 'F03', n: 10, zh: 36 },
+  { id: 'B01', n: 9, zh: 43 },
+  { id: 'W04', n: 9, zh: 51 },
+  { id: 'S04', n: 9, zh: 47 },
+  { id: 'Q02', n: 8, zh: 45 },
+  { id: 'F01', n: 8, zh: 38 },
+  { id: 'W02', n: 7, zh: 41 }
+]
+全部步骤+标题中的英文 token 数: 306 | 中文总字数: 4136
+不同英文 token 种数: 111
+a action amount api append applyaction archive b barrier base basebase bloom bucket bucketof bulk bulk_insert checkpoint cleaner clustering commit committime compaction completed connector cow create_table d dataframe delta_commit deltacommit dt end errorifexists file flink group hash hdfs hive hive_style_partitioning hms hoodie hoodie.properties hoodie_record_key hoodiekey hudi id ignore includemetafields inflight insert insert_records instant key keytab log metadata metastore mor none occ offset operation operationbegin optimized options overwrite parquet partition path pending plan precombine primarykey principal profile r26 read record region requested restore rollback runquery runtime savemode scala schedule schema slice snapshot source spark sql state style style_partitioning_only sync table table.properties time timeline tombstone ts ttl upsert v1 v2 version writer yarn
+同义词组 提交 / Instant / commit → { '提交': 43, Instant: 10, commit: 1 }
+同义词组 文件组 / File Group → { '文件组': 5, 'File Group': 19 }
+同义词组 桶 / Bucket → { '桶': 28, Bucket: 6 }
+同义词组 压缩 / Compaction → { '压缩': 0, Compaction: 7 }
+同义词组 合并 / Compaction → { '合并': 28, Compaction: 7 }
+同义词组 清理 / Clean → { '清理': 5, Clean: 7 }
+同义词组 归档 / Archive → { '归档': 4, Archive: 5 }
+同义词组 回滚 / Rollback → { '回滚': 7, Rollback: 5 }
+同义词组 快照 / Snapshot → { '快照': 15, Snapshot: 13 }
+同义词组 时间线 / Timeline → { '时间线': 1, Timeline: 17 }
+同义词组 缓存 / Checkpoint → { '缓存': 0, Checkpoint: 9 }

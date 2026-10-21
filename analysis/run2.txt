@@ -1,0 +1,339 @@
+﻿captions: 315 | 含因果解释词: 3 (1%) | 以操作动词开头: 50 (16%)
+以「你会看到」开头: 0
+
+=== 旁白最短 12 个主题（avg 字/步）===
+{
+  id: 'W05',
+  avg: 13.3,
+  min: 12,
+  causal: 0,
+  instr: 1,
+  hedge: 0,
+  totalChars: 53
+}
+{
+  id: 'I04',
+  avg: 13.3,
+  min: 11,
+  causal: 0,
+  instr: 0,
+  hedge: 0,
+  totalChars: 53
+}
+{
+  id: 'E02',
+  avg: 14.3,
+  min: 10,
+  causal: 0,
+  instr: 0,
+  hedge: 0,
+  totalChars: 57
+}
+{
+  id: 'E06',
+  avg: 14.8,
+  min: 13,
+  causal: 0,
+  instr: 0,
+  hedge: 0,
+  totalChars: 59
+}
+{
+  id: 'S07',
+  avg: 15,
+  min: 10,
+  causal: 0,
+  instr: 0,
+  hedge: 0,
+  totalChars: 60
+}
+{
+  id: 'A06',
+  avg: 15,
+  min: 10,
+  causal: 0,
+  instr: 2,
+  hedge: 0,
+  totalChars: 60
+}
+{
+  id: 'A01',
+  avg: 15.5,
+  min: 11,
+  causal: 0,
+  instr: 0,
+  hedge: 1,
+  totalChars: 62
+}
+{
+  id: 'A05',
+  avg: 17,
+  min: 13,
+  causal: 0,
+  instr: 2,
+  hedge: 2,
+  totalChars: 68
+}
+{
+  id: 'W06',
+  avg: 17.3,
+  min: 12,
+  causal: 0,
+  instr: 0,
+  hedge: 0,
+  totalChars: 69
+}
+{
+  id: 'E09',
+  avg: 17.8,
+  min: 8,
+  causal: 0,
+  instr: 1,
+  hedge: 1,
+  totalChars: 71
+}
+{
+  id: 'F08',
+  avg: 18,
+  min: 15,
+  causal: 0,
+  instr: 0,
+  hedge: 1,
+  totalChars: 72
+}
+{
+  id: 'A02',
+  avg: 18,
+  min: 12,
+  causal: 0,
+  instr: 0,
+  hedge: 1,
+  totalChars: 72
+}
+
+=== 无任何因果解释句的主题 ===
+W05 avg 13.3 instr 1 / 4 hedge 0
+I04 avg 13.3 instr 0 / 4 hedge 0
+E02 avg 14.3 instr 0 / 4 hedge 0
+E06 avg 14.8 instr 0 / 4 hedge 0
+S07 avg 15 instr 0 / 4 hedge 0
+A06 avg 15 instr 2 / 4 hedge 0
+A01 avg 15.5 instr 0 / 4 hedge 1
+A05 avg 17 instr 2 / 4 hedge 2
+W06 avg 17.3 instr 0 / 4 hedge 0
+E09 avg 17.8 instr 1 / 4 hedge 1
+F08 avg 18 instr 0 / 4 hedge 1
+A02 avg 18 instr 0 / 4 hedge 1
+T06 avg 18.3 instr 1 / 4 hedge 2
+I01 avg 18.3 instr 2 / 4 hedge 1
+T04 avg 18.5 instr 0 / 4 hedge 2
+S05 avg 18.5 instr 0 / 4 hedge 1
+F05 avg 18.5 instr 1 / 4 hedge 0
+A08 avg 18.5 instr 0 / 4 hedge 2
+S11 avg 18.8 instr 0 / 4 hedge 0
+F07 avg 18.8 instr 1 / 4 hedge 0
+B06 avg 19 instr 1 / 4 hedge 0
+Q06 avg 19 instr 1 / 4 hedge 1
+E04 avg 19 instr 0 / 4 hedge 0
+E10 avg 19 instr 1 / 4 hedge 2
+A04 avg 19 instr 0 / 4 hedge 1
+W01 avg 19.3 instr 0 / 4 hedge 1
+W02 avg 19.3 instr 1 / 4 hedge 0
+Q08 avg 19.3 instr 2 / 4 hedge 1
+S06 avg 19.3 instr 0 / 4 hedge 0
+E03 avg 19.3 instr 1 / 4 hedge 1
+I02 avg 19.5 instr 0 / 4 hedge 2
+F06 avg 19.5 instr 0 / 4 hedge 1
+Q01 avg 19.8 instr 2 / 4 hedge 0
+E08 avg 19.8 instr 2 / 4 hedge 2
+T07 avg 20 instr 3 / 4 hedge 1
+W10 avg 20 instr 0 / 4 hedge 0
+B08 avg 20.3 instr 1 / 4 hedge 0
+T02 avg 20.3 instr 0 / 4 hedge 0
+T03 avg 20.3 instr 1 / 4 hedge 0
+Q02 avg 20.3 instr 1 / 4 hedge 0
+S10 avg 20.3 instr 0 / 4 hedge 0
+A03 avg 20.5 instr 1 / 4 hedge 1
+A07 avg 20.5 instr 0 / 4 hedge 1
+T08 avg 20.8 instr 1 / 4 hedge 1
+E07 avg 20.8 instr 1 / 4 hedge 0
+W08 avg 21 instr 2 / 4 hedge 0
+B07 avg 21.3 instr 1 / 4 hedge 0
+W03 avg 21.5 instr 0 / 4 hedge 0
+W09 avg 21.8 instr 1 / 4 hedge 2
+B05 avg 22.2 instr 0 / 5 hedge 0
+I06 avg 22.3 instr 0 / 4 hedge 0
+F04 avg 22.5 instr 1 / 4 hedge 1
+S02 avg 22.8 instr 0 / 4 hedge 0
+I08 avg 23 instr 0 / 4 hedge 0
+S03 avg 23 instr 0 / 4 hedge 0
+S01 avg 23.2 instr 1 / 5 hedge 0
+I07 avg 23.3 instr 0 / 4 hedge 0
+Q04 avg 23.3 instr 1 / 4 hedge 1
+F01 avg 23.3 instr 0 / 4 hedge 0
+E05 avg 23.5 instr 0 / 4 hedge 1
+B04 avg 23.6 instr 3 / 5 hedge 0
+S12 avg 24 instr 0 / 4 hedge 0
+F02 avg 24 instr 0 / 4 hedge 1
+E01 avg 24 instr 0 / 4 hedge 1
+S04 avg 25.3 instr 1 / 4 hedge 0
+Q07 avg 25.8 instr 0 / 4 hedge 0
+S08 avg 25.8 instr 0 / 4 hedge 0
+T01 avg 26 instr 1 / 4 hedge 0
+F03 avg 26 instr 0 / 4 hedge 1
+I03 avg 26.3 instr 2 / 4 hedge 1
+W04 avg 26.5 instr 0 / 4 hedge 0
+S09 avg 26.5 instr 1 / 4 hedge 1
+B01 avg 27.5 instr 1 / 4 hedge 0
+T05 avg 32.5 instr 1 / 4 hedge 1
+W07 avg 32.8 instr 0 / 4 hedge 1
+
+=== 最短 15 条步骤旁白 ===
+B07#3 4字 25字符 | Snapshot 读取当前 File Slice。
+F05#2 4字 15字符 | 引擎产生 REQUESTED。
+B04#4 5字 6字符 | 先生成计划。
+W07#2 5字 44字符 | Append、Overwrite、ErrorIfExists、Ignore 走不同入口。
+I07#1 5字 26字符 | 本例测试 BUCKET 与 Bulk Insert。
+S01#2 5字 25字符 | Schedule 将计划写为 REQUESTED。
+W06#2 6字 19字符 | 旧 File Group 全部被取代。
+S12#4 6字 23字符 | Snapshot 仍由有效 Slice 计算。
+T06#3 7字 18字符 | 把分区定义传给 Metastore。
+T07#2 7字 25字符 | 查看引擎创建的 table.properties。
+T08#1 7字 25字符 | 先看旧文件的 id、amount、ts 和 dt。
+W03#2 7字 31字符 | 本地模型写入 operation=D 的 tombstone。
+Q05#2 7字 18字符 | Base 和 Log 共同参与归并。
+Q08#1 7字 18字符 | 让当前主键产生 tombstone。
+S02#1 7字 25字符 | MOR 的本次更新产生 DELTA_COMMIT。
+
+=== 最长 8 条步骤旁白 ===
+I01#2 22字 24字符 | 动画追踪候选文件，不将示意扫描速度当作性能实测。
+S01#3 22字 24字符 | 动画展示执行阶段，不虚构底层尚未返回的中间状态。
+T03#4 23字 31字符 | 多级路径按多个字段依次组合；真实目录可在 HDFS 详情查看。
+I06#1 23字 25字符 | 只在当前分区内查找，可能定位不到另一个分区的同键。
+I08#1 23字 25字符 | 表配置与运行时选项不一致，需要核对真正生效的索引。
+T05#4 24字 26字符 | 该动画为配置机制示意，不模拟三种模式下真实文件编码。
+E01#4 24字 27字符 | 亲手对齐作业选项，再观察定位策略；真实恢复需重跑验证。
+E01#2 25字 27字符 | 教学案例假设采用手动选择的作业选项，不推断真实优先级。
+
+=== operation 序列重复次数 top ===
+[
+  [ 'observe>observe>observe>observe', 11 ],
+  [ 'observe>observe>upsert>snapshot', 5 ],
+  [ 'observe>duplicates>stale>snapshot', 2 ],
+  [ 'observe>observe>bucket-write>snapshot', 2 ],
+  [ 'observe>observe>invalid-bulk>bucket-write', 2 ],
+  [ 'observe>schedule>observe>compact', 2 ],
+  [ 'upsert>insert>clean>snapshot', 2 ],
+  [ 'observe>observe>cluster>snapshot', 2 ],
+  [ 'observe>bucket-write>observe>observe', 2 ],
+  [ 'observe>observe>upsert>schedule>compact', 1 ],
+  [ 'observe>upsert>insert>schedule>compact', 1 ],
+  [ 'observe>observe>cross-partition>snapshot', 1 ]
+]
+
+节点标签：共 331 个，含英文 153 个 (46%)；同一主题内中英混排的主题 60/78
+混排主题: B01,B04,B05,B08,T02,T03,T05,T06,T07,T08,W01,W02,W03,W04,W07,W08,W09,W10,I01,I02,I04,I05,I07,Q02,Q03,Q04,Q05,Q07,Q08,S01,S02,S03,S04,S05,S07,S08,S11,S12,F01,F03,F04,F05,F06,F07,F08,E01,E03,E04,E05,E06,E07,E08,E10,A01,A02,A03,A04,A05,A07,A08
+
+=== 二级细节(moments)/限制声明 ===
+有 moments 的主题: [ 'E01' ]
+设置 limitation 的主题: 0
+
+=== 免责话术 ===
+出现限定话术的步骤数: 57 / 315 (18%) | 涉及主题: 37 /78
+步骤文案带免责的主题数 top: [
+  [ 'T06', 3 ], [ 'I02', 3 ], [ 'E10', 3 ],
+  [ 'A05', 3 ], [ 'T05', 2 ], [ 'T08', 2 ],
+  [ 'W07', 2 ], [ 'W09', 2 ], [ 'Q06', 2 ],
+  [ 'Q08', 2 ], [ 'S05', 2 ], [ 'F08', 2 ],
+  [ 'E08', 2 ], [ 'E09', 2 ], [ 'A04', 2 ],
+  [ 'A07', 2 ], [ 'T04', 1 ], [ 'W01', 1 ],
+  [ 'W04', 1 ], [ 'I01', 1 ], [ 'I03', 1 ],
+  [ 'I05', 1 ], [ 'I08', 1 ], [ 'Q04', 1 ],
+  [ 'S01', 1 ], [ 'S09', 1 ], [ 'F02', 1 ],
+  [ 'F03', 1 ], [ 'F04', 1 ], [ 'F06', 1 ],
+  [ 'E01', 1 ], [ 'E03', 1 ], [ 'E05', 1 ],
+  [ 'A01', 1 ], [ 'A02', 1 ], [ 'A03', 1 ],
+  [ 'A08', 1 ]
+]
+按类型: {
+  '待验证': 2,
+  '待实测': 2,
+  '教学模型': 0,
+  '模拟': 16,
+  '不连接真实集群': 4,
+  '示意 / 机制示意': 13,
+  '不伪造 / 避免虚构': 14,
+  '未实现 / 未建模': 6,
+  '假设 / 本案例': 4,
+  '仅展示 / 不能推断': 6
+}
+summary/note 中的限定话术: { '待实测': 18, '待验证': 2, '示意 / 机制示意': 1 }
+
+=== 术语先用后定义（按目录顺序）===
+{
+  term: 'COW',
+  usedIn: 'T01',
+  stepNo: 3,
+  defId: 'B02',
+  defOrder: 1,
+  useOrder: 8,
+  text: '文件落点由所选 COW/MOR 及引擎规则决定。'
+}
+{
+  term: 'MOR',
+  usedIn: 'T01',
+  stepNo: 3,
+  defId: 'B03',
+  defOrder: 2,
+  useOrder: 8,
+  text: '文件落点由所选 COW/MOR 及引擎规则决定。'
+}
+{ term: 'ReplaceCommit', issue: '未在步骤/节点中出现', defId: 'S10' }
+{ term: 'File ID', issue: '未在步骤/节点中出现', defId: 'B05' }
+{
+  term: 'HDFS',
+  usedIn: 'T03',
+  stepNo: 4,
+  defId: 'B08',
+  defOrder: 7,
+  useOrder: 10,
+  text: '多级路径按多个字段依次组合；真实目录可在 HDFS 详情查看。'
+}
+
+=== 术语出现主题数与首次出现 ===
+File Group	首次 B01#3	定义主题 B04	出现于 B01,B04,B05,B07,W02,W06,I03,Q01,Q04,S03,S04,F01
+File Slice	首次 B01#4	定义主题 B04	出现于 B01,B04,B05,B07,W02,W06,I03,Q01,Q04,S03,S04,F01
+Timeline	首次 B01#1	定义主题 S01	出现于 B01,B08,T01,W10,S03,S08,E05,E07
+Commit	首次 B01#4	定义主题 S02	出现于 
+Snapshot	首次 B01#4	定义主题 Q01	出现于 B07,W01,W08,Q02,Q04,S10,S12,A01
+Base File	首次 B04#1	定义主题 B04	出现于 B04,B05,W02,W04,Q01,Q02,Q04,Q05,S01,S02,S04,S05
+Log File	首次 B04#1	定义主题 B04	出现于 B04,B05,W02,Q01,Q02,Q05,S01,S02,S03,S04,F03,A05
+Instant	首次 B05#2	定义主题 S01	出现于 B05,Q04,S01,S07,A07
+Compaction	首次 B05#1	定义主题 S04	出现于 B05,S04,E09
+HoodieKey	首次 B06#1	定义主题 B06	出现于 
+Record Key	首次 B06#1	定义主题 B06	出现于 
+Partition Path	首次 B06#1	定义主题 B06	出现于 
+Checkpoint	首次 B07#1	定义主题 Q04	出现于 B07,Q04,S09,F03,F04
+Precombine	首次 T01#1	定义主题 T02	出现于 
+COW	首次 T01#3	定义主题 B02	出现于 T01,W02,W04,Q05
+MOR	首次 T01#3	定义主题 B03	出现于 T01,W02,W04,Q05,S02,F03
+HDFS	首次 T03#4	定义主题 B08	出现于 T03,T06,F07
+Hive Sync / HMS	首次 T06#1	定义主题 T06	出现于 T05
+Schema	首次 T08#4	定义主题 T08	出现于 T08
+Incremental	首次 W03#4	定义主题 Q03	出现于 
+Bulk Insert	首次 W04#1	定义主题 W04	出现于 W04,I07,I08
+Clean	首次 W06#4	定义主题 S06	出现于 W06,S04,S06,S11,E08
+SaveMode	首次 W07#1	定义主题 W07	出现于 W07,F02
+Spark	首次 W07#4	定义主题 无	出现于 W07,W09,Q06,F01,F02
+Bucket	首次 I03#2	定义主题 I03	出现于 I03
+Read Optimized	首次 Q02#1	定义主题 Q02	出现于 
+DeltaCommit	首次 S02#1	定义主题 S02	出现于 
+Archive	首次 S07#3	定义主题 S07	出现于 S07,A07
+Rollback	首次 S08#2	定义主题 S08	出现于 S08,E07
+Pending	首次 S08#2	定义主题 S12	出现于 S12
+Clustering	首次 S10#2	定义主题 S10	出现于 S10,A01
+TTL	首次 S11#2	定义主题 S11	出现于 S11
+Flink	首次 F03#2	定义主题 无	出现于 F03,F05,F06
+Kerberos	首次 F07#1	定义主题 无	出现于 
+Metadata Table	首次 A03#4	定义主题 A03	出现于 A03
+OCC / 并发控制	首次 A04#4	定义主题 A04	出现于 A04

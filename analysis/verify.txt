@@ -1,0 +1,104 @@
+﻿=== 术语首次出现主题（前 12 主题检查）===
+File Group	firstTopic=B04	前12主题内=true	行内定义=true
+File Slice	firstTopic=B01	前12主题内=true	行内定义=false
+Base File	firstTopic=B04	前12主题内=true	行内定义=false
+Log File	firstTopic=B04	前12主题内=true	行内定义=false
+File ID	firstTopic=B04	前12主题内=true	行内定义=true
+Instant	firstTopic=B05	前12主题内=true	行内定义=false
+Timeline	firstTopic=B01	前12主题内=true	行内定义=true
+Checkpoint	firstTopic=B07	前12主题内=true	行内定义=true
+Commit	firstTopic=B01	前12主题内=true	行内定义=false
+Compaction	firstTopic=B05	前12主题内=true	行内定义=true
+Precombine	firstTopic=T01	前12主题内=true	行内定义=true
+Record Key	firstTopic=B06	前12主题内=true	行内定义=true
+Partition Path	firstTopic=B06	前12主题内=true	行内定义=true
+HoodieKey	firstTopic=B06	前12主题内=true	行内定义=true
+Snapshot Read	firstTopic=B01	前12主题内=true	行内定义=false
+
+=== 汇总 ===
+主题数: 78 | 全部有 objective: true | takeaway: true
+glossary 平均: 1.92 | limitations 平均: 1.00 | templates 平均: 2.45
+旁白汉字/步：min 8.8 max 58.8 avg 31.0
+术语表词数: 29 | 模板 id 总数: 44
+代表主题：
+ B01: 1=59字 2=60字 3=61字 4=55字
+ B04: 1=59字 2=50字 3=43字 4=56字 5=58字
+ B05: 1=55字 2=46字 3=51字 4=42字 5=50字
+ I03: 1=53字 2=49字 3=51字 4=68字
+ Q02: 1=42字 2=39字 3=49字 4=38字
+ S01: 1=45字 2=40字 3=46字 4=52字 5=47字
+ S04: 1=54字 2=51字 3=35字 4=43字
+ E01: 1=57字 2=45字 3=57字 4=55字
+
+=== 错误 ===
+- B04: glossary「File Slice」def 35 字 > 30
+- B04: glossary「Log File」def 35 字 > 30
+- B04#3: 代表主题旁白汉字数 43 不在 45–90
+- B05: glossary「Log File」def 35 字 > 30
+- B05: glossary「Compaction」def 42 字 > 30
+- B05#4: 代表主题旁白汉字数 42 不在 45–90
+- B06: glossary「HoodieKey」def 36 字 > 30
+- B08: glossary 缺失（允许为空但有术语时应给出）
+- T04: glossary「HoodieKey」def 36 字 > 30
+- T05: glossary 缺失（允许为空但有术语时应给出）
+- T06: glossary 缺失（允许为空但有术语时应给出）
+- T07: glossary 缺失（允许为空但有术语时应给出）
+- T08: glossary 缺失（允许为空但有术语时应给出）
+- W01: glossary「Commit」def 40 字 > 30
+- W03: glossary「Log File」def 35 字 > 30
+- W03: glossary「Compaction」def 42 字 > 30
+- W07: 旁白仍含免责话术 边界分开理解
+- W10: glossary「Commit」def 40 字 > 30
+- I03: glossary「Bucket」def 33 字 > 30
+- I03: glossary「HoodieKey」def 36 字 > 30
+- I04: glossary「Bucket」def 33 字 > 30
+- I05: glossary「Bucket」def 33 字 > 30
+- I06: glossary「HoodieKey」def 36 字 > 30
+- I07: glossary「Bucket」def 33 字 > 30
+- I08: glossary「Bucket」def 33 字 > 30
+- Q01: glossary「File Slice」def 35 字 > 30
+- Q02: glossary「Read Optimized」def 33 字 > 30
+- Q02: glossary「Log File」def 35 字 > 30
+- Q02#1: 代表主题旁白汉字数 42 不在 45–90
+- Q02#2: 代表主题旁白汉字数 39 不在 45–90
+- Q02#4: 代表主题旁白汉字数 38 不在 45–90
+- Q04: glossary「Archive」def 37 字 > 30
+- Q05: glossary「Read Optimized」def 33 字 > 30
+- Q06: glossary「File Slice」def 35 字 > 30
+- Q07: glossary「Commit」def 40 字 > 30
+- S01: glossary「Compaction」def 42 字 > 30
+- S01#2: 代表主题旁白汉字数 40 不在 45–90
+- S02: glossary「Commit」def 40 字 > 30
+- S03: glossary「Compaction」def 42 字 > 30
+- S04: glossary「Compaction」def 42 字 > 30
+- S04: glossary「Log File」def 35 字 > 30
+- S04#3: 代表主题旁白汉字数 35 不在 45–90
+- S04#4: 代表主题旁白汉字数 43 不在 45–90
+- S05: glossary「Compaction」def 42 字 > 30
+- S07: glossary「Archive」def 37 字 > 30
+- F02: 旁白仍含免责话术 读取结果
+- F03: glossary「Log File」def 35 字 > 30
+- F05: glossary「Compaction」def 42 字 > 30
+- F06: glossary「Bucket」def 33 字 > 30
+- F07: glossary 缺失（允许为空但有术语时应给出）
+- F08: 旁白仍含免责话术 从两个入口进入
+- E01: glossary「Bucket」def 33 字 > 30
+- E01: 旁白仍含免责话术 修改并验证
+- E02: glossary「HoodieKey」def 36 字 > 30
+- E03: glossary「Bucket」def 33 字 > 30
+- E05: glossary「Compaction」def 42 字 > 30
+- E06: glossary「Compaction」def 42 字 > 30
+- E08: glossary「Archive」def 37 字 > 30
+- E09: glossary「Compaction」def 42 字 > 30
+- E10: glossary 缺失（允许为空但有术语时应给出）
+- A02: glossary「Bucket」def 33 字 > 30
+- A02: glossary「Compaction」def 42 字 > 30
+- A03: 旁白仍含免责话术 实现边界
+- A04: glossary「Commit」def 40 字 > 30
+- A05: glossary「Compaction」def 42 字 > 30
+- A05: glossary「Log File」def 35 字 > 30
+- A05: 旁白仍含免责话术 核对指标
+- A07: glossary「Archive」def 37 字 > 30
+- A08: glossary「Compaction」def 42 字 > 30
+- A08: glossary「Archive」def 37 字 > 30
+- 术语表「Compaction」def 42 字 > 40

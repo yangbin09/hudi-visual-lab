@@ -1,0 +1,85 @@
+﻿term | 旁白命中 | 标题/节点命中 | 覆盖主题数 | 首次 | 末次 | summary提及主题数 | note提及主题数
+Commit | 19 | 28 | 30 | B01 | A07 | 16 | 3
+Record Key | 21 | 18 | 24 | B06 | A02 | 11 | 1
+Bucket | 22 | 14 | 8 | I03 | A02 | 5 | 3
+Snapshot | 11 | 17 | 18 | B01 | A01 | 4 | 0
+Pending | 12 | 13 | 7 | S08 | A08 | 2 | 0
+File Group | 11 | 13 | 18 | B01 | A04 | 11 | 2
+Timeline | 10 | 8 | 14 | B01 | A07 | 13 | 1
+File Slice | 8 | 4 | 9 | B01 | E05 | 4 | 1
+Clean | 5 | 7 | 7 | W06 | A06 | 12 | 2
+Rollback | 4 | 8 | 4 | S08 | E08 | 4 | 1
+Instant | 3 | 8 | 7 | B05 | A07 | 2 | 0
+Spark | 5 | 6 | 9 | W07 | E05 | 7 | 0
+Checkpoint | 8 | 2 | 5 | B07 | F04 | 0 | 0
+Partition Path | 6 | 3 | 6 | B06 | E02 | 2 | 1
+Archive | 4 | 5 | 3 | S07 | A07 | 4 | 2
+Clustering | 2 | 6 | 2 | S10 | A01 | 2 | 0
+Compaction | 4 | 3 | 6 | B05 | A05 | 13 | 2
+Hive Sync / HMS | 2 | 5 | 3 | T06 | E10 | 3 | 1
+HDFS | 2 | 5 | 5 | T03 | A03 | 9 | 0
+MOR | 6 | 0 | 6 | T01 | F03 | 8 | 2
+Incremental | 2 | 4 | 3 | W03 | Q08 | 5 | 0
+Bulk Insert | 5 | 1 | 4 | W04 | E03 | 2 | 2
+Flink | 3 | 3 | 4 | F03 | F08 | 6 | 2
+Precombine | 4 | 1 | 4 | T01 | W08 | 2 | 0
+SaveMode | 3 | 2 | 2 | W07 | F02 | 3 | 0
+COW | 4 | 0 | 4 | T01 | Q05 | 5 | 1
+Read Optimized | 1 | 3 | 2 | Q02 | Q05 | 4 | 0
+Schema | 1 | 3 | 2 | T08 | E04 | 1 | 1
+Base File | 1 | 2 | 2 | B04 | W04 | 3 | 0
+Log File | 0 | 2 | 2 | B04 | W03 | 2 | 0
+TTL | 0 | 2 | 1 | S11 | S11 | 1 | 1
+DeltaCommit | 1 | 1 | 1 | S02 | S02 | 0 | 0
+Kerberos | 1 | 1 | 2 | F07 | E10 | 1 | 1
+HoodieKey | 0 | 1 | 1 | B06 | B06 | 1 | 0
+Metadata Table | 1 | 0 | 1 | A03 | A03 | 1 | 1
+OCC / 并发控制 | 1 | 0 | 1 | A04 | A04 | 2 | 2
+ReplaceCommit | 0 | 0 | 0 | - | - | 2 | 1
+File ID | 0 | 0 | 0 | - | - | 1 | 0
+
+=== 术语覆盖主题明细（≥2 才列）===
+Commit: B01,B07,B08,W01,W02,W04,W09,W10,Q01,Q03,Q05,Q07,S01,S02,S03,S04,S06,S07,S08,S09,S12,F02,F03,F04,F08,E03,E04,E05,A06,A07
+Record Key: B06,T01,T02,T04,T07,W01,W02,W03,W04,W08,W10,I01,I02,I03,I04,I05,I06,Q07,Q08,F08,E01,E02,E04,A02
+Bucket: I03,I04,I05,I06,I08,F06,E01,A02
+Snapshot: B01,B07,W01,W03,W04,W06,W08,Q01,Q02,Q04,Q05,S01,S09,S10,S12,F01,F03,A01
+Pending: S08,S12,E05,E06,E07,E08,A08
+File Group: B01,B04,B05,B06,W01,W02,W03,W05,W06,W10,I01,I03,I05,S03,S04,F02,F06,A04
+Timeline: B01,B08,T01,W01,W02,W10,S01,S03,S04,S07,S08,E05,E07,A07
+File Slice: B01,B04,B07,Q01,Q04,S03,S04,F01,E05
+Clean: W06,S04,S06,S11,E07,E08,A06
+Rollback: S08,E06,E07,E08
+Instant: B05,Q04,S01,S07,S12,E07,A07
+Spark: W07,W09,Q06,S05,F01,F02,F05,F08,E05
+Checkpoint: B07,Q04,S09,F03,F04
+Partition Path: B06,B08,T03,T04,Q07,E02
+Archive: S07,E08,A07
+Clustering: S10,A01
+Compaction: B05,S02,S04,F05,E09,A05
+Hive Sync / HMS: T06,F07,E10
+HDFS: T03,T06,F07,E10,A03
+MOR: T01,W02,W04,Q05,S02,F03
+Incremental: W03,Q03,Q08
+Bulk Insert: W04,I07,I08,E03
+Flink: F03,F05,F06,F08
+Precombine: T01,T02,T07,W08
+SaveMode: W07,F02
+COW: T01,W02,W04,Q05
+Read Optimized: Q02,Q05
+Schema: T08,E04
+Base File: B04,W04
+Log File: B04,W03
+Kerberos: F07,E10
+
+=== 模块统计 ===
+模块 A: 目录 8 条 / 视觉主题 6 个 / 步骤 26 / 旁白 581 字 / 平均 22.3 字/步 / 证据等级 E1 / support {"supported":6,"conditional":2}
+模块 B: 目录 8 条 / 视觉主题 8 个 / 步骤 32 / 旁白 706 字 / 平均 22.1 字/步 / 证据等级 E1 / support {"supported":6,"conditional":1,"unverified":1}
+模块 C: 目录 10 条 / 视觉主题 10 个 / 步骤 40 / 旁白 850 字 / 平均 21.3 字/步 / 证据等级 E1 / support {"supported":9,"conditional":1}
+模块 D: 目录 8 条 / 视觉主题 8 个 / 步骤 32 / 旁白 662 字 / 平均 20.7 字/步 / 证据等级 E1/E0 / support {"supported":2,"unverified":5,"conditional":1}
+模块 E: 目录 8 条 / 视觉主题 8 个 / 步骤 32 / 旁白 663 字 / 平均 20.7 字/步 / 证据等级 E1 / support {"supported":8}
+模块 F: 目录 12 条 / 视觉主题 12 个 / 步骤 49 / 旁白 1072 字 / 平均 21.9 字/步 / 证据等级 E1/E2 / support {"supported":5,"conditional":6,"unverified":1}
+模块 G: 目录 8 条 / 视觉主题 8 个 / 步骤 32 / 旁白 682 字 / 平均 21.3 字/步 / 证据等级 E1/E2/E0 / support {"supported":4,"conditional":2,"unverified":2}
+模块 H: 目录 10 条 / 视觉主题 10 个 / 步骤 40 / 旁白 768 字 / 平均 19.2 字/步 / 证据等级 E1/E0/E2 / support {"unverified":3,"conditional":6,"supported":1}
+模块 I: 目录 8 条 / 视觉主题 8 个 / 步骤 32 / 旁白 576 字 / 平均 18.0 字/步 / 证据等级 E1/E0/E2 / support {"supported":1,"unverified":3,"conditional":4}
+
+证据等级分布: { E1: 60, E0: 7, E2: 13 } | supportState: { supported: 42, conditional: 23, unverified: 15 } | 有 note 的条目: 42 /80

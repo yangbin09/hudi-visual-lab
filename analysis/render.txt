@@ -1,0 +1,43 @@
+﻿{
+ "out": {
+  "B01": {
+   "bodyLen": 1360,
+   "hasObjective": true,
+   "hasTakeaway": false,
+   "hasGlossary": true,
+   "hasLimitations": true,
+   "hasSelfcheck": true,
+   "caption": "h.\nHudi\nVisual Lab\n总览\n全部主题\n学习路径\n术语表\n学习进度\n证据库\n全部主题\n基础原理 / B01\n基础模式\n☀\n⚙ 参数\nB01 · 基础原理\nHudi 与 Hive 普通 Parquet 表的区别\n引擎驱动 ↗\n\n学完你能 说清 Hudi 表比普通 Parquet 表多出来的 Timeline 解决了什么问题\n\nB01\nL1 · 入门\n约 4 分钟\n教学模型\n先修\nParquet 是列式文件，不能原地改一行 ↗\nHive 表按分区目录组织数据 ↗\n准备就绪\n点击图形查看数据\n技术详情 ↗\n操作前 · 1 个物理文件\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n当前版本 · 点击查看\nHudi Engine\n执行过程示意\n目标文件预览 · 提交前不生效\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n生成预览 · 尚未提交\n图中最多显示四个文件；完整文件清单与记录可按需展开。\nBase File（基准文件）\nLog File（增量日志）\n旧版本（待清理）\n本次新增\n01\n先看见变化，再展开原理\n\n点击「开始演示」，先观察同一份数据。\n\n3\n可见记录\n1\n有效文件\n0\nLog\n本课术语\nTimeline\n定义\n\n按 instant 排序的提交记录，决定当前能读到哪一版数据\n\nFile Group\n定义\n\n同一 File ID 下共享一组文件版本的存储单元\n\nInstant\n定义\n\n一"
+  },
+  "B04": {
+   "bodyLen": 1430,
+   "hasObjective": true,
+   "hasTakeaway": false,
+   "hasGlossary": true,
+   "hasLimitations": true,
+   "hasSelfcheck": true,
+   "caption": "h.\nHudi\nVisual Lab\n总览\n全部主题\n学习路径\n术语表\n学习进度\n证据库\n全部主题\n基础原理 / B04\n基础模式\n☀\n⚙ 参数\nB04 · 基础原理\nFile Group、File ID、File Slice 结构\n引擎驱动 ↗\n\n学完你能 能画出 File Group / File Slice / Base File / Log File 四层结构，并解释一次更新改了哪一层\n\nB04\nL1 · 入门\n约 7 分钟\n教学模型\n先修\nB01 的 Timeline 与快照读 ↗\n分区目录结构 ↗\n准备就绪\n点击图形查看数据\n技术详情 ↗\n操作前 · 1 个物理文件\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n当前版本 · 点击查看\nHudi Engine\n执行过程示意\n目标文件预览 · 提交前不生效\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n生成预览 · 尚未提交\n图中最多显示四个文件；完整文件清单与记录可按需展开。\nBase File（基准文件）\nLog File（增量日志）\n旧版本（待清理）\n本次新增\n01\n先看见变化，再展开原理\n\n点击「开始演示」，先观察找到分区。\n\n3\n可见记录\n1\n有效文件\n0\nLog\n本课术语\nFile Group\n定义\n\n同一 File ID 下共享一组文件版本的存储单元\n\nFile Slice\n定义\n\nBase 加若干 Log 组成的一次快照引用\n\nB"
+  },
+  "I03": {
+   "bodyLen": 1424,
+   "hasObjective": true,
+   "hasTakeaway": false,
+   "hasGlossary": true,
+   "hasLimitations": true,
+   "hasSelfcheck": true,
+   "caption": "h.\nHudi\nVisual Lab\n总览\n全部主题\n学习路径\n术语表\n学习进度\n证据库\n全部主题\n索引机制 / I03\n基础模式\n☀\n⚙ 参数\nI03 · 索引机制\nBUCKET 索引与哈希分桶\n引擎驱动 ↗\n\n学完你能 说清 BUCKET 索引如何用主键哈希把 upsert 的定位与重写限制在一个桶内\n\nI03\nL2 · 进阶\n约 5 分钟\nr26 待验证\n先修\nB06 HoodieKey = 主键 + 分区路径 ↗\nB04 File Group ↗\nI01 SIMPLE 需要匹配候选文件 ↗\n准备就绪\n点击图形查看数据\n技术详情 ↗\n待定位记录\nkey = 1001\n教学 Hash → 取模\nbucketOf(key, 4) = 3\n2024-01-01\n分区路径 · 定位范围\nhash(\"1001\") = 2088288423 2088288423 % 4 = 3只能路由到 Bucket 3\nh 从 5381 开始按字符累积 · 当前字符“1”编码 49：5381 × 33 + 49 → 177622（32 位） · 点击 Hash 查看全部步骤\nBucket 0\n1 条记录\n1002:200\nBucket 1\n1 条记录\n1003:300.25\nBucket 2\n0 条记录\n空桶\nBucket 3\n1 条记录\n1001:100.5\n1001 是已有主键：改这一行，记录数不增加。djb2 为教学算法，r26 待验证。\nBase File（基准文件）\nLog File（增量日志）\n旧版本（待清理）\n本次新增\n01\n先看见变化，再展开原理\n\n点击「开始演示」，先观察读取主键"
+  },
+  "S04": {
+   "bodyLen": 1522,
+   "hasObjective": true,
+   "hasTakeaway": false,
+   "hasGlossary": true,
+   "hasLimitations": true,
+   "hasSelfcheck": true,
+   "caption": "h.\nHudi\nVisual Lab\n总览\n全部主题\n学习路径\n术语表\n学习进度\n证据库\n全部主题\nTimeline 与表服务 / S04\n基础模式\n☀\n⚙ 参数\nS04 · Timeline 与表服务\nCompaction 执行与文件合并\n引擎驱动 ↗\n\n学完你能 说清 Compaction 合并了什么、以及它与 Clean 的职责边界\n\nS04\nL3 · 高级\n约 6 分钟\n教学模型\n先修\nS03 计划生成 ↗\nB04 File Slice ↗\nMOR 的 Log 追加 ↗\n准备就绪\n点击图形查看数据\n技术详情 ↗\n操作前 · 2 个物理文件\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n当前版本 · 点击查看\n≡ LOG FILE\n.log · 1 条记录\n1001 ¥ 200\n当前版本 · 点击查看\nCompaction Plan\n执行过程示意\n目标文件预览 · 提交前不生效\n▤ BASE FILE\n.parquet · 3 条记录\n1001 ¥ 100.5\n1002 ¥ 200\n1003 ¥ 300.25\n生成预览 · 尚未提交\n≡ LOG FILE\n.log · 1 条记录\n1001 ¥ 200\n生成预览 · 尚未提交\n图中最多显示四个文件；完整文件清单与记录可按需展开。\nBase File（基准文件）\nLog File（增量日志）\n旧版本（待清理）\n本次新增\n01\n先看见变化，再展开原理\n\n点击「开始演示」，先观察准备计划。\n\n3\n可见记录\n2\n有效文件\n1\nLog\n本课术语\n"
+  }
+ },
+ "errors": [
+  "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+ ]
+}

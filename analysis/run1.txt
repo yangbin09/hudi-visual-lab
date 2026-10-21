@@ -1,0 +1,65 @@
+﻿=== 总量 ===
+catalog entries: 80 | visual lessons: 78 | 缺课: B02,B03
+step 总数: 315
+=== 字数 ===
+平均 chars: 20.8 | 中位: 20 | p90: 28 | 最大: 62 | 最小: 6
+=== 每主题步骤数分布 ===
+{ '4': 75, '5': 3 }
+=== 术语首次出现 ===
+File Group	首次=B01 step3 (caption)「本次只更新目标 File Group，保留旧文件。」 total=11/13 summary=12
+File Slice	首次=B01 step4 (caption)「Timeline 与当前 File Slice 一起指向新版本。」 total=8/4 summary=4
+Timeline	首次=B01 step1 (caption)「普通 Parquet 文件不携带 Hudi 的事务 Timeline。」 total=10/8 summary=14
+Commit	首次=B01 step4 (stepTitle)「提交快照」 total=19/28 summary=23
+Snapshot	首次=B01 step4 (stepTitle)「提交快照」 total=11/17 summary=4
+Base File	首次=B04 step1 (node)「Base File」 total=1/2 summary=3
+Log File	首次=B04 step1 (node)「Log File」 total=0/2 summary=2
+Instant	首次=B05 step2 (caption)「Log 携带本次更新记录与写入 Instant。」 total=3/8 summary=20
+Compaction	首次=B05 step1 (caption)「Base 已由引擎的初始 Compaction 建立。」 total=4/3 summary=18
+HoodieKey	首次=B06 step1 (node)「HoodieKey」 total=0/1 summary=1
+Record Key	首次=B06 step1 (caption)「主键区分记录，分区路径限定定位范围。」 total=21/18 summary=13
+Partition Path	首次=B06 step1 (caption)「主键区分记录，分区路径限定定位范围。」 total=6/3 summary=2
+Checkpoint	首次=B07 step1 (caption)「初始提交的 Checkpoint 记录旧文件版本。」 total=8/2 summary=4
+Precombine	首次=T01 step1 (caption)「主键、precombine 和分区字段进入表定义。」 total=4/1 summary=3
+COW	首次=T01 step3 (caption)「文件落点由所选 COW/MOR 及引擎规则决定。」 total=4/0 summary=5
+MOR	首次=T01 step3 (caption)「文件落点由所选 COW/MOR 及引擎规则决定。」 total=6/0 summary=8
+HDFS	首次=T03 step4 (caption)「多级路径按多个字段依次组合；真实目录可在 HDFS 详情查看。」 total=2/5 summary=9
+Hive Sync / HMS	首次=T06 step1 (caption)「HDFS 有数据，并不代表 HMS 已同步。」 total=2/5 summary=5
+Schema	首次=T08 step4 (caption)「当前引擎未实现 Schema 演进，动画只展示校验关口。」 total=1/3 summary=2
+Incremental	首次=W03 step4 (caption)「增量结果保留 D 标记，供下游处理删除。」 total=2/4 summary=5
+Bulk Insert	首次=W04 step1 (caption)「Bulk Insert 路径不用于定位和更新既有主键。」 total=5/1 summary=2
+Clean	首次=W06 step4 (caption)「旧文件仍需遵循 Cleaner 保留窗口。」 total=5/7 summary=14
+SaveMode	首次=W07 step1 (caption)「SaveMode 决定上层数据源对已有目标的处理。」 total=3/2 summary=3
+Spark	首次=W07 step4 (caption)「本页为 API 机制示意，不模拟 Spark SaveMode 的执行。」 total=5/6 summary=8
+Bucket	首次=I03 step2 (caption)「调用现有 bucketOf；r26 的实际哈希算法待验证。」 total=22/14 summary=11
+Read Optimized	首次=Q02 step1 (caption)「读优化路径只读取 Base。」 total=1/3 summary=4
+DeltaCommit	首次=S02 step1 (caption)「MOR 的本次更新产生 DELTA_COMMIT。」 total=1/1 summary=2
+Archive	首次=S07 step3 (caption)「Archive 移动元数据，不删除数据文件。」 total=4/5 summary=8
+Rollback	首次=S08 step2 (caption)「Rollback 用于未完成事务，不撤销已完成提交。」 total=4/8 summary=7
+Pending	首次=S08 step2 (caption)「Rollback 用于未完成事务，不撤销已完成提交。」 total=12/13 summary=4
+Clustering	首次=S10 step2 (caption)「Clustering 改变文件布局，不改变业务值。」 total=2/6 summary=2
+TTL	首次=S11 step2 (stepTitle)「执行分区 TTL」 total=0/2 summary=2
+Flink	首次=F03 step2 (caption)「本地 MOR 场景追加 Log，不模拟 Flink runtime。」 total=3/3 summary=8
+Kerberos	首次=F07 step1 (node)「keytab / principal」 total=1/1 summary=1
+Metadata Table	首次=A03 step4 (caption)「当前未实现 Metadata Table，不展示虚构的性能数字。」 total=1/0 summary=1
+OCC / 并发控制	首次=A04 step4 (caption)「锁、OCC 与实际重试语义未建模，不能当成并发实测。」 total=1/0 summary=2
+=== 免责话术（步骤文案）===
+{
+  '待验证': 2,
+  '待实测': 2,
+  '教学模型': 0,
+  '模拟': 16,
+  '不连接真实集群': 4,
+  '示意 / 机制示意': 13,
+  '不伪造 / 避免虚构': 14,
+  '未实现 / 未建模': 6,
+  '假设 / 本案例': 4,
+  '仅展示 / 不能推断': 6
+}
+=== 重复对 top ===
+{ a: 'B07', b: 'Q01', capSim: 0, nodeSim: 1, titleSim: 0, score: 0.5 }
+{ a: 'W01', b: 'W02', capSim: 0, nodeSim: 1, titleSim: 0, score: 0.5 }
+{ a: 'W01', b: 'W10', capSim: 0, nodeSim: 1, titleSim: 0, score: 0.5 }
+{ a: 'W02', b: 'W10', capSim: 0, nodeSim: 1, titleSim: 0, score: 0.5 }
+{ a: 'S03', b: 'S04', capSim: 0, nodeSim: 1, titleSim: 0, score: 0.5 }
+=== 负荷 ===
+B01:4步/5术语/110字/负荷12.4  B04:5步/4术语/118字/负荷12  B05:5步/3术语/111字/负荷10.4  B06:4步/4术语/76字/负荷10.6  B07:4步/4术语/85字/负荷10.7  B08:4步/3术语/81字/负荷9.2  T01:4步/5术语/104字/负荷12.4  T02:4步/2术语/81字/负荷7.7  T03:4步/2术语/81字/负荷7.7  T04:4步/2术语/74字/负荷7.6  T05:4步/0术语/130字/负荷5.1  T06:4步/2术语/73字/负荷7.6  T07:4步/2术语/80字/负荷7.7  T08:4步/1术语/83字/负荷6.2  W01:4步/5术语/77字/负荷12.1  W02:4步/6术语/77字/负荷13.6  W03:4步/5术语/86字/负荷12.2  W04:4步/7术语/106字/负荷15.4  W05:4步/1术语/53字/负荷5.9  W06:4步/3术语/69字/负荷9.1  W07:4步/2术语/131字/负荷8.1  W08:4步/3术语/84字/负荷9.2  W09:4步/2术语/87字/负荷7.7  W10:4步/4术语/80字/负荷10.7  I01:4步/2术语/73字/负荷7.6  I02:4步/1术语/78字/负荷6.2  I03:4步/3术语/105字/负荷9.4  I04:4步/2术语/53字/负荷7.4  I05:4步/3术语/79字/负荷9.2  I06:4步/2术语/89字/负荷7.7  I07:4步/1术语/93字/负荷6.3  I08:4步/2术语/92字/负荷7.8  Q01:4步/3术语/79字/负荷9.2  Q02:4步/2术语/81字/负荷7.7  Q03:4步/2术语/80字/负荷7.7  Q04:4步/4术语/93字/负荷10.8  Q05:4步/5术语/74字/负荷12.1  Q06:4步/1术语/76字/负荷6.1  Q07:4步/3术语/103字/负荷9.4  Q08:4步/2术语/77字/负荷7.6  S01:5步/4术语/116字/负荷12  S02:4步/4术语/91字/负荷10.8  S03:4步/4术语/92字/负荷10.8  S04:4步/6术语/101字/负荷13.8  S05:4步/1术语/74字/负荷6.1  S06:4步/2术语/77字/负荷7.6  S07:4步/4术语/60字/负荷10.5  S08:4步/4术语/103字/负荷10.9  S09:4步/3术语/106字/负荷9.4  S10:4步/2术语/81字/负荷7.7  S11:4步/2术语/75字/负荷7.6  S12:4步/4术语/96字/负荷10.8  F01:4步/3术语/93字/负荷9.3  F02:4步/4术语/96字/负荷10.8  F03:4步/5术语/104字/负荷12.4  F04:4步/2术语/90字/负荷7.8  F05:4步/3术语/74字/负荷9.1  F06:4步/3术语/78字/负荷9.2  F07:4步/3术语/75字/负荷9.1  F08:4步/4术语/72字/负荷10.6  E01:4步/2术语/96字/负荷7.8  E02:4步/2术语/57字/负荷7.5  E03:4步/2术语/77字/负荷7.6  E04:4步/3术语/76字/负荷9.1  E05:4步/5术语/94字/负荷12.3  E06:4步/2术语/59字/负荷7.5  E07:4步/5术语/83字/负荷12.2  E08:4步/4术语/79字/负荷10.7  E09:4步/1术语/71字/负荷6.1  E10:4步/3术语/76字/负荷9.1  A01:4步/2术语/62字/负荷7.5  A02:4步/2术语/72字/负荷7.6  A03:4步/2术语/82字/负荷7.7  A04:4步/2术语/76字/负荷7.6  A05:4步/1术语/68字/负荷6.1  A06:4步/2术语/60字/负荷7.5  A07:4步/4术语/82字/负荷10.7  A08:4步/1术语/74字/负荷6.1

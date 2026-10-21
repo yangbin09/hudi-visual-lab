@@ -1,0 +1,512 @@
+{
+  "attempt": 1,
+  "desktop": {
+    "width": 760,
+    "emptyMode": false,
+    "viewport": {
+      "w": 1280,
+      "h": 900
+    },
+    "steps": {
+      "explain": {
+        "label": "explain",
+        "width": 760,
+        "dockScrollW": 758,
+        "dockClientW": 758,
+        "overflowers": [],
+        "pageScrollW": 1280,
+        "innerW": 1280,
+        "hostScroll": {
+          "scrollW": 1280,
+          "clientW": 1280
+        },
+        "tablist": {
+          "scrollW": 758,
+          "clientW": 758
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "true"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "false"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "false"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "false"
+          }
+        ]
+      },
+      "data": {
+        "label": "数据",
+        "width": 760,
+        "dockScrollW": 758,
+        "dockClientW": 758,
+        "overflowers": [],
+        "pageScrollW": 1280,
+        "innerW": 1280,
+        "hostScroll": {
+          "scrollW": 1280,
+          "clientW": 1280
+        },
+        "tablist": {
+          "scrollW": 758,
+          "clientW": 758
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "false"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "true"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "false"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "false"
+          }
+        ]
+      },
+      "code": {
+        "label": "代码",
+        "width": 760,
+        "dockScrollW": 758,
+        "dockClientW": 758,
+        "overflowers": [],
+        "pageScrollW": 1280,
+        "innerW": 1280,
+        "hostScroll": {
+          "scrollW": 1280,
+          "clientW": 1280
+        },
+        "tablist": {
+          "scrollW": 758,
+          "clientW": 758
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "false"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "false"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "true"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "false"
+          }
+        ]
+      },
+      "evidence": {
+        "label": "依据",
+        "width": 760,
+        "dockScrollW": 758,
+        "dockClientW": 758,
+        "overflowers": [],
+        "pageScrollW": 1280,
+        "innerW": 1280,
+        "hostScroll": {
+          "scrollW": 1280,
+          "clientW": 1280
+        },
+        "tablist": {
+          "scrollW": 758,
+          "clientW": 758
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "false"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "false"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "false"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "true"
+          }
+        ]
+      }
+    },
+    "explainText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 本步：追加更多记录 INSERT · 新增 现象 看到第二次写入再追加一个 Log，同一个 File Slice 下出现 v2；因为每次写入各自留一个 Log，所以 Log 数会随写入增长，读取时的合并成本也随之上升。 发生了什么 追加 Log：新文件 1 条。 教学节点 01 看清输入记录 输入主键 1004，金额 200，ts=20240101150200。 02 找到实际写入位置 主键在当前分区不存在，走新增路径。 03 比较记录版本 没有旧记录需要更新，不应重写无关主键。 04 追加 Log 追加 Log：新文件 1 条。 05 核对提交与保留的数据 Base 中的旧值仍不变；最新值现在位于 Log。 引擎驱动 · 操作前后状态来自同一本地引擎，回放和拖动不重复执行操作。 关键数字 本步前后有变化 数字来自引擎的前后快照与 Snapshot 查询，不是估算。 指标 操作前 操作后 变化 可见记录 3 4 +1 有效文件 2 3 +1 有效 Log 1 2 +1 旧版本文件 0 0 不变 pending 事务 0 0 不变 Timeline instant 2 3 +1 本步跟踪的主键与判断 focus key = 1004 本步变化的物理文件 新增（1） LOG · 20240101120002_0-1_20240101120002.log.1_20240101120002 自测 2 题 · 多选题需完全选对 做完再提交；得分会通过 quiz-submit 事件交给主题页记录。 共 2 题，已作答 0 题 ｜ 含多选题（多选必须完全选对才算答对） 提交答案 重做 第 1 题 本步之后，旧 Base 文件会立即消失吗？ 单选 A会，新 Base 提交后旧文件马上删除 B不会，旧文件要等 Cleaner 按保留窗口回收 C取决于是否开启了 Met",
+    "hasQuiz": true,
+    "sourceRowsBefore": 0,
+    "dataText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 HDFS 文件树 物理文件 ≠ 当前 File Slice 引用 被新版本取代、但尚未被 Cleaner 删除的文件仍在这里；点击数据文件可查看它自己的记录。 简化教学显示：简化教学显示：文件名格式未逐字节对齐 r26 的 HoodieFileNameParser。 BASE（parquet，实心方块） LOG（实心圆 + 版本号） 已被取代，待 Clean（删除线） REQUESTED / INFLIGHT（pending instant） HDFS 物理文件：3 ACTIVE：3 待 Clean（SUPERSEDED）： 0 base / log：1 / 2 合计大小：2.00 MB hudi_cow_mor_demo/ .hoodie/ .hoodie Hoodie 元文件 512 B .hoodie_0 Hoodie 元文件 512 B .hoodie_r0 Hoodie 元文件 128 B 20240101120000.deltacommit deltacommit COMPLETED 20240101120001.deltacommit deltacommit COMPLETED 20240101120002.deltacommit deltacommit COMPLETED dt=2024-01-01/ 20240101120000_0-0_2",
+    "codeText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 参考模板 3 条 · 1 种语言 模板只用于阅读与复制；本平台不执行真实 Spark SQL / Flink SQL，也未连接 r26 集群。 更新记录（upsert） 待验证 Spark SQL 复制 本页语句尚未在 r26 环境实测 —— 当前只有社区 Hudi 0.15 文档支撑，r26 上的语法与行为请以实测为准。 SET hoodie.datasource.write.operation = 'upsert'; INSERT INTO hudi_demo.hudi_cow_mor_demo (id, ts, name, amount) SELECT id, ts, name, amount FROM hudi_demo.source_table; 说明upsert 依赖索引定位「已存在主键」所在的文件：COW 重写整个 File Group，MOR 只追加一个 log file。同主键多版本时由 precombine 字段决定谁胜出。 证据 E1 Hudi 0.15.0 索引机制：SIMPLE / BLOOM / BUCKET / GLOBAL E1 Hudi 0.15.0 Merge On Read 与 Compaction 删除记录（DELETE FROM） 待验证 Spark SQL 复制 本页语句尚未在 r26 环境实测 —— 当前只有社区",
+    "evidenceText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 边界与缺口 证据等级 E1 先看这段，再看证据条目：哪些结论有文档支撑、哪些仍需 r26 实测。 证据 E1 · 社区文档 支持状态：r26 已确认 引擎驱动 本主题明确列出的限制 / 待验证点 BUCKET 分桶算法 r26 未确认（djb2 仅为教学算法） Archive / Restore 的真实耗时与阻塞条件未在集群实测 证据条目 每条结论都能追到来源；E0 表示尚无直接依据，不代表平台连过真实集群。 Hudi 0.15.0 Merge On Read 与 Compaction E1 · 社区文档 组件 Hudi 版本 0.15.0 来源类型 社区文档 证据 ID EV-COMM-MOR 核实时间 2026-10-21 原文链接https://hudi.apache.org/docs/0.15.0/performance_queries/ 预期结果 MOR 表更新写为 log file，查询时与 base file 合并；compaction 将 log 合并为新的 parquet base file。 实际结果 社区文档说明读优化查询与 compaction 语义。 源码映射（摘要） 完整映射在「代码」分区；这里只保留与结论直接相关的入口。 src/engine/operations/writes.ts → performWrite src/eng",
+    "dataChecks": {
+      "fileRows": 12,
+      "recordRows": 4,
+      "timelineTableRows": 3,
+      "hasTimelineTableHeader": true,
+      "hasTimelineAxis": true,
+      "planCards": 0,
+      "planEmptyText": true,
+      "jsonLeak": false
+    },
+    "codeChecks": {
+      "literalBackslashN": false,
+      "sourceRows": 6,
+      "sqlBlocks": 6,
+      "hasSourceMapHeading": true,
+      "langLabels": [
+        "Spark SQL",
+        "Scala",
+        "Flink"
+      ]
+    },
+    "explainChecks": {
+      "metricRows": 6,
+      "hasDelta": true,
+      "hasMoments": 5,
+      "hasFileChange": true
+    },
+    "quizChecks": {
+      "scoreBadge": "得分 100 分（2 / 2）",
+      "correctCount": 5,
+      "events": [
+        {
+          "type": "quizScore",
+          "value": 100
+        },
+        {
+          "type": "quizSubmit",
+          "value": 100
+        },
+        {
+          "type": "quizScore",
+          "value": 100
+        }
+      ],
+      "submitButtonDisabled": true
+    },
+    "collapse": {
+      "expanded": "false",
+      "bodyDisplay": "none"
+    },
+    "expand": {
+      "expanded": "true",
+      "bodyDisplay": "block"
+    },
+    "keyboardTab": {
+      "selected": "数据",
+      "activeId": "lesson-dock-tab-data",
+      "tabEvents": [
+        "explain",
+        "data",
+        "code",
+        "evidence",
+        "data",
+        "code",
+        "explain",
+        "data"
+      ]
+    },
+    "plainText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 HDFS 文件树 物理文件 ≠ 当前 File Slice 引用 被新版本取代、但尚未被 Cleaner 删除的文件仍在这里；点击数据文件可查看它自己的记录。 简化教学显示：简化教学显示：文件名格式未逐字节对齐 r26 的 HoodieFileNameParser。 BASE（parquet，实心方块） LOG（实心圆 + 版本号） 已被取代，待 Clean（删除线） REQUESTED / INFLIGHT（pending instant） HDFS 物理文件：3 ACTIVE：3 待 Clean（SUPERSEDED）： 0 base / log：1 / 2 合计大小：2.00 MB hudi_cow_mor_demo/ .hoodie/ .hoodie Hoodie 元文件 512 B .hoodie_0 Hoodie 元文件 512 B .hoodie_r0 Hoodie 元文件 128 B 20240101120000.deltacommit deltacommit COMPLETED 20240101120001.deltacommit deltacommit COMPLETED 20240101120002.deltacommit deltacommit COMPLETED dt=2024-01-01/ 20240101120000_0-0_20240101120000.log.1_20240101120001 LOG v1 1 条 1.00 MB 20240101120000_0-0_20240101120000.parquet BASE 3 条 1.3 KB 20240101120002_0-1_20240101120002.log.1_20240101120002 LOG v1 1 条 1.00 MB 命令行视角（hdfs dfs -lsR 风格文本） 逻辑记录 Snapshot 可见性口径 D 是删除标记：记录仍在物理文件里，但 Snapshot 不会再返回它。 Record Key PK id PK name amount ts dt ts precombine _hoodie_commit_time _hoodie_commit_seqno _hoodie_record_key _hoodie_partition_path _hoodie_operation 1001 1001 订单 1001 200 20240101150100 2024-01-01 20240101150100 当前生效版本 20240101"
+  },
+  "empty": {
+    "width": 720,
+    "emptyMode": true,
+    "viewport": {
+      "w": 1280,
+      "h": 900
+    },
+    "steps": {},
+    "empties": {
+      "explain": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 本步解释 还没有可解释的步骤 先播放或单步执行一次，这里会显示本步的现象、原因和关键数字。",
+      "data": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 数据 表状态还没有准备好 当前步骤没有携带表快照；先播放或单步执行一次，再回来看 HDFS、记录和 Timeline。",
+      "code": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 参考模板 无模板 模板只用于阅读与复制；本平台不执行真实 Spark SQL / Flink SQL，也未连接 r26 集群。 本主题暂时没有代码模板 机制示意类主题不提供可执行 SQL；可在「数据 / 依据」分区继",
+      "evidence": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 边界与缺口 先看这段，再看证据条目：哪些结论有文档支撑、哪些仍需 r26 实测。 本主题没有额外的边界说明 默认按现有教学模型展示；r26 的真实文件与事务行为仍需现场核对。 证据条目 每条结论都能追到来源；E0 表"
+    },
+    "hasQuizSection": false,
+    "plainText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 边界与缺口 先看这段，再看证据条目：哪些结论有文档支撑、哪些仍需 r26 实测。 本主题没有额外的边界说明 默认按现有教学模型展示；r26 的真实文件与事务行为仍需现场核对。 证据条目 每条结论都能追到来源；E0 表示尚无直接依据，不代表平台连过真实集群。 本实验暂未关联证据条目。 源码映射（摘要） 完整映射在「代码」分区；这里只保留与结论直接相关的入口。 src/engine/operations/writes.ts → performWrite src/engine/core/state.ts → mergeRecords / visibleRecords src/experiments/visual/lessons.ts → VISUAL_LESSONS / make / s"
+  },
+  "mobile": {
+    "width": 336,
+    "emptyMode": false,
+    "viewport": {
+      "w": 390,
+      "h": 844
+    },
+    "steps": {
+      "explain": {
+        "label": "explain",
+        "width": 336,
+        "dockScrollW": 334,
+        "dockClientW": 334,
+        "overflowers": [],
+        "pageScrollW": 390,
+        "innerW": 390,
+        "hostScroll": {
+          "scrollW": 390,
+          "clientW": 390
+        },
+        "tablist": {
+          "scrollW": 510,
+          "clientW": 334
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "true"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "false"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "false"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "false"
+          }
+        ]
+      },
+      "data": {
+        "label": "数据",
+        "width": 336,
+        "dockScrollW": 334,
+        "dockClientW": 334,
+        "overflowers": [],
+        "pageScrollW": 390,
+        "innerW": 390,
+        "hostScroll": {
+          "scrollW": 390,
+          "clientW": 390
+        },
+        "tablist": {
+          "scrollW": 510,
+          "clientW": 334
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "false"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "true"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "false"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "false"
+          }
+        ]
+      },
+      "code": {
+        "label": "代码",
+        "width": 336,
+        "dockScrollW": 334,
+        "dockClientW": 334,
+        "overflowers": [],
+        "pageScrollW": 390,
+        "innerW": 390,
+        "hostScroll": {
+          "scrollW": 390,
+          "clientW": 390
+        },
+        "tablist": {
+          "scrollW": 510,
+          "clientW": 334
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "false"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "false"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "true"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "false"
+          }
+        ]
+      },
+      "evidence": {
+        "label": "依据",
+        "width": 336,
+        "dockScrollW": 334,
+        "dockClientW": 334,
+        "overflowers": [],
+        "pageScrollW": 390,
+        "innerW": 390,
+        "hostScroll": {
+          "scrollW": 390,
+          "clientW": 390
+        },
+        "tablist": {
+          "scrollW": 510,
+          "clientW": 334
+        },
+        "tabs": [
+          {
+            "label": "解释",
+            "hint": "现象 / 原因 / 关键数字",
+            "selected": "false"
+          },
+          {
+            "label": "数据",
+            "hint": "HDFS / 记录 / Timeline / 计划",
+            "selected": "false"
+          },
+          {
+            "label": "代码",
+            "hint": "SQL / 源码映射",
+            "selected": "false"
+          },
+          {
+            "label": "依据",
+            "hint": "证据 / r26 差距",
+            "selected": "true"
+          }
+        ]
+      }
+    },
+    "explainText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 本步：追加更多记录 INSERT · 新增 现象 看到第二次写入再追加一个 Log，同一个 File Slice 下出现 v2；因为每次写入各自留一个 Log，所以 Log 数会随写入增长，读取时的合并成本也随之上升。 发生了什么 追加 Log：新文件 1 条。 教学节点 01 看清输入记录 输入主键 1004，金额 200，ts=20240101150200。 02 找到实际写入位置 主键在当前分区不存在，走新增路径。 03 比较记录版本 没有旧记录需要更新，不应重写无关主键。 04 追加 Log 追加 Log：新文件 1 条。 05 核对提交与保留的数据 Base 中的旧值仍不变；最新值现在位于 Log。 引擎驱动 · 操作前后状态来自同一本地引擎，回放和拖动不重复执行操作。 关键数字 本步前后有变化 数字来自引擎的前后快照与 Snapshot 查询，不是估算。 指标 操作前 操作后 变化 可见记录 3 4 +1 有效文件 2 3 +1 有效 Log 1 2 +1 旧版本文件 0 0 不变 pending 事务 0 0 不变 Timeline instant 2 3 +1 本步跟踪的主键与判断 focus key = 1004 本步变化的物理文件 新增（1） LOG · 20240101120002_0-1_20240101120002.log.1_20240101120002 自测 2 题 · 多选题需完全选对 做完再提交；得分会通过 quiz-submit 事件交给主题页记录。 共 2 题，已作答 0 题 ｜ 含多选题（多选必须完全选对才算答对） 提交答案 重做 第 1 题 本步之后，旧 Base 文件会立即消失吗？ 单选 A会，新 Base 提交后旧文件马上删除 B不会，旧文件要等 Cleaner 按保留窗口回收 C取决于是否开启了 Met",
+    "hasQuiz": true,
+    "sourceRowsBefore": 0,
+    "dataText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 HDFS 文件树 物理文件 ≠ 当前 File Slice 引用 被新版本取代、但尚未被 Cleaner 删除的文件仍在这里；点击数据文件可查看它自己的记录。 简化教学显示：简化教学显示：文件名格式未逐字节对齐 r26 的 HoodieFileNameParser。 BASE（parquet，实心方块） LOG（实心圆 + 版本号） 已被取代，待 Clean（删除线） REQUESTED / INFLIGHT（pending instant） HDFS 物理文件：3 ACTIVE：3 待 Clean（SUPERSEDED）： 0 base / log：1 / 2 合计大小：2.00 MB hudi_cow_mor_demo/ .hoodie/ .hoodie Hoodie 元文件 512 B .hoodie_0 Hoodie 元文件 512 B .hoodie_r0 Hoodie 元文件 128 B 20240101120000.deltacommit deltacommit COMPLETED 20240101120001.deltacommit deltacommit COMPLETED 20240101120002.deltacommit deltacommit COMPLETED dt=2024-01-01/ 20240101120000_0-0_2",
+    "codeText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 参考模板 3 条 · 1 种语言 模板只用于阅读与复制；本平台不执行真实 Spark SQL / Flink SQL，也未连接 r26 集群。 更新记录（upsert） 待验证 Spark SQL 复制 本页语句尚未在 r26 环境实测 —— 当前只有社区 Hudi 0.15 文档支撑，r26 上的语法与行为请以实测为准。 SET hoodie.datasource.write.operation = 'upsert'; INSERT INTO hudi_demo.hudi_cow_mor_demo (id, ts, name, amount) SELECT id, ts, name, amount FROM hudi_demo.source_table; 说明upsert 依赖索引定位「已存在主键」所在的文件：COW 重写整个 File Group，MOR 只追加一个 log file。同主键多版本时由 precombine 字段决定谁胜出。 证据 E1 Hudi 0.15.0 索引机制：SIMPLE / BLOOM / BUCKET / GLOBAL E1 Hudi 0.15.0 Merge On Read 与 Compaction 删除记录（DELETE FROM） 待验证 Spark SQL 复制 本页语句尚未在 r26 环境实测 —— 当前只有社区",
+    "evidenceText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 边界与缺口 证据等级 E1 先看这段，再看证据条目：哪些结论有文档支撑、哪些仍需 r26 实测。 证据 E1 · 社区文档 支持状态：r26 已确认 引擎驱动 本主题明确列出的限制 / 待验证点 BUCKET 分桶算法 r26 未确认（djb2 仅为教学算法） Archive / Restore 的真实耗时与阻塞条件未在集群实测 证据条目 每条结论都能追到来源；E0 表示尚无直接依据，不代表平台连过真实集群。 Hudi 0.15.0 Merge On Read 与 Compaction E1 · 社区文档 组件 Hudi 版本 0.15.0 来源类型 社区文档 证据 ID EV-COMM-MOR 核实时间 2026-10-21 原文链接https://hudi.apache.org/docs/0.15.0/performance_queries/ 预期结果 MOR 表更新写为 log file，查询时与 base file 合并；compaction 将 log 合并为新的 parquet base file。 实际结果 社区文档说明读优化查询与 compaction 语义。 源码映射（摘要） 完整映射在「代码」分区；这里只保留与结论直接相关的入口。 src/engine/operations/writes.ts → performWrite src/eng",
+    "dataChecks": {
+      "fileRows": 12,
+      "recordRows": 4,
+      "timelineTableRows": 3,
+      "hasTimelineTableHeader": true,
+      "hasTimelineAxis": true,
+      "planCards": 0,
+      "planEmptyText": true,
+      "jsonLeak": false
+    },
+    "codeChecks": {
+      "literalBackslashN": false,
+      "sourceRows": 6,
+      "sqlBlocks": 6,
+      "hasSourceMapHeading": true,
+      "langLabels": [
+        "Spark SQL",
+        "Scala",
+        "Flink"
+      ]
+    },
+    "explainChecks": {
+      "metricRows": 6,
+      "hasDelta": true,
+      "hasMoments": 5,
+      "hasFileChange": true
+    },
+    "quizChecks": {
+      "scoreBadge": "得分 100 分（2 / 2）",
+      "correctCount": 5,
+      "events": [
+        {
+          "type": "quizScore",
+          "value": 100
+        },
+        {
+          "type": "quizSubmit",
+          "value": 100
+        },
+        {
+          "type": "quizScore",
+          "value": 100
+        }
+      ],
+      "submitButtonDisabled": true
+    },
+    "collapse": {
+      "expanded": "false",
+      "bodyDisplay": "none"
+    },
+    "expand": {
+      "expanded": "true",
+      "bodyDisplay": "block"
+    },
+    "keyboardTab": {
+      "selected": "数据",
+      "activeId": "lesson-dock-tab-data",
+      "tabEvents": [
+        "explain",
+        "data",
+        "code",
+        "evidence",
+        "data",
+        "code",
+        "explain",
+        "data"
+      ]
+    },
+    "plainText": "B05 · 详情 本步数据、代码与依据都在这里，不用再开抽屉 收起 ▾ 解释 现象 / 原因 / 关键数字 数据 HDFS / 记录 / Timeline / 计划 代码 SQL / 源码映射 依据 证据 / r26 差距 HDFS 文件树 物理文件 ≠ 当前 File Slice 引用 被新版本取代、但尚未被 Cleaner 删除的文件仍在这里；点击数据文件可查看它自己的记录。 简化教学显示：简化教学显示：文件名格式未逐字节对齐 r26 的 HoodieFileNameParser。 BASE（parquet，实心方块） LOG（实心圆 + 版本号） 已被取代，待 Clean（删除线） REQUESTED / INFLIGHT（pending instant） HDFS 物理文件：3 ACTIVE：3 待 Clean（SUPERSEDED）： 0 base / log：1 / 2 合计大小：2.00 MB hudi_cow_mor_demo/ .hoodie/ .hoodie Hoodie 元文件 512 B .hoodie_0 Hoodie 元文件 512 B .hoodie_r0 Hoodie 元文件 128 B 20240101120000.deltacommit deltacommit COMPLETED 20240101120001.deltacommit deltacommit COMPLETED 20240101120002.deltacommit deltacommit COMPLETED dt=2024-01-01/ 20240101120000_0-0_20240101120000.log.1_20240101120001 LOG v1 1 条 1.00 MB 20240101120000_0-0_20240101120000.parquet BASE 3 条 1.3 KB 20240101120002_0-1_20240101120002.log.1_20240101120002 LOG v1 1 条 1.00 MB 命令行视角（hdfs dfs -lsR 风格文本） 逻辑记录 Snapshot 可见性口径 D 是删除标记：记录仍在物理文件里，但 Snapshot 不会再返回它。 Record Key PK id PK name amount ts dt ts precombine _hoodie_commit_time _hoodie_commit_seqno _hoodie_record_key _hoodie_partition_path _hoodie_operation 1001 1001 订单 1001 200 20240101150100 2024-01-01 20240101150100 当前生效版本 20240101"
+  },
+  "shots": {
+    "explain": true,
+    "data": true,
+    "code": true,
+    "evidence": true,
+    "mobile": true
+  },
+  "errors": [
+    "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

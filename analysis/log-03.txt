@@ -1,0 +1,143 @@
+﻿node : [console.error] Failed to load resource: the server responded with a status of 404 (Not Found)
+所在位置 行:1 字符: 129
++ ... ew($false); node 'D:\code\hudi演示\_analysis\audit-03-interactions.mjs' ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([console.error]...404 (Not Found):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+mobile done B05
+mobile done I03
+mobile done S04
+mobile done Q02
+mobile done S01
+mobile done E01
+wrote D:/code/hudi演示/_analysis/raw-03-interactions.json
+
+===== B02 =====
+stageTop: {"text":" 交互画布 ● Base File ● Log File ● 旧版本 点击文件查看内部记录 ↗","html":"<span data-v-2a1e45e7=\"\"><i data-v-2a1e45e7=\"\" class=\"vl-dot\"></i> 交互画布</span><span data-v-2a1e45e7=\"\">● Base File <span data-v-2a1e45e7=\"\" class=\"vl-log-legend\">● Log File</span> <span data-v-2a1e45e7=\"\" class=\"vl-old-legend\">● 旧版本</span></span><span data-v-2a1e45e7=\"\">点击文件查看内部记录 ↗</span>","spans":[{"t":" 交互画布","size":"10px","color":"rgb(147, 164, 158)","w":56,"h":16,"display":"block"},{"t":"● Base File ● Log File ● 旧版本","size":"10px","color":"rgb(122, 180, 154)","w":179,"h":16,"display":"block"},{"t":"点击文件查看内部记录 ↗","size":"10px","color":"rgb(147, 164, 158)","w":113,"h":16,"display":"block"}]}
+legend: {"text":"● Base File ● Log File ● 旧版本","size":"10px","color":"rgb(122, 180, 154)","w":179,"h":16,"bg":"rgb(21, 28, 32)"}
+actionBar: {"text":"现在试试看 ↑ Upsert 更新记录 Snapshot 读取 ① Schedule ② Compaction Cleaner","buttons":[{"t":"↑ Upsert 更新记录","w":130,"h":37,"size":"12px","disabled":false},{"t":"Snapshot 读取","w":109,"h":37,"size":"12px","disabled":false},{"t":"① Schedule","w":96,"h":37,"size":"12px","disabled":true},{"t":"② Compaction","w":113,"h":37,"size":"12px","disabled":true},{"t":"Cleaner","w":71,"h":37,"size":"12px","disabled":false}]}
+controls: {"text":"|◀ ▶ ▶| ↺ 0.5× 1× 2× 跳过动画 重置实验","controls":[{"tag":"button","t":"上一步","w":39,"h":36},{"tag":"button","t":"播放","w":34,"h":34},{"tag":"button","t":"下一步","w":39,"h":36},{"tag":"button","t":"重放","w":34,"h":36},{"tag":"select","t":"播放速度","w":54,"h":27},{"tag":"input","t":"动画进度","w":928,"h":3},{"tag":"button","t":"跳过动画","w":74,"h":35},{"tag":"button","t":"重置实验","w":74,"h":35}]}
+engineer: "全部动画 ↗\n基础模式\n☀\n⚙ 设置" -> {"nav":"全部动画 ↗\n工程师模式\n☀\n⚙ 设置","actionBar":"现在试试看\n↑ Upsert 更新记录\nSnapshot 读取\n① Schedule\n② Compaction\nCleaner\n模拟失败"}
+glyphHover: {"cursor":"pointer","aria":"BASE 20240101120000_0-0_20240101120000.parquet"} dialog: {"cls":"vl-dialog","text":"文件记录 ✕ 20240101120000_0-0_20240101120000.parquet BASE · ACTIVE · 3 条 主键 金额 precombine 1001 100.5 20240101100000 1002 200 20240101100010 1003 300.25 20240101100020 这里展示所选物理文件自己的记录，旧版本不会被替换为最新查询结果。"}
+contrast fail 1 / 43
+    1.62 12px rgb(52, 65, 63) on rgb(21, 28, 32) | / | header.vl-nav>span.vl-breadcrumb>span
+
+===== B02 mobile =====
+doc {"scrollWidth":390,"clientWidth":390,"scrollHeight":844,"bodyScrollWidth":390,"htmlOverflowX":"visible","bodyOverflowX":"visible"} svg {"w":356,"h":319,"vb":"0 0 1120 290","aria":"COW 重写 Base，MOR 追加 Log 的双路径动画"}
+legend spans [{"t":" 交互画布","w":56,"h":16,"size":"10px","display":"block"},{"t":"● Base File ● Log File ● 旧版本","w":179,"h":16,"size":"10px","display":"block"},{"t":"点击文件查看内部记录 ↗","w":0,"h":0,"size":"10px","display":"none"}]
+action [{"t":"↑ Upsert 更新记录","w":101,"h":32},{"t":"Snapshot 读取","w":84,"h":32},{"t":"① Schedule","w":72,"h":32},{"t":"② Compaction","w":87,"h":32},{"t":"Cleaner","w":52,"h":32}]
+controls [{"tag":"button","t":"上一步","w":29,"h":36},{"tag":"button","t":"播放","w":34,"h":34},{"tag":"button","t":"下一步","w":29,"h":36},{"tag":"button","t":"重放","w":24,"h":36},{"tag":"input","t":"动画进度","w":19,"h":3},{"tag":"button","t":"跳过动画","w":60,"h":31},{"tag":"button","t":"重置实验","w":60,"h":31}]
+canvasBox {"w":356,"h":319}
+caption "00 从这里开始 · 约 1 分钟 准备好了吗？更新同一条记录，观察两种文件策略。"
+
+===== mobile B05 =====
+docW 390 clientW 390 overflow 4 [{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":399,"right":519,"w":120},{"tag":"span","path":"div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span","left":424,"right":442,"w":18},{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":528,"right":648,"w":120}]
+svg {"w":364,"h":344,"vb":"0 0 1080 425","scene":"files","aria":"B05 初始 Base 动画"} scale {"scale":0.337,"rendered10px":3.4,"rendered12px":4,"contentW":364,"contentH":143}
+taps 24/24 [{"tag":"a","t":"h. Hudi Visual Lab","w":79,"h":31,"y":18},{"tag":"a","t":"← 全部动画","w":53,"h":16,"y":26},{"tag":"button","t":"基础模式","w":54,"h":30,"y":19},{"tag":"button","t":"切换深浅主题","w":22,"h":30,"y":19},{"tag":"button","t":"⚙ 参数","w":45,"h":30,"y":19},{"tag":"button","t":"引擎驱动 ↗","w":64,"h":30,"y":93},{"tag":"button","t":"技术详情 ↗","w":53,"h":16,"y":166},{"tag":"g","t":"BASE 20240101120000_0-0_20240101120000.parquet","w":59,"h":37,"y":309}]
+drawer {"dialog":{"w":367,"h":844,"x":23},"drawer":{"w":366,"scrollH":629,"clientH":629,"scrollW":366,"clientW":366},"tabs":[{"t":"技术详情","w":76,"h":37,"top":77,"size":"12px"},{"t":"运行日志","w":76,"h":37,"top":77,"size":"12px"},{"t":"HDFS","w":60,"h":37,"top":77,"size":"12px"},{"t":"Timeline","w":77,"h":37,"top":77,"size":"12px"},{"t":"SQL","w":51,"h":37,"top":120,"size":"12px"},{"t":"源码透视","w":76,"h":37,"top":120,"size":"12px"},{"t":"证据","w":52,"h":37,"top":120,"size":"12px"}],"tabRows":2,"tabStripW":76}
+logTab {"scrollH":225,"clientH":225,"text":"运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"}
+paramDlg {"w":366,"scrollH":409,"clientH":409,"inputs":[{"t":"记录主键","w":330,"h":35},{"t":"更新金额","w":330,"h":35},{"t":"减少动态效果，改用单步观察","w":13,"h":13}],"html":"参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"}
+contrastFail 0 []
+
+===== mobile I03 =====
+docW 390 clientW 390 overflow 2 [{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":399,"right":519,"w":120},{"tag":"span","path":"div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span","left":413,"right":431,"w":18}]
+svg {"w":364,"h":344,"vb":"0 0 1080 425","scene":"index","aria":"I03 读取主键 动画"} scale {"scale":0.337,"rendered10px":3.4,"rendered12px":4,"contentW":364,"contentH":143}
+taps 26/26 [{"tag":"a","t":"h. Hudi Visual Lab","w":79,"h":31,"y":18},{"tag":"a","t":"← 全部动画","w":53,"h":16,"y":26},{"tag":"button","t":"基础模式","w":54,"h":30,"y":19},{"tag":"button","t":"切换深浅主题","w":22,"h":30,"y":19},{"tag":"button","t":"⚙ 参数","w":45,"h":30,"y":19},{"tag":"button","t":"引擎驱动 ↗","w":64,"h":30,"y":93},{"tag":"button","t":"技术详情 ↗","w":53,"h":16,"y":166},{"tag":"g","t":"查看哈希计算","w":80,"h":28,"y":310}]
+drawer {"dialog":{"w":367,"h":844,"x":23},"drawer":{"w":366,"scrollH":654,"clientH":654,"scrollW":366,"clientW":366},"tabs":[{"t":"技术详情","w":76,"h":37,"top":77,"size":"12px"},{"t":"运行日志","w":76,"h":37,"top":77,"size":"12px"},{"t":"HDFS","w":60,"h":37,"top":77,"size":"12px"},{"t":"Timeline","w":77,"h":37,"top":77,"size":"12px"},{"t":"SQL","w":51,"h":37,"top":120,"size":"12px"},{"t":"源码透视","w":76,"h":37,"top":120,"size":"12px"},{"t":"证据","w":52,"h":37,"top":120,"size":"12px"}],"tabRows":2,"tabStripW":76}
+logTab {"scrollH":225,"clientH":225,"text":"运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"}
+paramDlg {"w":366,"scrollH":488,"clientH":488,"inputs":[{"t":"记录主键","w":330,"h":35},{"t":"Bucket 数量","w":330,"h":35},{"t":"分区值","w":330,"h":35},{"t":"减少动态效果，改用单步观察","w":13,"h":13}],"html":"参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 Bucket 数量 分区值 减少动态效果，改用单步观察 应用参数并重置"}
+contrastFail 0 []
+
+===== mobile S04 =====
+docW 390 clientW 390 overflow 2 [{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":399,"right":519,"w":120},{"tag":"span","path":"div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span","left":419,"right":437,"w":18}]
+svg {"w":364,"h":344,"vb":"0 0 1080 425","scene":"files","aria":"S04 准备计划 动画"} scale {"scale":0.337,"rendered10px":3.4,"rendered12px":4,"contentW":364,"contentH":143}
+taps 25/25 [{"tag":"a","t":"h. Hudi Visual Lab","w":79,"h":31,"y":18},{"tag":"a","t":"← 全部动画","w":53,"h":16,"y":26},{"tag":"button","t":"基础模式","w":54,"h":30,"y":19},{"tag":"button","t":"切换深浅主题","w":22,"h":30,"y":19},{"tag":"button","t":"⚙ 参数","w":45,"h":30,"y":19},{"tag":"button","t":"引擎驱动 ↗","w":64,"h":30,"y":93},{"tag":"button","t":"技术详情 ↗","w":53,"h":16,"y":166},{"tag":"g","t":"BASE 20240101120000_0-0_20240101120000.parquet","w":59,"h":37,"y":309}]
+drawer {"dialog":{"w":367,"h":844,"x":23},"drawer":{"w":366,"scrollH":629,"clientH":629,"scrollW":366,"clientW":366},"tabs":[{"t":"技术详情","w":76,"h":37,"top":77,"size":"12px"},{"t":"运行日志","w":76,"h":37,"top":77,"size":"12px"},{"t":"HDFS","w":60,"h":37,"top":77,"size":"12px"},{"t":"Timeline","w":77,"h":37,"top":77,"size":"12px"},{"t":"SQL","w":51,"h":37,"top":120,"size":"12px"},{"t":"源码透视","w":76,"h":37,"top":120,"size":"12px"},{"t":"证据","w":52,"h":37,"top":120,"size":"12px"}],"tabRows":2,"tabStripW":76}
+logTab {"scrollH":225,"clientH":225,"text":"运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"}
+paramDlg {"w":366,"scrollH":409,"clientH":409,"inputs":[{"t":"记录主键","w":330,"h":35},{"t":"更新金额","w":330,"h":35},{"t":"减少动态效果，改用单步观察","w":13,"h":13}],"html":"参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"}
+contrastFail 0 []
+
+===== mobile Q02 =====
+docW 390 clientW 390 overflow 2 [{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":399,"right":519,"w":120},{"tag":"span","path":"div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span","left":408,"right":413,"w":6}]
+svg {"w":364,"h":344,"vb":"0 0 1080 335","scene":"query","aria":"Q02 选择读优化 动画"} scale {"scale":0.337,"rendered10px":3.4,"rendered12px":4,"contentW":364,"contentH":113}
+taps 26/26 [{"tag":"a","t":"h. Hudi Visual Lab","w":79,"h":31,"y":18},{"tag":"a","t":"← 全部动画","w":53,"h":16,"y":26},{"tag":"button","t":"基础模式","w":54,"h":30,"y":19},{"tag":"button","t":"切换深浅主题","w":22,"h":30,"y":19},{"tag":"button","t":"⚙ 参数","w":45,"h":30,"y":19},{"tag":"button","t":"引擎驱动 ↗","w":64,"h":30,"y":93},{"tag":"button","t":"技术详情 ↗","w":53,"h":16,"y":166},{"tag":"g","t":"读取文件 20240101120000_0-0_20240101120000.parquet","w":100,"h":17,"y":325}]
+drawer {"dialog":{"w":367,"h":844,"x":23},"drawer":{"w":366,"scrollH":629,"clientH":629,"scrollW":366,"clientW":366},"tabs":[{"t":"技术详情","w":76,"h":37,"top":77,"size":"12px"},{"t":"运行日志","w":76,"h":37,"top":77,"size":"12px"},{"t":"HDFS","w":60,"h":37,"top":77,"size":"12px"},{"t":"Timeline","w":77,"h":37,"top":77,"size":"12px"},{"t":"SQL","w":51,"h":37,"top":120,"size":"12px"},{"t":"源码透视","w":76,"h":37,"top":120,"size":"12px"},{"t":"证据","w":52,"h":37,"top":120,"size":"12px"}],"tabRows":2,"tabStripW":76}
+logTab {"scrollH":225,"clientH":225,"text":"运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"}
+paramDlg {"w":366,"scrollH":409,"clientH":409,"inputs":[{"t":"记录主键","w":330,"h":35},{"t":"更新金额","w":330,"h":35},{"t":"减少动态效果，改用单步观察","w":13,"h":13}],"html":"参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"}
+contrastFail 0 []
+
+===== mobile S01 =====
+docW 390 clientW 390 overflow 4 [{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":399,"right":519,"w":120},{"tag":"span","path":"div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span","left":419,"right":437,"w":18},{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":528,"right":648,"w":120}]
+svg {"w":364,"h":344,"vb":"0 0 1080 335","scene":"timeline","aria":"S01 先产生待合并更新 动画"} scale {"scale":0.337,"rendered10px":3.4,"rendered12px":4,"contentW":364,"contentH":113}
+taps 26/26 [{"tag":"a","t":"h. Hudi Visual Lab","w":79,"h":31,"y":18},{"tag":"a","t":"← 全部动画","w":53,"h":16,"y":26},{"tag":"button","t":"基础模式","w":54,"h":30,"y":19},{"tag":"button","t":"切换深浅主题","w":22,"h":30,"y":19},{"tag":"button","t":"⚙ 参数","w":45,"h":30,"y":19},{"tag":"button","t":"引擎驱动 ↗","w":64,"h":30,"y":93},{"tag":"button","t":"技术详情 ↗","w":53,"h":16,"y":166},{"tag":"g","t":"输入版本 1001 BASE 100.5","w":105,"h":9,"y":344}]
+drawer {"dialog":{"w":367,"h":844,"x":23},"drawer":{"w":366,"scrollH":692,"clientH":692,"scrollW":366,"clientW":366},"tabs":[{"t":"技术详情","w":76,"h":37,"top":77,"size":"12px"},{"t":"运行日志","w":76,"h":37,"top":77,"size":"12px"},{"t":"HDFS","w":60,"h":37,"top":77,"size":"12px"},{"t":"Timeline","w":77,"h":37,"top":77,"size":"12px"},{"t":"SQL","w":51,"h":37,"top":120,"size":"12px"},{"t":"源码透视","w":76,"h":37,"top":120,"size":"12px"},{"t":"证据","w":52,"h":37,"top":120,"size":"12px"}],"tabRows":2,"tabStripW":76}
+logTab {"scrollH":225,"clientH":225,"text":"运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"}
+paramDlg {"w":366,"scrollH":409,"clientH":409,"inputs":[{"t":"记录主键","w":330,"h":35},{"t":"更新金额","w":330,"h":35},{"t":"减少动态效果，改用单步观察","w":13,"h":13}],"html":"参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 更新金额 减少动态效果，改用单步观察 应用参数并重置"}
+contrastFail 0 []
+
+===== mobile E01 =====
+docW 390 clientW 390 overflow 2 [{"tag":"button","path":"div > div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button","left":399,"right":519,"w":120},{"tag":"span","path":"div.visual-lab.lesson-page > main.lesson-main > nav.lesson-chapters > button > span","left":419,"right":437,"w":18}]
+svg {"w":364,"h":294,"vb":"0 0 1080 280","scene":"flow","aria":"表索引与作业索引的定位方式对照"} scale {"scale":0.337,"rendered10px":3.4,"rendered12px":4,"contentW":364,"contentH":94}
+taps 24/24 [{"tag":"a","t":"h. Hudi Visual Lab","w":79,"h":31,"y":18},{"tag":"a","t":"← 全部动画","w":53,"h":16,"y":26},{"tag":"button","t":"基础模式","w":54,"h":30,"y":19},{"tag":"button","t":"切换深浅主题","w":22,"h":30,"y":19},{"tag":"button","t":"⚙ 参数","w":45,"h":30,"y":19},{"tag":"button","t":"机制示意 ↗","w":64,"h":30,"y":93},{"tag":"button","t":"技术详情 ↗","w":53,"h":16,"y":166},{"tag":"select","t":"本次作业索引","w":92,"h":30,"y":204}]
+drawer {"dialog":{"w":367,"h":844,"x":23},"drawer":{"w":366,"scrollH":629,"clientH":629,"scrollW":366,"clientW":366},"tabs":[{"t":"技术详情","w":76,"h":37,"top":77,"size":"12px"},{"t":"运行日志","w":76,"h":37,"top":77,"size":"12px"},{"t":"HDFS","w":60,"h":37,"top":77,"size":"12px"},{"t":"Timeline","w":77,"h":37,"top":77,"size":"12px"},{"t":"SQL","w":51,"h":37,"top":120,"size":"12px"},{"t":"源码透视","w":76,"h":37,"top":120,"size":"12px"},{"t":"证据","w":52,"h":37,"top":120,"size":"12px"}],"tabRows":2,"tabStripW":76}
+logTab {"scrollH":225,"clientH":225,"text":"运行日志 ✕ 技术详情 运行日志 HDFS Timeline SQL 源码透视 证据 以下是截至当前展示位置的本地模拟日志，未连接真实集群。"}
+paramDlg {"w":366,"scrollH":409,"clientH":409,"inputs":[{"t":"记录主键","w":330,"h":35},{"t":"Bucket 数量","w":330,"h":35},{"t":"减少动态效果，改用单步观察","w":13,"h":13}],"html":"参数 ✕ 应用后重新建立场景并重置演示，不会在播放中途替换数据。 记录主键 Bucket 数量 减少动态效果，改用单步观察 应用参数并重置"}
+contrastFail 0 []
+
+===== light homeLightAudit ===== rootBg rgb(244, 246, 240) fail 10 / 21
+    3.75 17px rgb(115, 129, 120) on rgb(244, 246, 240) | Visual Lab | header.vl-nav>a.router-link-active>b
+    3.75 10px rgb(115, 129, 120) on rgb(244, 246, 240) | LEARN BY SEEING. UNDERSTAN | div.visual-home>main.vh-main>div.vl-eyebrow
+    3.75 14px rgb(115, 129, 120) on rgb(244, 246, 240) | 一个操作，一次变化。用交互动画建立你的 Hudi 直 | div.visual-home>main.vh-main>p.vh-intro
+    4.09 10px rgb(115, 129, 120) on rgb(255, 255, 255) | 精选实验 / 约 1 分钟建立直觉 | a.vh-feature>div>span.vl-eyebrow
+    4.09 13px rgb(115, 129, 120) on rgb(255, 255, 255) | 并排观察 COW 重写 Base、MOR 追加 Lo | a.vh-feature>div>p
+    3.75 12px rgb(115, 129, 120) on rgb(244, 246, 240) | 全部 80 个动画 → | main.vh-main>div.vh-topics-head>a.vh-all-topics
+    3.75 9px rgb(115, 129, 120) on rgb(244, 246, 240) | 01 / 动画实验 | div.vh-topics>a>span.vl-eyebrow
+    3.75 13px rgb(115, 129, 120) on rgb(244, 246, 240) | ↗ | a>h3>span
+    3.75 9px rgb(115, 129, 120) on rgb(244, 246, 240) | HUAWEI MRS r26 · 纯浏览器模拟 | div.visual-home>footer.vl-footer>span
+    3.75 10px rgb(115, 129, 120) on rgb(244, 246, 240) | 看动画 → 亲手操作 → 解释 → 代码 | div.visual-home>footer.vl-footer>span
+svgFill null
+
+===== light catalogLightAudit ===== rootBg rgb(244, 246, 240) fail 10 / 22
+    3.75 17px rgb(115, 129, 120) on rgb(244, 246, 240) | Visual Lab | header.vl-nav>a.vl-brand>b
+    3.75 10px rgb(115, 129, 120) on rgb(244, 246, 240) | 80 个主题 · 9 个模块 · 先观察，再操作 | div.catalog-heading>div>span.vl-eyebrow
+    3.75 13px rgb(115, 129, 120) on rgb(244, 246, 240) | 选一个你想弄懂的问题，从动画开始。 | div.catalog-heading>div>p
+    3.75 11px rgb(115, 129, 120) on rgb(244, 246, 240) | 80 个可播放主题 | main.catalog-main>div.catalog-status>span
+    3.75 11px rgb(115, 129, 120) on rgb(244, 246, 240) | 演示范围 | main.catalog-main>div.catalog-status>label
+    4.09 9px rgb(115, 129, 120) on rgb(255, 255, 255) | B01 · 基础原理 | a.catalog-card>div.catalog-card-meta>span
+    4.09 10px rgb(115, 129, 120) on rgb(255, 255, 255) | 教学模型 | a.catalog-card>div.catalog-card-bottom>span
+    3.75 11px rgb(115, 129, 120) on rgb(244, 246, 240) | 引擎驱动展示本地模拟结果；机制示意展示组件关系与处理 | div.visual-home>main.catalog-main>p.catalog-footnote
+    3.75 9px rgb(115, 129, 120) on rgb(244, 246, 240) | HUAWEI MRS r26 · 纯浏览器模拟 | div.visual-home>footer.vl-footer>span
+    3.75 10px rgb(115, 129, 120) on rgb(244, 246, 240) | 看动画 → 亲手操作 → 解释 → 代码 | div.visual-home>footer.vl-footer>span
+svgFill null
+
+===== light lessonLightAudit ===== rootBg rgb(244, 246, 240) fail 22 / 50
+    3.75 17px rgb(115, 129, 120) on rgb(244, 246, 240) | Visual Lab | header.vl-nav>a.vl-brand>b
+    3.75 12px rgb(115, 129, 120) on rgb(244, 246, 240) | ← 全部动画 | div.visual-lab>header.vl-nav>a.lesson-nav-link
+    3.75 12px rgb(115, 129, 120) on rgb(244, 246, 240) | 基础原理 / B05 | div.visual-lab>header.vl-nav>span.vl-breadcrumb
+    3.75 10px rgb(115, 129, 120) on rgb(244, 246, 240) | B05 · 基础原理 | div.lesson-heading>div>span.vl-eyebrow
+    3.75 11px rgb(115, 129, 120) on rgb(244, 246, 240) | 引擎驱动 ↗ | main.lesson-main>div.lesson-heading>button.lesson-model
+    4.09 10px rgb(115, 129, 120) on rgb(255, 255, 255) | 正在演示 | section.lesson-stage>div.lesson-stage-bar>span
+    4.09 10px rgb(115, 129, 120) on rgb(255, 255, 255) | 技术详情 ↗ | section.lesson-stage>div.lesson-stage-bar>button
+    4.09 13px rgb(115, 129, 120) on rgb(255, 255, 255) | 操作前 · 1 个物理文件 | svg>g>text
+    4.09 17px rgb(115, 129, 120) on rgb(255, 255, 255) | Hudi Engine | svg>g>text
+    4.09 12px rgb(115, 129, 120) on rgb(255, 255, 255) | 执行过程示意 | svg>g>text
+svgFill {"rects":[{"cls":null,"fill":"url(\"#lesson-grid\")"},{"cls":"file-body base-body","fill":"rgb(230, 242, 232)"},{"cls":"record-highlight","fill":"rgb(188, 235, 210)"},{"cls":"record-bg","fill":"rgb(255, 255, 255)"},{"cls":"record-bg","fill":"rgb(255, 255, 255)"},{"cls":"ac-worker","fill":"rgb(230, 242, 232)"}],"texts":[{"cls":"ac-section","fill":"rgb(115, 129, 120)","size":"13px"},{"cls":"file-type","fill":"rgb(38, 61, 52)","size":"12px"},{"cls":"file-format","fill":"rgb(115, 129, 120)","size":"10px"},{"cls":"record-text","fill":"rgb(38, 61, 52)","size":"11px"},{"cls":"record-text","fill":"rgb(38, 61, 52)","size":"11px"},{"cls":"record-text","fill":"rgb(38, 61, 52)","size":"11px"},{"cls":"file-format","fill":"rgb(115, 129, 120)","size":"10px"},{"cls":"ac-worker-title","fill":"rgb(38, 61, 52)","size":"17px"}]}
+
+===== progress gap =====
+{
+ "lsBefore": [],
+ "progBefore": null,
+ "progAfter": null,
+ "tableRows": 0,
+ "emptyText": "暂无数据",
+ "countCards": [
+  "0个",
+  "0个",
+  "0分",
+  "0个"
+ ],
+ "progressHead": "H Hudi Lab 总览 证据库 学习进度 MRS 3.1.0-350-r26 | Hudi 0.15.0-h0.cbu.mrs.350.r26 Spark 3.3.1-h0.cbu.mrs.350.r26 · Flink 1.17.x 纯浏览器模拟 · 未连接真实集群 浅色 实验目录 « A 基础原理 2/8 ▾ B01 Hudi 与 Hive 普通 Parquet 表的区别 B02 COW 表的数据写入与文件重写 B03 MOR 表的数据写入与 Log 合并 B04 File Group、File ID、File Slice 结构 B05 Base File 与 Log File 的版本关系 B06 Record Key、Partition Path、HoodieKey B07 Hudi 的 MVCC 与 Snapshot 可见性 B08 Hudi 表在 HDFS 中的完整目录结构 ",
+ "hasAnyVisited": true
+}
+evidenceSearch [{"q":"Log","rows":2,"hitText":"命中 2 / 15 条","empty":null},{"q":"bucket","rows":2,"hitText":"命中 2 / 15 条","empty":null},{"q":"r26","rows":10,"hitText":"命中 10 / 15 条","empty":null},{"q":"zzzz","rows":0,"hitText":"命中 0 / 15 条","empty":"暂无数据"}]

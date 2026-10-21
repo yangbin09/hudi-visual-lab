@@ -1,0 +1,3133 @@
+{
+ "desktop": {
+  "home": {
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "domTextCount": 92,
+   "minFontDom": 12,
+   "under12Dom": 0,
+   "under12DomSamples": [],
+   "fontHistogram": {
+    "12": 47,
+    "13": 4,
+    "14": 30,
+    "17": 2,
+    "20": 3,
+    "25": 1,
+    "29": 2,
+    "52": 3
+   },
+   "tapTotal": 33,
+   "tapUnder44": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 4 条路径 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 80 个动画 →",
+     "w": 97,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 9 个模块 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    }
+   ],
+   "tapUnder44Count": 11,
+   "tapUnder44Ratio": 33,
+   "tapUnder44Samples": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 4 条路径 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 80 个动画 →",
+     "w": 97,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 9 个模块 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    }
+   ],
+   "keyBoxes": {
+    "lessonStage": null,
+    "stageBar": null,
+    "stageBarBtn": null,
+    "explanation": null,
+    "chapters": null,
+    "chapterBtn": null,
+    "playbar": null,
+    "playbarBtn": null,
+    "playbarNext": null,
+    "model": null,
+    "bottom": null,
+    "footerBtn": null,
+    "navBtn": {
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "objectiveBar": null,
+    "termCard": null,
+    "legend": null,
+    "canvasArea": null,
+    "canvas": null
+   },
+   "scroll": {
+    "docScrollH": 2081,
+    "docScrollW": 1440,
+    "innerH": 900,
+    "innerW": 1440,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#a8bab2",
+    "--vl-bg": "#151c20",
+    "--vl-panel": "#1b2429",
+    "--vl-base-bg": "#203e35",
+    "--vl-log-bg": "#423c2a",
+    "--vl-ink": "#e2eae4",
+    "--vl-surface-2": "#222d33",
+    "--vl-term-bg": "#1f2a30",
+    "--vl-legend-bg": "#1d272c",
+    "--vl-border-strong": "#5d6f6a",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": false,
+   "theme": "dark",
+   "pageBg": "rgb(13, 17, 23)",
+   "title": "总览 · Hudi Lab"
+  },
+  "homeLight": {
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "domTextCount": 92,
+   "minFontDom": 12,
+   "under12Dom": 0,
+   "under12DomSamples": [],
+   "fontHistogram": {
+    "12": 47,
+    "13": 4,
+    "14": 30,
+    "17": 2,
+    "20": 3,
+    "25": 1,
+    "29": 2,
+    "52": 3
+   },
+   "tapTotal": 33,
+   "tapUnder44": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 33,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 4 条路径 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 80 个动画 →",
+     "w": 97,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 9 个模块 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    }
+   ],
+   "tapUnder44Count": 11,
+   "tapUnder44Ratio": 33,
+   "tapUnder44Samples": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 33,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 4 条路径 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 80 个动画 →",
+     "w": 97,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部 9 个模块 →",
+     "w": 90,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    }
+   ],
+   "keyBoxes": {
+    "lessonStage": null,
+    "stageBar": null,
+    "stageBarBtn": null,
+    "explanation": null,
+    "chapters": null,
+    "chapterBtn": null,
+    "playbar": null,
+    "playbarBtn": null,
+    "playbarNext": null,
+    "model": null,
+    "bottom": null,
+    "footerBtn": null,
+    "navBtn": {
+     "w": 33,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "objectiveBar": null,
+    "termCard": null,
+    "legend": null,
+    "canvasArea": null,
+    "canvas": null
+   },
+   "scroll": {
+    "docScrollH": 2081,
+    "docScrollW": 1440,
+    "innerH": 900,
+    "innerW": 1440,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#5b6a61",
+    "--vl-bg": "#f4f6f0",
+    "--vl-panel": "#fff",
+    "--vl-base-bg": "#e6f2e8",
+    "--vl-log-bg": "#faf0d9",
+    "--vl-ink": "#263d34",
+    "--vl-surface-2": "#eef2ec",
+    "--vl-term-bg": "#f3f6f1",
+    "--vl-legend-bg": "#f7faf5",
+    "--vl-border-strong": "#7f8d82",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": false,
+   "theme": "light",
+   "pageBg": "rgb(246, 248, 250)"
+  },
+  "catalog": {
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "domTextCount": 761,
+   "minFontDom": 12,
+   "under12Dom": 0,
+   "under12DomSamples": [],
+   "fontHistogram": {
+    "12": 674,
+    "13": 2,
+    "15": 80,
+    "17": 2,
+    "24": 1,
+    "25": 1,
+    "34": 1
+   },
+   "tapTotal": 101,
+   "tapUnder44": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "input",
+     "t": "搜索动画实验",
+     "w": 244,
+     "h": 21,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "全部 80",
+     "w": 75,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "基础原理 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "建表与分区 8",
+     "w": 104,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "数据写入 10",
+     "w": 99,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "索引机制 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "数据查询 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Timeline 与表服务 12",
+     "w": 151,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Spark / Flink 集成 8",
+     "w": 143,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "故障实验室 10",
+     "w": 111,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "高级专题 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "select",
+     "t": "演示范围",
+     "w": 123,
+     "h": 32,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "select",
+     "t": "学习状态",
+     "w": 70,
+     "h": 32,
+     "minH": "0px",
+     "minW": "0px"
+    }
+   ],
+   "tapUnder44Count": 21,
+   "tapUnder44Ratio": 21,
+   "tapUnder44Samples": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "input",
+     "t": "搜索动画实验",
+     "w": 244,
+     "h": 21,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "全部 80",
+     "w": 75,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "基础原理 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "建表与分区 8",
+     "w": 104,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "数据写入 10",
+     "w": 99,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "索引机制 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "数据查询 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Timeline 与表服务 12",
+     "w": 151,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Spark / Flink 集成 8",
+     "w": 143,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "故障实验室 10",
+     "w": 111,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "高级专题 8",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "select",
+     "t": "演示范围",
+     "w": 123,
+     "h": 32,
+     "minH": "0px",
+     "minW": "0px"
+    }
+   ],
+   "keyBoxes": {
+    "lessonStage": null,
+    "stageBar": null,
+    "stageBarBtn": null,
+    "explanation": null,
+    "chapters": null,
+    "chapterBtn": null,
+    "playbar": null,
+    "playbarBtn": null,
+    "playbarNext": null,
+    "model": null,
+    "bottom": null,
+    "footerBtn": null,
+    "navBtn": {
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "objectiveBar": null,
+    "termCard": null,
+    "legend": null,
+    "canvasArea": null,
+    "canvas": null
+   },
+   "scroll": {
+    "docScrollH": 9839,
+    "docScrollW": 1440,
+    "innerH": 900,
+    "innerW": 1440,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#a8bab2",
+    "--vl-bg": "#151c20",
+    "--vl-panel": "#1b2429",
+    "--vl-base-bg": "#203e35",
+    "--vl-log-bg": "#423c2a",
+    "--vl-ink": "#e2eae4",
+    "--vl-surface-2": "#222d33",
+    "--vl-term-bg": "#1f2a30",
+    "--vl-legend-bg": "#1d272c",
+    "--vl-border-strong": "#5d6f6a",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": false,
+   "theme": "dark",
+   "pageBg": "rgb(13, 17, 23)"
+  },
+  "lesson": {
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "domTextCount": 124,
+   "minFontDom": 11,
+   "under12Dom": 6,
+   "under12DomSamples": [
+    {
+     "t": "第 1 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 2 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 3 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    }
+   ],
+   "fontHistogram": {
+    "11": 6,
+    "12": 61,
+    "13": 38,
+    "14": 6,
+    "15": 1,
+    "16": 7,
+    "17": 2,
+    "25": 1,
+    "27": 2
+   },
+   "svg": {
+    "box": {
+     "w": 1050,
+     "h": 326
+    },
+    "viewBox": [
+     1080,
+     335
+    ],
+    "scale": 0.972,
+    "minDeclared": 12,
+    "minRendered": 11.7,
+    "textCount": 26
+   },
+   "tapTotal": 47,
+   "tapUnder44": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 48,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "基础模式",
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "⚙ 参数",
+     "w": 67,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "引擎驱动 ↗",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "B04 Base File / Log File / File Sl",
+     "w": 231,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "MOR 的写入路径 ↗",
+     "w": 130,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "技术详情 ↗",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Base File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Log File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Instant定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Compaction定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "播放演示",
+     "w": 127,
+     "h": 37,
+     "minH": "auto",
+     "minW": "127px"
+    },
+    {
+     "tag": "button",
+     "t": "上一步",
+     "w": 41,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "下一步",
+     "w": 41,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "input",
+     "t": "动画进度",
+     "w": 893,
+     "h": 4,
+     "minH": "auto",
+     "minW": "60px"
+    },
+    {
+     "tag": "select",
+     "t": "播放速度",
+     "w": 65,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "重置",
+     "w": 52,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "跳到结果",
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "1初始 Base",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "2追加一版 Log",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "3追加更多记录",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "4计划合并",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "5产生新 Base",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "提交答案",
+     "w": 80,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "重做",
+     "w": 54,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "opt-0-0初始 Base",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-0-1追加一版 Log",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-0-2追加更多记录",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-1-0追加一版 Log",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-1-1初始 Base",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-1-2追加更多记录",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-2-0追加更多记录",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-2-1初始 Base",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-2-2追加一版 Log",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "a",
+     "t": "← 上一主题",
+     "w": 69,
+     "h": 22,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "下一主题 →",
+     "w": 69,
+     "h": 22,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "← 上一主题",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "下一主题 →",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "教学模型 · r26 行为边界 ↗",
+     "w": 144,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    }
+   ],
+   "tapUnder44Count": 47,
+   "tapUnder44Ratio": 100,
+   "tapUnder44Samples": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 48,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "基础模式",
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 37,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "⚙ 参数",
+     "w": 67,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "引擎驱动 ↗",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "B04 Base File / Log File / File Sl",
+     "w": 231,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "MOR 的写入路径 ↗",
+     "w": 130,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "技术详情 ↗",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Base File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Log File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Instant定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Compaction定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "播放演示",
+     "w": 127,
+     "h": 37,
+     "minH": "auto",
+     "minW": "127px"
+    }
+   ],
+   "keyBoxes": {
+    "lessonStage": {
+     "w": 1052,
+     "h": 504,
+     "minH": "504px",
+     "font": "14px"
+    },
+    "stageBar": {
+     "w": 1050,
+     "h": 40,
+     "minH": "40px",
+     "font": "12px"
+    },
+    "stageBarBtn": {
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "explanation": {
+     "w": 1050,
+     "h": 88,
+     "minH": "88px",
+     "font": "14px"
+    },
+    "chapters": {
+     "w": 1368,
+     "h": 51,
+     "minH": "auto",
+     "font": "14px"
+    },
+    "chapterBtn": {
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "playbar": {
+     "w": 1368,
+     "h": 65,
+     "minH": "auto",
+     "font": "14px"
+    },
+    "playbarBtn": {
+     "w": 127,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "playbarNext": {
+     "w": 41,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "model": {
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "bottom": {
+     "w": 1368,
+     "h": 32,
+     "minH": "32px",
+     "font": "12px"
+    },
+    "footerBtn": {
+     "w": 144,
+     "h": 19,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "navBtn": {
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "objectiveBar": {
+     "w": 1368,
+     "h": 129,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "termCard": {
+     "w": 298,
+     "h": 240,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "legend": {
+     "w": 1050,
+     "h": 37,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "canvasArea": {
+     "w": 1050,
+     "h": 327,
+     "scrollW": 1050,
+     "overflowX": "visible"
+    },
+    "canvas": {
+     "w": 1050,
+     "h": 326
+    }
+   },
+   "scroll": {
+    "docScrollH": 2108,
+    "docScrollW": 1440,
+    "innerH": 900,
+    "innerW": 1440,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#a8bab2",
+    "--vl-bg": "#151c20",
+    "--vl-panel": "#1b2429",
+    "--vl-base-bg": "#203e35",
+    "--vl-log-bg": "#423c2a",
+    "--vl-ink": "#e2eae4",
+    "--vl-surface-2": "#222d33",
+    "--vl-term-bg": "#1f2a30",
+    "--vl-legend-bg": "#1d272c",
+    "--vl-border-strong": "#5d6f6a",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": false,
+   "theme": "dark",
+   "pageBg": "rgb(13, 17, 23)",
+   "title": "Base File 与 Log File 的版本关系 · Hudi Lab",
+   "broken": false,
+   "hasBody": 1,
+   "hasObjective": 1,
+   "hasLegend": 1,
+   "hasTermcard": 4
+  },
+  "lessonLight": {
+   "viewport": {
+    "w": 1440,
+    "h": 900
+   },
+   "domTextCount": 124,
+   "minFontDom": 11,
+   "under12Dom": 6,
+   "under12DomSamples": [
+    {
+     "t": "第 1 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 2 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 3 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    }
+   ],
+   "fontHistogram": {
+    "11": 6,
+    "12": 61,
+    "13": 38,
+    "14": 6,
+    "15": 1,
+    "16": 7,
+    "17": 2,
+    "25": 1,
+    "27": 2
+   },
+   "svg": {
+    "box": {
+     "w": 1050,
+     "h": 326
+    },
+    "viewBox": [
+     1080,
+     335
+    ],
+    "scale": 0.972,
+    "minDeclared": 12,
+    "minRendered": 11.7,
+    "textCount": 26
+   },
+   "tapTotal": 47,
+   "tapUnder44": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 48,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "基础模式",
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 33,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "⚙ 参数",
+     "w": 67,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "引擎驱动 ↗",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "B04 Base File / Log File / File Sl",
+     "w": 231,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "MOR 的写入路径 ↗",
+     "w": 130,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "技术详情 ↗",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Base File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Log File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Instant定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Compaction定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "播放演示",
+     "w": 127,
+     "h": 37,
+     "minH": "auto",
+     "minW": "127px"
+    },
+    {
+     "tag": "button",
+     "t": "上一步",
+     "w": 41,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "下一步",
+     "w": 41,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "input",
+     "t": "动画进度",
+     "w": 893,
+     "h": 4,
+     "minH": "auto",
+     "minW": "60px"
+    },
+    {
+     "tag": "select",
+     "t": "播放速度",
+     "w": 65,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "重置",
+     "w": 52,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "跳到结果",
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "1初始 Base",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "2追加一版 Log",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "3追加更多记录",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "4计划合并",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "5产生新 Base",
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "提交答案",
+     "w": 80,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "重做",
+     "w": 54,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "opt-0-0初始 Base",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-0-1追加一版 Log",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-0-2追加更多记录",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-1-0追加一版 Log",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-1-1初始 Base",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-1-2追加更多记录",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-2-0追加更多记录",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-2-1初始 Base",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "opt-2-2追加一版 Log",
+     "w": 1296,
+     "h": 40,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "a",
+     "t": "← 上一主题",
+     "w": 69,
+     "h": 22,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "下一主题 →",
+     "w": 69,
+     "h": 22,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "← 上一主题",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "下一主题 →",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "教学模型 · r26 行为边界 ↗",
+     "w": 144,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    }
+   ],
+   "tapUnder44Count": 47,
+   "tapUnder44Ratio": 100,
+   "tapUnder44Samples": [
+    {
+     "tag": "a",
+     "t": "Hudi Visual Lab 首页",
+     "w": 170,
+     "h": 31,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "总览",
+     "w": 44,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习路径",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "术语表",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "学习进度",
+     "w": 68,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "证据库",
+     "w": 56,
+     "h": 35,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "a",
+     "t": "全部主题",
+     "w": 48,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "基础模式",
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "切换深浅主题",
+     "w": 33,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "⚙ 参数",
+     "w": 67,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "引擎驱动 ↗",
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "B04 Base File / Log File / File Sl",
+     "w": 231,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "MOR 的写入路径 ↗",
+     "w": 130,
+     "h": 27,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "技术详情 ↗",
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "minW": "auto"
+    },
+    {
+     "tag": "button",
+     "t": "Base File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Log File定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Instant定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "Compaction定义",
+     "w": 272,
+     "h": 27,
+     "minH": "0px",
+     "minW": "0px"
+    },
+    {
+     "tag": "button",
+     "t": "播放演示",
+     "w": 127,
+     "h": 37,
+     "minH": "auto",
+     "minW": "127px"
+    }
+   ],
+   "keyBoxes": {
+    "lessonStage": {
+     "w": 1052,
+     "h": 504,
+     "minH": "504px",
+     "font": "14px"
+    },
+    "stageBar": {
+     "w": 1050,
+     "h": 40,
+     "minH": "40px",
+     "font": "12px"
+    },
+    "stageBarBtn": {
+     "w": 64,
+     "h": 19,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "explanation": {
+     "w": 1050,
+     "h": 88,
+     "minH": "88px",
+     "font": "14px"
+    },
+    "chapters": {
+     "w": 1368,
+     "h": 51,
+     "minH": "auto",
+     "font": "14px"
+    },
+    "chapterBtn": {
+     "w": 266,
+     "h": 37,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "playbar": {
+     "w": 1368,
+     "h": 65,
+     "minH": "auto",
+     "font": "14px"
+    },
+    "playbarBtn": {
+     "w": 127,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "playbarNext": {
+     "w": 41,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "model": {
+     "w": 92,
+     "h": 37,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "bottom": {
+     "w": 1368,
+     "h": 32,
+     "minH": "32px",
+     "font": "12px"
+    },
+    "footerBtn": {
+     "w": 144,
+     "h": 19,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "navBtn": {
+     "w": 78,
+     "h": 37,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "objectiveBar": {
+     "w": 1368,
+     "h": 129,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "termCard": {
+     "w": 298,
+     "h": 240,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "legend": {
+     "w": 1050,
+     "h": 37,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "canvasArea": {
+     "w": 1050,
+     "h": 327,
+     "scrollW": 1050,
+     "overflowX": "visible"
+    },
+    "canvas": {
+     "w": 1050,
+     "h": 326
+    }
+   },
+   "scroll": {
+    "docScrollH": 2108,
+    "docScrollW": 1440,
+    "innerH": 900,
+    "innerW": 1440,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#5b6a61",
+    "--vl-bg": "#f4f6f0",
+    "--vl-panel": "#fff",
+    "--vl-base-bg": "#e6f2e8",
+    "--vl-log-bg": "#faf0d9",
+    "--vl-ink": "#263d34",
+    "--vl-surface-2": "#eef2ec",
+    "--vl-term-bg": "#f3f6f1",
+    "--vl-legend-bg": "#f7faf5",
+    "--vl-border-strong": "#7f8d82",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": false,
+   "theme": "light",
+   "pageBg": "rgb(246, 248, 250)"
+  }
+ },
+ "mobile": {
+  "home": {
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "domTextCount": 91,
+   "minFontDom": 12,
+   "under12Dom": 0,
+   "under12DomSamples": [],
+   "fontHistogram": {
+    "12": 46,
+    "13": 4,
+    "14": 30,
+    "17": 2,
+    "20": 3,
+    "23": 2,
+    "25": 1,
+    "40": 3
+   },
+   "tapTotal": 33,
+   "tapUnder44": [],
+   "tapUnder44Count": 0,
+   "tapUnder44Ratio": 0,
+   "tapUnder44Samples": [],
+   "keyBoxes": {
+    "lessonStage": null,
+    "stageBar": null,
+    "stageBarBtn": null,
+    "explanation": null,
+    "chapters": null,
+    "chapterBtn": null,
+    "playbar": null,
+    "playbarBtn": null,
+    "playbarNext": null,
+    "model": null,
+    "bottom": null,
+    "footerBtn": null,
+    "navBtn": {
+     "w": 44,
+     "h": 44,
+     "minH": "44px",
+     "font": "13px"
+    },
+    "objectiveBar": null,
+    "termCard": null,
+    "legend": null,
+    "canvasArea": null,
+    "canvas": null
+   },
+   "scroll": {
+    "docScrollH": 3762,
+    "docScrollW": 390,
+    "innerH": 844,
+    "innerW": 390,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#a8bab2",
+    "--vl-bg": "#151c20",
+    "--vl-panel": "#1b2429",
+    "--vl-base-bg": "#203e35",
+    "--vl-log-bg": "#423c2a",
+    "--vl-ink": "#e2eae4",
+    "--vl-surface-2": "#222d33",
+    "--vl-term-bg": "#1f2a30",
+    "--vl-legend-bg": "#1d272c",
+    "--vl-border-strong": "#5d6f6a",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": true,
+   "theme": "dark",
+   "pageBg": "rgb(13, 17, 23)",
+   "title": "总览 · Hudi Lab"
+  },
+  "homeLight": {
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "domTextCount": 91,
+   "minFontDom": 12,
+   "under12Dom": 0,
+   "under12DomSamples": [],
+   "fontHistogram": {
+    "12": 46,
+    "13": 4,
+    "14": 30,
+    "17": 2,
+    "20": 3,
+    "23": 2,
+    "25": 1,
+    "40": 3
+   },
+   "tapTotal": 33,
+   "tapUnder44": [],
+   "tapUnder44Count": 0,
+   "tapUnder44Ratio": 0,
+   "tapUnder44Samples": [],
+   "keyBoxes": {
+    "lessonStage": null,
+    "stageBar": null,
+    "stageBarBtn": null,
+    "explanation": null,
+    "chapters": null,
+    "chapterBtn": null,
+    "playbar": null,
+    "playbarBtn": null,
+    "playbarNext": null,
+    "model": null,
+    "bottom": null,
+    "footerBtn": null,
+    "navBtn": {
+     "w": 44,
+     "h": 44,
+     "minH": "44px",
+     "font": "13px"
+    },
+    "objectiveBar": null,
+    "termCard": null,
+    "legend": null,
+    "canvasArea": null,
+    "canvas": null
+   },
+   "scroll": {
+    "docScrollH": 3762,
+    "docScrollW": 390,
+    "innerH": 844,
+    "innerW": 390,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#5b6a61",
+    "--vl-bg": "#f4f6f0",
+    "--vl-panel": "#fff",
+    "--vl-base-bg": "#e6f2e8",
+    "--vl-log-bg": "#faf0d9",
+    "--vl-ink": "#263d34",
+    "--vl-surface-2": "#eef2ec",
+    "--vl-term-bg": "#f3f6f1",
+    "--vl-legend-bg": "#f7faf5",
+    "--vl-border-strong": "#7f8d82",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": true,
+   "theme": "light",
+   "pageBg": "rgb(246, 248, 250)"
+  },
+  "catalog": {
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "domTextCount": 759,
+   "minFontDom": 12,
+   "under12Dom": 0,
+   "under12DomSamples": [],
+   "fontHistogram": {
+    "12": 672,
+    "13": 2,
+    "15": 80,
+    "17": 2,
+    "24": 1,
+    "25": 1,
+    "34": 1
+   },
+   "tapTotal": 101,
+   "tapUnder44": [],
+   "tapUnder44Count": 0,
+   "tapUnder44Ratio": 0,
+   "tapUnder44Samples": [],
+   "keyBoxes": {
+    "lessonStage": null,
+    "stageBar": null,
+    "stageBarBtn": null,
+    "explanation": null,
+    "chapters": null,
+    "chapterBtn": null,
+    "playbar": null,
+    "playbarBtn": null,
+    "playbarNext": null,
+    "model": null,
+    "bottom": null,
+    "footerBtn": null,
+    "navBtn": {
+     "w": 44,
+     "h": 44,
+     "minH": "44px",
+     "font": "13px"
+    },
+    "objectiveBar": null,
+    "termCard": null,
+    "legend": null,
+    "canvasArea": null,
+    "canvas": null
+   },
+   "scroll": {
+    "docScrollH": 28549,
+    "docScrollW": 390,
+    "innerH": 844,
+    "innerW": 390,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#a8bab2",
+    "--vl-bg": "#151c20",
+    "--vl-panel": "#1b2429",
+    "--vl-base-bg": "#203e35",
+    "--vl-log-bg": "#423c2a",
+    "--vl-ink": "#e2eae4",
+    "--vl-surface-2": "#222d33",
+    "--vl-term-bg": "#1f2a30",
+    "--vl-legend-bg": "#1d272c",
+    "--vl-border-strong": "#5d6f6a",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": true,
+   "theme": "dark",
+   "pageBg": "rgb(13, 17, 23)"
+  },
+  "lesson": {
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "domTextCount": 113,
+   "minFontDom": 11,
+   "under12Dom": 6,
+   "under12DomSamples": [
+    {
+     "t": "第 1 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 2 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 3 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    }
+   ],
+   "fontHistogram": {
+    "11": 6,
+    "12": 57,
+    "13": 35,
+    "14": 6,
+    "15": 2,
+    "16": 4,
+    "18": 1,
+    "25": 1,
+    "27": 1
+   },
+   "svg": {
+    "box": {
+     "w": 900,
+     "h": 279
+    },
+    "viewBox": [
+     1080,
+     335
+    ],
+    "scale": 0.833,
+    "minDeclared": 12,
+    "minRendered": 10,
+    "textCount": 26
+   },
+   "tapTotal": 46,
+   "tapUnder44": [],
+   "tapUnder44Count": 0,
+   "tapUnder44Ratio": 0,
+   "tapUnder44Samples": [],
+   "keyBoxes": {
+    "lessonStage": {
+     "w": 366,
+     "h": 515,
+     "minH": "340px",
+     "font": "14px"
+    },
+    "stageBar": {
+     "w": 364,
+     "h": 53,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "stageBarBtn": {
+     "w": 80,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "explanation": {
+     "w": 364,
+     "h": 98,
+     "minH": "88px",
+     "font": "14px"
+    },
+    "chapters": {
+     "w": 366,
+     "h": 58,
+     "minH": "auto",
+     "font": "14px"
+    },
+    "chapterBtn": {
+     "w": 120,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "playbar": {
+     "w": 366,
+     "h": 101,
+     "minH": "65px",
+     "font": "14px"
+    },
+    "playbarBtn": {
+     "w": 110,
+     "h": 44,
+     "minH": "44px",
+     "font": "13px"
+    },
+    "playbarNext": {
+     "w": 44,
+     "h": 44,
+     "minH": "44px",
+     "font": "13px"
+    },
+    "model": {
+     "w": 80,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "bottom": {
+     "w": 366,
+     "h": 45,
+     "minH": "45px",
+     "font": "12px"
+    },
+    "footerBtn": {
+     "w": 160,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "navBtn": {
+     "w": 62,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "objectiveBar": {
+     "w": 366,
+     "h": 223,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "termCard": {
+     "w": 306,
+     "h": 240,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "legend": {
+     "w": 364,
+     "h": 62,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "canvasArea": {
+     "w": 364,
+     "h": 290,
+     "scrollW": 924,
+     "overflowX": "auto"
+    },
+    "canvas": {
+     "w": 900,
+     "h": 279
+    }
+   },
+   "scroll": {
+    "docScrollH": 3791,
+    "docScrollW": 390,
+    "innerH": 844,
+    "innerW": 390,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#a8bab2",
+    "--vl-bg": "#151c20",
+    "--vl-panel": "#1b2429",
+    "--vl-base-bg": "#203e35",
+    "--vl-log-bg": "#423c2a",
+    "--vl-ink": "#e2eae4",
+    "--vl-surface-2": "#222d33",
+    "--vl-term-bg": "#1f2a30",
+    "--vl-legend-bg": "#1d272c",
+    "--vl-border-strong": "#5d6f6a",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": true,
+   "theme": "dark",
+   "pageBg": "rgb(13, 17, 23)",
+   "title": "Base File 与 Log File 的版本关系 · Hudi Lab",
+   "broken": false,
+   "hasBody": 1,
+   "hasObjective": 1,
+   "hasLegend": 1,
+   "hasTermcard": 4,
+   "afterScrollLeft": {
+    "scrollLeft": 200,
+    "scrollW": 924,
+    "clientW": 364
+   }
+  },
+  "lessonLight": {
+   "viewport": {
+    "w": 390,
+    "h": 844
+   },
+   "domTextCount": 113,
+   "minFontDom": 11,
+   "under12Dom": 6,
+   "under12DomSamples": [
+    {
+     "t": "第 1 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 2 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    },
+    {
+     "t": "第 3 题",
+     "fs": 11,
+     "cls": "mt-0.5 text-[11px] font-semibold text-[v"
+    },
+    {
+     "t": "单选",
+     "fs": 11,
+     "cls": "rounded border border-[var(--color-hudi-"
+    }
+   ],
+   "fontHistogram": {
+    "11": 6,
+    "12": 57,
+    "13": 35,
+    "14": 6,
+    "15": 2,
+    "16": 4,
+    "18": 1,
+    "25": 1,
+    "27": 1
+   },
+   "svg": {
+    "box": {
+     "w": 900,
+     "h": 279
+    },
+    "viewBox": [
+     1080,
+     335
+    ],
+    "scale": 0.833,
+    "minDeclared": 12,
+    "minRendered": 10,
+    "textCount": 26
+   },
+   "tapTotal": 46,
+   "tapUnder44": [],
+   "tapUnder44Count": 0,
+   "tapUnder44Ratio": 0,
+   "tapUnder44Samples": [],
+   "keyBoxes": {
+    "lessonStage": {
+     "w": 366,
+     "h": 515,
+     "minH": "340px",
+     "font": "14px"
+    },
+    "stageBar": {
+     "w": 364,
+     "h": 53,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "stageBarBtn": {
+     "w": 80,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "explanation": {
+     "w": 364,
+     "h": 98,
+     "minH": "88px",
+     "font": "14px"
+    },
+    "chapters": {
+     "w": 366,
+     "h": 58,
+     "minH": "auto",
+     "font": "14px"
+    },
+    "chapterBtn": {
+     "w": 120,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "playbar": {
+     "w": 366,
+     "h": 101,
+     "minH": "65px",
+     "font": "14px"
+    },
+    "playbarBtn": {
+     "w": 110,
+     "h": 44,
+     "minH": "44px",
+     "font": "13px"
+    },
+    "playbarNext": {
+     "w": 44,
+     "h": 44,
+     "minH": "44px",
+     "font": "13px"
+    },
+    "model": {
+     "w": 80,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "bottom": {
+     "w": 366,
+     "h": 45,
+     "minH": "45px",
+     "font": "12px"
+    },
+    "footerBtn": {
+     "w": 160,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "navBtn": {
+     "w": 62,
+     "h": 44,
+     "minH": "44px",
+     "font": "12px"
+    },
+    "objectiveBar": {
+     "w": 366,
+     "h": 223,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "termCard": {
+     "w": 306,
+     "h": 240,
+     "minH": "auto",
+     "font": "13px"
+    },
+    "legend": {
+     "w": 364,
+     "h": 62,
+     "minH": "auto",
+     "font": "12px"
+    },
+    "canvasArea": {
+     "w": 364,
+     "h": 290,
+     "scrollW": 924,
+     "overflowX": "auto"
+    },
+    "canvas": {
+     "w": 900,
+     "h": 279
+    }
+   },
+   "scroll": {
+    "docScrollH": 3791,
+    "docScrollW": 390,
+    "innerH": 844,
+    "innerW": 390,
+    "canScrollY": true,
+    "canScrollX": false
+   },
+   "tokens": {
+    "--vl-muted": "#5b6a61",
+    "--vl-bg": "#f4f6f0",
+    "--vl-panel": "#fff",
+    "--vl-base-bg": "#e6f2e8",
+    "--vl-log-bg": "#faf0d9",
+    "--vl-ink": "#263d34",
+    "--vl-surface-2": "#eef2ec",
+    "--vl-term-bg": "#f3f6f1",
+    "--vl-legend-bg": "#f7faf5",
+    "--vl-border-strong": "#7f8d82",
+    "--vl-fs-xs": "12px",
+    "--vl-fs-sm": "13px",
+    "--vl-fs-md": "14px",
+    "--vl-tap": "44px",
+    "--vl-focus": "#2f7d5a"
+   },
+   "coarse": true,
+   "theme": "light",
+   "pageBg": "rgb(246, 248, 250)"
+  }
+ },
+ "contrast": {
+  "desktopDark": {
+   "muted on bg": 8.48,
+   "muted on panel": 7.76,
+   "muted on base-bg": 5.73,
+   "muted on log-bg": 5.41,
+   "ink on bg": 14.05,
+   "ink on term-bg": 11.96,
+   "muted on surface-2": 6.93,
+   "muted on legend-bg": 7.49,
+   "focus on bg": 3.45,
+   "focus on bg(light)": 3.45
+  },
+  "desktopLight": {
+   "muted on bg": 5.24,
+   "muted on panel": null,
+   "muted on base-bg": 4.96,
+   "muted on log-bg": 5.04,
+   "ink on bg": 10.72,
+   "ink on term-bg": 10.7,
+   "muted on surface-2": 5.04,
+   "muted on legend-bg": 5.42,
+   "focus on bg": 4.59,
+   "focus on bg(light)": 4.59
+  },
+  "mobileDark": {
+   "muted on bg": 8.48,
+   "muted on panel": 7.76,
+   "muted on base-bg": 5.73,
+   "muted on log-bg": 5.41,
+   "ink on bg": 14.05,
+   "ink on term-bg": 11.96,
+   "muted on surface-2": 6.93,
+   "muted on legend-bg": 7.49,
+   "focus on bg": 3.45,
+   "focus on bg(light)": 3.45
+  },
+  "mobileLight": {
+   "muted on bg": 5.24,
+   "muted on panel": null,
+   "muted on base-bg": 4.96,
+   "muted on log-bg": 5.04,
+   "ink on bg": 10.72,
+   "ink on term-bg": 10.7,
+   "muted on surface-2": 5.04,
+   "muted on legend-bg": 5.42,
+   "focus on bg": 4.59,
+   "focus on bg(light)": 4.59
+  },
+  "b02MobileDark": null,
+  "b02MobileLight": null
+ }
+}

@@ -1,0 +1,8779 @@
+{
+ "catalogCount": 80,
+ "lessonCount": 78,
+ "missingLessons": [
+  "B02",
+  "B03"
+ ],
+ "perLesson": [
+  {
+   "id": "B01",
+   "module": "A",
+   "order": 0,
+   "kind": "files",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "更新记录",
+    "Hudi Writer",
+    "文件版本",
+    "Timeline"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "同一份数据",
+    "写入更新",
+    "生成新版本",
+    "提交快照"
+   ],
+   "captions": [
+    "普通 Parquet 文件不携带 Hudi 的事务 Timeline。",
+    "让更新记录进入 Hudi 写入路径。",
+    "本次只更新目标 File Group，保留旧文件。",
+    "Timeline 与当前 File Slice 一起指向新版本。"
+   ],
+   "captionChars": [
+    35,
+    18,
+    25,
+    32
+   ],
+   "captionZh": [
+    10,
+    11,
+    12,
+    10
+   ],
+   "totalChars": 110,
+   "totalZh": 43,
+   "operations": [
+    null,
+    null,
+    "upsert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "同一份数据",
+    "写入更新",
+    "生成新版本",
+    "提交快照"
+   ]
+  },
+  {
+   "id": "B04",
+   "module": "A",
+   "order": 3,
+   "kind": "files",
+   "seed": "mor",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "分区",
+    "File Group",
+    "Base File",
+    "Log File"
+   ],
+   "steps": 5,
+   "stepTitles": [
+    "找到分区",
+    "查看 File Slice",
+    "追加新版本",
+    "重建 Slice",
+    "切换 Base"
+   ],
+   "captions": [
+    "先从分区进入一个 File Group。",
+    "当前 File Slice 引用一个 Base 与零个或多个 Log。",
+    "更新追加为 Log，仍属于当前 File Group。",
+    "先生成计划。",
+    "执行计划，新的 Base 取代旧 Slice 中的文件引用。"
+   ],
+   "captionChars": [
+    20,
+    35,
+    27,
+    6,
+    30
+   ],
+   "captionZh": [
+    8,
+    12,
+    10,
+    5,
+    15
+   ],
+   "totalChars": 118,
+   "totalZh": 50,
+   "operations": [
+    null,
+    null,
+    "upsert",
+    "schedule",
+    "compact"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "找到分区",
+    "查看 File Slice",
+    "追加新版本",
+    "重建 Slice",
+    "切换 Base"
+   ]
+  },
+  {
+   "id": "B05",
+   "module": "A",
+   "order": 4,
+   "kind": "files",
+   "seed": "mor",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "Base instant",
+    "Log v1",
+    "Log v2",
+    "新 Base"
+   ],
+   "steps": 5,
+   "stepTitles": [
+    "初始 Base",
+    "追加一版 Log",
+    "追加更多记录",
+    "计划合并",
+    "产生新 Base"
+   ],
+   "captions": [
+    "Base 已由引擎的初始 Compaction 建立。",
+    "Log 携带本次更新记录与写入 Instant。",
+    "第二次写入又增加一版 Log。",
+    "计划记录待合并的 File Group。",
+    "旧文件仍物理存在，当前 Slice 已引用新文件。"
+   ],
+   "captionChars": [
+    27,
+    24,
+    15,
+    20,
+    25
+   ],
+   "captionZh": [
+    9,
+    11,
+    10,
+    8,
+    16
+   ],
+   "totalChars": 111,
+   "totalZh": 54,
+   "operations": [
+    null,
+    "upsert",
+    "insert",
+    "schedule",
+    "compact"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "初始 Base",
+    "追加一版 Log",
+    "追加更多记录",
+    "计划合并",
+    "产生新 Base"
+   ]
+  },
+  {
+   "id": "B06",
+   "module": "A",
+   "order": 5,
+   "kind": "index",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "Record Key",
+    "Partition Path",
+    "HoodieKey",
+    "File Group"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "记录是谁",
+    "组合定位信息",
+    "修改分区",
+    "查看两个分区"
+   ],
+   "captions": [
+    "主键区分记录，分区路径限定定位范围。",
+    "观察主键和分区路径一起进入定位过程。",
+    "本地非全局索引示例向另一个分区写入同名主键。",
+    "同名主键在两个分区形成不同定位信息。"
+   ],
+   "captionChars": [
+    18,
+    18,
+    22,
+    18
+   ],
+   "captionZh": [
+    16,
+    17,
+    21,
+    17
+   ],
+   "totalChars": 76,
+   "totalZh": 71,
+   "operations": [
+    null,
+    null,
+    "cross-partition",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "partition"
+   ],
+   "titles": [
+    "记录是谁",
+    "组合定位信息",
+    "修改分区",
+    "查看两个分区"
+   ]
+  },
+  {
+   "id": "B07",
+   "module": "A",
+   "order": 6,
+   "kind": "query",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "读取请求",
+    "选择文件",
+    "归并版本",
+    "返回记录"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "保留旧快照",
+    "产生更新",
+    "读取当前版本",
+    "读取历史版本"
+   ],
+   "captions": [
+    "初始提交的 Checkpoint 记录旧文件版本。",
+    "当前版本改为新的金额。",
+    "Snapshot 读取当前 File Slice。",
+    "选择初始 Checkpoint，查看更新前的值。"
+   ],
+   "captionChars": [
+    25,
+    11,
+    25,
+    24
+   ],
+   "captionZh": [
+    12,
+    10,
+    4,
+    11
+   ],
+   "totalChars": 85,
+   "totalZh": 37,
+   "operations": [
+    null,
+    "upsert",
+    "snapshot",
+    "history"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "保留旧快照",
+    "产生更新",
+    "读取当前版本",
+    "读取历史版本"
+   ]
+  },
+  {
+   "id": "B08",
+   "module": "A",
+   "order": 7,
+   "kind": "schema",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "表根目录",
+    "分区目录",
+    "数据文件",
+    ".hoodie"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "展开根目录",
+    "进入分区",
+    "增加文件",
+    "查看元数据"
+   ],
+   "captions": [
+    "根目录同时容纳数据目录与 Hudi 元数据目录。",
+    "分区路径来自当前表的分区字段。",
+    "写入产生数据文件，并增加提交信息。",
+    "文件清单与 Timeline 可在技术详情中核对。"
+   ],
+   "captionChars": [
+    24,
+    15,
+    17,
+    25
+   ],
+   "captionZh": [
+    17,
+    14,
+    15,
+    14
+   ],
+   "totalChars": 81,
+   "totalZh": 60,
+   "operations": [
+    null,
+    null,
+    "insert",
+    "metadata"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "展开根目录",
+    "进入分区",
+    "增加文件",
+    "查看元数据"
+   ]
+  },
+  {
+   "id": "T01",
+   "module": "B",
+   "order": 8,
+   "kind": "schema",
+   "seed": "empty",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "字段定义",
+    "表类型",
+    "表配置",
+    "空表",
+    "首批数据"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "组合字段",
+    "创建表",
+    "第一次写入",
+    "查看结果"
+   ],
+   "captions": [
+    "主键、precombine 和分区字段进入表定义。",
+    "CREATE_TABLE 建立空表元信息，此时没有数据文件。",
+    "文件落点由所选 COW/MOR 及引擎规则决定。",
+    "点击生成的文件或打开 Timeline 查看状态。"
+   ],
+   "captionChars": [
+    25,
+    30,
+    24,
+    25
+   ],
+   "captionZh": [
+    12,
+    15,
+    14,
+    14
+   ],
+   "totalChars": 104,
+   "totalZh": 55,
+   "operations": [
+    null,
+    "create",
+    "insert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "tableType",
+    "partition"
+   ],
+   "titles": [
+    "组合字段",
+    "创建表",
+    "第一次写入",
+    "查看结果"
+   ]
+  },
+  {
+   "id": "T02",
+   "module": "B",
+   "order": 9,
+   "kind": "files",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "主键",
+    "同键多版本",
+    "precombine",
+    "胜出记录"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "同一个主键",
+    "两个候选版本",
+    "乱序旧消息",
+    "查看胜出记录"
+   ],
+   "captions": [
+    "主键确定身份，precombine 确定版本顺序。",
+    "同批次写入两条同键记录，ts 较大的胜出。",
+    "再写入 ts 更小的版本，观察金额不会倒退。",
+    "最终结果直接来自引擎归并。"
+   ],
+   "captionChars": [
+    25,
+    21,
+    22,
+    13
+   ],
+   "captionZh": [
+    12,
+    16,
+    16,
+    12
+   ],
+   "totalChars": 81,
+   "totalZh": 56,
+   "operations": [
+    null,
+    "duplicates",
+    "stale",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "同一个主键",
+    "两个候选版本",
+    "乱序旧消息",
+    "查看胜出记录"
+   ]
+  },
+  {
+   "id": "T03",
+   "module": "B",
+   "order": 10,
+   "kind": "schema",
+   "seed": "empty",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "dt 字段",
+    "region 字段",
+    "分区路径",
+    "分区文件"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "单层分区",
+    "写入第一个分区",
+    "写入另一个分区",
+    "多级分区示意"
+   ],
+   "captions": [
+    "当前实验使用 dt 分区；字段值生成分区路径。",
+    "把记录写入设置中的分区。",
+    "同一个表可以拥有多个独立分区。",
+    "多级路径按多个字段依次组合；真实目录可在 HDFS 详情查看。"
+   ],
+   "captionChars": [
+    23,
+    12,
+    15,
+    31
+   ],
+   "captionZh": [
+    17,
+    11,
+    14,
+    23
+   ],
+   "totalChars": 81,
+   "totalZh": 65,
+   "operations": [
+    null,
+    "insert",
+    "cross-partition",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "partition",
+    "tableType"
+   ],
+   "titles": [
+    "单层分区",
+    "写入第一个分区",
+    "写入另一个分区",
+    "多级分区示意"
+   ]
+  },
+  {
+   "id": "T04",
+   "module": "B",
+   "order": 11,
+   "kind": "schema",
+   "seed": "empty",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "输入分区值",
+    "空值检查",
+    "默认分区",
+    "文件落盘"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "输入为空",
+    "写入空分区",
+    "正常分区写入",
+    "观察重复身份"
+   ],
+   "captions": [
+    "本地模型把空 dt 推导为空分区路径。",
+    "引擎发出默认分区相关提示，具体目录名待实测。",
+    "相同主键写入有值的分区。",
+    "分区级索引不能把这两个定位自动当成同一个。"
+   ],
+   "captionChars": [
+    19,
+    22,
+    12,
+    21
+   ],
+   "captionZh": [
+    14,
+    20,
+    11,
+    20
+   ],
+   "totalChars": 74,
+   "totalZh": 65,
+   "operations": [
+    null,
+    "empty-partition",
+    "cross-partition",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "partition"
+   ],
+   "titles": [
+    "输入为空",
+    "写入空分区",
+    "正常分区写入",
+    "观察重复身份"
+   ]
+  },
+  {
+   "id": "T05",
+   "module": "B",
+   "order": 12,
+   "kind": "schema",
+   "seed": "cow",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "分区列 dt",
+    "目录 dt=值",
+    "数据列",
+    "读取视图"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "目录与字段",
+    "展示三种配置",
+    "目录传播",
+    "边界说明"
+   ],
+   "captions": [
+    "Hive Style 的目录命名和字段保留是不同维度。",
+    "NONE、HIVE_STYLE_PARTITIONING、STYLE_PARTITIONING_ONLY 在配置卡片中对比。",
+    "观察分区值从字段传到目录表示。",
+    "该动画为配置机制示意，不模拟三种模式下真实文件编码。"
+   ],
+   "captionChars": [
+    27,
+    62,
+    15,
+    26
+   ],
+   "captionZh": [
+    15,
+    8,
+    14,
+    24
+   ],
+   "totalChars": 130,
+   "totalZh": 61,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "partition"
+   ],
+   "titles": [
+    "目录与字段",
+    "展示三种配置",
+    "目录传播",
+    "边界说明"
+   ]
+  },
+  {
+   "id": "T06",
+   "module": "B",
+   "order": 13,
+   "kind": "flow",
+   "seed": "cow",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "Hudi 写入",
+    "HDFS 分区",
+    "Hive Sync",
+    "HMS",
+    "查询引擎"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "文件已写入",
+    "发起同步",
+    "登记分区",
+    "下游发现表"
+   ],
+   "captions": [
+    "HDFS 有数据，并不代表 HMS 已同步。",
+    "同步工具读取表和分区元信息。",
+    "把分区定义传给 Metastore。",
+    "这是同步链路示意，未连接真实 HMS。"
+   ],
+   "captionChars": [
+    22,
+    14,
+    18,
+    19
+   ],
+   "captionZh": [
+    10,
+    13,
+    7,
+    13
+   ],
+   "totalChars": 73,
+   "totalZh": 43,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "partition",
+    "failureAt"
+   ],
+   "titles": [
+    "文件已写入",
+    "发起同步",
+    "登记分区",
+    "下游发现表"
+   ]
+  },
+  {
+   "id": "T07",
+   "module": "B",
+   "order": 14,
+   "kind": "schema",
+   "seed": "empty",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "建表选项",
+    "表级配置",
+    "hoodie.properties",
+    "后续 Writer"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "收集配置",
+    "配置落入空表",
+    "后续写入",
+    "检查一致性"
+   ],
+   "captions": [
+    "主键、precombine、表类型共同形成表定义。",
+    "查看引擎创建的 table.properties。",
+    "写入路径读取同一份表配置。",
+    "修改结构性配置不能只修改界面文字。"
+   ],
+   "captionChars": [
+    25,
+    25,
+    13,
+    17
+   ],
+   "captionZh": [
+    12,
+    7,
+    12,
+    16
+   ],
+   "totalChars": 80,
+   "totalZh": 47,
+   "operations": [
+    null,
+    "create",
+    "insert",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "tableType",
+    "partition"
+   ],
+   "titles": [
+    "收集配置",
+    "配置落入空表",
+    "后续写入",
+    "检查一致性"
+   ]
+  },
+  {
+   "id": "T08",
+   "module": "B",
+   "order": 15,
+   "kind": "schema",
+   "seed": "cow",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "旧 Schema",
+    "新增列",
+    "兼容性检查",
+    "新 Schema"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "旧文件已有字段",
+    "提出新增字段",
+    "检查类型变化",
+    "不伪造执行"
+   ],
+   "captions": [
+    "先看旧文件的 id、amount、ts 和 dt。",
+    "新消息可能携带可空字段。",
+    "删除列或修改类型需要单独验证兼容性。",
+    "当前引擎未实现 Schema 演进，动画只展示校验关口。"
+   ],
+   "captionChars": [
+    25,
+    12,
+    18,
+    28
+   ],
+   "captionZh": [
+    7,
+    11,
+    17,
+    18
+   ],
+   "totalChars": 83,
+   "totalZh": 53,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "旧文件已有字段",
+    "提出新增字段",
+    "检查类型变化",
+    "不伪造执行"
+   ]
+  },
+  {
+   "id": "W01",
+   "module": "C",
+   "order": 16,
+   "kind": "files",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "输入记录",
+    "Writer",
+    "定位 File Group",
+    "写入文件",
+    "提交 Timeline"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "输入新记录",
+    "选择文件位置",
+    "生成数据文件",
+    "读取新增记录"
+   ],
+   "captions": [
+    "新增主键从输入区进入 Writer。",
+    "按分区定位写入范围。",
+    "INSERT_RECORDS 产生真实模拟文件和提交。",
+    "文件与 Snapshot 返回的行数可核对。"
+   ],
+   "captionChars": [
+    18,
+    10,
+    27,
+    22
+   ],
+   "captionZh": [
+    10,
+    9,
+    11,
+    11
+   ],
+   "totalChars": 77,
+   "totalZh": 41,
+   "operations": [
+    null,
+    null,
+    "insert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "输入新记录",
+    "选择文件位置",
+    "生成数据文件",
+    "读取新增记录"
+   ]
+  },
+  {
+   "id": "W02",
+   "module": "C",
+   "order": 17,
+   "kind": "files",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "输入记录",
+    "Writer",
+    "定位 File Group",
+    "写入文件",
+    "提交 Timeline"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "进入 Writer",
+    "定位旧文件",
+    "合并并重写",
+    "检查查询结果"
+   ],
+   "captions": [
+    "这次主键已经存在。",
+    "更新需要找到已有 File Group。",
+    "当前 COW 场景生成新 Base，旧版本变灰。",
+    "切换表类型后重跑，可观察 MOR 追加 Log。"
+   ],
+   "captionChars": [
+    9,
+    20,
+    24,
+    24
+   ],
+   "captionZh": [
+    8,
+    8,
+    12,
+    13
+   ],
+   "totalChars": 77,
+   "totalZh": 41,
+   "operations": [
+    null,
+    null,
+    "upsert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount",
+    "tableType"
+   ],
+   "titles": [
+    "进入 Writer",
+    "定位旧文件",
+    "合并并重写",
+    "检查查询结果"
+   ]
+  },
+  {
+   "id": "W03",
+   "module": "C",
+   "order": 18,
+   "kind": "files",
+   "seed": "mor",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "目标主键",
+    "删除标记 D",
+    "Log File",
+    "Snapshot"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "定位待删主键",
+    "写入删除标记",
+    "快照不再返回它",
+    "读取增量事件"
+   ],
+   "captions": [
+    "删除消息仍然需要定位对应文件组。",
+    "本地模型写入 operation=D 的 tombstone。",
+    "删除在查询可见性和物理文件层面不同步。",
+    "增量结果保留 D 标记，供下游处理删除。"
+   ],
+   "captionChars": [
+    16,
+    31,
+    19,
+    20
+   ],
+   "captionZh": [
+    15,
+    7,
+    18,
+    15
+   ],
+   "totalChars": 86,
+   "totalZh": 55,
+   "operations": [
+    null,
+    "delete",
+    "snapshot",
+    "incremental"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey"
+   ],
+   "titles": [
+    "定位待删主键",
+    "写入删除标记",
+    "快照不再返回它",
+    "读取增量事件"
+   ]
+  },
+  {
+   "id": "W04",
+   "module": "C",
+   "order": 19,
+   "kind": "files",
+   "seed": "empty",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "输入批次",
+    "直接写入",
+    "Base 文件",
+    "初始提交"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "空表初始化",
+    "批次流入",
+    "观察落点",
+    "核对快照"
+   ],
+   "captions": [
+    "Bulk Insert 路径不用于定位和更新既有主键。",
+    "这一批数据直接进入 Base 文件生成过程。",
+    "当前教学引擎的 Bulk Insert 在 COW/MOR 均生成 Base。",
+    "查询结果与新 Base 的记录一致。"
+   ],
+   "captionChars": [
+    27,
+    22,
+    39,
+    18
+   ],
+   "captionZh": [
+    14,
+    15,
+    11,
+    11
+   ],
+   "totalChars": 106,
+   "totalZh": 51,
+   "operations": [
+    null,
+    "bulk",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "tableType",
+    "partition"
+   ],
+   "titles": [
+    "空表初始化",
+    "批次流入",
+    "观察落点",
+    "核对快照"
+   ]
+  },
+  {
+   "id": "W05",
+   "module": "C",
+   "order": 20,
+   "kind": "files",
+   "seed": "multi",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "目标分区",
+    "新记录",
+    "替换文件组",
+    "其他分区"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "选择一个分区",
+    "写入替换数据",
+    "查看保留范围",
+    "查询覆盖结果"
+   ],
+   "captions": [
+    "仅覆盖设置中的目标分区。",
+    "旧分区文件被取代，其他分区保留。",
+    "灰色文件尚未被物理删除。",
+    "观察仍存在的其他分区记录。"
+   ],
+   "captionChars": [
+    12,
+    16,
+    12,
+    13
+   ],
+   "captionZh": [
+    11,
+    14,
+    11,
+    12
+   ],
+   "totalChars": 53,
+   "totalZh": 48,
+   "operations": [
+    null,
+    "overwrite-partition",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "partition",
+    "amount"
+   ],
+   "titles": [
+    "选择一个分区",
+    "写入替换数据",
+    "查看保留范围",
+    "查询覆盖结果"
+   ]
+  },
+  {
+   "id": "W06",
+   "module": "C",
+   "order": 21,
+   "kind": "files",
+   "seed": "multi",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "所有分区",
+    "新输入批次",
+    "替换所有引用",
+    "新快照"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "覆盖范围是整表",
+    "写入新全量",
+    "新快照生效",
+    "观察旧文件"
+   ],
+   "captions": [
+    "和分区覆盖相比，这次处理所有分区。",
+    "旧 File Group 全部被取代。",
+    "查询只返回覆盖后的记录。",
+    "旧文件仍需遵循 Cleaner 保留窗口。"
+   ],
+   "captionChars": [
+    17,
+    19,
+    12,
+    21
+   ],
+   "captionZh": [
+    15,
+    6,
+    11,
+    11
+   ],
+   "totalChars": 69,
+   "totalZh": 43,
+   "operations": [
+    null,
+    "overwrite-table",
+    "snapshot",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "覆盖范围是整表",
+    "写入新全量",
+    "新快照生效",
+    "观察旧文件"
+   ]
+  },
+  {
+   "id": "W07",
+   "module": "C",
+   "order": 22,
+   "kind": "flow",
+   "seed": "cow",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "DataFrame",
+    "SaveMode",
+    "存在性判断",
+    "operation",
+    "Hudi Writer"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "先检查表是否存在",
+    "观察模式分支",
+    "再选择 operation",
+    "边界分开理解"
+   ],
+   "captions": [
+    "SaveMode 决定上层数据源对已有目标的处理。",
+    "Append、Overwrite、ErrorIfExists、Ignore 走不同入口。",
+    "Hudi operation 是后续独立的写入语义。",
+    "本页为 API 机制示意，不模拟 Spark SaveMode 的执行。"
+   ],
+   "captionChars": [
+    25,
+    44,
+    26,
+    36
+   ],
+   "captionZh": [
+    15,
+    5,
+    10,
+    13
+   ],
+   "totalChars": 131,
+   "totalZh": 43,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "先检查表是否存在",
+    "观察模式分支",
+    "再选择 operation",
+    "边界分开理解"
+   ]
+  },
+  {
+   "id": "W08",
+   "module": "C",
+   "order": 23,
+   "kind": "files",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "同一主键",
+    "ts 较小",
+    "ts 较大",
+    "胜出记录"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "两个消息同时到达",
+    "按 ts 选出胜者",
+    "旧消息晚到",
+    "查看实际数据"
+   ],
+   "captions": [
+    "同批次输入同键的两个金额版本。",
+    "由引擎去重，只保留较大的 precombine。",
+    "写入 ts 较小的记录，观察已有值是否保持。",
+    "点击文件比较物理记录与最新 Snapshot。"
+   ],
+   "captionChars": [
+    15,
+    24,
+    22,
+    23
+   ],
+   "captionZh": [
+    14,
+    11,
+    16,
+    13
+   ],
+   "totalChars": 84,
+   "totalZh": 54,
+   "operations": [
+    null,
+    "duplicates",
+    "stale",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "两个消息同时到达",
+    "按 ts 选出胜者",
+    "旧消息晚到",
+    "查看实际数据"
+   ]
+  },
+  {
+   "id": "W09",
+   "module": "C",
+   "order": 24,
+   "kind": "flow",
+   "seed": "cow",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "Spark SQL",
+    "DataFrame",
+    "选项解析",
+    "Hudi Writer",
+    "文件与提交"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "两个入口",
+    "选项汇合",
+    "执行模型写入",
+    "检查公共结果"
+   ],
+   "captions": [
+    "SQL 与 DataFrame 都需要明确表配置和写入语义。",
+    "观察上层参数汇入共同写入路径。",
+    "这里调用同一模拟写入引擎，不运行真实 Spark。",
+    "相同操作与参数得到同一个模拟状态。"
+   ],
+   "captionChars": [
+    30,
+    15,
+    25,
+    17
+   ],
+   "captionZh": [
+    14,
+    14,
+    17,
+    16
+   ],
+   "totalChars": 87,
+   "totalZh": 61,
+   "operations": [
+    null,
+    null,
+    "upsert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "两个入口",
+    "选项汇合",
+    "执行模型写入",
+    "检查公共结果"
+   ]
+  },
+  {
+   "id": "W10",
+   "module": "C",
+   "order": 25,
+   "kind": "files",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "输入记录",
+    "Writer",
+    "定位 File Group",
+    "写入文件",
+    "提交 Timeline"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "第一次 Upsert",
+    "重放同一记录",
+    "对比逻辑和物理",
+    "核对结果"
+   ],
+   "captions": [
+    "更新已有主键，生成一次提交。",
+    "金额不增加，但文件和 Timeline 仍可能变化。",
+    "逻辑幂等不等于没有写入和存储成本。",
+    "并发及其他 operation 需要分别验证。"
+   ],
+   "captionChars": [
+    14,
+    26,
+    17,
+    23
+   ],
+   "captionZh": [
+    12,
+    14,
+    16,
+    11
+   ],
+   "totalChars": 80,
+   "totalZh": 53,
+   "operations": [
+    "upsert",
+    "upsert",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "第一次 Upsert",
+    "重放同一记录",
+    "对比逻辑和物理",
+    "核对结果"
+   ]
+  },
+  {
+   "id": "I01",
+   "module": "D",
+   "order": 26,
+   "kind": "index",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "记录主键",
+    "分区候选",
+    "定位已有键",
+    "File Group"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "限定分区范围",
+    "按主键匹配",
+    "更新目标文件",
+    "读取结果"
+   ],
+   "captions": [
+    "写入索引先确定需要查找的范围。",
+    "动画追踪候选文件，不将示意扫描速度当作性能实测。",
+    "实际文件组和文件内容由引擎定位。",
+    "写入索引和查询执行路径需要分开理解。"
+   ],
+   "captionChars": [
+    15,
+    24,
+    16,
+    18
+   ],
+   "captionZh": [
+    14,
+    22,
+    15,
+    17
+   ],
+   "totalChars": 73,
+   "totalZh": 68,
+   "operations": [
+    null,
+    null,
+    "upsert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "限定分区范围",
+    "按主键匹配",
+    "更新目标文件",
+    "读取结果"
+   ]
+  },
+  {
+   "id": "I02",
+   "module": "D",
+   "order": 27,
+   "kind": "index",
+   "seed": "cow",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "待定位主键",
+    "Bloom 候选",
+    "精确确认",
+    "目标文件"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "先做候选筛选",
+    "排除明确不匹配",
+    "核对实际主键",
+    "执行模型更新"
+   ],
+   "captions": [
+    "Bloom 的“可能包含”不代表主键一定存在。",
+    "候选筛选是机制示意，未实现真实 Bloom 位图。",
+    "候选仍需要精确确认，防止误判。",
+    "最终更新仍由现有写入引擎处理。"
+   ],
+   "captionChars": [
+    23,
+    25,
+    15,
+    15
+   ],
+   "captionZh": [
+    14,
+    16,
+    13,
+    14
+   ],
+   "totalChars": 78,
+   "totalZh": 57,
+   "operations": [
+    null,
+    null,
+    null,
+    "upsert"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "先做候选筛选",
+    "排除明确不匹配",
+    "核对实际主键",
+    "执行模型更新"
+   ]
+  },
+  {
+   "id": "I03",
+   "module": "D",
+   "order": 28,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "Record",
+    "Hash",
+    "Bucket",
+    "File Group"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "读取主键",
+    "计算教学桶号",
+    "写入目标桶",
+    "检查桶内记录"
+   ],
+   "captions": [
+    "观察输入主键进入 Hash。",
+    "调用现有 bucketOf；r26 的实际哈希算法待验证。",
+    "记录沿映射路径移动到对应 Bucket 与 File Group。",
+    "点击 Bucket 查看本桶记录；改桶数会重置并重新计算。"
+   ],
+   "captionChars": [
+    14,
+    29,
+    33,
+    29
+   ],
+   "captionZh": [
+    8,
+    14,
+    13,
+    19
+   ],
+   "totalChars": 105,
+   "totalZh": 54,
+   "operations": [
+    null,
+    null,
+    "bucket-write",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "bucketCount",
+    "partition"
+   ],
+   "titles": [
+    "读取主键",
+    "计算教学桶号",
+    "写入目标桶",
+    "检查桶内记录"
+   ]
+  },
+  {
+   "id": "I04",
+   "module": "D",
+   "order": 29,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "分区 A",
+    "Hash",
+    "Bucket",
+    "分区 B"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "分区先限定范围",
+    "写入当前分区",
+    "切到另一个分区",
+    "查看完整定位"
+   ],
+   "captions": [
+    "相同桶号在不同分区不是同一个定位。",
+    "主键进入当前分区的桶。",
+    "同名主键进入另一套分区桶。",
+    "定位同时包含分区与桶号。"
+   ],
+   "captionChars": [
+    17,
+    11,
+    13,
+    12
+   ],
+   "captionZh": [
+    16,
+    10,
+    12,
+    11
+   ],
+   "totalChars": 53,
+   "totalZh": 49,
+   "operations": [
+    null,
+    "bucket-write",
+    "cross-partition",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "bucketCount",
+    "partition"
+   ],
+   "titles": [
+    "分区先限定范围",
+    "写入当前分区",
+    "切到另一个分区",
+    "查看完整定位"
+   ]
+  },
+  {
+   "id": "I05",
+   "module": "D",
+   "order": 30,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "主键集合",
+    "Hash 取模",
+    "Bucket 数量",
+    "File Group"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "确定桶数",
+    "记录依次分配",
+    "追加一个主键",
+    "查看桶分布"
+   ],
+   "captions": [
+    "修改设置中的桶数会从初始状态重新映射。",
+    "教学哈希分配每条记录到固定桶。",
+    "观察目标桶如何由 key 和桶数共同决定。",
+    "分布取决于键集合；不宣称是 r26 的实际分配。"
+   ],
+   "captionChars": [
+    19,
+    15,
+    21,
+    24
+   ],
+   "captionZh": [
+    18,
+    14,
+    15,
+    17
+   ],
+   "totalChars": 79,
+   "totalZh": 64,
+   "operations": [
+    null,
+    null,
+    "bucket-write",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "bucketCount",
+    "recordKey"
+   ],
+   "titles": [
+    "确定桶数",
+    "记录依次分配",
+    "追加一个主键",
+    "查看桶分布"
+   ]
+  },
+  {
+   "id": "I06",
+   "module": "D",
+   "order": 31,
+   "kind": "index",
+   "seed": "multi",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "主键",
+    "分区级范围",
+    "全局范围",
+    "已有位置"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "分区索引范围",
+    "跨分区写入",
+    "全局范围示意",
+    "验证边界"
+   ],
+   "captions": [
+    "只在当前分区内查找，可能定位不到另一个分区的同键。",
+    "当前模型为非全局索引，观察重复身份。",
+    "全局索引的概念是扩大查找范围，不只是改变桶号。",
+    "r26 全局迁移、删除旧位置等行为需单独实测。"
+   ],
+   "captionChars": [
+    25,
+    18,
+    23,
+    23
+   ],
+   "captionZh": [
+    23,
+    16,
+    21,
+    17
+   ],
+   "totalChars": 89,
+   "totalZh": 77,
+   "operations": [
+    null,
+    "cross-partition",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "partition"
+   ],
+   "titles": [
+    "分区索引范围",
+    "跨分区写入",
+    "全局范围示意",
+    "验证边界"
+   ]
+  },
+  {
+   "id": "I07",
+   "module": "D",
+   "order": 32,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "索引类型",
+    "写入 operation",
+    "兼容性检查",
+    "允许 / 拒绝"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "选择组合",
+    "进入兼容性检查",
+    "观察拒绝",
+    "改走 Upsert"
+   ],
+   "captions": [
+    "本例测试 BUCKET 与 Bulk Insert。",
+    "规则来自当前 Version Profile 与保守策略。",
+    "引擎拒绝该组合；这不是 r26 已证实的行为。",
+    "兼容路径可以通过同一引擎写入。"
+   ],
+   "captionChars": [
+    26,
+    29,
+    23,
+    15
+   ],
+   "captionZh": [
+    5,
+    11,
+    16,
+    14
+   ],
+   "totalChars": 93,
+   "totalZh": 46,
+   "operations": [
+    null,
+    null,
+    "invalid-bulk",
+    "bucket-write"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "bucketCount"
+   ],
+   "titles": [
+    "选择组合",
+    "进入兼容性检查",
+    "观察拒绝",
+    "改走 Upsert"
+   ]
+  },
+  {
+   "id": "I08",
+   "module": "D",
+   "order": 33,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "表配置",
+    "运行配置",
+    "兼容性检查",
+    "错误定位"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "先看生效配置",
+    "制造被拒组合",
+    "定位检查层",
+    "使用可用路径"
+   ],
+   "captions": [
+    "表配置与运行时选项不一致，需要核对真正生效的索引。",
+    "当前教学策略拒绝 BUCKET + Bulk Insert。",
+    "错误来自兼容性规则，而非文件内容。",
+    "改为 Upsert 后查看实际桶和文件。"
+   ],
+   "captionChars": [
+    25,
+    30,
+    17,
+    20
+   ],
+   "captionZh": [
+    23,
+    8,
+    15,
+    11
+   ],
+   "totalChars": 92,
+   "totalZh": 57,
+   "operations": [
+    null,
+    "invalid-bulk",
+    null,
+    "bucket-write"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "bucketCount",
+    "recordKey"
+   ],
+   "titles": [
+    "先看生效配置",
+    "制造被拒组合",
+    "定位检查层",
+    "使用可用路径"
+   ]
+  },
+  {
+   "id": "Q01",
+   "module": "E",
+   "order": 34,
+   "kind": "query",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "读取请求",
+    "选择文件",
+    "归并版本",
+    "返回记录"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "发起快照请求",
+    "读取 Base 和 Log",
+    "归并同键版本",
+    "查看结果"
+   ],
+   "captions": [
+    "目标是当前已提交的完整逻辑视图。",
+    "高亮当前 File Slice 中仍有效的文件。",
+    "由查询引擎归并并过滤删除记录。",
+    "点击结果行查看字段；结果来自 runQuery。"
+   ],
+   "captionChars": [
+    16,
+    24,
+    15,
+    24
+   ],
+   "captionZh": [
+    15,
+    11,
+    14,
+    13
+   ],
+   "totalChars": 79,
+   "totalZh": 53,
+   "operations": [
+    null,
+    null,
+    "snapshot",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "发起快照请求",
+    "读取 Base 和 Log",
+    "归并同键版本",
+    "查看结果"
+   ]
+  },
+  {
+   "id": "Q02",
+   "module": "E",
+   "order": 35,
+   "kind": "query",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "读取请求",
+    "只选 Base",
+    "跳过 Log",
+    "较旧结果"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "选择读优化",
+    "Log 留在原地",
+    "输出 Base 记录",
+    "与 Snapshot 对比"
+   ],
+   "captions": [
+    "读优化路径只读取 Base。",
+    "更新已在 Log 中，但本次不参与读取。",
+    "查询引擎返回 Base 中的较旧金额。",
+    "切换为 Snapshot 可以读到 Log 的最新更新。"
+   ],
+   "captionChars": [
+    14,
+    20,
+    19,
+    28
+   ],
+   "captionZh": [
+    8,
+    13,
+    12,
+    12
+   ],
+   "totalChars": 81,
+   "totalZh": 45,
+   "operations": [
+    null,
+    null,
+    "optimized",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "选择读优化",
+    "Log 留在原地",
+    "输出 Base 记录",
+    "与 Snapshot 对比"
+   ]
+  },
+  {
+   "id": "Q03",
+   "module": "E",
+   "order": 36,
+   "kind": "query",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "begin / end",
+    "变更文件",
+    "窗口内版本",
+    "增量结果"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "圈出时间窗口",
+    "筛选提交时间",
+    "查询增量",
+    "检查 operation"
+   ],
+   "captions": [
+    "从初始种子提交之后开始读取变更。",
+    "根据记录 commitTime 选择窗口内版本。",
+    "只返回窗口内的新增、更新和删除标记。",
+    "下游必须识别 D，而不是把所有行都当作新增。"
+   ],
+   "captionChars": [
+    16,
+    24,
+    18,
+    22
+   ],
+   "captionZh": [
+    15,
+    11,
+    16,
+    18
+   ],
+   "totalChars": 80,
+   "totalZh": 60,
+   "operations": [
+    null,
+    null,
+    "incremental",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "圈出时间窗口",
+    "筛选提交时间",
+    "查询增量",
+    "检查 operation"
+   ]
+  },
+  {
+   "id": "Q04",
+   "module": "E",
+   "order": 37,
+   "kind": "query",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "历史 Instant",
+    "Checkpoint",
+    "旧 File Slice",
+    "历史记录"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "选择旧 Instant",
+    "回溯文件引用",
+    "查询历史",
+    "回到现在"
+   ],
+   "captions": [
+    "读取初始 Base 建立后的 Checkpoint。",
+    "历史快照有自己的 File Slice。",
+    "本例存在真实模拟 Checkpoint，避免近似回退。",
+    "对比当前 Snapshot 的最新金额。"
+   ],
+   "captionChars": [
+    26,
+    20,
+    27,
+    20
+   ],
+   "captionZh": [
+    8,
+    8,
+    14,
+    9
+   ],
+   "totalChars": 93,
+   "totalZh": 39,
+   "operations": [
+    null,
+    null,
+    "history",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "选择旧 Instant",
+    "回溯文件引用",
+    "查询历史",
+    "回到现在"
+   ]
+  },
+  {
+   "id": "Q05",
+   "module": "E",
+   "order": 38,
+   "kind": "query",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "同一张表",
+    "Snapshot",
+    "Read Optimized",
+    "结果差异"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "当前更新在 Log",
+    "快照读取",
+    "读优化读取",
+    "回到对比实验"
+   ],
+   "captions": [
+    "已有 Base 之后又提交了一次更新。",
+    "Base 和 Log 共同参与归并。",
+    "只读 Base，所以金额可能更旧。",
+    "COW/MOR 双画布可从主题目录进入。"
+   ],
+   "captionChars": [
+    19,
+    18,
+    17,
+    20
+   ],
+   "captionZh": [
+    12,
+    7,
+    10,
+    11
+   ],
+   "totalChars": 74,
+   "totalZh": 40,
+   "operations": [
+    null,
+    "snapshot",
+    "optimized",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "当前更新在 Log",
+    "快照读取",
+    "读优化读取",
+    "回到对比实验"
+   ]
+  },
+  {
+   "id": "Q06",
+   "module": "E",
+   "order": 39,
+   "kind": "query",
+   "seed": "multi",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "分区条件",
+    "分区目录",
+    "选中文件",
+    "过滤结果"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "选择分区条件",
+    "排除其他分区",
+    "读取目标分区",
+    "检查扫描范围"
+   ],
+   "captions": [
+    "设置中的分区决定本次需要的数据范围。",
+    "高亮目标分区的文件。",
+    "当前教学适配器选择分区后调用同一查询引擎。",
+    "这里统计模拟候选文件数，不模拟 Spark 执行计划。"
+   ],
+   "captionChars": [
+    18,
+    10,
+    21,
+    27
+   ],
+   "captionZh": [
+    17,
+    9,
+    20,
+    18
+   ],
+   "totalChars": 76,
+   "totalZh": 64,
+   "operations": [
+    null,
+    null,
+    "partition-read",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "partition"
+   ],
+   "titles": [
+    "选择分区条件",
+    "排除其他分区",
+    "读取目标分区",
+    "检查扫描范围"
+   ]
+  },
+  {
+   "id": "Q07",
+   "module": "E",
+   "order": 40,
+   "kind": "query",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "业务字段",
+    "Record Key",
+    "Partition Path",
+    "Commit Time"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "从业务记录开始",
+    "追踪来源",
+    "返回元字段",
+    "点击记录查看"
+   ],
+   "captions": [
+    "业务字段和 Hudi 元字段承担不同职责。",
+    "主键、分区和提交信息随记录流入查询。",
+    "includeMetaFields 打开后，由引擎生成实际元字段。",
+    "展开结果可检查 _hoodie_record_key 等字段。"
+   ],
+   "captionChars": [
+    21,
+    18,
+    33,
+    31
+   ],
+   "captionZh": [
+    14,
+    16,
+    13,
+    10
+   ],
+   "totalChars": 103,
+   "totalZh": 53,
+   "operations": [
+    null,
+    null,
+    "metadata",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "从业务记录开始",
+    "追踪来源",
+    "返回元字段",
+    "点击记录查看"
+   ]
+  },
+  {
+   "id": "Q08",
+   "module": "E",
+   "order": 41,
+   "kind": "query",
+   "seed": "updates",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "上游变更",
+    "增量窗口",
+    "operation 分流",
+    "下游消费"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "制造删除事件",
+    "读取窗口变更",
+    "分流更新与删除",
+    "消费边界"
+   ],
+   "captions": [
+    "让当前主键产生 tombstone。",
+    "增量查询包含新增、更新与删除标记。",
+    "观察 operation=D 需要走删除通道。",
+    "下游处理为机制示意，不连接外部数据库。"
+   ],
+   "captionChars": [
+    18,
+    17,
+    23,
+    19
+   ],
+   "captionZh": [
+    7,
+    15,
+    9,
+    17
+   ],
+   "totalChars": 77,
+   "totalZh": 48,
+   "operations": [
+    "delete",
+    "incremental",
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey"
+   ],
+   "titles": [
+    "制造删除事件",
+    "读取窗口变更",
+    "分流更新与删除",
+    "消费边界"
+   ]
+  },
+  {
+   "id": "S01",
+   "module": "F",
+   "order": 42,
+   "kind": "timeline",
+   "seed": "mor",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "REQUESTED",
+    "INFLIGHT",
+    "COMPLETED",
+    "可见快照"
+   ],
+   "steps": 5,
+   "stepTitles": [
+    "先产生待合并更新",
+    "生成请求",
+    "执行前观察",
+    "合并后提交",
+    "查询已提交结果"
+   ],
+   "captions": [
+    "已有 Base 后追加一条 Log，作为计划的候选文件。",
+    "Schedule 将计划写为 REQUESTED。",
+    "动画展示执行阶段，不虚构底层尚未返回的中间状态。",
+    "执行结果中的实际 Instant 状态显示在时间线上。",
+    "用查询核对最终文件引用。"
+   ],
+   "captionChars": [
+    28,
+    25,
+    24,
+    27,
+    12
+   ],
+   "captionZh": [
+    16,
+    5,
+    22,
+    17,
+    11
+   ],
+   "totalChars": 116,
+   "totalZh": 71,
+   "operations": [
+    "upsert",
+    "schedule",
+    null,
+    "compact",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "先产生待合并更新",
+    "生成请求",
+    "执行前观察",
+    "合并后提交",
+    "查询已提交结果"
+   ]
+  },
+  {
+   "id": "S02",
+   "module": "F",
+   "order": 43,
+   "kind": "timeline",
+   "seed": "mor",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "初始提交",
+    "DeltaCommit",
+    "Compaction Plan",
+    "合并提交"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "追加一条更新",
+    "查看提交类型",
+    "安排合并",
+    "完成合并"
+   ],
+   "captions": [
+    "MOR 的本次更新产生 DELTA_COMMIT。",
+    "当前更新在 Log，Base 尚未重写。",
+    "计划生成后可以看到 REQUESTED。",
+    "最终 Action 与 State 按引擎返回展示。"
+   ],
+   "captionChars": [
+    25,
+    20,
+    20,
+    26
+   ],
+   "captionZh": [
+    7,
+    9,
+    9,
+    10
+   ],
+   "totalChars": 91,
+   "totalZh": 35,
+   "operations": [
+    "upsert",
+    null,
+    "schedule",
+    "compact"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "追加一条更新",
+    "查看提交类型",
+    "安排合并",
+    "完成合并"
+   ]
+  },
+  {
+   "id": "S03",
+   "module": "F",
+   "order": 44,
+   "kind": "files",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "当前文件",
+    "服务计划",
+    "执行合并",
+    "新 File Slice",
+    "提交 Timeline"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "读取当前文件",
+    "选择候选文件组",
+    "生成计划",
+    "等待执行"
+   ],
+   "captions": [
+    "当前 File Slice 中已有待合并 Log。",
+    "计划根据 Log 数阈值筛选。",
+    "只 Schedule，不改写数据文件。",
+    "Timeline 的 REQUESTED 和计划内容可在详情核对。"
+   ],
+   "captionChars": [
+    25,
+    15,
+    19,
+    33
+   ],
+   "captionZh": [
+    8,
+    9,
+    8,
+    12
+   ],
+   "totalChars": 92,
+   "totalZh": 37,
+   "operations": [
+    null,
+    null,
+    "schedule",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "读取当前文件",
+    "选择候选文件组",
+    "生成计划",
+    "等待执行"
+   ]
+  },
+  {
+   "id": "S04",
+   "module": "F",
+   "order": 45,
+   "kind": "files",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "当前文件",
+    "服务计划",
+    "执行合并",
+    "新 File Slice",
+    "提交 Timeline"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "准备计划",
+    "读取 Base 与 Log",
+    "生成新 Base",
+    "旧文件仍在"
+   ],
+   "captions": [
+    "为当前待合并的 File Group 生成计划。",
+    "多个输入文件的数据流入合并过程。",
+    "执行引擎 Compaction，新 Base 包含归并后的记录。",
+    "Compaction 改引用，Cleaner 才物理回收。"
+   ],
+   "captionChars": [
+    24,
+    16,
+    32,
+    29
+   ],
+   "captionZh": [
+    11,
+    15,
+    13,
+    8
+   ],
+   "totalChars": 101,
+   "totalZh": 47,
+   "operations": [
+    "schedule",
+    null,
+    "compact",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "准备计划",
+    "读取 Base 与 Log",
+    "生成新 Base",
+    "旧文件仍在"
+   ]
+  },
+  {
+   "id": "S05",
+   "module": "F",
+   "order": 46,
+   "kind": "flow",
+   "seed": "updates",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "写入作业",
+    "Schedule",
+    "持久化 Plan",
+    "独立 Spark 作业",
+    "新 Base"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "写入侧只做计划",
+    "生成计划",
+    "交给独立执行者",
+    "执行计划"
+   ],
+   "captions": [
+    "将写入链路与合并执行拆开。",
+    "引擎生成 REQUESTED，不产生新 Base。",
+    "作业调度为机制示意，不连接真实调度平台。",
+    "本地引擎完成相同计划的文件合并。"
+   ],
+   "captionChars": [
+    13,
+    25,
+    20,
+    16
+   ],
+   "captionZh": [
+    12,
+    8,
+    18,
+    15
+   ],
+   "totalChars": 74,
+   "totalZh": 53,
+   "operations": [
+    null,
+    "schedule",
+    null,
+    "compact"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "写入侧只做计划",
+    "生成计划",
+    "交给独立执行者",
+    "执行计划"
+   ]
+  },
+  {
+   "id": "S06",
+   "module": "F",
+   "order": 47,
+   "kind": "files",
+   "seed": "small",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "旧文件",
+    "保留窗口",
+    "可清理文件",
+    "物理删除"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "制造旧版本",
+    "推进提交边界",
+    "检查并清理",
+    "核对仍有效文件"
+   ],
+   "captions": [
+    "更新记录生成被取代的旧 Base。",
+    "再产生一次提交，让保留窗口有可比较范围。",
+    "按设置中的保留提交数调用 Cleaner。",
+    "被保留窗口保护的旧文件不会凭动画消失。"
+   ],
+   "captionChars": [
+    17,
+    20,
+    21,
+    19
+   ],
+   "captionZh": [
+    11,
+    18,
+    12,
+    18
+   ],
+   "totalChars": 77,
+   "totalZh": 59,
+   "operations": [
+    "upsert",
+    "insert",
+    "clean",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "retention"
+   ],
+   "titles": [
+    "制造旧版本",
+    "推进提交边界",
+    "检查并清理",
+    "核对仍有效文件"
+   ]
+  },
+  {
+   "id": "S07",
+   "module": "F",
+   "order": 48,
+   "kind": "timeline",
+   "seed": "small",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "活跃 Timeline",
+    "保留边界",
+    "旧 Instant",
+    "Archive"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "观察活跃提交",
+    "确定保留边界",
+    "迁移旧 Instant",
+    "查看归档区"
+   ],
+   "captions": [
+    "每次写入都会增加元数据记录。",
+    "保留数量由设置决定。",
+    "Archive 移动元数据，不删除数据文件。",
+    "归档记录和活跃记录分开展示。"
+   ],
+   "captionChars": [
+    14,
+    10,
+    22,
+    14
+   ],
+   "captionZh": [
+    13,
+    9,
+    12,
+    13
+   ],
+   "totalChars": 60,
+   "totalZh": 47,
+   "operations": [
+    null,
+    null,
+    "archive",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "retention"
+   ],
+   "titles": [
+    "观察活跃提交",
+    "确定保留边界",
+    "迁移旧 Instant",
+    "查看归档区"
+   ]
+  },
+  {
+   "id": "S08",
+   "module": "F",
+   "order": 49,
+   "kind": "timeline",
+   "seed": "pending",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "未完成事务",
+    "残留文件",
+    "Rollback",
+    "恢复一致"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "发现未完成状态",
+    "选择回滚目标",
+    "执行回滚",
+    "查看回滚提交"
+   ],
+   "captions": [
+    "初始场景已通过故障注入留下 INFLIGHT。",
+    "Rollback 用于未完成事务，不撤销已完成提交。",
+    "移除引擎识别的残留文件和对应 pending。",
+    "Timeline 增加 ROLLBACK，完成的其他记录保留。"
+   ],
+   "captionChars": [
+    23,
+    26,
+    23,
+    31
+   ],
+   "captionZh": [
+    13,
+    15,
+    14,
+    11
+   ],
+   "totalChars": 103,
+   "totalZh": 53,
+   "operations": [
+    null,
+    null,
+    "rollback",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "发现未完成状态",
+    "选择回滚目标",
+    "执行回滚",
+    "查看回滚提交"
+   ]
+  },
+  {
+   "id": "S09",
+   "module": "F",
+   "order": 50,
+   "kind": "timeline",
+   "seed": "updates",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "目标历史点",
+    "已提交版本",
+    "恢复计划",
+    "历史快照"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "选定历史快照",
+    "回溯目标",
+    "区分查询与恢复",
+    "回到当前表"
+   ],
+   "captions": [
+    "Restore 的目标是已经提交过的历史状态。",
+    "观察历史 Checkpoint 与现在的差异。",
+    "读旧快照不会修改当前表；真正 Restore 需要恢复执行模型。",
+    "当前引擎没有 Restore 动作，本页不伪造恢复提交。"
+   ],
+   "captionChars": [
+    23,
+    23,
+    32,
+    28
+   ],
+   "captionZh": [
+    14,
+    10,
+    21,
+    17
+   ],
+   "totalChars": 106,
+   "totalZh": 62,
+   "operations": [
+    null,
+    "history",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "选定历史快照",
+    "回溯目标",
+    "区分查询与恢复",
+    "回到当前表"
+   ]
+  },
+  {
+   "id": "S10",
+   "module": "F",
+   "order": 51,
+   "kind": "files",
+   "seed": "small",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "多个小文件",
+    "重组记录",
+    "较大文件",
+    "新文件引用"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "观察小文件",
+    "数据汇入重组",
+    "执行重组",
+    "核对逻辑结果"
+   ],
+   "captions": [
+    "多次小批量写入产生多个文件。",
+    "Clustering 改变文件布局，不改变业务值。",
+    "生成的新文件和实际 Action 从引擎读取。",
+    "Snapshot 的业务记录保持一致。"
+   ],
+   "captionChars": [
+    14,
+    25,
+    23,
+    19
+   ],
+   "captionZh": [
+    13,
+    12,
+    14,
+    9
+   ],
+   "totalChars": 81,
+   "totalZh": 48,
+   "operations": [
+    null,
+    null,
+    "cluster",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "观察小文件",
+    "数据汇入重组",
+    "执行重组",
+    "核对逻辑结果"
+   ]
+  },
+  {
+   "id": "S11",
+   "module": "F",
+   "order": 52,
+   "kind": "files",
+   "seed": "multi",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "分区日期",
+    "TTL 策略",
+    "过期分区",
+    "Cleaner"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "区分新旧分区",
+    "执行分区 TTL",
+    "查看逻辑结果",
+    "尝试回收物理文件"
+   ],
+   "captions": [
+    "初始场景包含一个较早日期分区。",
+    "仅支持 PARTITION，超期分区从有效引用中移除。",
+    "此时旧物理文件可能仍然存在。",
+    "Cleaner 仍遵守自己的保留窗口。"
+   ],
+   "captionChars": [
+    15,
+    27,
+    14,
+    19
+   ],
+   "captionZh": [
+    14,
+    15,
+    13,
+    10
+   ],
+   "totalChars": 75,
+   "totalZh": 52,
+   "operations": [
+    null,
+    "ttl",
+    "snapshot",
+    "clean"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "retention"
+   ],
+   "titles": [
+    "区分新旧分区",
+    "执行分区 TTL",
+    "查看逻辑结果",
+    "尝试回收物理文件"
+   ]
+  },
+  {
+   "id": "S12",
+   "module": "F",
+   "order": 53,
+   "kind": "timeline",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "有效文件引用",
+    "Requested Plan",
+    "Pending Instant",
+    "提交可见性"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "生成 pending",
+    "观察引用关系",
+    "注入未完成执行",
+    "核对可见性"
+   ],
+   "captions": [
+    "Schedule 增加一个 REQUESTED，文件内容不变。",
+    "Pending 不等于新快照已经提交。",
+    "制造未完成合并事务，Base 不发生成功替换。",
+    "Snapshot 仍由有效 Slice 计算。"
+   ],
+   "captionChars": [
+    31,
+    19,
+    23,
+    23
+   ],
+   "captionZh": [
+    10,
+    10,
+    16,
+    6
+   ],
+   "totalChars": 96,
+   "totalZh": 42,
+   "operations": [
+    "schedule",
+    null,
+    "fail",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "生成 pending",
+    "观察引用关系",
+    "注入未完成执行",
+    "核对可见性"
+   ]
+  },
+  {
+   "id": "F01",
+   "module": "G",
+   "order": 54,
+   "kind": "flow",
+   "seed": "empty",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "Spark SQL",
+    "表定义",
+    "Hudi Writer",
+    "文件",
+    "Snapshot"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "创建表定义",
+    "数据进入 Writer",
+    "执行写入模型",
+    "查看结果"
+   ],
+   "captions": [
+    "SQL 入口在本地映射为 CREATE_TABLE。",
+    "记录开始沿写入链路移动。",
+    "使用同一个 applyAction，未运行真实 Spark SQL。",
+    "查询直接读取生成的 File Slice。"
+   ],
+   "captionChars": [
+    26,
+    12,
+    34,
+    21
+   ],
+   "captionZh": [
+    8,
+    11,
+    10,
+    9
+   ],
+   "totalChars": 93,
+   "totalZh": 38,
+   "operations": [
+    "create",
+    null,
+    "insert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "tableType",
+    "partition"
+   ],
+   "titles": [
+    "创建表定义",
+    "数据进入 Writer",
+    "执行写入模型",
+    "查看结果"
+   ]
+  },
+  {
+   "id": "F02",
+   "module": "G",
+   "order": 55,
+   "kind": "flow",
+   "seed": "cow",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "DataFrame",
+    "SaveMode + options",
+    "Writer",
+    "File Group",
+    "Commit"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "输入数据与选项",
+    "选项汇合",
+    "写入本地模型",
+    "读取结果"
+   ],
+   "captions": [
+    "DataFrame 数据和写入选项进入两条输入通道。",
+    "SaveMode 与 operation 在不同层生效。",
+    "演示相同 Upsert 的文件结果。",
+    "本地模拟不执行 Scala 或连接 Spark。"
+   ],
+   "captionChars": [
+    26,
+    28,
+    18,
+    24
+   ],
+   "captionZh": [
+    15,
+    7,
+    9,
+    10
+   ],
+   "totalChars": 96,
+   "totalZh": 41,
+   "operations": [
+    null,
+    null,
+    "upsert",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "输入数据与选项",
+    "选项汇合",
+    "写入本地模型",
+    "读取结果"
+   ]
+  },
+  {
+   "id": "F03",
+   "module": "G",
+   "order": 56,
+   "kind": "flow",
+   "seed": "mor",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "消息流",
+    "Flink Writer",
+    "Log 追加",
+    "提交边界",
+    "Snapshot"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "消息进入实时链路",
+    "追加更新",
+    "读取当前快照",
+    "提交边界示意"
+   ],
+   "captions": [
+    "记录从输入端连续流向 Writer。",
+    "本地 MOR 场景追加 Log，不模拟 Flink runtime。",
+    "查询引擎归并 Base 与 Log。",
+    "真实 Checkpoint 与 Hudi 的对齐需在 r26 验证。"
+   ],
+   "captionChars": [
+    18,
+    34,
+    18,
+    34
+   ],
+   "captionZh": [
+    10,
+    9,
+    7,
+    10
+   ],
+   "totalChars": 104,
+   "totalZh": 36,
+   "operations": [
+    null,
+    "upsert",
+    "snapshot",
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "消息进入实时链路",
+    "追加更新",
+    "读取当前快照",
+    "提交边界示意"
+   ]
+  },
+  {
+   "id": "F04",
+   "module": "G",
+   "order": 57,
+   "kind": "flow",
+   "seed": "mor",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "Source offset",
+    "缓冲记录",
+    "Checkpoint barrier",
+    "Hudi 提交",
+    "恢复重放"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "消息流动",
+    "Barrier 到达",
+    "提交与确认",
+    "恢复重放"
+   ],
+   "captions": [
+    "记录先进入缓冲和写入链路。",
+    "观察 Checkpoint 边界传播到 Writer。",
+    "这两个边界的先后需要由实际 connector 确认。",
+    "从最近的成功检查点回放消息；本页仅为机制示意。"
+   ],
+   "captionChars": [
+    13,
+    27,
+    27,
+    23
+   ],
+   "captionZh": [
+    12,
+    7,
+    15,
+    21
+   ],
+   "totalChars": 90,
+   "totalZh": 55,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "消息流动",
+    "Barrier 到达",
+    "提交与确认",
+    "恢复重放"
+   ]
+  },
+  {
+   "id": "F05",
+   "module": "G",
+   "order": 58,
+   "kind": "flow",
+   "seed": "updates",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "Flink 写入",
+    "Schedule Plan",
+    "计划队列",
+    "Spark Compaction",
+    "新 Base"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "写入留在实时链路",
+    "生成持久化计划",
+    "独立作业接手",
+    "完成合并"
+   ],
+   "captions": [
+    "Flink 侧计划生成与合并执行分工展示。",
+    "引擎产生 REQUESTED。",
+    "观察计划从写入端传给独立执行端。",
+    "本地模型生成新 Base，并保留旧物理文件。"
+   ],
+   "captionChars": [
+    21,
+    15,
+    16,
+    22
+   ],
+   "captionZh": [
+    14,
+    4,
+    15,
+    15
+   ],
+   "totalChars": 74,
+   "totalZh": 48,
+   "operations": [
+    null,
+    "schedule",
+    null,
+    "compact"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "写入留在实时链路",
+    "生成持久化计划",
+    "独立作业接手",
+    "完成合并"
+   ]
+  },
+  {
+   "id": "F06",
+   "module": "G",
+   "order": 59,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "输入流",
+    "并行 Writer",
+    "Bucket 映射",
+    "File Group"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "按桶分配记录",
+    "增加同键输入",
+    "并行度关口",
+    "避免虚构并发结果"
+   ],
+   "captions": [
+    "教学映射由现有 bucketOf 计算。",
+    "同一个键仍映射到同一个桶。",
+    "Writer 与桶数的真实调度关系尚未建模。",
+    "本页不将桶数直接当成实际 Flink 并行度。"
+   ],
+   "captionChars": [
+    20,
+    13,
+    22,
+    23
+   ],
+   "captionZh": [
+    9,
+    12,
+    14,
+    15
+   ],
+   "totalChars": 78,
+   "totalZh": 50,
+   "operations": [
+    null,
+    "bucket-write",
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "bucketCount",
+    "recordKey"
+   ],
+   "titles": [
+    "按桶分配记录",
+    "增加同键输入",
+    "并行度关口",
+    "避免虚构并发结果"
+   ]
+  },
+  {
+   "id": "F07",
+   "module": "G",
+   "order": 60,
+   "kind": "flow",
+   "seed": "cow",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "keytab / principal",
+    "认证票据",
+    "HDFS 权限",
+    "HMS 权限",
+    "作业执行"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "身份认证",
+    "访问 HDFS",
+    "访问 HMS",
+    "选择一个失败关口"
+   ],
+   "captions": [
+    "先获得有效身份，后续服务才能做授权判断。",
+    "目录读写权限和认证成功是不同检查。",
+    "库表权限可能在另一个关口阻止流程。",
+    "在参数里选择拦截位置，观察流动在哪里停止。"
+   ],
+   "captionChars": [
+    20,
+    17,
+    17,
+    21
+   ],
+   "captionZh": [
+    18,
+    16,
+    16,
+    19
+   ],
+   "totalChars": 75,
+   "totalZh": 69,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "身份认证",
+    "访问 HDFS",
+    "访问 HMS",
+    "选择一个失败关口"
+   ]
+  },
+  {
+   "id": "F08",
+   "module": "G",
+   "order": 61,
+   "kind": "flow",
+   "seed": "mor",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "Spark 配置",
+    "共同表格式",
+    "Flink 配置",
+    "读写兼容性"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "从两个入口进入",
+    "对齐关键参数",
+    "观察读写通道",
+    "验证范围"
+   ],
+   "captions": [
+    "两个计算引擎共享表格式，不代表所有配置可互换。",
+    "主键、分区、表类型等需要一致。",
+    "文件格式和提交协议是兼容性核对重点。",
+    "当前未执行真实跨引擎兼容性测试。"
+   ],
+   "captionChars": [
+    23,
+    15,
+    18,
+    16
+   ],
+   "captionZh": [
+    21,
+    12,
+    17,
+    15
+   ],
+   "totalChars": 72,
+   "totalZh": 65,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "从两个入口进入",
+    "对齐关键参数",
+    "观察读写通道",
+    "验证范围"
+   ]
+  },
+  {
+   "id": "E01",
+   "module": "H",
+   "order": 62,
+   "kind": "flow",
+   "seed": "bucket",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "表定义 BUCKET",
+    "作业选项",
+    "比对索引类型",
+    "验证定位策略"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "追踪表定义",
+    "追踪作业选项",
+    "比对两份配置",
+    "修改并验证"
+   ],
+   "captions": [
+    "表定义 BUCKET，预期按主键分桶定位。",
+    "教学案例假设采用手动选择的作业选项，不推断真实优先级。",
+    "类型差异是排查线索，不能据此断言异常根因。",
+    "亲手对齐作业选项，再观察定位策略；真实恢复需重跑验证。"
+   ],
+   "captionChars": [
+    21,
+    27,
+    21,
+    27
+   ],
+   "captionZh": [
+    12,
+    25,
+    19,
+    24
+   ],
+   "totalChars": 96,
+   "totalZh": 80,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    4
+   ],
+   "hasMoments": true,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "bucketCount"
+   ],
+   "titles": [
+    "追踪表定义",
+    "追踪作业选项",
+    "比对两份配置",
+    "修改并验证"
+   ]
+  },
+  {
+   "id": "E02",
+   "module": "H",
+   "order": 63,
+   "kind": "index",
+   "seed": "empty",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "空分区消息",
+    "默认路径",
+    "正常分区",
+    "重复身份"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "写入空值分区",
+    "补全分区再次写入",
+    "分区级定位失效",
+    "查看两个位置"
+   ],
+   "captions": [
+    "本地模型产生空路径分区，并给出警告。",
+    "同键到了另一个分区。",
+    "旧位置未被跨分区索引自动更新。",
+    "分区路径和主键需要一起核对。"
+   ],
+   "captionChars": [
+    18,
+    10,
+    15,
+    14
+   ],
+   "captionZh": [
+    16,
+    9,
+    14,
+    13
+   ],
+   "totalChars": 57,
+   "totalZh": 52,
+   "operations": [
+    "empty-partition",
+    "cross-partition",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "partition"
+   ],
+   "titles": [
+    "写入空值分区",
+    "补全分区再次写入",
+    "分区级定位失效",
+    "查看两个位置"
+   ]
+  },
+  {
+   "id": "E03",
+   "module": "H",
+   "order": 64,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "BUCKET 表",
+    "Bulk Insert",
+    "兼容性规则",
+    "拒绝写入"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "表已有 BUCKET 配置",
+    "尝试批量初始化",
+    "引擎拒绝组合",
+    "切换可用路径"
+   ],
+   "captions": [
+    "当前模型采用保守策略。",
+    "执行 BULK_INSERT 进入索引兼容性检查。",
+    "不产生新文件或成功提交，r26 实际限制待验证。",
+    "使用当前模型允许的 Upsert。"
+   ],
+   "captionChars": [
+    11,
+    25,
+    24,
+    17
+   ],
+   "captionZh": [
+    10,
+    11,
+    18,
+    9
+   ],
+   "totalChars": 77,
+   "totalZh": 48,
+   "operations": [
+    null,
+    null,
+    "invalid-bulk",
+    "bucket-write"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "bucketCount",
+    "recordKey"
+   ],
+   "titles": [
+    "表已有 BUCKET 配置",
+    "尝试批量初始化",
+    "引擎拒绝组合",
+    "切换可用路径"
+   ]
+  },
+  {
+   "id": "E04",
+   "module": "H",
+   "order": 65,
+   "kind": "schema",
+   "seed": "cow",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "记录字段",
+    "表 Schema",
+    "主键校验",
+    "写入拒绝"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "构造缺失主键配置",
+    "校验入口",
+    "观察引擎报错",
+    "修复输入"
+   ],
+   "captions": [
+    "使用缺少 primaryKey 配置的候选表测试写入校验。",
+    "失败必须停在结果提交之前。",
+    "本地校验返回具体错误，保留原状态。",
+    "回到配置完整的原表后可以正常写入。"
+   ],
+   "captionChars": [
+    29,
+    13,
+    17,
+    17
+   ],
+   "captionZh": [
+    16,
+    12,
+    15,
+    16
+   ],
+   "totalChars": 76,
+   "totalZh": 59,
+   "operations": [
+    null,
+    null,
+    "invalid-schema",
+    "upsert"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "构造缺失主键配置",
+    "校验入口",
+    "观察引擎报错",
+    "修复输入"
+   ]
+  },
+  {
+   "id": "E05",
+   "module": "H",
+   "order": 66,
+   "kind": "timeline",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "YARN 成功",
+    "Spark 结束",
+    "Hudi Pending",
+    "未合并文件"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "先生成计划",
+    "注入未提交场景",
+    "查看真实模拟状态",
+    "数据仍未合并"
+   ],
+   "captions": [
+    "有 Plan 才能演示执行失败。",
+    "引擎日志模拟上层成功但 Hudi 未完成。",
+    "以当前 Timeline 的非 COMPLETED 状态为准。",
+    "当前 File Slice 没有成功的新 Base。"
+   ],
+   "captionChars": [
+    16,
+    21,
+    31,
+    26
+   ],
+   "captionZh": [
+    9,
+    14,
+    9,
+    8
+   ],
+   "totalChars": 94,
+   "totalZh": 40,
+   "operations": [
+    "schedule",
+    "fail",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "先生成计划",
+    "注入未提交场景",
+    "查看真实模拟状态",
+    "数据仍未合并"
+   ]
+  },
+  {
+   "id": "E06",
+   "module": "H",
+   "order": 67,
+   "kind": "timeline",
+   "seed": "pending",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "Requested / Inflight",
+    "未完成计划",
+    "Rollback",
+    "重新 Schedule"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "检测残留",
+    "先回滚未完成项",
+    "重新生成计划",
+    "执行新计划"
+   ],
+   "captions": [
+    "场景从已有未完成事务开始。",
+    "只回滚引擎识别的 pending。",
+    "从仍有效的文件重新安排合并。",
+    "新计划正常执行后核对最终状态。"
+   ],
+   "captionChars": [
+    13,
+    17,
+    14,
+    15
+   ],
+   "captionZh": [
+    12,
+    8,
+    13,
+    14
+   ],
+   "totalChars": 59,
+   "totalZh": 47,
+   "operations": [
+    null,
+    "rollback",
+    "schedule",
+    "compact"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "检测残留",
+    "先回滚未完成项",
+    "重新生成计划",
+    "执行新计划"
+   ]
+  },
+  {
+   "id": "E07",
+   "module": "H",
+   "order": 68,
+   "kind": "timeline",
+   "seed": "pending",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "Pending Instant",
+    "残留文件清单",
+    "Rollback",
+    "物理文件核对"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "盘点残留",
+    "回滚事务",
+    "检查清理边界",
+    "核对仍有效记录"
+   ],
+   "captions": [
+    "先比较 Timeline、pending 与物理文件。",
+    "删除引擎判断属于该未完成事务的文件。",
+    "Rollback 不等于清除所有历史旧文件。",
+    "避免把旧版本和失败残留混为一谈。"
+   ],
+   "captionChars": [
+    27,
+    18,
+    22,
+    16
+   ],
+   "captionZh": [
+    8,
+    17,
+    12,
+    15
+   ],
+   "totalChars": 83,
+   "totalZh": 52,
+   "operations": [
+    null,
+    "rollback",
+    null,
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "盘点残留",
+    "回滚事务",
+    "检查清理边界",
+    "核对仍有效记录"
+   ]
+  },
+  {
+   "id": "E08",
+   "module": "H",
+   "order": 69,
+   "kind": "timeline",
+   "seed": "pending",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "Pending 检查",
+    "保留边界",
+    "Cleaner",
+    "Archive"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "发现未完成项",
+    "识别保护范围",
+    "处理 pending",
+    "重新评估清理"
+   ],
+   "captions": [
+    "先检查是否有未完成事务，不能只看作业结束。",
+    "真实阻塞条件需实测，本地不伪造服务停摆。",
+    "先通过现有回滚模型处理一个未完成事务。",
+    "Cleaner 仍按本地保留窗口工作。"
+   ],
+   "captionChars": [
+    21,
+    20,
+    19,
+    19
+   ],
+   "captionZh": [
+    19,
+    18,
+    18,
+    10
+   ],
+   "totalChars": 79,
+   "totalZh": 65,
+   "operations": [
+    null,
+    null,
+    "rollback",
+    "clean"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "retention"
+   ],
+   "titles": [
+    "发现未完成项",
+    "识别保护范围",
+    "处理 pending",
+    "重新评估清理"
+   ]
+  },
+  {
+   "id": "E09",
+   "module": "H",
+   "order": 70,
+   "kind": "flow",
+   "seed": "updates",
+   "model": "mixed",
+   "modelLabel": "引擎 + 机制示意",
+   "nodes": [
+    "实时写入",
+    "共享资源池",
+    "合并任务",
+    "积压队列",
+    "分离调度"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "两条任务链",
+    "积压机制示意",
+    "把执行分离",
+    "独立执行合并"
+   ],
+   "captions": [
+    "实时写入与合并可能争用同一资源池。",
+    "动画队列表示因果关系，不代表实测延迟或吞吐。",
+    "写入侧生成计划。",
+    "实际文件结果由本地 Compaction 计算。"
+   ],
+   "captionChars": [
+    17,
+    22,
+    8,
+    24
+   ],
+   "captionZh": [
+    16,
+    20,
+    7,
+    11
+   ],
+   "totalChars": 71,
+   "totalZh": 54,
+   "operations": [
+    null,
+    null,
+    "schedule",
+    "compact"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "两条任务链",
+    "积压机制示意",
+    "把执行分离",
+    "独立执行合并"
+   ]
+  },
+  {
+   "id": "E10",
+   "module": "H",
+   "order": 71,
+   "kind": "flow",
+   "seed": "cow",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "身份认证",
+    "票据有效期",
+    "HDFS 目录权限",
+    "HMS 库表权限",
+    "作业"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "选择故障位置",
+    "认证与授权分离",
+    "沿链路定位",
+    "修复关口后重跑"
+   ],
+   "captions": [
+    "参数里选择某一关口，观察后续流动被阻断。",
+    "成功认证不代表有目录或表的权限。",
+    "高亮失败节点，不编造真实报错字符串。",
+    "此页不操作 keytab，也不连接现场服务。"
+   ],
+   "captionChars": [
+    20,
+    16,
+    18,
+    22
+   ],
+   "captionZh": [
+    18,
+    15,
+    16,
+    13
+   ],
+   "totalChars": 76,
+   "totalZh": 62,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "选择故障位置",
+    "认证与授权分离",
+    "沿链路定位",
+    "修复关口后重跑"
+   ]
+  },
+  {
+   "id": "A01",
+   "module": "I",
+   "order": 72,
+   "kind": "metrics",
+   "seed": "small",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "小批写入",
+    "多个小文件",
+    "Clustering",
+    "较少文件"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "观察文件分布",
+    "汇入重组",
+    "执行 Clustering",
+    "核对业务数据"
+   ],
+   "captions": [
+    "图中大小和文件数来自当前模拟状态。",
+    "多份记录流向重组过程。",
+    "生成更集中的文件布局。",
+    "文件数变化，Snapshot 业务值保持一致。"
+   ],
+   "captionChars": [
+    17,
+    11,
+    11,
+    23
+   ],
+   "captionZh": [
+    16,
+    10,
+    10,
+    12
+   ],
+   "totalChars": 62,
+   "totalZh": 48,
+   "operations": [
+    null,
+    null,
+    "cluster",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "观察文件分布",
+    "汇入重组",
+    "执行 Clustering",
+    "核对业务数据"
+   ]
+  },
+  {
+   "id": "A02",
+   "module": "I",
+   "order": 73,
+   "kind": "index",
+   "seed": "bucket",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "主键集合",
+    "教学 Hash",
+    "桶负载",
+    "热点桶"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "观察初始分布",
+    "重复同键更新",
+    "比较各桶负载",
+    "改变桶数重跑"
+   ],
+   "captions": [
+    "每个桶的数量由实际教学映射统计。",
+    "同键更新仍落向同一个桶。",
+    "记录数是本地示例，不能推断真实 r26 倾斜程度。",
+    "改变设置会清空过程并重新计算全部映射。"
+   ],
+   "captionChars": [
+    16,
+    12,
+    25,
+    19
+   ],
+   "captionZh": [
+    15,
+    11,
+    18,
+    18
+   ],
+   "totalChars": 72,
+   "totalZh": 62,
+   "operations": [
+    null,
+    "bucket-write",
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "bucketCount",
+    "recordKey"
+   ],
+   "titles": [
+    "观察初始分布",
+    "重复同键更新",
+    "比较各桶负载",
+    "改变桶数重跑"
+   ]
+  },
+  {
+   "id": "A03",
+   "module": "I",
+   "order": 74,
+   "kind": "flow",
+   "seed": "small",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "查询文件清单",
+    "列举 HDFS",
+    "Metadata 索引",
+    "候选文件"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "常规列举路径",
+    "元数据路径",
+    "选择候选文件",
+    "实现边界"
+   ],
+   "captions": [
+    "先看逐个列举目录获得文件信息的路径。",
+    "另一条路径从文件元信息索引取得清单。",
+    "两条路径最终服务于文件发现。",
+    "当前未实现 Metadata Table，不展示虚构的性能数字。"
+   ],
+   "captionChars": [
+    18,
+    18,
+    14,
+    32
+   ],
+   "captionZh": [
+    17,
+    17,
+    13,
+    15
+   ],
+   "totalChars": 82,
+   "totalZh": 62,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "常规列举路径",
+    "元数据路径",
+    "选择候选文件",
+    "实现边界"
+   ]
+  },
+  {
+   "id": "A04",
+   "module": "I",
+   "order": 75,
+   "kind": "flow",
+   "seed": "cow",
+   "model": "concept",
+   "modelLabel": "机制示意",
+   "nodes": [
+    "Writer A",
+    "Writer B",
+    "共同 File Group",
+    "冲突检查",
+    "重试"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "两个写者进入",
+    "构造竞争",
+    "冲突关口",
+    "重试机制示意"
+   ],
+   "captions": [
+    "两条输入通道指向同一个文件组。",
+    "两个写者都基于同一个旧版本产生候选更新。",
+    "用高亮表示需要校验的冲突位置。",
+    "锁、OCC 与实际重试语义未建模，不能当成并发实测。"
+   ],
+   "captionChars": [
+    15,
+    20,
+    15,
+    26
+   ],
+   "captionZh": [
+    14,
+    19,
+    14,
+    19
+   ],
+   "totalChars": 76,
+   "totalZh": 66,
+   "operations": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "failureAt"
+   ],
+   "titles": [
+    "两个写者进入",
+    "构造竞争",
+    "冲突关口",
+    "重试机制示意"
+   ]
+  },
+  {
+   "id": "A05",
+   "module": "I",
+   "order": 76,
+   "kind": "metrics",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "Log 堆积",
+    "阈值检查",
+    "Compaction Plan",
+    "合并后文件"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "增加一批 Log",
+    "生成合并计划",
+    "合并现有 Log",
+    "核对指标"
+   ],
+   "captions": [
+    "先增加一次更新，观察模拟 Log 数。",
+    "当前演示满足最低候选条件。",
+    "执行后当前有效 Log 数减少。",
+    "只展示模拟文件和字节数，不换算真实吞吐。"
+   ],
+   "captionChars": [
+    19,
+    13,
+    16,
+    20
+   ],
+   "captionZh": [
+    12,
+    12,
+    10,
+    18
+   ],
+   "totalChars": 68,
+   "totalZh": 52,
+   "operations": [
+    "upsert",
+    "schedule",
+    "compact",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "增加一批 Log",
+    "生成合并计划",
+    "合并现有 Log",
+    "核对指标"
+   ]
+  },
+  {
+   "id": "A06",
+   "module": "I",
+   "order": 77,
+   "kind": "metrics",
+   "seed": "small",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "旧版本文件",
+    "保留窗口",
+    "可回收集合",
+    "存储占用"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "生成旧版本",
+    "推进边界",
+    "按窗口清理",
+    "数据可见性不变"
+   ],
+   "captions": [
+    "先更新一条已有记录。",
+    "再添加提交，使窗口有可淘汰历史。",
+    "调整保留数后重新演示，比较文件占用。",
+    "实际文件数和估算字节数来自引擎。"
+   ],
+   "captionChars": [
+    10,
+    16,
+    18,
+    16
+   ],
+   "captionZh": [
+    9,
+    14,
+    16,
+    15
+   ],
+   "totalChars": 60,
+   "totalZh": 54,
+   "operations": [
+    "upsert",
+    "insert",
+    "clean",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "retention"
+   ],
+   "titles": [
+    "生成旧版本",
+    "推进边界",
+    "按窗口清理",
+    "数据可见性不变"
+   ]
+  },
+  {
+   "id": "A07",
+   "module": "I",
+   "order": 78,
+   "kind": "timeline",
+   "seed": "small",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "活跃 Instant",
+    "保留数量",
+    "Archive",
+    "较短 Timeline"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "观察多次提交",
+    "设置保留数量",
+    "执行归档",
+    "查看分区数据"
+   ],
+   "captions": [
+    "初始小批写入生成多个 Instant。",
+    "窗口决定迁移到 Archive 的范围。",
+    "只迁移元数据，不移动 Parquet 文件。",
+    "查询结果与归档前一致，耗时不代表真实集群。"
+   ],
+   "captionChars": [
+    19,
+    20,
+    22,
+    21
+   ],
+   "captionZh": [
+    10,
+    10,
+    11,
+    19
+   ],
+   "totalChars": 82,
+   "totalZh": 50,
+   "operations": [
+    null,
+    null,
+    "archive",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "retention"
+   ],
+   "titles": [
+    "观察多次提交",
+    "设置保留数量",
+    "执行归档",
+    "查看分区数据"
+   ]
+  },
+  {
+   "id": "A08",
+   "module": "I",
+   "order": 79,
+   "kind": "metrics",
+   "seed": "updates",
+   "model": "engine",
+   "modelLabel": "引擎驱动",
+   "nodes": [
+    "文件数量",
+    "Log 堆积",
+    "Pending",
+    "维护决策"
+   ],
+   "steps": 4,
+   "stepTitles": [
+    "扫描表状态",
+    "为 Log 生成计划",
+    "执行维护",
+    "核对维护后指标"
+   ],
+   "captions": [
+    "从模拟状态统计文件数、Log、旧版本和 pending。",
+    "看到 Log 堆积，选择安排合并。",
+    "实际文件结果由引擎计算。",
+    "维护建议不能替代真实集群健康诊断。"
+   ],
+   "captionChars": [
+    28,
+    17,
+    12,
+    17
+   ],
+   "captionZh": [
+    14,
+    10,
+    11,
+    16
+   ],
+   "totalChars": 74,
+   "totalZh": 51,
+   "operations": [
+    null,
+    "schedule",
+    "compact",
+    "snapshot"
+   ],
+   "moments": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "hasMoments": false,
+   "hasLimitation": false,
+   "controls": [
+    "recordKey",
+    "amount"
+   ],
+   "titles": [
+    "扫描表状态",
+    "为 Log 生成计划",
+    "执行维护",
+    "核对维护后指标"
+   ]
+  }
+ ],
+ "entries": [
+  {
+   "id": "B01",
+   "moduleId": "A",
+   "title": "Hudi 与 Hive 普通 Parquet 表的区别",
+   "summary": "用同一份数据对比「Hudi 表的增量提交 + 快照读」与「Hive 普通 Parquet 表的整表覆盖」，讲清 Hudi 在数据文件之外多出来的那条 Timeline。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-COMM-MOR"
+   ],
+   "module": "A"
+  },
+  {
+   "id": "B02",
+   "moduleId": "A",
+   "title": "COW 表的数据写入与文件重写",
+   "summary": "一步步向同一分区写入与更新，观察 COW 如何把整个 File Group 重写成新的 parquet 文件，以及旧文件在 Clean 之前为什么还留在 HDFS 上。",
+   "implemented": true,
+   "experimentId": "B02",
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-COMM-MOR"
+   ],
+   "note": "社区 0.15 文档给出 COW / MOR 的表类型与写入语义；r26 上的实际文件落点仍需实测校正。",
+   "module": "A"
+  },
+  {
+   "id": "B03",
+   "moduleId": "A",
+   "title": "MOR 表的数据写入与 Log 合并",
+   "summary": "观察 MOR 把更新写成 Log File 追加进 File Slice，直到一次 Compaction 才把 log 合并回新的 Base File，解释「读优化查询在此之前看不到新数据」的根因。",
+   "implemented": true,
+   "experimentId": "B02",
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "note": "MOR 首写是产生 log-only File Slice 还是直接产生 base file，属于 r26 未确认细节，界面须标待验证。",
+   "module": "A"
+  },
+  {
+   "id": "B04",
+   "moduleId": "A",
+   "title": "File Group、File ID、File Slice 结构",
+   "summary": "把散落的物理文件按 File Group 重新聚合，讲清 File ID 作为稳定标识的作用，以及 File Slice = Base File + 若干 Log File 的结构。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-R26-ART-COMMON"
+   ],
+   "module": "A"
+  },
+  {
+   "id": "B05",
+   "moduleId": "A",
+   "title": "Base File 与 Log File 的版本关系",
+   "summary": "用 log 文件的 version 号与 base instant 说明「一个 File Slice 引用了哪些物理文件」，以及新旧 base 文件之间的替换关系。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "A"
+  },
+  {
+   "id": "B06",
+   "moduleId": "A",
+   "title": "Record Key、Partition Path、HoodieKey",
+   "summary": "讲清 HoodieKey = Record Key + Partition Path 的复合定位语义，以及 recordkey.field 配置与索引定位之间的依赖关系。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-COMM-INDEX"
+   ],
+   "module": "A"
+  },
+  {
+   "id": "B07",
+   "moduleId": "A",
+   "title": "Hudi 的 MVCC 与 Snapshot 可见性",
+   "summary": "用两个 instant 的 checkpoint 讲清快照读看到的是「提交时刻的完整状态」，以及 Time Travel 为什么强依赖 Timeline 上的历史 instant 仍然存在。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "A"
+  },
+  {
+   "id": "B08",
+   "moduleId": "A",
+   "title": "Hudi 表在 HDFS 中的完整目录结构",
+   "summary": "逐层展开表根目录与 .hoodie 目录，讲清「数据文件放分区目录、元数据文件放 .hoodie」这种分离存放方式，以及各自承担什么职责。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-R26-ART-COMMON"
+   ],
+   "note": "r26 制品层面确认 hudi-common 在位（组件级证据），目录结构本身为社区 0.15 语义。",
+   "module": "A"
+  },
+  {
+   "id": "T01",
+   "moduleId": "B",
+   "title": "华为 Spark SQL 创建 COW / MOR 表",
+   "summary": "用 Spark SQL 的 CREATE TABLE ... USING hudi + TBLPROPERTIES 建出 COW 与 MOR 两张表，讲清 type / primaryKey / partitionKey 等属性如何落进 .hoodie/hoodie.properties。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-R26-ART-SPARK3"
+   ],
+   "note": "建表语法为社区 0.15 语义（E1）；r26 侧仅确认 hudi-spark3.3.x_2.12 制品在位（组件级）。",
+   "module": "B"
+  },
+  {
+   "id": "T02",
+   "moduleId": "B",
+   "title": "Hudi 主键与 Precombine 配置",
+   "summary": "讲清 recordkey.field 与 precombine.field 的语义差别：前者决定「这条记录是谁」，后者决定「同一个人的多个版本谁胜出」，以及两者配错的典型后果。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "B"
+  },
+  {
+   "id": "T03",
+   "moduleId": "B",
+   "title": "Hudi 单分区与多级分区",
+   "summary": "对比单层分区与多层分区的目录结构、分区过滤行为与 File Group 分布，讲清分区路径如何由分区字段值拼出。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "B"
+  },
+  {
+   "id": "T04",
+   "moduleId": "B",
+   "title": "默认分区、Null 分区与异常分区值",
+   "summary": "复现空分区值被落到默认分区、以及非法分区字符被清洗的行为，讲清 Hudi 的分区值清洗规则与由此产生的跨分区问题。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "B"
+  },
+  {
+   "id": "T05",
+   "moduleId": "B",
+   "title": "Hive Style Partitioning",
+   "summary": "对比 NONE / HIVE_STYLE_PARTITIONING / STYLE_PARTITIONING_ONLY 三种配置下分区列的存储方式，讲清「目录 + 字段双写」与「仅写目录」对下游读取的影响。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "B"
+  },
+  {
+   "id": "T06",
+   "moduleId": "B",
+   "title": "Hive Metastore 同步与分区元数据",
+   "summary": "讲清 Hudi 表的数据在 HDFS、元数据在 Hive Metastore 的分工，以及用 hudi-hive-sync-bundle 同步后 HMS 才能识别分区并供下游引擎使用。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-R26-ART-HIVESYNC",
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "note": "r26 制品层面确认 hudi-hive-sync-bundle 在位；同步工具的入口类名与参数需以 r26 实际发行包确认。",
+   "module": "B"
+  },
+  {
+   "id": "T07",
+   "moduleId": "B",
+   "title": "Hudi 表配置与 .hoodie/hoodie.properties",
+   "summary": "逐项解读 hoodie.properties 里的表级配置，讲清哪些配置在建表后可以改、哪些改动会破坏历史文件与索引的一致性。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "B"
+  },
+  {
+   "id": "T08",
+   "moduleId": "B",
+   "title": "建表、写入与 Schema 演进限制",
+   "summary": "讲清新增列、删除列、修改列类型三类 Schema 演进在 Hudi 0.15 下的约束边界，以及 hoodie.schema.on.read 的适用场景。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "note": "Schema 演进的具体限制以社区 0.15 为准，r26 上的实际行为与报错信息需实测确认。",
+   "module": "B"
+  },
+  {
+   "id": "W01",
+   "moduleId": "C",
+   "title": "Insert 写入全过程",
+   "summary": "跟踪一次 INSERT INTO 从写出数据文件、落到 File Group、到提交 commit instant 的全过程，讲清每次写入都在 Timeline 上留下什么。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-COMM-MOR"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W02",
+   "moduleId": "C",
+   "title": "Upsert 更新全过程",
+   "summary": "讲清 upsert 如何先按主键定位到已有 File Group：COW 重写整个 File Group，MOR 只追加一个 log file，两者的写放大差距一目了然。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-INDEX",
+    "EV-COMM-MOR"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W03",
+   "moduleId": "C",
+   "title": "Delete 删除全过程",
+   "summary": "讲清 Hudi 的删除不是「把行从文件里抹掉」，而是写入一条 operation=DELETE 的记录，以及被删记录在 Compaction / Clean 之后才真正回收。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W04",
+   "moduleId": "C",
+   "title": "Bulk Insert 数据初始化",
+   "summary": "用 bulk_insert 演示「跳过查重与合并、直接生成 Base File」的写入路径，讲清它为什么是 MOR 表唯一的「一写即 parquet」路径。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-BULK-INSERT"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W05",
+   "moduleId": "C",
+   "title": "Insert Overwrite 分区覆盖",
+   "summary": "演示只覆盖单个分区时的文件与 Timeline 变化，讲清 replacecommit instant 的作用，以及被覆盖分区的旧文件在 Clean 之前仍然占用 HDFS 空间。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-COMM-MOR"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W06",
+   "moduleId": "C",
+   "title": "Insert Overwrite Table 整表覆盖",
+   "summary": "演示整表覆盖如何作废所有分区的 File Group，讲清它与分区覆盖在代价与恢复难度上的差别。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-COMM-MOR"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W07",
+   "moduleId": "C",
+   "title": "DataFrame SaveMode 四种模式",
+   "summary": "对比 DataFrameWriter 的 Append / Overwrite / ErrorIfExists / Ignore 四种 SaveMode，讲清它们与 Hudi 自身的 write.operation 语义如何叠加。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W08",
+   "moduleId": "C",
+   "title": "Precombine 与相同主键冲突处理",
+   "summary": "用同一主键的多版本数据演示 precombine 字段如何决定胜出者，讲清 precombine 字段选错会导致「旧数据覆盖新数据」的典型故障。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W09",
+   "moduleId": "C",
+   "title": "Spark SQL 与 DataFrame 写入差异",
+   "summary": "对比 INSERT INTO 与 DataFrameWriter 两条写入路径在 SaveMode、operation、分区推断上的差别，讲清什么时候必须显式指定 operation。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-R26-ART-SPARK-CLIENT"
+   ],
+   "module": "C"
+  },
+  {
+   "id": "W10",
+   "moduleId": "C",
+   "title": "重复写入、错误配置与幂等性分析",
+   "summary": "重复执行同一条写入语句并观察 Timeline 与文件的变化，讲清「重跑不一定幂等」的原因：幂等性取决于 operation、索引与并发控制三者的组合。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-INDEX",
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "note": "重跑是否产生重复数据取决于并发控制（OCC）行为，r26 上的实际表现需实测确认。",
+   "module": "C"
+  },
+  {
+   "id": "I01",
+   "moduleId": "D",
+   "title": "SIMPLE 索引定位原理",
+   "summary": "讲清 SIMPLE 索引在写入时靠内存 HashMap 定位旧记录、在读取时不做任何裁剪的特点，解释它为什么适合「写后读全量」的场景。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "module": "D"
+  },
+  {
+   "id": "I02",
+   "moduleId": "D",
+   "title": "BLOOM 索引定位原理",
+   "summary": "讲清 Bloom Filter 存在 base file footer 中、查询时先判文件再决定是否打开的概率性剪枝，说明它「可能误判但不会漏判」的语义。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "module": "D"
+  },
+  {
+   "id": "I03",
+   "moduleId": "D",
+   "title": "BUCKET 索引与哈希分桶",
+   "summary": "讲清 BUCKET 索引把主键哈希映射到固定数量的桶、每个桶对应一个 File Group，从而让 upsert 只重写一个桶而非全表扫描。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "note": "「按主键哈希分桶、File Group 固定分配」为社区 0.15 语义；r26 的实际分桶哈希算法未确认，本项目使用教学示意算法并须显著标注。",
+   "module": "D"
+  },
+  {
+   "id": "I04",
+   "moduleId": "D",
+   "title": "BUCKET 索引与分区路径",
+   "summary": "讲清 BUCKET 索引的作用域是「分区内」而非全局，以及跨分区移动同一个主键时 Bucket 映射会怎样失效。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "note": "分区作用域为社区 0.15 语义；r26 下 BUCKET 与分区路径组合的具体行为需实测确认。",
+   "module": "D"
+  },
+  {
+   "id": "I05",
+   "moduleId": "D",
+   "title": "BUCKET 数量与 File Group 分配",
+   "summary": "讲清桶数如何决定每个分区的 File Group 数量、桶数过小或过大分别带来什么问题，以及桶数与写入并行度的匹配关系。",
+   "implemented": false,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "note": "桶数与 File Group 的分配规则在社区文档中未给出细节，r26 也未确认，属待研究场景（E0）。",
+   "module": "D"
+  },
+  {
+   "id": "I06",
+   "moduleId": "D",
+   "title": "GLOBAL 索引与非 GLOBAL 索引",
+   "summary": "对比 GLOBAL_SIMPLE / GLOBAL_BLOOM 与分区级索引的作用域差异，讲清全局索引解决的是「同主键跨分区」问题，代价是索引构建与维护成本更高。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "note": "GLOBAL 索引仅见于社区 0.15 文档；r26 是否启用、行为如何均未确认。",
+   "module": "D"
+  },
+  {
+   "id": "I07",
+   "moduleId": "D",
+   "title": "索引类型与写入操作兼容性",
+   "summary": "把索引类型 × 写入 operation 展开成一张兼容性矩阵，讲清哪些组合天然不被支持，以及遇到不支持的组合时引擎应当拦截还是放行。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX",
+    "EV-COMM-BULK-INSERT"
+   ],
+   "note": "矩阵中绝大多数格子有社区文档支撑，唯独「BUCKET + bulk_insert」这一格社区文档未明确说明、r26 未确认，本项目按拦截处理。",
+   "module": "D"
+  },
+  {
+   "id": "I08",
+   "moduleId": "D",
+   "title": "索引异常诊断实验",
+   "summary": "制造索引与写入操作不匹配的异常，观察引擎给出的错误信息，讲清「看错误类型 → 判断是哪一层拒绝 → 改配置还是改 operation」的排查路径。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-INDEX",
+    "EV-COMM-BULK-INSERT"
+   ],
+   "note": "诊断流程为社区 0.15 语义；r26 上具体的异常类名与报错文案需实测确认。",
+   "module": "D"
+  },
+  {
+   "id": "Q01",
+   "moduleId": "E",
+   "title": "Snapshot 快照查询",
+   "summary": "讲清默认的快照读会合并 base file 与全部 log file，因此 MOR 表在 Compaction 之前也能查到最新数据，代价是读放大。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "Q02",
+   "moduleId": "E",
+   "title": "Read Optimized 读优化查询",
+   "summary": "讲清读优化只读 base file、完全忽略 log file，读得快但会「漏掉」仅存在于 log file 的更新，这是 MOR 表必须及时 Compaction 的根因。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "Q03",
+   "moduleId": "E",
+   "title": "Incremental 增量查询",
+   "summary": "用 begin/end instant time 圈出时间窗口，讲清增量查询只返回窗口内新增与更新的记录，以及被删记录会以 operation=DELETE 的形式返回。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "Q04",
+   "moduleId": "E",
+   "title": "Time Travel 时间旅行",
+   "summary": "用 as.of.instant 读回某个历史时刻的数据，讲清它依赖 Timeline 上仍保留该 instant —— 一旦被 Archive 并清理了历史文件，历史时刻就查不到了。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "Q05",
+   "moduleId": "E",
+   "title": "COW / MOR 查询数据可见性对比",
+   "summary": "在同一份数据上并排比较 COW 与 MOR 在快照读、读优化读下的可见性差异，解释「写完立刻读」为什么两种表结果一致、跑完 Compaction 后为何更一致。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "Q06",
+   "moduleId": "E",
+   "title": "分区过滤与文件扫描",
+   "summary": "调整分区过滤条件并观察实际被打开的文件数，讲清分区裁剪是 Hudi 最有效的读优化手段，也是分区设计必须对齐查询模式的原因。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "Q07",
+   "moduleId": "E",
+   "title": "_hoodie_* 元数据字段",
+   "summary": "逐个解释 _hoodie_record_key / _hoodie_partition_path / _hoodie_commit_time / _hoodie_operation 等元字段的来源与用途，说明它们为什么能直接用来做增量消费。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "Q08",
+   "moduleId": "E",
+   "title": "CDC 与增量数据消费场景",
+   "summary": "把 Incremental Query 接到一条「上游采集 → 下游落库」的链路上，讲清消费端必须自己处理删除语义，否则会漏删造成数据不一致。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "E"
+  },
+  {
+   "id": "S01",
+   "moduleId": "F",
+   "title": "Timeline 与 Instant 生命周期",
+   "summary": "讲清 Timeline 是按 instant time 排序的一串 Instant，以及 REQUESTED / INFLIGHT / COMPLETED 三种状态各自代表写入走到了哪一步。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-R26-ART-COMMON"
+   ],
+   "module": "F"
+  },
+  {
+   "id": "S02",
+   "moduleId": "F",
+   "title": "Commit 与 DeltaCommit",
+   "summary": "区分 COW 的一次性 commit 与 MOR 的 commit + delta commit 组合，讲清 delta commit 如何只记录增量、又如何被 Compaction 消费。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "module": "F"
+  },
+  {
+   "id": "S03",
+   "moduleId": "F",
+   "title": "Compaction Plan 生成",
+   "summary": "用 RUN COMPACTION ON 配合 hoodie.run.compact.only.inline=true 只生成 Compaction Plan，讲清计划里记录的是「哪些 File Group 有多少个 log file 要合并」。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "语法与参数来自华为《Hudi数据表Compaction规范》；r26 上该存储过程的可用性仍需实测确认。",
+   "module": "F"
+  },
+  {
+   "id": "S04",
+   "moduleId": "F",
+   "title": "Compaction 执行与文件合并",
+   "summary": "执行一次 Compaction，观察 log file 被合并成新的 base file、旧 base 与 log 变为 SUPERSEDED，讲清 Compaction 与 Clean 是两件不同的事。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION",
+    "EV-COMM-MOR"
+   ],
+   "module": "F"
+  },
+  {
+   "id": "S05",
+   "moduleId": "F",
+   "title": "异步 Compaction 调度",
+   "summary": "按华为规范拆成「Spark 作业只生成 Plan → 独立 Spark 作业执行 Plan」两步，讲清为什么实时写入链路不应该自己执行 Compaction。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "调度间隔（2~4 小时）与 CPU:内存配比（1:4~1:8）来自华为文档；异步作业的入口类名需以 r26 实际发行包为准。",
+   "module": "F"
+  },
+  {
+   "id": "S06",
+   "moduleId": "F",
+   "title": "Clean 策略与文件物理删除",
+   "summary": "讲清 Clean 才真正把被取代的旧文件从 HDFS 上删掉，以及保留窗口 hoodie.cleaner.commits.retained 如何同时决定空间成本与时间旅行能力。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "RUN CLEAN 存储过程在华为文档中标注为 MRS 3.2.0+；目标版本 3.1.0-350-r26 需改用 hoodie.clean.automatic=true。",
+   "module": "F"
+  },
+  {
+   "id": "S07",
+   "moduleId": "F",
+   "title": "Archive Timeline 归档",
+   "summary": "演示 Archive 把较早的 instant 从活跃 Timeline 移到 .hoodie/archive/ 下，讲清它只搬元数据、不动数据文件，以及归档与 Clean 的先后依赖。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "module": "F"
+  },
+  {
+   "id": "S08",
+   "moduleId": "F",
+   "title": "Rollback 回滚",
+   "summary": "制造一次写到一半失败的提交，再执行 Rollback，讲清它如何删除该 instant 的残留文件并让 Timeline 重新自洽。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-R26-ART-COMMON"
+   ],
+   "note": "仅有组件级证据（hudi-common 在位），无行为级文档；r26 上 hoodie-cli rollback 的参数名需实测确认。",
+   "module": "F"
+  },
+  {
+   "id": "S09",
+   "moduleId": "F",
+   "title": "Restore 恢复",
+   "summary": "用 Restore 把表回滚到某个历史 instant，讲清它与 Rollback 的区别：Rollback 撤销未完成的写入，Restore 撤销已经生效的历史提交。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-MOR"
+   ],
+   "note": "Restore 语义为社区 0.15 行为；r26 的 restore 命令可用性与前置条件需实测确认。",
+   "module": "F"
+  },
+  {
+   "id": "S10",
+   "moduleId": "F",
+   "title": "Clustering 与 ReplaceCommit",
+   "summary": "演示 Clustering 重写分区内的小文件并产生 replacecommit instant，讲清它只改变物理布局、不改变数据内容，与 Clean 的职责边界。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-R26-ART-COMMON",
+    "EV-COMM-MOR"
+   ],
+   "note": "r26 侧 run_clustering 存储过程的参数签名（含 orderby / predicate）需实测确认，华为文档未覆盖。",
+   "module": "F"
+  },
+  {
+   "id": "S11",
+   "moduleId": "F",
+   "title": "TTL 分区过期与清理",
+   "summary": "用 ttl_policy_save 写一条分区级 TTL 策略，讲清 spec 用正则匹配分区、value 与 units 必须成对提供，以及 level 当前仅支持 PARTITION。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-TTL-POLICY"
+   ],
+   "note": "TTL 语法与 PARTITION 级约束有华为文档支撑（E2）；TTL 触发后写哪种 instant、旧文件如何回收等 ReplaceCommit 行为细节 r26 未确认（E0），页面须标待验证。",
+   "module": "F"
+  },
+  {
+   "id": "S12",
+   "moduleId": "F",
+   "title": "Pending Instant 与文件版本引用",
+   "summary": "讲清「Timeline 引用的文件」与「HDFS 上真实存在的文件」是两个集合，Pending Instant 会让两者长期不一致，直到 Clean 把残留文件收走。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-R26-ART-COMMON"
+   ],
+   "note": "pending instant 阻塞后续表服务的具体阈值与行为 r26 未实测确认。",
+   "module": "F"
+  },
+  {
+   "id": "F01",
+   "moduleId": "G",
+   "title": "Spark SQL 创建与写入 Hudi",
+   "summary": "把建表、写入、查询三段 Spark SQL 串成一条完整链路，讲清 TBLPROPERTIES 里的表类型与主键配置如何影响随后的每一次写入。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-R26-ART-SPARK3"
+   ],
+   "module": "G"
+  },
+  {
+   "id": "F02",
+   "moduleId": "G",
+   "title": "Scala DataFrame Writer",
+   "summary": "用 DataFrameWriter API 完成一次带分区条件的写入，讲清它比 Spark SQL 多出来的 SaveMode、prepartition 与 repartition 控制手段。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-R26-ART-SPARK-CLIENT",
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "module": "G"
+  },
+  {
+   "id": "F03",
+   "moduleId": "G",
+   "title": "Flink SQL 实时写入",
+   "summary": "用 Flink SQL 的 connector=hudi 建表并持续写入，讲清 Flink 侧的写入以 log file 追加到 File Slice，以及 checkpoint 与 Hudi 提交的配合。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-R26-ART-FLINK17",
+    "EV-COMM-MOR"
+   ],
+   "module": "G"
+  },
+  {
+   "id": "F04",
+   "moduleId": "G",
+   "title": "Flink Checkpoint 与 Hudi 提交",
+   "summary": "讲清 Flink 的 checkpoint 边界如何与 Hudi instant 的提交点对齐，以及「Hudi 已提交但 checkpoint 未成功」时数据会被重放一次的后果。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-R26-ART-FLINK17"
+   ],
+   "note": "对齐语义为社区 0.15 行为；r26 上 Flink 1.17 connector 的具体提交点需实测确认。",
+   "module": "G"
+  },
+  {
+   "id": "F05",
+   "moduleId": "G",
+   "title": "Flink 写入与 Spark 异步 Compaction",
+   "summary": "按华为规范配置 Flink 侧 compaction.async.enabled=false、compaction.schedule.enabled=true，讲清 Flink 只生成 Plan、合并交给独立 Spark 作业的分工。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION",
+    "EV-R26-ART-FLINK17"
+   ],
+   "module": "G"
+  },
+  {
+   "id": "F06",
+   "moduleId": "G",
+   "title": "Flink 并行度与 Bucket 分配",
+   "summary": "调整 Flink 并行度观察写入产出的 File Group 数量，讲清并行度与桶数不匹配时，同一个桶被多个并发写者争抢会引发什么问题。",
+   "implemented": false,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX",
+    "EV-R26-ART-FLINK17"
+   ],
+   "note": "Flink 并行度与 BUCKET 索引的交互在社区文档中无对应说明，r26 也未确认，属待研究场景（E0）。",
+   "module": "G"
+  },
+  {
+   "id": "F07",
+   "moduleId": "G",
+   "title": "Kerberos、HDFS、HMS 权限链路",
+   "summary": "梳理作业提交前必须打通的认证链路：keytab 登录 → HDFS 目录读写权限 → Hive Metastore 建表权限，讲清断在哪一环会表现为什么样的报错。",
+   "implemented": false,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-HW-KERBEROS"
+   ],
+   "note": "r26 环境下的 keytab / principal / 目录权限 / HMS 库表权限配置项尚未收集到现场记录，该证据本身为 E0。",
+   "module": "G"
+  },
+  {
+   "id": "F08",
+   "moduleId": "G",
+   "title": "Hudi 表的 Spark / Flink 兼容性",
+   "summary": "对比 Spark 与 Flink 对同一张表的建表参数、写入模式与查询语义，讲清「同一份数据、两个引擎」时最容易踩到的配置差异。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-R26-ART-SPARK3",
+    "EV-R26-ART-FLINK17",
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "note": "社区 0.15 两侧均支持；r26 上跨引擎读写同一张表的兼容性需实测确认。",
+   "module": "G"
+  },
+  {
+   "id": "E01",
+   "moduleId": "H",
+   "title": "BUCKET 索引写入时报 SIMPLE 错误",
+   "summary": "复现「表配置了 BUCKET 索引，写入时却按 SIMPLE 索引报错」的现象，讲清配置没生效的常见原因与逐层排查顺序。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "note": "索引语义为社区 0.15；r26 上该错误的实际类名与文案需实测确认。",
+   "module": "H"
+  },
+  {
+   "id": "E02",
+   "moduleId": "H",
+   "title": "默认分区写入与跨分区异常",
+   "summary": "让空分区值落到默认分区后再写入同名主键，讲清同主键出现在两个分区时索引定位不到旧记录、进而产生重复数据的成因。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE",
+    "EV-COMM-INDEX"
+   ],
+   "note": "分区清洗与索引作用域为社区 0.15 语义；r26 上的实际报错与去重行为需实测确认。",
+   "module": "H"
+  },
+  {
+   "id": "E03",
+   "moduleId": "H",
+   "title": "BUCKET 表 Bulk Insert 失败",
+   "summary": "在 BUCKET 索引表上执行 bulk_insert 并观察引擎的拦截，讲清为什么这个组合风险最高，以及正确的初始化顺序应该是什么。",
+   "implemented": false,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-BULK-INSERT"
+   ],
+   "note": "「BUCKET + bulk_insert 不兼容」这一断言在社区 0.15 文档中未明确说明、r26 也未确认，属待研究场景（E0）；本项目按拦截并提示实测处理。",
+   "module": "H"
+  },
+  {
+   "id": "E04",
+   "moduleId": "H",
+   "title": "Hudi 无 Schema 或元数据不完整",
+   "summary": "构造缺字段、缺分区字段、recordkey.field 与 primaryKey 不一致的表，讲清元数据不自洽时写入为什么必须被拒绝。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-COMM-CREATE-TABLE"
+   ],
+   "note": "配置约束为社区 0.15 语义；r26 上具体的校验时机与报错需实测确认。",
+   "module": "H"
+  },
+  {
+   "id": "E05",
+   "moduleId": "H",
+   "title": "Compaction 失败但 YARN 显示成功",
+   "summary": "注入「Spark 任务结束但 Hudi 事务未提交」的故障，讲清为什么调度平台显示成功而表数据没变，以及该看哪个时间点的日志来发现。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "「调度成功但事务未提交」场景来自华为《Hudi数据表Compaction规范》中的故障描述。",
+   "module": "H"
+  },
+  {
+   "id": "E06",
+   "moduleId": "H",
+   "title": "Compaction Requested / Inflight 残留",
+   "summary": "留下一个未被消费的 Compaction Plan 与一个 INFLIGHT instant，讲清残留状态如何阻塞后续 Compaction，以及应当重跑计划还是先做 Rollback。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "Plan 一次性消费语义来自华为规范；r26 上残留 plan 的具体文件形态与清理方式需实测确认。",
+   "module": "H"
+  },
+  {
+   "id": "E07",
+   "moduleId": "H",
+   "title": "Rollback Requested 文件大量残留",
+   "summary": "统计回滚前后 HDFS 上仍存在的物理文件，讲清「Timeline 已经回滚了但文件没删干净」的原因，以及该由 Clean 还是人工介入来收尾。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-R26-ART-COMMON"
+   ],
+   "note": "回滚语义为社区 0.15；r26 上残留文件的判定与清理路径需实测确认。",
+   "module": "H"
+  },
+  {
+   "id": "E08",
+   "moduleId": "H",
+   "title": "Cleaner / Archive 被异常状态阻塞",
+   "summary": "制造 pending instant 让 Archive 与 Cleaner 相继停摆，讲清「表服务被谁挡住」的判断方法与排查顺序。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION",
+    "EV-R26-ART-COMMON"
+   ],
+   "note": "Archive 语法有华为文档支撑（E2），但「pending instant 阻塞 Archive」的行为为社区 0.15 语义、r26 未实测。",
+   "module": "H"
+  },
+  {
+   "id": "E09",
+   "moduleId": "H",
+   "title": "Flink 写入积压与 Compaction 资源冲突",
+   "summary": "让实时写入与 Compaction 抢同一批集群资源，讲清华为规范为什么要求 Flink 只生成 Plan，并用 CPU:内存 = 1:4~1:8 的配比说明依据。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "调度建议来自华为规范；真实积压表现与资源指标需在 r26 集群实测。",
+   "module": "H"
+  },
+  {
+   "id": "E10",
+   "moduleId": "H",
+   "title": "Kerberos、HMS、HDFS 权限故障",
+   "summary": "按认证 → HDFS 目录权限 → HMS 库表权限三段拆解典型报错，讲清每一类故障的报错特征与对应的处置动作。",
+   "implemented": false,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-HW-KERBEROS"
+   ],
+   "note": "r26 环境下的具体配置项与报错文案尚未收集到现场记录，该证据本身为 E0，属待研究场景。",
+   "module": "H"
+  },
+  {
+   "id": "A01",
+   "moduleId": "I",
+   "title": "Hudi 文件大小与小文件问题",
+   "summary": "统计每个分区的文件数与平均大小，讲清小文件怎么产生、怎么拖慢查询，以及用 Clustering 从源头控制文件大小的思路。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "evidenceIds": [
+    "EV-COMM-MOR",
+    "EV-R26-ART-COMMON"
+   ],
+   "module": "I"
+  },
+  {
+   "id": "A02",
+   "moduleId": "I",
+   "title": "Bucket 数据倾斜",
+   "summary": "构造主键分布极不均匀的数据并观察各桶的记录数，讲清哈希分桶下的倾斜现象，以及它和文件大小、Compaction 负载之间的因果链。",
+   "implemented": false,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX"
+   ],
+   "note": "分桶算法本身在 r26 未确认，倾斜程度与分布特征无法定量结论，属待研究场景（E0）。",
+   "module": "I"
+  },
+  {
+   "id": "A03",
+   "moduleId": "I",
+   "title": "Metadata Table",
+   "summary": "讲清 Metadata Table 提供的文件元信息视图能替代哪些昂贵的 HDFS 列举操作，以及 hoodie.metadata.enable 开关带来的取舍。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-METADATA-TABLE"
+   ],
+   "note": "Metadata Table 为社区 0.15 特性；r26 的开关、索引实现与限制均未确认。",
+   "module": "I"
+  },
+  {
+   "id": "A04",
+   "moduleId": "I",
+   "title": "并发控制、锁与多 Writer",
+   "summary": "让两个写者同时改同一分区，讲清乐观并发控制如何发现写冲突、为什么并发写者必须收敛到同一个 File Group 集合上。",
+   "implemented": false,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "evidenceIds": [
+    "EV-COMM-INDEX",
+    "EV-R26-ART-COMMON"
+   ],
+   "note": "并发控制在社区文档中有 OCC 的概念性描述，但 r26 上的具体冲突检测与重试行为无直接依据，属待研究场景（E0）。",
+   "module": "I"
+  },
+  {
+   "id": "A05",
+   "moduleId": "I",
+   "title": "Compaction 策略与吞吐量分析",
+   "summary": "调节 compaction.delta_commits 并观察每次 Compaction 合并掉的 log 数量，讲清「攒多久合一次」在延迟与吞吐之间的取舍。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "参数取值与调度建议来自华为规范；真实吞吐数据必须在 r26 集群实测。",
+   "module": "I"
+  },
+  {
+   "id": "A06",
+   "moduleId": "I",
+   "title": "Cleaner 保留策略与存储成本",
+   "summary": "调节 hoodie.cleaner.commits.retained / keep.max.commits / keep.min.commits 并观察存储占用，讲清「保留窗口」同时决定了成本与可回溯范围。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "参数组合来自华为规范；具体存储成本随数据量变化，需实测标定。",
+   "module": "I"
+  },
+  {
+   "id": "A07",
+   "moduleId": "I",
+   "title": "Timeline 规模与归档性能",
+   "summary": "统计活跃 Timeline 上的 instant 数量并执行 Archive，讲清 Timeline 为什么会无限膨胀、Archive 如何控制它，以及归档动作本身的代价。",
+   "implemented": false,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "RUN ARCHIVELOG 语法有华为文档支撑（E2）；Timeline 规模阈值与归档耗时无实测数据，需 r26 标定。",
+   "module": "I"
+  },
+  {
+   "id": "A08",
+   "moduleId": "I",
+   "title": "Hudi 表健康检查与维护决策",
+   "summary": "把前面的能力串成一张体检清单：文件数与大小、log file 堆积、pending instant、Timeline 长度、Cleaner 保留窗口，逐项给出维护决策。",
+   "implemented": false,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "evidenceIds": [
+    "EV-R26-ART-COMMON",
+    "EV-HW-RUN-COMPACTION"
+   ],
+   "note": "检查项来自社区 0.15 的运维实践与华为规范；r26 上 hoodie-cli 的安装路径与命令名需实测确认。",
+   "module": "I"
+  }
+ ],
+ "termStats": {
+  "File Group": {
+   "caption": 11,
+   "lessonMeta": 13,
+   "summary": 12,
+   "note": 2,
+   "places": []
+  },
+  "File Slice": {
+   "caption": 8,
+   "lessonMeta": 4,
+   "summary": 4,
+   "note": 1,
+   "places": []
+  },
+  "Base File": {
+   "caption": 1,
+   "lessonMeta": 2,
+   "summary": 3,
+   "note": 0,
+   "places": []
+  },
+  "Log File": {
+   "caption": 0,
+   "lessonMeta": 2,
+   "summary": 2,
+   "note": 0,
+   "places": []
+  },
+  "Instant": {
+   "caption": 3,
+   "lessonMeta": 8,
+   "summary": 20,
+   "note": 3,
+   "places": []
+  },
+  "Timeline": {
+   "caption": 10,
+   "lessonMeta": 8,
+   "summary": 14,
+   "note": 1,
+   "places": []
+  },
+  "Commit": {
+   "caption": 19,
+   "lessonMeta": 28,
+   "summary": 23,
+   "note": 3,
+   "places": []
+  },
+  "Compaction": {
+   "caption": 4,
+   "lessonMeta": 3,
+   "summary": 18,
+   "note": 2,
+   "places": []
+  },
+  "Clustering": {
+   "caption": 2,
+   "lessonMeta": 6,
+   "summary": 2,
+   "note": 1,
+   "places": []
+  },
+  "HoodieKey": {
+   "caption": 0,
+   "lessonMeta": 1,
+   "summary": 1,
+   "note": 0,
+   "places": []
+  },
+  "Record Key": {
+   "caption": 21,
+   "lessonMeta": 18,
+   "summary": 13,
+   "note": 1,
+   "places": []
+  },
+  "Partition Path": {
+   "caption": 6,
+   "lessonMeta": 3,
+   "summary": 2,
+   "note": 1,
+   "places": []
+  },
+  "Bucket": {
+   "caption": 22,
+   "lessonMeta": 14,
+   "summary": 11,
+   "note": 4,
+   "places": []
+  },
+  "Precombine": {
+   "caption": 4,
+   "lessonMeta": 1,
+   "summary": 3,
+   "note": 0,
+   "places": []
+  },
+  "COW": {
+   "caption": 4,
+   "lessonMeta": 0,
+   "summary": 5,
+   "note": 1,
+   "places": []
+  },
+  "MOR": {
+   "caption": 6,
+   "lessonMeta": 0,
+   "summary": 8,
+   "note": 2,
+   "places": []
+  },
+  "Read Optimized": {
+   "caption": 1,
+   "lessonMeta": 3,
+   "summary": 4,
+   "note": 0,
+   "places": []
+  },
+  "Snapshot": {
+   "caption": 11,
+   "lessonMeta": 17,
+   "summary": 4,
+   "note": 0,
+   "places": []
+  },
+  "Incremental": {
+   "caption": 2,
+   "lessonMeta": 4,
+   "summary": 5,
+   "note": 0,
+   "places": []
+  },
+  "Metadata Table": {
+   "caption": 1,
+   "lessonMeta": 0,
+   "summary": 1,
+   "note": 1,
+   "places": []
+  },
+  "Archive": {
+   "caption": 4,
+   "lessonMeta": 5,
+   "summary": 8,
+   "note": 3,
+   "places": []
+  },
+  "Clean": {
+   "caption": 5,
+   "lessonMeta": 7,
+   "summary": 14,
+   "note": 3,
+   "places": []
+  },
+  "Rollback": {
+   "caption": 4,
+   "lessonMeta": 8,
+   "summary": 7,
+   "note": 2,
+   "places": []
+  },
+  "TTL": {
+   "caption": 0,
+   "lessonMeta": 2,
+   "summary": 2,
+   "note": 2,
+   "places": []
+  },
+  "Pending": {
+   "caption": 12,
+   "lessonMeta": 13,
+   "summary": 4,
+   "note": 2,
+   "places": []
+  },
+  "Checkpoint": {
+   "caption": 8,
+   "lessonMeta": 2,
+   "summary": 4,
+   "note": 0,
+   "places": []
+  },
+  "ReplaceCommit": {
+   "caption": 0,
+   "lessonMeta": 0,
+   "summary": 2,
+   "note": 1,
+   "places": []
+  },
+  "DeltaCommit": {
+   "caption": 1,
+   "lessonMeta": 1,
+   "summary": 2,
+   "note": 0,
+   "places": []
+  },
+  "Hive Sync / HMS": {
+   "caption": 2,
+   "lessonMeta": 5,
+   "summary": 5,
+   "note": 2,
+   "places": []
+  },
+  "HDFS": {
+   "caption": 2,
+   "lessonMeta": 5,
+   "summary": 9,
+   "note": 0,
+   "places": []
+  },
+  "OCC / 并发控制": {
+   "caption": 1,
+   "lessonMeta": 0,
+   "summary": 2,
+   "note": 4,
+   "places": []
+  },
+  "Bulk Insert": {
+   "caption": 5,
+   "lessonMeta": 1,
+   "summary": 2,
+   "note": 2,
+   "places": []
+  },
+  "SaveMode": {
+   "caption": 3,
+   "lessonMeta": 2,
+   "summary": 3,
+   "note": 0,
+   "places": []
+  },
+  "Schema": {
+   "caption": 1,
+   "lessonMeta": 3,
+   "summary": 2,
+   "note": 1,
+   "places": []
+  },
+  "File ID": {
+   "caption": 0,
+   "lessonMeta": 0,
+   "summary": 1,
+   "note": 0,
+   "places": []
+  },
+  "Flink": {
+   "caption": 3,
+   "lessonMeta": 3,
+   "summary": 8,
+   "note": 2,
+   "places": []
+  },
+  "Spark": {
+   "caption": 5,
+   "lessonMeta": 6,
+   "summary": 8,
+   "note": 0,
+   "places": []
+  },
+  "Kerberos": {
+   "caption": 1,
+   "lessonMeta": 1,
+   "summary": 1,
+   "note": 1,
+   "places": []
+  }
+ },
+ "firstSeen": {
+  "File Group": {
+   "id": "B01",
+   "stepNo": 3,
+   "source": "caption",
+   "text": "本次只更新目标 File Group，保留旧文件。"
+  },
+  "File Slice": {
+   "id": "B01",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "Timeline 与当前 File Slice 一起指向新版本。"
+  },
+  "Timeline": {
+   "id": "B01",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "普通 Parquet 文件不携带 Hudi 的事务 Timeline。"
+  },
+  "Commit": {
+   "id": "B01",
+   "stepNo": 4,
+   "source": "stepTitle",
+   "text": "提交快照"
+  },
+  "Snapshot": {
+   "id": "B01",
+   "stepNo": 4,
+   "source": "stepTitle",
+   "text": "提交快照"
+  },
+  "Base File": {
+   "id": "B04",
+   "stepNo": 1,
+   "source": "node",
+   "text": "Base File"
+  },
+  "Log File": {
+   "id": "B04",
+   "stepNo": 1,
+   "source": "node",
+   "text": "Log File"
+  },
+  "Instant": {
+   "id": "B05",
+   "stepNo": 2,
+   "source": "caption",
+   "text": "Log 携带本次更新记录与写入 Instant。"
+  },
+  "Compaction": {
+   "id": "B05",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "Base 已由引擎的初始 Compaction 建立。"
+  },
+  "HoodieKey": {
+   "id": "B06",
+   "stepNo": 1,
+   "source": "node",
+   "text": "HoodieKey"
+  },
+  "Record Key": {
+   "id": "B06",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "主键区分记录，分区路径限定定位范围。"
+  },
+  "Partition Path": {
+   "id": "B06",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "主键区分记录，分区路径限定定位范围。"
+  },
+  "Checkpoint": {
+   "id": "B07",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "初始提交的 Checkpoint 记录旧文件版本。"
+  },
+  "Precombine": {
+   "id": "T01",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "主键、precombine 和分区字段进入表定义。"
+  },
+  "COW": {
+   "id": "T01",
+   "stepNo": 3,
+   "source": "caption",
+   "text": "文件落点由所选 COW/MOR 及引擎规则决定。"
+  },
+  "MOR": {
+   "id": "T01",
+   "stepNo": 3,
+   "source": "caption",
+   "text": "文件落点由所选 COW/MOR 及引擎规则决定。"
+  },
+  "HDFS": {
+   "id": "T03",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "多级路径按多个字段依次组合；真实目录可在 HDFS 详情查看。"
+  },
+  "Hive Sync / HMS": {
+   "id": "T06",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "HDFS 有数据，并不代表 HMS 已同步。"
+  },
+  "Schema": {
+   "id": "T08",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "当前引擎未实现 Schema 演进，动画只展示校验关口。"
+  },
+  "Incremental": {
+   "id": "W03",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "增量结果保留 D 标记，供下游处理删除。"
+  },
+  "Bulk Insert": {
+   "id": "W04",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "Bulk Insert 路径不用于定位和更新既有主键。"
+  },
+  "Clean": {
+   "id": "W06",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "旧文件仍需遵循 Cleaner 保留窗口。"
+  },
+  "SaveMode": {
+   "id": "W07",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "SaveMode 决定上层数据源对已有目标的处理。"
+  },
+  "Spark": {
+   "id": "W07",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "本页为 API 机制示意，不模拟 Spark SaveMode 的执行。"
+  },
+  "Bucket": {
+   "id": "I03",
+   "stepNo": 2,
+   "source": "caption",
+   "text": "调用现有 bucketOf；r26 的实际哈希算法待验证。"
+  },
+  "Read Optimized": {
+   "id": "Q02",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "读优化路径只读取 Base。"
+  },
+  "DeltaCommit": {
+   "id": "S02",
+   "stepNo": 1,
+   "source": "caption",
+   "text": "MOR 的本次更新产生 DELTA_COMMIT。"
+  },
+  "Archive": {
+   "id": "S07",
+   "stepNo": 3,
+   "source": "caption",
+   "text": "Archive 移动元数据，不删除数据文件。"
+  },
+  "Rollback": {
+   "id": "S08",
+   "stepNo": 2,
+   "source": "caption",
+   "text": "Rollback 用于未完成事务，不撤销已完成提交。"
+  },
+  "Pending": {
+   "id": "S08",
+   "stepNo": 2,
+   "source": "caption",
+   "text": "Rollback 用于未完成事务，不撤销已完成提交。"
+  },
+  "Clustering": {
+   "id": "S10",
+   "stepNo": 2,
+   "source": "caption",
+   "text": "Clustering 改变文件布局，不改变业务值。"
+  },
+  "TTL": {
+   "id": "S11",
+   "stepNo": 2,
+   "source": "stepTitle",
+   "text": "执行分区 TTL"
+  },
+  "Flink": {
+   "id": "F03",
+   "stepNo": 2,
+   "source": "caption",
+   "text": "本地 MOR 场景追加 Log，不模拟 Flink runtime。"
+  },
+  "Kerberos": {
+   "id": "F07",
+   "stepNo": 1,
+   "source": "node",
+   "text": "keytab / principal"
+  },
+  "Metadata Table": {
+   "id": "A03",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "当前未实现 Metadata Table，不展示虚构的性能数字。"
+  },
+  "OCC / 并发控制": {
+   "id": "A04",
+   "stepNo": 4,
+   "source": "caption",
+   "text": "锁、OCC 与实际重试语义未建模，不能当成并发实测。"
+  }
+ },
+ "hedgeStats": {
+  "待验证": 2,
+  "待实测": 2,
+  "教学模型": 0,
+  "模拟": 16,
+  "不连接真实集群": 4,
+  "示意 / 机制示意": 13,
+  "不伪造 / 避免虚构": 14,
+  "未实现 / 未建模": 6,
+  "假设 / 本案例": 4,
+  "仅展示 / 不能推断": 6
+ },
+ "hedgeSummary": {
+  "待实测": 18,
+  "待验证": 2,
+  "示意 / 机制示意": 1
+ },
+ "hedgeHits": [
+  {
+   "id": "T04",
+   "step": 2,
+   "kind": "待实测",
+   "text": "引擎发出默认分区相关提示，具体目录名待实测。"
+  },
+  {
+   "id": "T05",
+   "step": 4,
+   "kind": "模拟",
+   "text": "该动画为配置机制示意，不模拟三种模式下真实文件编码。"
+  },
+  {
+   "id": "T05",
+   "step": 4,
+   "kind": "示意 / 机制示意",
+   "text": "该动画为配置机制示意，不模拟三种模式下真实文件编码。"
+  },
+  {
+   "id": "T06",
+   "step": 1,
+   "kind": "不伪造 / 避免虚构",
+   "text": "HDFS 有数据，并不代表 HMS 已同步。"
+  },
+  {
+   "id": "T06",
+   "step": 4,
+   "kind": "不连接真实集群",
+   "text": "这是同步链路示意，未连接真实 HMS。"
+  },
+  {
+   "id": "T06",
+   "step": 4,
+   "kind": "示意 / 机制示意",
+   "text": "这是同步链路示意，未连接真实 HMS。"
+  },
+  {
+   "id": "T08",
+   "step": 4,
+   "kind": "未实现 / 未建模",
+   "text": "当前引擎未实现 Schema 演进，动画只展示校验关口。"
+  },
+  {
+   "id": "T08",
+   "step": 4,
+   "kind": "仅展示 / 不能推断",
+   "text": "当前引擎未实现 Schema 演进，动画只展示校验关口。"
+  },
+  {
+   "id": "W01",
+   "step": 3,
+   "kind": "模拟",
+   "text": "INSERT_RECORDS 产生真实模拟文件和提交。"
+  },
+  {
+   "id": "W04",
+   "step": 3,
+   "kind": "假设 / 本案例",
+   "text": "当前教学引擎的 Bulk Insert 在 COW/MOR 均生成 Base。"
+  },
+  {
+   "id": "W07",
+   "step": 4,
+   "kind": "模拟",
+   "text": "本页为 API 机制示意，不模拟 Spark SaveMode 的执行。"
+  },
+  {
+   "id": "W07",
+   "step": 4,
+   "kind": "示意 / 机制示意",
+   "text": "本页为 API 机制示意，不模拟 Spark SaveMode 的执行。"
+  },
+  {
+   "id": "W09",
+   "step": 3,
+   "kind": "模拟",
+   "text": "这里调用同一模拟写入引擎，不运行真实 Spark。"
+  },
+  {
+   "id": "W09",
+   "step": 4,
+   "kind": "模拟",
+   "text": "相同操作与参数得到同一个模拟状态。"
+  },
+  {
+   "id": "I01",
+   "step": 2,
+   "kind": "示意 / 机制示意",
+   "text": "动画追踪候选文件，不将示意扫描速度当作性能实测。"
+  },
+  {
+   "id": "I02",
+   "step": 1,
+   "kind": "不伪造 / 避免虚构",
+   "text": "Bloom 的“可能包含”不代表主键一定存在。"
+  },
+  {
+   "id": "I02",
+   "step": 2,
+   "kind": "示意 / 机制示意",
+   "text": "候选筛选是机制示意，未实现真实 Bloom 位图。"
+  },
+  {
+   "id": "I02",
+   "step": 2,
+   "kind": "未实现 / 未建模",
+   "text": "候选筛选是机制示意，未实现真实 Bloom 位图。"
+  },
+  {
+   "id": "I03",
+   "step": 2,
+   "kind": "待验证",
+   "text": "调用现有 bucketOf；r26 的实际哈希算法待验证。"
+  },
+  {
+   "id": "I05",
+   "step": 4,
+   "kind": "不伪造 / 避免虚构",
+   "text": "分布取决于键集合；不宣称是 r26 的实际分配。"
+  },
+  {
+   "id": "I08",
+   "step": 2,
+   "kind": "假设 / 本案例",
+   "text": "当前教学策略拒绝 BUCKET + Bulk Insert。"
+  },
+  {
+   "id": "Q04",
+   "step": 3,
+   "kind": "模拟",
+   "text": "本例存在真实模拟 Checkpoint，避免近似回退。"
+  },
+  {
+   "id": "Q06",
+   "step": 3,
+   "kind": "假设 / 本案例",
+   "text": "当前教学适配器选择分区后调用同一查询引擎。"
+  },
+  {
+   "id": "Q06",
+   "step": 4,
+   "kind": "模拟",
+   "text": "这里统计模拟候选文件数，不模拟 Spark 执行计划。"
+  },
+  {
+   "id": "Q08",
+   "step": 4,
+   "kind": "不连接真实集群",
+   "text": "下游处理为机制示意，不连接外部数据库。"
+  },
+  {
+   "id": "Q08",
+   "step": 4,
+   "kind": "示意 / 机制示意",
+   "text": "下游处理为机制示意，不连接外部数据库。"
+  },
+  {
+   "id": "S01",
+   "step": 3,
+   "kind": "不伪造 / 避免虚构",
+   "text": "动画展示执行阶段，不虚构底层尚未返回的中间状态。"
+  },
+  {
+   "id": "S05",
+   "step": 3,
+   "kind": "不连接真实集群",
+   "text": "作业调度为机制示意，不连接真实调度平台。"
+  },
+  {
+   "id": "S05",
+   "step": 3,
+   "kind": "示意 / 机制示意",
+   "text": "作业调度为机制示意，不连接真实调度平台。"
+  },
+  {
+   "id": "S09",
+   "step": 4,
+   "kind": "不伪造 / 避免虚构",
+   "text": "当前引擎没有 Restore 动作，本页不伪造恢复提交。"
+  },
+  {
+   "id": "F02",
+   "step": 4,
+   "kind": "模拟",
+   "text": "本地模拟不执行 Scala 或连接 Spark。"
+  },
+  {
+   "id": "F03",
+   "step": 2,
+   "kind": "模拟",
+   "text": "本地 MOR 场景追加 Log，不模拟 Flink runtime。"
+  },
+  {
+   "id": "F04",
+   "step": 4,
+   "kind": "示意 / 机制示意",
+   "text": "从最近的成功检查点回放消息；本页仅为机制示意。"
+  },
+  {
+   "id": "F06",
+   "step": 3,
+   "kind": "未实现 / 未建模",
+   "text": "Writer 与桶数的真实调度关系尚未建模。"
+  },
+  {
+   "id": "F08",
+   "step": 1,
+   "kind": "不伪造 / 避免虚构",
+   "text": "两个计算引擎共享表格式，不代表所有配置可互换。"
+  },
+  {
+   "id": "F08",
+   "step": 4,
+   "kind": "未实现 / 未建模",
+   "text": "当前未执行真实跨引擎兼容性测试。"
+  },
+  {
+   "id": "E01",
+   "step": 2,
+   "kind": "假设 / 本案例",
+   "text": "教学案例假设采用手动选择的作业选项，不推断真实优先级。"
+  },
+  {
+   "id": "E03",
+   "step": 3,
+   "kind": "待验证",
+   "text": "不产生新文件或成功提交，r26 实际限制待验证。"
+  },
+  {
+   "id": "E05",
+   "step": 2,
+   "kind": "模拟",
+   "text": "引擎日志模拟上层成功但 Hudi 未完成。"
+  },
+  {
+   "id": "E08",
+   "step": 2,
+   "kind": "待实测",
+   "text": "真实阻塞条件需实测，本地不伪造服务停摆。"
+  },
+  {
+   "id": "E08",
+   "step": 2,
+   "kind": "不伪造 / 避免虚构",
+   "text": "真实阻塞条件需实测，本地不伪造服务停摆。"
+  },
+  {
+   "id": "E09",
+   "step": 2,
+   "kind": "不伪造 / 避免虚构",
+   "text": "动画队列表示因果关系，不代表实测延迟或吞吐。"
+  },
+  {
+   "id": "E09",
+   "step": 2,
+   "kind": "仅展示 / 不能推断",
+   "text": "动画队列表示因果关系，不代表实测延迟或吞吐。"
+  },
+  {
+   "id": "E10",
+   "step": 2,
+   "kind": "不伪造 / 避免虚构",
+   "text": "成功认证不代表有目录或表的权限。"
+  },
+  {
+   "id": "E10",
+   "step": 3,
+   "kind": "不伪造 / 避免虚构",
+   "text": "高亮失败节点，不编造真实报错字符串。"
+  },
+  {
+   "id": "E10",
+   "step": 4,
+   "kind": "不连接真实集群",
+   "text": "此页不操作 keytab，也不连接现场服务。"
+  },
+  {
+   "id": "A01",
+   "step": 1,
+   "kind": "模拟",
+   "text": "图中大小和文件数来自当前模拟状态。"
+  },
+  {
+   "id": "A02",
+   "step": 3,
+   "kind": "仅展示 / 不能推断",
+   "text": "记录数是本地示例，不能推断真实 r26 倾斜程度。"
+  },
+  {
+   "id": "A03",
+   "step": 4,
+   "kind": "未实现 / 未建模",
+   "text": "当前未实现 Metadata Table，不展示虚构的性能数字。"
+  },
+  {
+   "id": "A04",
+   "step": 4,
+   "kind": "不伪造 / 避免虚构",
+   "text": "锁、OCC 与实际重试语义未建模，不能当成并发实测。"
+  },
+  {
+   "id": "A04",
+   "step": 4,
+   "kind": "未实现 / 未建模",
+   "text": "锁、OCC 与实际重试语义未建模，不能当成并发实测。"
+  },
+  {
+   "id": "A05",
+   "step": 1,
+   "kind": "模拟",
+   "text": "先增加一次更新，观察模拟 Log 数。"
+  },
+  {
+   "id": "A05",
+   "step": 4,
+   "kind": "模拟",
+   "text": "只展示模拟文件和字节数，不换算真实吞吐。"
+  },
+  {
+   "id": "A05",
+   "step": 4,
+   "kind": "仅展示 / 不能推断",
+   "text": "只展示模拟文件和字节数，不换算真实吞吐。"
+  },
+  {
+   "id": "A07",
+   "step": 4,
+   "kind": "不伪造 / 避免虚构",
+   "text": "查询结果与归档前一致，耗时不代表真实集群。"
+  },
+  {
+   "id": "A07",
+   "step": 4,
+   "kind": "仅展示 / 不能推断",
+   "text": "查询结果与归档前一致，耗时不代表真实集群。"
+  },
+  {
+   "id": "A08",
+   "step": 1,
+   "kind": "模拟",
+   "text": "从模拟状态统计文件数、Log、旧版本和 pending。"
+  }
+ ],
+ "dupPairs": [
+  {
+   "a": "B07",
+   "b": "Q01",
+   "capSim": 0,
+   "nodeSim": 1,
+   "titleSim": 0,
+   "score": 0.5
+  },
+  {
+   "a": "W01",
+   "b": "W02",
+   "capSim": 0,
+   "nodeSim": 1,
+   "titleSim": 0,
+   "score": 0.5
+  },
+  {
+   "a": "W01",
+   "b": "W10",
+   "capSim": 0,
+   "nodeSim": 1,
+   "titleSim": 0,
+   "score": 0.5
+  },
+  {
+   "a": "W02",
+   "b": "W10",
+   "capSim": 0,
+   "nodeSim": 1,
+   "titleSim": 0,
+   "score": 0.5
+  },
+  {
+   "a": "S03",
+   "b": "S04",
+   "capSim": 0,
+   "nodeSim": 1,
+   "titleSim": 0,
+   "score": 0.5
+  }
+ ],
+ "structure": [
+  {
+   "id": "B01",
+   "module": "A",
+   "title": "Hudi 与 Hive 普通 Parquet 表的区别",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "B02",
+   "module": "A",
+   "title": "COW 表的数据写入与文件重写",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": false,
+   "steps": 0,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "experiment"
+  },
+  {
+   "id": "B03",
+   "module": "A",
+   "title": "MOR 表的数据写入与 Log 合并",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": false,
+   "steps": 0,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "experiment"
+  },
+  {
+   "id": "B04",
+   "module": "A",
+   "title": "File Group、File ID、File Slice 结构",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 5,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "B05",
+   "module": "A",
+   "title": "Base File 与 Log File 的版本关系",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 5,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "B06",
+   "module": "A",
+   "title": "Record Key、Partition Path、HoodieKey",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "B07",
+   "module": "A",
+   "title": "Hudi 的 MVCC 与 Snapshot 可见性",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "B08",
+   "module": "A",
+   "title": "Hudi 表在 HDFS 中的完整目录结构",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "T01",
+   "module": "B",
+   "title": "华为 Spark SQL 创建 COW / MOR 表",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "T02",
+   "module": "B",
+   "title": "Hudi 主键与 Precombine 配置",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "T03",
+   "module": "B",
+   "title": "Hudi 单分区与多级分区",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "T04",
+   "module": "B",
+   "title": "默认分区、Null 分区与异常分区值",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "T05",
+   "module": "B",
+   "title": "Hive Style Partitioning",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "concept"
+  },
+  {
+   "id": "T06",
+   "module": "B",
+   "title": "Hive Metastore 同步与分区元数据",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "concept"
+  },
+  {
+   "id": "T07",
+   "module": "B",
+   "title": "Hudi 表配置与 .hoodie/hoodie.properties",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "T08",
+   "module": "B",
+   "title": "建表、写入与 Schema 演进限制",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "concept"
+  },
+  {
+   "id": "W01",
+   "module": "C",
+   "title": "Insert 写入全过程",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "W02",
+   "module": "C",
+   "title": "Upsert 更新全过程",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "W03",
+   "module": "C",
+   "title": "Delete 删除全过程",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "W04",
+   "module": "C",
+   "title": "Bulk Insert 数据初始化",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "W05",
+   "module": "C",
+   "title": "Insert Overwrite 分区覆盖",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "W06",
+   "module": "C",
+   "title": "Insert Overwrite Table 整表覆盖",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "W07",
+   "module": "C",
+   "title": "DataFrame SaveMode 四种模式",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "concept"
+  },
+  {
+   "id": "W08",
+   "module": "C",
+   "title": "Precombine 与相同主键冲突处理",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "W09",
+   "module": "C",
+   "title": "Spark SQL 与 DataFrame 写入差异",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "W10",
+   "module": "C",
+   "title": "重复写入、错误配置与幂等性分析",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "I01",
+   "module": "D",
+   "title": "SIMPLE 索引定位原理",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "I02",
+   "module": "D",
+   "title": "BLOOM 索引定位原理",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "I03",
+   "module": "D",
+   "title": "BUCKET 索引与哈希分桶",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "engine"
+  },
+  {
+   "id": "I04",
+   "module": "D",
+   "title": "BUCKET 索引与分区路径",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "engine"
+  },
+  {
+   "id": "I05",
+   "module": "D",
+   "title": "BUCKET 数量与 File Group 分配",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "model": "engine"
+  },
+  {
+   "id": "I06",
+   "module": "D",
+   "title": "GLOBAL 索引与非 GLOBAL 索引",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "mixed"
+  },
+  {
+   "id": "I07",
+   "module": "D",
+   "title": "索引类型与写入操作兼容性",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "engine"
+  },
+  {
+   "id": "I08",
+   "module": "D",
+   "title": "索引异常诊断实验",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "Q01",
+   "module": "E",
+   "title": "Snapshot 快照查询",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "Q02",
+   "module": "E",
+   "title": "Read Optimized 读优化查询",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "Q03",
+   "module": "E",
+   "title": "Incremental 增量查询",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "Q04",
+   "module": "E",
+   "title": "Time Travel 时间旅行",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "Q05",
+   "module": "E",
+   "title": "COW / MOR 查询数据可见性对比",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "Q06",
+   "module": "E",
+   "title": "分区过滤与文件扫描",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "Q07",
+   "module": "E",
+   "title": "_hoodie_* 元数据字段",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "Q08",
+   "module": "E",
+   "title": "CDC 与增量数据消费场景",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "S01",
+   "module": "F",
+   "title": "Timeline 与 Instant 生命周期",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 5,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "S02",
+   "module": "F",
+   "title": "Commit 与 DeltaCommit",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "S03",
+   "module": "F",
+   "title": "Compaction Plan 生成",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "S04",
+   "module": "F",
+   "title": "Compaction 执行与文件合并",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "S05",
+   "module": "F",
+   "title": "异步 Compaction 调度",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "mixed"
+  },
+  {
+   "id": "S06",
+   "module": "F",
+   "title": "Clean 策略与文件物理删除",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "S07",
+   "module": "F",
+   "title": "Archive Timeline 归档",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "S08",
+   "module": "F",
+   "title": "Rollback 回滚",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "S09",
+   "module": "F",
+   "title": "Restore 恢复",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "mixed"
+  },
+  {
+   "id": "S10",
+   "module": "F",
+   "title": "Clustering 与 ReplaceCommit",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "S11",
+   "module": "F",
+   "title": "TTL 分区过期与清理",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "S12",
+   "module": "F",
+   "title": "Pending Instant 与文件版本引用",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "F01",
+   "module": "G",
+   "title": "Spark SQL 创建与写入 Hudi",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "F02",
+   "module": "G",
+   "title": "Scala DataFrame Writer",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "F03",
+   "module": "G",
+   "title": "Flink SQL 实时写入",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "F04",
+   "module": "G",
+   "title": "Flink Checkpoint 与 Hudi 提交",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "concept"
+  },
+  {
+   "id": "F05",
+   "module": "G",
+   "title": "Flink 写入与 Spark 异步 Compaction",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "model": "mixed"
+  },
+  {
+   "id": "F06",
+   "module": "G",
+   "title": "Flink 并行度与 Bucket 分配",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "model": "mixed"
+  },
+  {
+   "id": "F07",
+   "module": "G",
+   "title": "Kerberos、HDFS、HMS 权限链路",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "model": "concept"
+  },
+  {
+   "id": "F08",
+   "module": "G",
+   "title": "Hudi 表的 Spark / Flink 兼容性",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "concept"
+  },
+  {
+   "id": "E01",
+   "module": "H",
+   "title": "BUCKET 索引写入时报 SIMPLE 错误",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "concept"
+  },
+  {
+   "id": "E02",
+   "module": "H",
+   "title": "默认分区写入与跨分区异常",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "E03",
+   "module": "H",
+   "title": "BUCKET 表 Bulk Insert 失败",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "model": "engine"
+  },
+  {
+   "id": "E04",
+   "module": "H",
+   "title": "Hudi 无 Schema 或元数据不完整",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "E05",
+   "module": "H",
+   "title": "Compaction 失败但 YARN 显示成功",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "E06",
+   "module": "H",
+   "title": "Compaction Requested / Inflight 残留",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "E07",
+   "module": "H",
+   "title": "Rollback Requested 文件大量残留",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "E08",
+   "module": "H",
+   "title": "Cleaner / Archive 被异常状态阻塞",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "mixed"
+  },
+  {
+   "id": "E09",
+   "module": "H",
+   "title": "Flink 写入积压与 Compaction 资源冲突",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "mixed"
+  },
+  {
+   "id": "E10",
+   "module": "H",
+   "title": "Kerberos、HMS、HDFS 权限故障",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "model": "concept"
+  },
+  {
+   "id": "A01",
+   "module": "I",
+   "title": "Hudi 文件大小与小文件问题",
+   "hasSummary": true,
+   "hasNote": false,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "supported",
+   "model": "engine"
+  },
+  {
+   "id": "A02",
+   "module": "I",
+   "title": "Bucket 数据倾斜",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "model": "engine"
+  },
+  {
+   "id": "A03",
+   "module": "I",
+   "title": "Metadata Table",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "unverified",
+   "model": "concept"
+  },
+  {
+   "id": "A04",
+   "module": "I",
+   "title": "并发控制、锁与多 Writer",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E0",
+   "supportState": "unverified",
+   "model": "concept"
+  },
+  {
+   "id": "A05",
+   "module": "I",
+   "title": "Compaction 策略与吞吐量分析",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "A06",
+   "module": "I",
+   "title": "Cleaner 保留策略与存储成本",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "A07",
+   "module": "I",
+   "title": "Timeline 规模与归档性能",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E2",
+   "supportState": "conditional",
+   "model": "engine"
+  },
+  {
+   "id": "A08",
+   "module": "I",
+   "title": "Hudi 表健康检查与维护决策",
+   "hasSummary": true,
+   "hasNote": true,
+   "lesson": true,
+   "steps": 4,
+   "evidenceLevel": "E1",
+   "supportState": "conditional",
+   "model": "engine"
+  }
+ ],
+ "load": [
+  {
+   "id": "B01",
+   "order": 0,
+   "steps": 4,
+   "terms": 5,
+   "chars": 110,
+   "load": 12.4
+  },
+  {
+   "id": "B04",
+   "order": 3,
+   "steps": 5,
+   "terms": 4,
+   "chars": 118,
+   "load": 12
+  },
+  {
+   "id": "B05",
+   "order": 4,
+   "steps": 5,
+   "terms": 3,
+   "chars": 111,
+   "load": 10.4
+  },
+  {
+   "id": "B06",
+   "order": 5,
+   "steps": 4,
+   "terms": 4,
+   "chars": 76,
+   "load": 10.6
+  },
+  {
+   "id": "B07",
+   "order": 6,
+   "steps": 4,
+   "terms": 4,
+   "chars": 85,
+   "load": 10.7
+  },
+  {
+   "id": "B08",
+   "order": 7,
+   "steps": 4,
+   "terms": 3,
+   "chars": 81,
+   "load": 9.2
+  },
+  {
+   "id": "T01",
+   "order": 8,
+   "steps": 4,
+   "terms": 5,
+   "chars": 104,
+   "load": 12.4
+  },
+  {
+   "id": "T02",
+   "order": 9,
+   "steps": 4,
+   "terms": 2,
+   "chars": 81,
+   "load": 7.7
+  },
+  {
+   "id": "T03",
+   "order": 10,
+   "steps": 4,
+   "terms": 2,
+   "chars": 81,
+   "load": 7.7
+  },
+  {
+   "id": "T04",
+   "order": 11,
+   "steps": 4,
+   "terms": 2,
+   "chars": 74,
+   "load": 7.6
+  },
+  {
+   "id": "T05",
+   "order": 12,
+   "steps": 4,
+   "terms": 0,
+   "chars": 130,
+   "load": 5.1
+  },
+  {
+   "id": "T06",
+   "order": 13,
+   "steps": 4,
+   "terms": 2,
+   "chars": 73,
+   "load": 7.6
+  },
+  {
+   "id": "T07",
+   "order": 14,
+   "steps": 4,
+   "terms": 2,
+   "chars": 80,
+   "load": 7.7
+  },
+  {
+   "id": "T08",
+   "order": 15,
+   "steps": 4,
+   "terms": 1,
+   "chars": 83,
+   "load": 6.2
+  },
+  {
+   "id": "W01",
+   "order": 16,
+   "steps": 4,
+   "terms": 5,
+   "chars": 77,
+   "load": 12.1
+  },
+  {
+   "id": "W02",
+   "order": 17,
+   "steps": 4,
+   "terms": 6,
+   "chars": 77,
+   "load": 13.6
+  },
+  {
+   "id": "W03",
+   "order": 18,
+   "steps": 4,
+   "terms": 5,
+   "chars": 86,
+   "load": 12.2
+  },
+  {
+   "id": "W04",
+   "order": 19,
+   "steps": 4,
+   "terms": 7,
+   "chars": 106,
+   "load": 15.4
+  },
+  {
+   "id": "W05",
+   "order": 20,
+   "steps": 4,
+   "terms": 1,
+   "chars": 53,
+   "load": 5.9
+  },
+  {
+   "id": "W06",
+   "order": 21,
+   "steps": 4,
+   "terms": 3,
+   "chars": 69,
+   "load": 9.1
+  },
+  {
+   "id": "W07",
+   "order": 22,
+   "steps": 4,
+   "terms": 2,
+   "chars": 131,
+   "load": 8.1
+  },
+  {
+   "id": "W08",
+   "order": 23,
+   "steps": 4,
+   "terms": 3,
+   "chars": 84,
+   "load": 9.2
+  },
+  {
+   "id": "W09",
+   "order": 24,
+   "steps": 4,
+   "terms": 2,
+   "chars": 87,
+   "load": 7.7
+  },
+  {
+   "id": "W10",
+   "order": 25,
+   "steps": 4,
+   "terms": 4,
+   "chars": 80,
+   "load": 10.7
+  },
+  {
+   "id": "I01",
+   "order": 26,
+   "steps": 4,
+   "terms": 2,
+   "chars": 73,
+   "load": 7.6
+  },
+  {
+   "id": "I02",
+   "order": 27,
+   "steps": 4,
+   "terms": 1,
+   "chars": 78,
+   "load": 6.2
+  },
+  {
+   "id": "I03",
+   "order": 28,
+   "steps": 4,
+   "terms": 3,
+   "chars": 105,
+   "load": 9.4
+  },
+  {
+   "id": "I04",
+   "order": 29,
+   "steps": 4,
+   "terms": 2,
+   "chars": 53,
+   "load": 7.4
+  },
+  {
+   "id": "I05",
+   "order": 30,
+   "steps": 4,
+   "terms": 3,
+   "chars": 79,
+   "load": 9.2
+  },
+  {
+   "id": "I06",
+   "order": 31,
+   "steps": 4,
+   "terms": 2,
+   "chars": 89,
+   "load": 7.7
+  },
+  {
+   "id": "I07",
+   "order": 32,
+   "steps": 4,
+   "terms": 1,
+   "chars": 93,
+   "load": 6.3
+  },
+  {
+   "id": "I08",
+   "order": 33,
+   "steps": 4,
+   "terms": 2,
+   "chars": 92,
+   "load": 7.8
+  },
+  {
+   "id": "Q01",
+   "order": 34,
+   "steps": 4,
+   "terms": 3,
+   "chars": 79,
+   "load": 9.2
+  },
+  {
+   "id": "Q02",
+   "order": 35,
+   "steps": 4,
+   "terms": 2,
+   "chars": 81,
+   "load": 7.7
+  },
+  {
+   "id": "Q03",
+   "order": 36,
+   "steps": 4,
+   "terms": 2,
+   "chars": 80,
+   "load": 7.7
+  },
+  {
+   "id": "Q04",
+   "order": 37,
+   "steps": 4,
+   "terms": 4,
+   "chars": 93,
+   "load": 10.8
+  },
+  {
+   "id": "Q05",
+   "order": 38,
+   "steps": 4,
+   "terms": 5,
+   "chars": 74,
+   "load": 12.1
+  },
+  {
+   "id": "Q06",
+   "order": 39,
+   "steps": 4,
+   "terms": 1,
+   "chars": 76,
+   "load": 6.1
+  },
+  {
+   "id": "Q07",
+   "order": 40,
+   "steps": 4,
+   "terms": 3,
+   "chars": 103,
+   "load": 9.4
+  },
+  {
+   "id": "Q08",
+   "order": 41,
+   "steps": 4,
+   "terms": 2,
+   "chars": 77,
+   "load": 7.6
+  },
+  {
+   "id": "S01",
+   "order": 42,
+   "steps": 5,
+   "terms": 4,
+   "chars": 116,
+   "load": 12
+  },
+  {
+   "id": "S02",
+   "order": 43,
+   "steps": 4,
+   "terms": 4,
+   "chars": 91,
+   "load": 10.8
+  },
+  {
+   "id": "S03",
+   "order": 44,
+   "steps": 4,
+   "terms": 4,
+   "chars": 92,
+   "load": 10.8
+  },
+  {
+   "id": "S04",
+   "order": 45,
+   "steps": 4,
+   "terms": 6,
+   "chars": 101,
+   "load": 13.8
+  },
+  {
+   "id": "S05",
+   "order": 46,
+   "steps": 4,
+   "terms": 1,
+   "chars": 74,
+   "load": 6.1
+  },
+  {
+   "id": "S06",
+   "order": 47,
+   "steps": 4,
+   "terms": 2,
+   "chars": 77,
+   "load": 7.6
+  },
+  {
+   "id": "S07",
+   "order": 48,
+   "steps": 4,
+   "terms": 4,
+   "chars": 60,
+   "load": 10.5
+  },
+  {
+   "id": "S08",
+   "order": 49,
+   "steps": 4,
+   "terms": 4,
+   "chars": 103,
+   "load": 10.9
+  },
+  {
+   "id": "S09",
+   "order": 50,
+   "steps": 4,
+   "terms": 3,
+   "chars": 106,
+   "load": 9.4
+  },
+  {
+   "id": "S10",
+   "order": 51,
+   "steps": 4,
+   "terms": 2,
+   "chars": 81,
+   "load": 7.7
+  },
+  {
+   "id": "S11",
+   "order": 52,
+   "steps": 4,
+   "terms": 2,
+   "chars": 75,
+   "load": 7.6
+  },
+  {
+   "id": "S12",
+   "order": 53,
+   "steps": 4,
+   "terms": 4,
+   "chars": 96,
+   "load": 10.8
+  },
+  {
+   "id": "F01",
+   "order": 54,
+   "steps": 4,
+   "terms": 3,
+   "chars": 93,
+   "load": 9.3
+  },
+  {
+   "id": "F02",
+   "order": 55,
+   "steps": 4,
+   "terms": 4,
+   "chars": 96,
+   "load": 10.8
+  },
+  {
+   "id": "F03",
+   "order": 56,
+   "steps": 4,
+   "terms": 5,
+   "chars": 104,
+   "load": 12.4
+  },
+  {
+   "id": "F04",
+   "order": 57,
+   "steps": 4,
+   "terms": 2,
+   "chars": 90,
+   "load": 7.8
+  },
+  {
+   "id": "F05",
+   "order": 58,
+   "steps": 4,
+   "terms": 3,
+   "chars": 74,
+   "load": 9.1
+  },
+  {
+   "id": "F06",
+   "order": 59,
+   "steps": 4,
+   "terms": 3,
+   "chars": 78,
+   "load": 9.2
+  },
+  {
+   "id": "F07",
+   "order": 60,
+   "steps": 4,
+   "terms": 3,
+   "chars": 75,
+   "load": 9.1
+  },
+  {
+   "id": "F08",
+   "order": 61,
+   "steps": 4,
+   "terms": 4,
+   "chars": 72,
+   "load": 10.6
+  },
+  {
+   "id": "E01",
+   "order": 62,
+   "steps": 4,
+   "terms": 2,
+   "chars": 96,
+   "load": 7.8
+  },
+  {
+   "id": "E02",
+   "order": 63,
+   "steps": 4,
+   "terms": 2,
+   "chars": 57,
+   "load": 7.5
+  },
+  {
+   "id": "E03",
+   "order": 64,
+   "steps": 4,
+   "terms": 2,
+   "chars": 77,
+   "load": 7.6
+  },
+  {
+   "id": "E04",
+   "order": 65,
+   "steps": 4,
+   "terms": 3,
+   "chars": 76,
+   "load": 9.1
+  },
+  {
+   "id": "E05",
+   "order": 66,
+   "steps": 4,
+   "terms": 5,
+   "chars": 94,
+   "load": 12.3
+  },
+  {
+   "id": "E06",
+   "order": 67,
+   "steps": 4,
+   "terms": 2,
+   "chars": 59,
+   "load": 7.5
+  },
+  {
+   "id": "E07",
+   "order": 68,
+   "steps": 4,
+   "terms": 5,
+   "chars": 83,
+   "load": 12.2
+  },
+  {
+   "id": "E08",
+   "order": 69,
+   "steps": 4,
+   "terms": 4,
+   "chars": 79,
+   "load": 10.7
+  },
+  {
+   "id": "E09",
+   "order": 70,
+   "steps": 4,
+   "terms": 1,
+   "chars": 71,
+   "load": 6.1
+  },
+  {
+   "id": "E10",
+   "order": 71,
+   "steps": 4,
+   "terms": 3,
+   "chars": 76,
+   "load": 9.1
+  },
+  {
+   "id": "A01",
+   "order": 72,
+   "steps": 4,
+   "terms": 2,
+   "chars": 62,
+   "load": 7.5
+  },
+  {
+   "id": "A02",
+   "order": 73,
+   "steps": 4,
+   "terms": 2,
+   "chars": 72,
+   "load": 7.6
+  },
+  {
+   "id": "A03",
+   "order": 74,
+   "steps": 4,
+   "terms": 2,
+   "chars": 82,
+   "load": 7.7
+  },
+  {
+   "id": "A04",
+   "order": 75,
+   "steps": 4,
+   "terms": 2,
+   "chars": 76,
+   "load": 7.6
+  },
+  {
+   "id": "A05",
+   "order": 76,
+   "steps": 4,
+   "terms": 1,
+   "chars": 68,
+   "load": 6.1
+  },
+  {
+   "id": "A06",
+   "order": 77,
+   "steps": 4,
+   "terms": 2,
+   "chars": 60,
+   "load": 7.5
+  },
+  {
+   "id": "A07",
+   "order": 78,
+   "steps": 4,
+   "terms": 4,
+   "chars": 82,
+   "load": 10.7
+  },
+  {
+   "id": "A08",
+   "order": 79,
+   "steps": 4,
+   "terms": 1,
+   "chars": 74,
+   "load": 6.1
+  }
+ ]
+}

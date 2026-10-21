@@ -1,0 +1,15 @@
+﻿import { chromium } from '@playwright/test'
+const b = await chromium.launch({ channel: 'msedge' })
+const p = await b.newPage({ viewport: { width: 1440, height: 900 } })
+await p.goto('http://127.0.0.1:5173/experiment/B05', { waitUntil: 'networkidle' }); await p.waitForTimeout(500)
+await p.locator('button', { hasText: '技术详情' }).first().click(); await p.waitForTimeout(300)
+const src = p.locator('.vl-drawer-tabs button', { hasText: '源码透视' })
+await src.click(); await p.waitForTimeout(300)
+const pre = await p.evaluate(() => [...document.querySelectorAll('dialog[open] pre')].map(x => x.innerText))
+// HDFS -> inspect a file -> lose tabs?
+await p.locator('.vl-drawer-tabs button', { hasText: 'HDFS' }).click(); await p.waitForTimeout(200)
+const hdfs = await p.evaluate(() => ({ rows: document.querySelectorAll('dialog[open] .vl-file-row').length, tabsVisible: !!document.querySelector('dialog[open] .vl-drawer-tabs') }))
+await p.locator('dialog[open] .vl-file-row').first().click(); await p.waitForTimeout(300)
+const after = await p.evaluate(() => { const d = document.querySelector('dialog[open]'); return { title: d.querySelector('h2')?.textContent, tabsVisible: !!d.querySelector('.vl-drawer-tabs'), hasBack: !!d.querySelector('button[aria-label*="返回"]') } })
+console.log(JSON.stringify({ pre, hdfs, after, literalBackslashN: pre.some(t => t.includes('\\n')) }))
+await b.close()

@@ -1,0 +1,41 @@
+﻿=== 术语首次出现主题（前 12 主题检查）===
+File Group	firstTopic=B04	前12主题内=true	行内定义=true
+File Slice	firstTopic=B01	前12主题内=true	行内定义=false
+Base File	firstTopic=B04	前12主题内=true	行内定义=false
+Log File	firstTopic=B04	前12主题内=true	行内定义=false
+File ID	firstTopic=B04	前12主题内=true	行内定义=true
+Instant	firstTopic=B05	前12主题内=true	行内定义=false
+Timeline	firstTopic=B01	前12主题内=true	行内定义=true
+Checkpoint	firstTopic=B07	前12主题内=true	行内定义=true
+Commit	firstTopic=B01	前12主题内=true	行内定义=false
+Compaction	firstTopic=B05	前12主题内=true	行内定义=true
+Precombine	firstTopic=T01	前12主题内=true	行内定义=true
+Record Key	firstTopic=B06	前12主题内=true	行内定义=true
+Partition Path	firstTopic=B06	前12主题内=true	行内定义=true
+HoodieKey	firstTopic=B06	前12主题内=true	行内定义=true
+Snapshot Read	firstTopic=B01	前12主题内=true	行内定义=false
+Hive Metastore	firstTopic=T06	前12主题内=true	行内定义=false
+
+=== 汇总 ===
+主题数: 78 | 全部有 objective: true | takeaway: true
+glossary 平均: 2.08 | limitations 平均: 1.00 | templates 平均: 2.45
+旁白汉字/步：min 8.8 max 58.8 avg 31.5
+术语表词数: 30 | 模板 id 总数: 44
+代表主题：
+ B01: 1=59字 2=60字 3=61字 4=55字
+ B04: 1=59字 2=50字 3=47字 4=56字 5=58字
+ B05: 1=55字 2=46字 3=51字 4=42字 5=60字
+ I03: 1=53字 2=49字 3=51字 4=68字
+ Q02: 1=48字 2=43字 3=49字 4=40字
+ S01: 1=45字 2=48字 3=46字 4=52字 5=47字
+ S04: 1=54字 2=51字 3=41字 4=45字
+ E01: 1=57字 2=45字 3=57字 4=52字
+
+=== 错误 ===
+- B04: glossary「File Slice」def 32 字 > 30
+- B05#4: 代表主题旁白汉字数 42 不在 45–90
+- Q01: glossary「File Slice」def 32 字 > 30
+- Q02#2: 代表主题旁白汉字数 43 不在 45–90
+- Q02#4: 代表主题旁白汉字数 40 不在 45–90
+- Q06: glossary「File Slice」def 32 字 > 30
+- S04#3: 代表主题旁白汉字数 41 不在 45–90

@@ -1,0 +1,3136 @@
+{
+  "homeNavMs": 1222,
+  "homeTiming": {
+    "dcl": 174,
+    "load": 178,
+    "fcp": 308
+  },
+  "home": {
+    "title": "总览 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "scrollHeight": 1281,
+      "bodyScrollWidth": 1440,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "textCount": 39,
+    "smallBySize": {
+      "10px": 3,
+      "9px": 9
+    },
+    "interactiveCount": 13,
+    "foldInteractives": [
+      {
+        "tag": "a",
+        "text": "h. Hudi Visual Lab",
+        "w": 170,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "text": "完整实验目录 ↗",
+        "w": 102,
+        "h": 35,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "切换深浅主题",
+        "w": 36,
+        "h": 35,
+        "y": 16
+      },
+      {
+        "tag": "a",
+        "text": "精选实验 / 约 1 分钟建立直觉同一条更新，两种不同的写入方式。并排观察 COW 重写 Base、MOR 追加 Log，再亲手执行一次 Compaction。",
+        "w": 1096,
+        "h": 322,
+        "y": 371
+      },
+      {
+        "tag": "a",
+        "text": "全部 80 个动画 →",
+        "w": 97,
+        "h": 19,
+        "y": 745
+      },
+      {
+        "tag": "a",
+        "text": "01 / 动画实验Hudi 是如何存储数据的？ ↗",
+        "w": 262,
+        "h": 187,
+        "y": 791
+      },
+      {
+        "tag": "a",
+        "text": "02 / 动画实验COW 和 MOR 有什么区别？ ↗",
+        "w": 262,
+        "h": 187,
+        "y": 791
+      },
+      {
+        "tag": "a",
+        "text": "03 / 动画实验Hudi 是如何更新数据的？ ↗",
+        "w": 262,
+        "h": 187,
+        "y": 791
+      },
+      {
+        "tag": "a",
+        "text": "04 / 动画实验Bucket 索引如何定位记录？ ↗",
+        "w": 262,
+        "h": 187,
+        "y": 791
+      }
+    ],
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "让数据流动，让原理看得见。",
+        "size": 52,
+        "top": 164
+      },
+      {
+        "tag": "h2",
+        "t": "同一条更新，两种不同的写入方式。",
+        "size": 29,
+        "top": 449
+      },
+      {
+        "tag": "h2",
+        "t": "从一个问题开始",
+        "size": 20,
+        "top": 739
+      },
+      {
+        "tag": "h3",
+        "t": "Hudi 是如何存储数据的？ ↗",
+        "size": 13,
+        "top": 927
+      },
+      {
+        "tag": "h3",
+        "t": "COW 和 MOR 有什么区别？ ↗",
+        "size": 13,
+        "top": 927
+      },
+      {
+        "tag": "h3",
+        "t": "Hudi 是如何更新数据的？ ↗",
+        "size": 13,
+        "top": 927
+      },
+      {
+        "tag": "h3",
+        "t": "Bucket 索引如何定位记录？ ↗",
+        "size": 13,
+        "top": 927
+      },
+      {
+        "tag": "h3",
+        "t": "Compaction 如何合并文件？ ↗",
+        "size": 13,
+        "top": 1131
+      },
+      {
+        "tag": "h3",
+        "t": "Timeline 如何管理事务？ ↗",
+        "size": 13,
+        "top": 1131
+      },
+      {
+        "tag": "h3",
+        "t": "Cleaner 如何清理旧文件？ ↗",
+        "size": 13,
+        "top": 1131
+      },
+      {
+        "tag": "h3",
+        "t": "发生故障后如何恢复？ ↗",
+        "size": 13,
+        "top": 1131
+      }
+    ],
+    "overflowCount": 0,
+    "hScrollers": []
+  },
+  "homeKeyStyles": [
+    {
+      "label": "首页主标题",
+      "sel": ".vh-main>h1",
+      "size": "52px",
+      "lh": "65px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 1096,
+      "h": 130
+    },
+    {
+      "label": "首页副标题",
+      "sel": ".vh-intro",
+      "size": "14px",
+      "lh": "22.4px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 1096,
+      "h": 22
+    },
+    {
+      "label": "eyebrow",
+      "sel": ".vl-eyebrow",
+      "size": "10px",
+      "lh": "normal",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 1096,
+      "h": 12
+    },
+    {
+      "label": "精选实验标题",
+      "sel": ".vh-feature h2",
+      "size": "29px",
+      "lh": "43.5px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 290,
+      "h": 87
+    },
+    {
+      "label": "精选实验说明",
+      "sel": ".vh-feature p",
+      "size": "13px",
+      "lh": "23.4px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 290,
+      "h": 47
+    },
+    {
+      "label": "精选CTA",
+      "sel": ".vh-start",
+      "size": "13px",
+      "lh": "20.8px",
+      "color": "rgb(21, 28, 32)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 190,
+      "h": 43
+    },
+    {
+      "label": "问题区标题",
+      "sel": ".vh-topics-head h2",
+      "size": "20px",
+      "lh": "32px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 140,
+      "h": 32
+    },
+    {
+      "label": "全部80个动画",
+      "sel": ".vh-all-topics",
+      "size": "12px",
+      "lh": "19.2px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 97,
+      "h": 19
+    },
+    {
+      "label": "主题卡标题",
+      "sel": ".vh-topics h3",
+      "size": "13px",
+      "lh": "22.1px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 224,
+      "h": 22
+    },
+    {
+      "label": "主题卡序号",
+      "sel": ".vh-topics .vl-eyebrow",
+      "size": "9px",
+      "lh": "normal",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 65,
+      "h": 10
+    },
+    {
+      "label": "页脚",
+      "sel": ".vl-footer span",
+      "size": "9px",
+      "lh": "14.4px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400",
+      "w": 137,
+      "h": 14
+    },
+    {
+      "label": "导航",
+      "sel": ".vl-nav a",
+      "size": "17px",
+      "lh": "27.2px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "600",
+      "w": 170,
+      "h": 31
+    }
+  ],
+  "homeFoldText": [
+    {
+      "t": "LEARN BY SEEING. UNDERSTAND BY DOING.",
+      "y": 132,
+      "size": 10
+    },
+    {
+      "t": "看得见。",
+      "y": 227,
+      "size": 52
+    },
+    {
+      "t": "一个操作，一次变化。用交互动画建立你的 Hudi 直觉。",
+      "y": 314,
+      "size": 14
+    },
+    {
+      "t": "精选实验 / 约 1 分钟建立直觉",
+      "y": 416,
+      "size": 10
+    },
+    {
+      "t": "COW · 新 Base",
+      "y": 443,
+      "size": 16
+    },
+    {
+      "t": "MOR · 追加 Log",
+      "y": 577,
+      "size": 16
+    },
+    {
+      "t": "开始 COW / MOR 实验 →",
+      "y": 613,
+      "size": 13
+    },
+    {
+      "t": "从一个问题开始",
+      "y": 739,
+      "size": 20
+    },
+    {
+      "t": "全部 80 个动画 →",
+      "y": 745,
+      "size": 12
+    }
+  ],
+  "homeLight": {
+    "rootBg": "rgb(244, 246, 240)",
+    "intro": {
+      "color": "rgb(115, 129, 120)",
+      "size": "14px",
+      "bg": "rgb(244, 246, 240)"
+    },
+    "eyebrow": {
+      "color": "rgb(115, 129, 120)",
+      "size": "10px",
+      "bg": "rgb(244, 246, 240)"
+    },
+    "topicMeta": {
+      "color": "rgb(115, 129, 120)",
+      "size": "9px",
+      "bg": "rgb(244, 246, 240)"
+    },
+    "featureP": {
+      "color": "rgb(115, 129, 120)",
+      "size": "13px",
+      "bg": "rgb(255, 255, 255)"
+    }
+  },
+  "catalog": {
+    "title": "全部动画实验 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "scrollHeight": 7688,
+      "bodyScrollWidth": 1440,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "cardCount": 80,
+    "statusText": "80 个可播放主题\n演示范围 \n全部类型\n引擎驱动\n引擎 + 机制示意\n机制示意",
+    "firstFold": [
+      {
+        "tag": "a",
+        "text": "h. Hudi Visual Lab",
+        "w": 170,
+        "h": 31,
+        "y": 18
+      },
+      {
+        "tag": "a",
+        "text": "返回主题首页",
+        "w": 72,
+        "h": 35,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "切换深浅主题",
+        "w": 36,
+        "h": 35,
+        "y": 16
+      },
+      {
+        "tag": "input",
+        "text": "搜索动画实验",
+        "w": 214,
+        "h": 19,
+        "y": 162
+      },
+      {
+        "tag": "button",
+        "text": "全部 80",
+        "w": 70,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "基础原理 8",
+        "w": 87,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "建表与分区 8",
+        "w": 98,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "数据写入 10",
+        "w": 92,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "索引机制 8",
+        "w": 87,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "数据查询 8",
+        "w": 87,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "Timeline 与表服务 12",
+        "w": 140,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "Spark / Flink 集成 8",
+        "w": 133,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "故障实验室 10",
+        "w": 103,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "button",
+        "text": "高级专题 8",
+        "w": 87,
+        "h": 36,
+        "y": 263
+      },
+      {
+        "tag": "select",
+        "text": "演示范围",
+        "w": 113,
+        "h": 29,
+        "y": 336
+      },
+      {
+        "tag": "a",
+        "text": "B01 · 基础原理引擎驱动Hudi 与 Hive 普通 Parquet 表的区别教学模型开始观察 →",
+        "w": 405,
+        "h": 249,
+        "y": 382
+      },
+      {
+        "tag": "a",
+        "text": "B02 · 基础原理双路径对比COW 表的数据写入与文件重写教学模型开始观察 →",
+        "w": 405,
+        "h": 249,
+        "y": 382
+      },
+      {
+        "tag": "a",
+        "text": "B03 · 基础原理双路径对比MOR 表的数据写入与 Log 合并教学模型开始观察 →",
+        "w": 405,
+        "h": 249,
+        "y": 382
+      },
+      {
+        "tag": "a",
+        "text": "B04 · 基础原理引擎驱动File Group、File ID、File Slice 结构教学模型开始观察 →",
+        "w": 405,
+        "h": 249,
+        "y": 649
+      },
+      {
+        "tag": "a",
+        "text": "B05 · 基础原理引擎驱动Base File 与 Log File 的版本关系教学模型开始观察 →",
+        "w": 405,
+        "h": 249,
+        "y": 649
+      },
+      {
+        "tag": "a",
+        "text": "B06 · 基础原理引擎驱动Record Key、Partition Path、HoodieKey教学模型开始观察 →",
+        "w": 405,
+        "h": 249,
+        "y": 649
+      }
+    ],
+    "smallBySize": {
+      "10px": 9,
+      "11px": 13,
+      "9px": 85
+    },
+    "smallSamples": {
+      "10px": [
+        {
+          "t": "80 个主题 · 9 个模块 · 先观察，再操作",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > div.catalog-heading > div > span.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "80",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button.active > span",
+          "color": "rgb(21, 28, 32)",
+          "bg": "rgb(191, 231, 177)"
+        },
+        {
+          "t": "8",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button > span",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "10",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button > span",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "12",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button > span",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "教学模型",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-bottom > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        }
+      ],
+      "11px": [
+        {
+          "t": "全部",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button.active",
+          "color": "rgb(21, 28, 32)",
+          "bg": "rgb(191, 231, 177)"
+        },
+        {
+          "t": "基础原理",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "建表与分区",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "数据写入",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "索引机制",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "数据查询",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        }
+      ],
+      "9px": [
+        {
+          "t": "B01 · 基础原理",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "引擎驱动",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "B02 · 基础原理",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "双路径对比",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "B03 · 基础原理",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "B04 · 基础原理",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        }
+      ]
+    },
+    "textCount": 195,
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "Hudi Lab 动画实验",
+        "size": 34,
+        "top": 147
+      },
+      {
+        "tag": "h2",
+        "t": "Hudi 与 Hive 普通 Parquet 表的区别",
+        "size": 15,
+        "top": 553
+      },
+      {
+        "tag": "h2",
+        "t": "COW 表的数据写入与文件重写",
+        "size": 15,
+        "top": 553
+      },
+      {
+        "tag": "h2",
+        "t": "MOR 表的数据写入与 Log 合并",
+        "size": 15,
+        "top": 553
+      },
+      {
+        "tag": "h2",
+        "t": "File Group、File ID、File Slice 结构",
+        "size": 15,
+        "top": 819
+      },
+      {
+        "tag": "h2",
+        "t": "Base File 与 Log File 的版本关系",
+        "size": 15,
+        "top": 819
+      }
+    ],
+    "hScrollers": []
+  },
+  "catalogKeyStyles": [
+    {
+      "label": "卡片元信息 9px",
+      "size": "9px",
+      "lh": "14.4px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(27, 36, 41)",
+      "weight": "400"
+    },
+    {
+      "label": "卡片标题",
+      "size": "15px",
+      "lh": "24px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(27, 36, 41)",
+      "weight": "500"
+    },
+    {
+      "label": "卡片底部",
+      "size": "10px",
+      "lh": "16px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(27, 36, 41)",
+      "weight": "400"
+    },
+    {
+      "label": "模块筛选按钮",
+      "size": "11px",
+      "lh": "17.6px",
+      "color": "rgb(21, 28, 32)",
+      "bg": "rgb(191, 231, 177)",
+      "weight": "400"
+    },
+    {
+      "label": "计数状态行",
+      "size": "11px",
+      "lh": "17.6px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400"
+    },
+    {
+      "label": "搜索框",
+      "size": "12px",
+      "lh": "19.2px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400"
+    },
+    {
+      "label": "页面标题",
+      "size": "34px",
+      "lh": "54.4px",
+      "color": "rgb(226, 234, 228)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400"
+    },
+    {
+      "label": "页面说明",
+      "size": "13px",
+      "lh": "20.8px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400"
+    },
+    {
+      "label": "eyebrow",
+      "size": "10px",
+      "lh": "normal",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400"
+    },
+    {
+      "label": "脚注",
+      "size": "11px",
+      "lh": "19.8px",
+      "color": "rgb(147, 164, 158)",
+      "bg": "rgb(21, 28, 32)",
+      "weight": "400"
+    }
+  ],
+  "catalogSearch": [
+    {
+      "term": "bucket",
+      "cards": 7,
+      "status": "7 个可播放主题",
+      "ids": [
+        "I03 · 索引机制",
+        "I04 · 索引机制",
+        "I05 · 索引机制",
+        "F06 · Spark / Flink 集成",
+        "E01 · 故障实验室",
+        "E03 · 故障实验室",
+        "A02 · 高级专题"
+      ]
+    },
+    {
+      "term": "索引",
+      "cards": 8,
+      "status": "8 个可播放主题",
+      "ids": [
+        "I01 · 索引机制",
+        "I02 · 索引机制",
+        "I03 · 索引机制",
+        "I04 · 索引机制",
+        "I06 · 索引机制",
+        "I07 · 索引机制",
+        "I08 · 索引机制",
+        "E01 · 故障实验室"
+      ]
+    },
+    {
+      "term": "compaction",
+      "cards": 8,
+      "status": "8 个可播放主题",
+      "ids": [
+        "S03 · Timeline 与表服务",
+        "S04 · Timeline 与表服务",
+        "S05 · Timeline 与表服务",
+        "F05 · Spark / Flink 集成",
+        "E05 · 故障实验室",
+        "E06 · 故障实验室",
+        "E09 · 故障实验室",
+        "A05 · 高级专题"
+      ]
+    },
+    {
+      "term": "Compaction",
+      "cards": 8,
+      "status": "8 个可播放主题",
+      "ids": [
+        "S03 · Timeline 与表服务",
+        "S04 · Timeline 与表服务",
+        "S05 · Timeline 与表服务",
+        "F05 · Spark / Flink 集成",
+        "E05 · 故障实验室",
+        "E06 · 故障实验室",
+        "E09 · 故障实验室",
+        "A05 · 高级专题"
+      ]
+    },
+    {
+      "term": "COW",
+      "cards": 3,
+      "status": "3 个可播放主题",
+      "ids": [
+        "B02 · 基础原理",
+        "T01 · 建表与分区",
+        "Q05 · 数据查询"
+      ]
+    },
+    {
+      "term": "MOR",
+      "cards": 3,
+      "status": "3 个可播放主题",
+      "ids": [
+        "B03 · 基础原理",
+        "T01 · 建表与分区",
+        "Q05 · 数据查询"
+      ]
+    },
+    {
+      "term": "log",
+      "cards": 2,
+      "status": "2 个可播放主题",
+      "ids": [
+        "B03 · 基础原理",
+        "B05 · 基础原理"
+      ]
+    },
+    {
+      "term": "Log",
+      "cards": 2,
+      "status": "2 个可播放主题",
+      "ids": [
+        "B03 · 基础原理",
+        "B05 · 基础原理"
+      ]
+    },
+    {
+      "term": "文件组",
+      "cards": 0,
+      "status": "0 个可播放主题",
+      "ids": []
+    },
+    {
+      "term": "File Group",
+      "cards": 2,
+      "status": "2 个可播放主题",
+      "ids": [
+        "B04 · 基础原理",
+        "I05 · 索引机制"
+      ]
+    },
+    {
+      "term": "timeline",
+      "cards": 3,
+      "status": "3 个可播放主题",
+      "ids": [
+        "S01 · Timeline 与表服务",
+        "S07 · Timeline 与表服务",
+        "A07 · 高级专题"
+      ]
+    },
+    {
+      "term": "日志",
+      "cards": 0,
+      "status": "0 个可播放主题",
+      "ids": []
+    },
+    {
+      "term": "E01",
+      "cards": 1,
+      "status": "1 个可播放主题",
+      "ids": [
+        "E01 · 故障实验室"
+      ]
+    },
+    {
+      "term": "B02",
+      "cards": 1,
+      "status": "1 个可播放主题",
+      "ids": [
+        "B02 · 基础原理"
+      ]
+    },
+    {
+      "term": "小文件",
+      "cards": 1,
+      "status": "1 个可播放主题",
+      "ids": [
+        "A01 · 高级专题"
+      ]
+    },
+    {
+      "term": "zzz",
+      "cards": 0,
+      "status": "0 个可播放主题",
+      "ids": []
+    }
+  ],
+  "catalogEmpty": {
+    "text": "没有找到匹配的动画。\n\n清除筛选",
+    "visible": true,
+    "y": 382,
+    "h": 220,
+    "statusLine": "0 个可播放主题\n演示范围 \n全部类型\n引擎驱动\n引擎 + 机制示意\n机制示意"
+  },
+  "catalogFilterButtons": [
+    "全部 80",
+    "基础原理 8",
+    "建表与分区 8",
+    "数据写入 10",
+    "索引机制 8",
+    "数据查询 8",
+    "Timeline 与表服务 12",
+    "Spark / Flink 集成 8",
+    "故障实验室 10",
+    "高级专题 8"
+  ],
+  "catalogFilters": {
+    "filterTests": [
+      {
+        "label": "基础原理",
+        "cards": 8,
+        "status": "8 个可播放主题"
+      },
+      {
+        "label": "索引机制",
+        "cards": 8,
+        "status": "8 个可播放主题"
+      },
+      {
+        "label": "全部",
+        "cards": 80,
+        "status": "80 个可播放主题"
+      }
+    ],
+    "conceptCount": 11,
+    "combo": {
+      "cards": 0,
+      "status": "0 个可播放主题",
+      "empty": 1,
+      "activeFilter": "基础原理 8"
+    }
+  },
+  "catalogCardMetrics": {
+    "card": {
+      "w": 405,
+      "h": 249,
+      "top": 382
+    },
+    "metaFont": "9px",
+    "previewH": 95,
+    "titleFont": "15px"
+  },
+  "progress": {
+    "title": "学习进度 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "scrollHeight": 900,
+      "bodyScrollWidth": 1440,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "textCount": 243,
+    "smallBySize": {
+      "11px": 166,
+      "10px": 5
+    },
+    "smallSamples": {
+      "11px": [
+        {
+          "t": "MRS 3.1.0-350-r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "|",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.text-[var(--color-hudi-border)]",
+          "color": "rgb(48, 54, 61)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "Hudi 0.15.0-h0.cbu.mrs.350.r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "Spark 3.3.1-h0.cbu.mrs.350.r26 · Flink 1.17.x",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.hidden.font-mono.text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "纯浏览器模拟 · 未连接真实集群",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.inline-flex.items-center.gap-1",
+          "color": "rgb(210, 153, 34)",
+          "bg": "oklab(0.719553 0.0245742 0.137988 / 0.15)"
+        },
+        {
+          "t": "浅色",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > button.rounded.border.border-[var(--color-hudi-border)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ],
+      "10px": [
+        {
+          "t": "2/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "▾",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/10",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/12",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ]
+    },
+    "foldInteractives": [
+      {
+        "tag": "a",
+        "text": "H Hudi Lab",
+        "w": 104,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "a",
+        "text": "总览",
+        "w": 44,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "a",
+        "text": "证据库",
+        "w": 58,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "a",
+        "text": "学习进度",
+        "w": 72,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "button",
+        "text": "浅色",
+        "w": 40,
+        "h": 20,
+        "y": 12
+      },
+      {
+        "tag": "button",
+        "text": "«",
+        "w": 18,
+        "h": 20,
+        "y": 53
+      },
+      {
+        "tag": "button",
+        "text": "A基础原理2/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 90
+      },
+      {
+        "tag": "a",
+        "text": "B02COW 表的数据写入与文件重写",
+        "w": 226,
+        "h": 23,
+        "y": 143
+      },
+      {
+        "tag": "a",
+        "text": "B03MOR 表的数据写入与 Log 合并",
+        "w": 226,
+        "h": 23,
+        "y": 168
+      },
+      {
+        "tag": "button",
+        "text": "B建表与分区0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 321
+      },
+      {
+        "tag": "button",
+        "text": "C数据写入0/10▾",
+        "w": 243,
+        "h": 28,
+        "y": 552
+      },
+      {
+        "tag": "button",
+        "text": "D索引机制0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 833
+      },
+      {
+        "tag": "a",
+        "text": "B02（COW vs MOR）",
+        "w": 135,
+        "h": 19,
+        "y": 884
+      }
+    ],
+    "interactiveCount": 18,
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "学习进度",
+        "size": 20,
+        "top": 61
+      },
+      {
+        "tag": "h2",
+        "t": "各模块完成率",
+        "size": 16,
+        "top": 240
+      },
+      {
+        "tag": "h2",
+        "t": "实验清单与练习得分",
+        "size": 16,
+        "top": 748
+      },
+      {
+        "tag": "h2",
+        "t": "错题回顾",
+        "size": 16,
+        "top": 954
+      }
+    ],
+    "overflowCount": 0,
+    "hScrollers": []
+  },
+  "progressBody": {
+    "bodyBg": "rgb(13, 17, 23)",
+    "appBg": "rgb(13, 17, 23)",
+    "appClass": "flex h-full min-h-0 flex-col bg-[var(--color-hudi-bg)] text-[var(--color-hudi-text)]",
+    "hasVlNav": false,
+    "hasMainLayoutHeader": true,
+    "firstText": "H\nHudi Lab\n总览\n证据库\n学习进度\nMRS 3.1.0-350-r26\n|\nHudi 0.15.0-h0.cbu.mrs.350.r26\nSpark 3.3.1-h0.cbu.mrs.350.r26 · Flink 1.17.x\n纯浏览器模拟 · 未连接真实集群\n浅色\n实验目录\n«\nA\n基础原理\n2/8\n▾\nB01\nHudi 与 Hive 普通 Parquet 表的区别\nB02\nCOW 表的数据写入与文件重写\nB03\nMOR 表的数据写入与 Log 合并\nB04\nF"
+  },
+  "progressTable": {
+    "w": 1114,
+    "scrollW": 1114,
+    "h": 92,
+    "rows": 0
+  },
+  "evidence": {
+    "title": "证据库 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "scrollHeight": 900,
+      "bodyScrollWidth": 1440,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "textCount": 305,
+    "smallBySize": {
+      "11px": 173,
+      "10px": 5
+    },
+    "smallSamples": {
+      "11px": [
+        {
+          "t": "MRS 3.1.0-350-r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "|",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.text-[var(--color-hudi-border)]",
+          "color": "rgb(48, 54, 61)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "Hudi 0.15.0-h0.cbu.mrs.350.r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "Spark 3.3.1-h0.cbu.mrs.350.r26 · Flink 1.17.x",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.hidden.font-mono.text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "纯浏览器模拟 · 未连接真实集群",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.inline-flex.items-center.gap-1",
+          "color": "rgb(210, 153, 34)",
+          "bg": "oklab(0.719553 0.0245742 0.137988 / 0.15)"
+        },
+        {
+          "t": "浅色",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > button.rounded.border.border-[var(--color-hudi-border)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ],
+      "10px": [
+        {
+          "t": "2/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "▾",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/10",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/12",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ]
+    },
+    "foldInteractives": [
+      {
+        "tag": "a",
+        "text": "H Hudi Lab",
+        "w": 104,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "a",
+        "text": "总览",
+        "w": 44,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "a",
+        "text": "证据库",
+        "w": 58,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "a",
+        "text": "学习进度",
+        "w": 72,
+        "h": 28,
+        "y": 8
+      },
+      {
+        "tag": "button",
+        "text": "浅色",
+        "w": 40,
+        "h": 20,
+        "y": 12
+      },
+      {
+        "tag": "button",
+        "text": "«",
+        "w": 18,
+        "h": 20,
+        "y": 53
+      },
+      {
+        "tag": "button",
+        "text": "A基础原理2/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 90
+      },
+      {
+        "tag": "a",
+        "text": "B02COW 表的数据写入与文件重写",
+        "w": 226,
+        "h": 23,
+        "y": 143
+      },
+      {
+        "tag": "a",
+        "text": "B03MOR 表的数据写入与 Log 合并",
+        "w": 226,
+        "h": 23,
+        "y": 168
+      },
+      {
+        "tag": "button",
+        "text": "B建表与分区0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 321
+      },
+      {
+        "tag": "button",
+        "text": "C数据写入0/10▾",
+        "w": 243,
+        "h": 28,
+        "y": 552
+      },
+      {
+        "tag": "button",
+        "text": "D索引机制0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 833
+      },
+      {
+        "tag": "a",
+        "text": "回到 B02 实验",
+        "w": 99,
+        "h": 25,
+        "y": 75
+      },
+      {
+        "tag": "button",
+        "text": "回到 B02 实验",
+        "w": 99,
+        "h": 24,
+        "y": 75
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 1086,
+        "h": 22,
+        "y": 396
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 145,
+        "h": 20,
+        "y": 429
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 145,
+        "h": 20,
+        "y": 461
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 145,
+        "h": 20,
+        "y": 493
+      },
+      {
+        "tag": "button",
+        "text": "重置筛选",
+        "w": 72,
+        "h": 24,
+        "y": 523
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 626
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 660
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 693
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 727
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 760
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 794
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 827
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 861
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 894
+      }
+    ],
+    "interactiveCount": 39,
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "证据库",
+        "size": 20,
+        "top": 61
+      },
+      {
+        "tag": "h2",
+        "t": "等级分布",
+        "size": 16,
+        "top": 251
+      }
+    ],
+    "overflowCount": 94,
+    "hScrollers": [
+      {
+        "path": "div.flex.flex-col.gap-4 > section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__header-wrapper",
+        "sw": 1650,
+        "cw": 1122,
+        "ox": "hidden"
+      },
+      {
+        "path": "div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__body-wrapper > div.el-scrollbar > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default",
+        "sw": 1650,
+        "cw": 1122,
+        "ox": "auto"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_2.el-table__cell > div.cell.el-tooltip",
+        "sw": 370,
+        "cw": 258,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 391,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_2.el-table__cell > div.cell.el-tooltip",
+        "sw": 322,
+        "cw": 258,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 409,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 373,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 337,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_2.el-table__cell > div.cell.el-tooltip",
+        "sw": 305,
+        "cw": 258,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 397,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_2.el-table__cell > div.cell.el-tooltip",
+        "sw": 310,
+        "cw": 258,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 397,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_2.el-table__cell > div.cell.el-tooltip",
+        "sw": 475,
+        "cw": 258,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 373,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_9.el-table__cell > div.cell.el-tooltip",
+        "sw": 422,
+        "cw": 278,
+        "ox": "hidden"
+      }
+    ]
+  },
+  "evidenceBody": {
+    "bodyBg": "rgb(13, 17, 23)",
+    "appBg": "rgb(13, 17, 23)",
+    "appClass": "flex h-full min-h-0 flex-col bg-[var(--color-hudi-bg)] text-[var(--color-hudi-text)]",
+    "hasVlNav": false,
+    "hasMainLayoutHeader": true,
+    "firstText": "H\nHudi Lab\n总览\n证据库\n学习进度\nMRS 3.1.0-350-r26\n|\nHudi 0.15.0-h0.cbu.mrs.350.r26\nSpark 3.3.1-h0.cbu.mrs.350.r26 · Flink 1.17.x\n纯浏览器模拟 · 未连接真实集群\n浅色\n实验目录\n«\nA\n基础原理\n2/8\n▾\nB01\nHudi 与 Hive 普通 Parquet 表的区别\nB02\nCOW 表的数据写入与文件重写\nB03\nMOR 表的数据写入与 Log 合并\nB04\nF"
+  },
+  "evidenceTable": {
+    "w": 1122,
+    "scrollW": 1122,
+    "h": 535,
+    "rows": 15
+  },
+  "homeMobile": {
+    "title": "总览 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 1746,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "textCount": 38,
+    "smallBySize": {
+      "9px": 11
+    },
+    "smallSamples": {
+      "9px": [
+        {
+          "t": "LEARN BY SEEING. UNDERSTAND BY DOING.",
+          "path": "body > div > div.visual-home > main.vh-main > div.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "精选实验 / 约 1 分钟建立直觉",
+          "path": "div.visual-home > main.vh-main > a.vh-feature > div > span.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "01 / 动画实验",
+          "path": "div.visual-home > main.vh-main > div.vh-topics > a > span.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "02 / 动画实验",
+          "path": "div.visual-home > main.vh-main > div.vh-topics > a > span.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "03 / 动画实验",
+          "path": "div.visual-home > main.vh-main > div.vh-topics > a > span.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "04 / 动画实验",
+          "path": "div.visual-home > main.vh-main > div.vh-topics > a > span.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(21, 28, 32)"
+        }
+      ]
+    },
+    "interactiveCount": 13,
+    "tapUnder44": 4,
+    "tapUnder44Ratio": 31,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "text": "h. Hudi Visual Lab",
+        "w": 170,
+        "h": 31,
+        "y": 18,
+        "path": "body > div > div.visual-home > header.vl-nav > a.router-link-active.router-link-exact-active.vl-brand"
+      },
+      {
+        "tag": "a",
+        "text": "完整实验目录 ↗",
+        "w": 102,
+        "h": 35,
+        "y": 16,
+        "path": "div > div.visual-home > header.vl-nav > div.vl-nav-actions > a"
+      },
+      {
+        "tag": "button",
+        "text": "切换深浅主题",
+        "w": 36,
+        "h": 35,
+        "y": 16,
+        "path": "div > div.visual-home > header.vl-nav > div.vl-nav-actions > button"
+      },
+      {
+        "tag": "a",
+        "text": "全部 80 个动画 →",
+        "w": 97,
+        "h": 19,
+        "y": 744,
+        "path": "div > div.visual-home > main.vh-main > div.vh-topics-head > a.vh-all-topics"
+      }
+    ],
+    "overflowCount": 0,
+    "overflowEls": [],
+    "hScrollers": [],
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "让数据流动，让原理看得见。",
+        "size": 40,
+        "top": 133
+      },
+      {
+        "tag": "h2",
+        "t": "同一条更新，两种不同的写入方式。",
+        "size": 23,
+        "top": 376
+      },
+      {
+        "tag": "h2",
+        "t": "从一个问题开始",
+        "size": 20,
+        "top": 737
+      },
+      {
+        "tag": "h3",
+        "t": "Hudi 是如何存储数据的？ ↗",
+        "size": 13,
+        "top": 926
+      },
+      {
+        "tag": "h3",
+        "t": "COW 和 MOR 有什么区别？ ↗",
+        "size": 13,
+        "top": 926
+      },
+      {
+        "tag": "h3",
+        "t": "Hudi 是如何更新数据的？ ↗",
+        "size": 13,
+        "top": 1151
+      },
+      {
+        "tag": "h3",
+        "t": "Bucket 索引如何定位记录？ ↗",
+        "size": 13,
+        "top": 1151
+      },
+      {
+        "tag": "h3",
+        "t": "Compaction 如何合并文件？ ↗",
+        "size": 13,
+        "top": 1377
+      }
+    ]
+  },
+  "catalogMobile": {
+    "title": "全部动画实验 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 21458,
+      "bodyScrollWidth": 390,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "textCount": 193,
+    "smallBySize": {
+      "9px": 86,
+      "11px": 13,
+      "10px": 7
+    },
+    "smallSamples": {
+      "9px": [
+        {
+          "t": "80 个主题 · 9 个模块 · 先观察，再操作",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > div.catalog-heading > div > span.vl-eyebrow",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "B01 · 基础原理",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "引擎驱动",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "B02 · 基础原理",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "双路径对比",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "B03 · 基础原理",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-meta > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        }
+      ],
+      "11px": [
+        {
+          "t": "全部",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button.active",
+          "color": "rgb(21, 28, 32)",
+          "bg": "rgb(191, 231, 177)"
+        },
+        {
+          "t": "基础原理",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "建表与分区",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "数据写入",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "索引机制",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "数据查询",
+          "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        }
+      ],
+      "10px": [
+        {
+          "t": "80",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button.active > span",
+          "color": "rgb(21, 28, 32)",
+          "bg": "rgb(191, 231, 177)"
+        },
+        {
+          "t": "8",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button > span",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "10",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button > span",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "12",
+          "path": "div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button > span",
+          "color": "rgb(226, 234, 228)",
+          "bg": "rgb(21, 28, 32)"
+        },
+        {
+          "t": "教学模型",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-bottom > span",
+          "color": "rgb(147, 164, 158)",
+          "bg": "rgb(27, 36, 41)"
+        },
+        {
+          "t": "开始观察 →",
+          "path": "main.catalog-main > div.catalog-grid > a.catalog-card > div.catalog-card-bottom > span",
+          "color": "rgb(191, 231, 177)",
+          "bg": "rgb(27, 36, 41)"
+        }
+      ]
+    },
+    "interactiveCount": 94,
+    "tapUnder44": 14,
+    "tapUnder44Ratio": 15,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "text": "h. Hudi Visual Lab",
+        "w": 170,
+        "h": 31,
+        "y": 18,
+        "path": "body > div > div.visual-home.animated-catalog > header.vl-nav > a.vl-brand"
+      },
+      {
+        "tag": "button",
+        "text": "切换深浅主题",
+        "w": 36,
+        "h": 35,
+        "y": 16,
+        "path": "div > div.visual-home.animated-catalog > header.vl-nav > div.vl-nav-actions > button"
+      },
+      {
+        "tag": "input",
+        "text": "搜索动画实验",
+        "w": 294,
+        "h": 19,
+        "y": 245,
+        "path": "div.visual-home.animated-catalog > main.catalog-main > div.catalog-heading > label.catalog-search > input"
+      },
+      {
+        "tag": "button",
+        "text": "全部 80",
+        "w": 59,
+        "h": 34,
+        "y": 316,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button.active"
+      },
+      {
+        "tag": "button",
+        "text": "基础原理 8",
+        "w": 76,
+        "h": 34,
+        "y": 316,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "建表与分区 8",
+        "w": 87,
+        "h": 34,
+        "y": 316,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "数据写入 10",
+        "w": 81,
+        "h": 34,
+        "y": 316,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "索引机制 8",
+        "w": 76,
+        "h": 34,
+        "y": 355,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "数据查询 8",
+        "w": 76,
+        "h": 34,
+        "y": 355,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "Timeline 与表服务 12",
+        "w": 129,
+        "h": 34,
+        "y": 355,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "Spark / Flink 集成 8",
+        "w": 123,
+        "h": 34,
+        "y": 394,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "故障实验室 10",
+        "w": 92,
+        "h": 34,
+        "y": 394,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "button",
+        "text": "高级专题 8",
+        "w": 76,
+        "h": 34,
+        "y": 394,
+        "path": "div > div.visual-home.animated-catalog > main.catalog-main > nav.catalog-filters > button"
+      },
+      {
+        "tag": "select",
+        "text": "演示范围",
+        "w": 113,
+        "h": 29,
+        "y": 465,
+        "path": "div.visual-home.animated-catalog > main.catalog-main > div.catalog-status > label > select"
+      }
+    ],
+    "overflowCount": 0,
+    "overflowEls": [],
+    "hScrollers": [],
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "Hudi Lab 动画实验",
+        "size": 28,
+        "top": 130
+      },
+      {
+        "tag": "h2",
+        "t": "Hudi 与 Hive 普通 Parquet 表的区别",
+        "size": 15,
+        "top": 679
+      },
+      {
+        "tag": "h2",
+        "t": "COW 表的数据写入与文件重写",
+        "size": 15,
+        "top": 939
+      },
+      {
+        "tag": "h2",
+        "t": "MOR 表的数据写入与 Log 合并",
+        "size": 15,
+        "top": 1199
+      },
+      {
+        "tag": "h2",
+        "t": "File Group、File ID、File Slice 结构",
+        "size": 15,
+        "top": 1460
+      },
+      {
+        "tag": "h2",
+        "t": "Base File 与 Log File 的版本关系",
+        "size": 15,
+        "top": 1720
+      },
+      {
+        "tag": "h2",
+        "t": "Record Key、Partition Path、HoodieKey",
+        "size": 15,
+        "top": 1981
+      },
+      {
+        "tag": "h2",
+        "t": "Hudi 的 MVCC 与 Snapshot 可见性",
+        "size": 15,
+        "top": 2241
+      }
+    ]
+  },
+  "progressMobile": {
+    "title": "学习进度 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 494,
+      "clientWidth": 390,
+      "scrollHeight": 1070,
+      "bodyScrollWidth": 494,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "textCount": 242,
+    "smallBySize": {
+      "11px": 165,
+      "10px": 5
+    },
+    "smallSamples": {
+      "11px": [
+        {
+          "t": "MRS 3.1.0-350-r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "|",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.text-[var(--color-hudi-border)]",
+          "color": "rgb(48, 54, 61)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "Hudi 0.15.0-h0.cbu.mrs.350.r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "纯浏览器模拟 · 未连接真实集群",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.inline-flex.items-center.gap-1",
+          "color": "rgb(210, 153, 34)",
+          "bg": "oklab(0.719553 0.0245742 0.137988 / 0.15)"
+        },
+        {
+          "t": "浅色",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > button.rounded.border.border-[var(--color-hudi-border)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "B01",
+          "path": "section.mb-1 > ul.mb-1.ml-2.space-y-0.5 > li > span.flex.items-start.gap-1.5 > span.font-mono",
+          "color": "oklab(0.662468 -0.00589961 -0.0171311 / 0.6)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ],
+      "10px": [
+        {
+          "t": "2/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "▾",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/10",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/12",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ]
+    },
+    "interactiveCount": 18,
+    "tapUnder44": 17,
+    "tapUnder44Ratio": 94,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "text": "H Hudi Lab",
+        "w": 104,
+        "h": 28,
+        "y": 135,
+        "path": "body > div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > a.flex.shrink-0.items-center"
+      },
+      {
+        "tag": "a",
+        "text": "总览",
+        "w": 44,
+        "h": 28,
+        "y": 135,
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > nav.flex.items-center.gap-1 > a.rounded.px-2.py-1"
+      },
+      {
+        "tag": "a",
+        "text": "证据库",
+        "w": 58,
+        "h": 28,
+        "y": 135,
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > nav.flex.items-center.gap-1 > a.rounded.px-2.py-1"
+      },
+      {
+        "tag": "a",
+        "text": "学习进度",
+        "w": 72,
+        "h": 28,
+        "y": 135,
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > nav.flex.items-center.gap-1 > a.router-link-active.router-link-exact-active.rounded"
+      },
+      {
+        "tag": "button",
+        "text": "浅色",
+        "w": 40,
+        "h": 34,
+        "y": 256,
+        "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > button.rounded.border.border-[var(--color-hudi-border)]"
+      },
+      {
+        "tag": "button",
+        "text": "«",
+        "w": 18,
+        "h": 20,
+        "y": 306,
+        "path": "div.flex.h-full.min-h-0 > div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.flex.items-center.justify-between > button.rounded.px-1.5.py-0.5"
+      },
+      {
+        "tag": "button",
+        "text": "A基础原理2/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 343,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "a",
+        "text": "B02COW 表的数据写入与文件重写",
+        "w": 226,
+        "h": 23,
+        "y": 396,
+        "path": "div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > ul.mb-1.ml-2.space-y-0.5 > li > a.flex.items-start.gap-1.5"
+      },
+      {
+        "tag": "a",
+        "text": "B03MOR 表的数据写入与 Log 合并",
+        "w": 226,
+        "h": 23,
+        "y": 422,
+        "path": "div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > ul.mb-1.ml-2.space-y-0.5 > li > a.flex.items-start.gap-1.5"
+      },
+      {
+        "tag": "button",
+        "text": "B建表与分区0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 574,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "C数据写入0/10▾",
+        "w": 243,
+        "h": 28,
+        "y": 805,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "D索引机制0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 1087,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "E数据查询0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 1318,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "FTimeline 与表服务0/12▾",
+        "w": 243,
+        "h": 28,
+        "y": 1549,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "GSpark / Flink 集成0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 1880,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "H故障实验室0/10▾",
+        "w": 243,
+        "h": 28,
+        "y": 2111,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "I高级专题0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 2392,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      }
+    ],
+    "overflowCount": 21,
+    "overflowEls": [
+      {
+        "tag": "table",
+        "path": "section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header",
+        "left": 293,
+        "right": 1143,
+        "w": 850
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 383,
+        "right": 643,
+        "w": 260
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 643,
+        "right": 733,
+        "w": 90
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 733,
+        "right": 813,
+        "w": 80
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 813,
+        "right": 913,
+        "w": 100
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 913,
+        "right": 1033,
+        "w": 120
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 1033,
+        "right": 1143,
+        "w": 110
+      },
+      {
+        "tag": "thead",
+        "path": "div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > thead",
+        "left": 293,
+        "right": 1143,
+        "w": 850
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_2.is-leaf.el-table__cell",
+        "left": 383,
+        "right": 643,
+        "w": 260
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_2.is-leaf.el-table__cell > div.cell",
+        "left": 383,
+        "right": 642,
+        "w": 259
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_3.is-leaf.el-table__cell",
+        "left": 643,
+        "right": 733,
+        "w": 90
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_3.is-leaf.el-table__cell > div.cell",
+        "left": 643,
+        "right": 732,
+        "w": 89
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_4.is-leaf.el-table__cell",
+        "left": 733,
+        "right": 813,
+        "w": 80
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_4.is-leaf.el-table__cell > div.cell",
+        "left": 733,
+        "right": 812,
+        "w": 79
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_5.is-leaf.el-table__cell",
+        "left": 813,
+        "right": 913,
+        "w": 100
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_5.is-leaf.el-table__cell > div.cell",
+        "left": 813,
+        "right": 912,
+        "w": 99
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_6.is-leaf.el-table__cell",
+        "left": 913,
+        "right": 1033,
+        "w": 120
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_6.is-leaf.el-table__cell > div.cell",
+        "left": 913,
+        "right": 1032,
+        "w": 119
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_7.is-leaf.el-table__cell",
+        "left": 1033,
+        "right": 1143,
+        "w": 110
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_7.is-leaf.el-table__cell > div.cell",
+        "left": 1033,
+        "right": 1142,
+        "w": 109
+      },
+      {
+        "tag": "div",
+        "path": "div.el-table__inner-wrapper > div.el-table__body-wrapper > div.el-scrollbar > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default > div.el-scrollbar__view",
+        "left": 293,
+        "right": 1143,
+        "w": 850
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "html.dark > body > div",
+        "sw": 494,
+        "cw": 390,
+        "ox": "visible"
+      },
+      {
+        "path": "html.dark > body > div > div.flex.h-full.min-h-0",
+        "sw": 494,
+        "cw": 390,
+        "ox": "visible"
+      },
+      {
+        "path": "html.dark > body > div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center",
+        "sw": 494,
+        "cw": 390,
+        "ox": "visible"
+      },
+      {
+        "path": "body > div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1",
+        "sw": 160,
+        "cw": 40,
+        "ox": "visible"
+      },
+      {
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap",
+        "sw": 160,
+        "cw": 40,
+        "ox": "visible"
+      },
+      {
+        "path": "body > div > div.flex.h-full.min-h-0 > div.flex.min-h-0.flex-1 > main.min-h-0.min-w-0.flex-1",
+        "sw": 146,
+        "cw": 130,
+        "ox": "auto"
+      },
+      {
+        "path": "div.flex.flex-col.gap-4 > section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__header-wrapper",
+        "sw": 850,
+        "cw": 64,
+        "ox": "hidden"
+      },
+      {
+        "path": "div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__body-wrapper > div.el-scrollbar > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default",
+        "sw": 850,
+        "cw": 64,
+        "ox": "auto"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "学习进度",
+        "size": 20,
+        "top": 314
+      },
+      {
+        "tag": "h2",
+        "t": "各模块完成率",
+        "size": 16,
+        "top": 871
+      },
+      {
+        "tag": "h2",
+        "t": "实验清单与练习得分",
+        "size": 16,
+        "top": 1610
+      },
+      {
+        "tag": "h2",
+        "t": "错题回顾",
+        "size": 16,
+        "top": 2092
+      }
+    ]
+  },
+  "evidenceMobile": {
+    "title": "证据库 · Hudi Lab",
+    "doc": {
+      "scrollWidth": 494,
+      "clientWidth": 390,
+      "scrollHeight": 1070,
+      "bodyScrollWidth": 494,
+      "htmlOverflowX": "visible",
+      "bodyOverflowX": "visible"
+    },
+    "textCount": 304,
+    "smallBySize": {
+      "11px": 172,
+      "10px": 5
+    },
+    "smallSamples": {
+      "11px": [
+        {
+          "t": "MRS 3.1.0-350-r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "|",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.text-[var(--color-hudi-border)]",
+          "color": "rgb(48, 54, 61)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "Hudi 0.15.0-h0.cbu.mrs.350.r26",
+          "path": "header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.flex.items-center.gap-1.5 > span.font-mono.text-[var(--color-hudi-text)]",
+          "color": "rgb(230, 237, 243)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "纯浏览器模拟 · 未连接真实集群",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > span.inline-flex.items-center.gap-1",
+          "color": "rgb(210, 153, 34)",
+          "bg": "oklab(0.719553 0.0245742 0.137988 / 0.15)"
+        },
+        {
+          "t": "浅色",
+          "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > button.rounded.border.border-[var(--color-hudi-border)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "B01",
+          "path": "section.mb-1 > ul.mb-1.ml-2.space-y-0.5 > li > span.flex.items-start.gap-1.5 > span.font-mono",
+          "color": "oklab(0.662468 -0.00589961 -0.0171311 / 0.6)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ],
+      "10px": [
+        {
+          "t": "2/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "▾",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/8",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/10",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        },
+        {
+          "t": "0/12",
+          "path": "aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center > span.text-[10px].text-[var(--color-hudi-muted)]",
+          "color": "rgb(139, 148, 158)",
+          "bg": "rgb(22, 27, 34)"
+        }
+      ]
+    },
+    "interactiveCount": 39,
+    "tapUnder44": 39,
+    "tapUnder44Ratio": 100,
+    "tapUnder44Samples": [
+      {
+        "tag": "a",
+        "text": "H Hudi Lab",
+        "w": 104,
+        "h": 28,
+        "y": 135,
+        "path": "body > div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > a.flex.shrink-0.items-center"
+      },
+      {
+        "tag": "a",
+        "text": "总览",
+        "w": 44,
+        "h": 28,
+        "y": 135,
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > nav.flex.items-center.gap-1 > a.rounded.px-2.py-1"
+      },
+      {
+        "tag": "a",
+        "text": "证据库",
+        "w": 58,
+        "h": 28,
+        "y": 135,
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > nav.flex.items-center.gap-1 > a.router-link-active.router-link-exact-active.rounded"
+      },
+      {
+        "tag": "a",
+        "text": "学习进度",
+        "w": 72,
+        "h": 28,
+        "y": 135,
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > nav.flex.items-center.gap-1 > a.rounded.px-2.py-1"
+      },
+      {
+        "tag": "button",
+        "text": "浅色",
+        "w": 40,
+        "h": 34,
+        "y": 256,
+        "path": "div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap > button.rounded.border.border-[var(--color-hudi-border)]"
+      },
+      {
+        "tag": "button",
+        "text": "«",
+        "w": 18,
+        "h": 20,
+        "y": 306,
+        "path": "div.flex.h-full.min-h-0 > div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.flex.items-center.justify-between > button.rounded.px-1.5.py-0.5"
+      },
+      {
+        "tag": "button",
+        "text": "A基础原理2/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 343,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "a",
+        "text": "B02COW 表的数据写入与文件重写",
+        "w": 226,
+        "h": 23,
+        "y": 396,
+        "path": "div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > ul.mb-1.ml-2.space-y-0.5 > li > a.flex.items-start.gap-1.5"
+      },
+      {
+        "tag": "a",
+        "text": "B03MOR 表的数据写入与 Log 合并",
+        "w": 226,
+        "h": 23,
+        "y": 422,
+        "path": "div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > ul.mb-1.ml-2.space-y-0.5 > li > a.flex.items-start.gap-1.5"
+      },
+      {
+        "tag": "button",
+        "text": "B建表与分区0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 574,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "C数据写入0/10▾",
+        "w": 243,
+        "h": 28,
+        "y": 805,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "D索引机制0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 1087,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "E数据查询0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 1318,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "FTimeline 与表服务0/12▾",
+        "w": 243,
+        "h": 28,
+        "y": 1549,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "GSpark / Flink 集成0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 1880,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "H故障实验室0/10▾",
+        "w": 243,
+        "h": 28,
+        "y": 2111,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "button",
+        "text": "I高级专题0/8▾",
+        "w": 243,
+        "h": 28,
+        "y": 2392,
+        "path": "div.flex.min-h-0.flex-1 > aside.flex.min-h-0.shrink-0 > div.min-h-0.flex-1.overflow-y-auto > section.mb-1 > button.flex.w-full.items-center"
+      },
+      {
+        "tag": "a",
+        "text": "回到 B02 实验",
+        "w": 99,
+        "h": 25,
+        "y": 474,
+        "path": "div.flex.min-h-0.flex-1 > main.min-h-0.min-w-0.flex-1 > div.flex.flex-col.gap-4 > header.flex.flex-wrap.items-center > a"
+      },
+      {
+        "tag": "button",
+        "text": "回到 B02 实验",
+        "w": 99,
+        "h": 24,
+        "y": 475,
+        "path": "main.min-h-0.min-w-0.flex-1 > div.flex.flex-col.gap-4 > header.flex.flex-wrap.items-center > a > button.el-button.el-button--primary.el-button--small"
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 36,
+        "h": 22,
+        "y": 2157,
+        "path": "section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.flex.flex-wrap.items-center > div.el-input.el-input--small.el-input--suffix > div.el-input__wrapper > input.el-input__inner"
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 38,
+        "h": 20,
+        "y": 2190,
+        "path": "div.el-select.el-select--small.w-44 > div.el-select__wrapper.el-tooltip__trigger.el-tooltip__trigger > div.el-select__selection > div.el-select__selected-item.el-select__input-wrapper.is-hidden > input.el-select__input.is-small"
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 38,
+        "h": 20,
+        "y": 2222,
+        "path": "div.el-select.el-select--small.w-40 > div.el-select__wrapper.el-tooltip__trigger.el-tooltip__trigger > div.el-select__selection > div.el-select__selected-item.el-select__input-wrapper.is-hidden > input.el-select__input.is-small"
+      },
+      {
+        "tag": "input",
+        "text": "",
+        "w": 38,
+        "h": 20,
+        "y": 2254,
+        "path": "div.el-select.el-select--small.w-44 > div.el-select__wrapper.el-tooltip__trigger.el-tooltip__trigger > div.el-select__selection > div.el-select__selected-item.el-select__input-wrapper.is-hidden > input.el-select__input.is-small"
+      },
+      {
+        "tag": "button",
+        "text": "重置筛选",
+        "w": 72,
+        "h": 24,
+        "y": 2284,
+        "path": "main.min-h-0.min-w-0.flex-1 > div.flex.flex-col.gap-4 > section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.flex.flex-wrap.items-center > button.el-button.el-button--small"
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 2428,
+        "path": "tbody > tr.el-table__row > td.el-table_1_column_7.el-table__cell > div.cell > a.el-link.el-link--primary.is-hover-underline"
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 2461,
+        "path": "tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_7.el-table__cell > div.cell > a.el-link.el-link--primary.is-hover-underline"
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 2495,
+        "path": "tbody > tr.el-table__row > td.el-table_1_column_7.el-table__cell > div.cell > a.el-link.el-link--primary.is-hover-underline"
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 2528,
+        "path": "tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_7.el-table__cell > div.cell > a.el-link.el-link--primary.is-hover-underline"
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 2562,
+        "path": "tbody > tr.el-table__row > td.el-table_1_column_7.el-table__cell > div.cell > a.el-link.el-link--primary.is-hover-underline"
+      },
+      {
+        "tag": "a",
+        "text": "打开",
+        "w": 28,
+        "h": 23,
+        "y": 2595,
+        "path": "tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_7.el-table__cell > div.cell > a.el-link.el-link--primary.is-hover-underline"
+      }
+    ],
+    "overflowCount": 366,
+    "overflowEls": [
+      {
+        "tag": "table",
+        "path": "section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header",
+        "left": 289,
+        "right": 1939,
+        "w": 1650
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 489,
+        "right": 749,
+        "w": 260
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 749,
+        "right": 859,
+        "w": 110
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 859,
+        "right": 999,
+        "w": 140
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 999,
+        "right": 1189,
+        "w": 190
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 1189,
+        "right": 1309,
+        "w": 120
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 1309,
+        "right": 1419,
+        "w": 110
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 1419,
+        "right": 1659,
+        "w": 240
+      },
+      {
+        "tag": "col",
+        "path": "div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > colgroup > col",
+        "left": 1659,
+        "right": 1939,
+        "w": 280
+      },
+      {
+        "tag": "thead",
+        "path": "div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__header-wrapper > table.el-table__header > thead",
+        "left": 289,
+        "right": 1939,
+        "w": 1650
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_2.is-leaf.el-table__cell",
+        "left": 489,
+        "right": 749,
+        "w": 260
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_2.is-leaf.el-table__cell > div.cell",
+        "left": 489,
+        "right": 748,
+        "w": 259
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_3.is-leaf.el-table__cell",
+        "left": 749,
+        "right": 859,
+        "w": 110
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_3.is-leaf.el-table__cell > div.cell",
+        "left": 749,
+        "right": 858,
+        "w": 109
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_4.is-leaf.el-table__cell",
+        "left": 859,
+        "right": 999,
+        "w": 140
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_4.is-leaf.el-table__cell > div.cell",
+        "left": 859,
+        "right": 998,
+        "w": 139
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_5.is-leaf.el-table__cell",
+        "left": 999,
+        "right": 1189,
+        "w": 190
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_5.is-leaf.el-table__cell > div.cell",
+        "left": 999,
+        "right": 1188,
+        "w": 189
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_6.is-leaf.el-table__cell",
+        "left": 1189,
+        "right": 1309,
+        "w": 120
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_6.is-leaf.el-table__cell > div.cell",
+        "left": 1189,
+        "right": 1308,
+        "w": 119
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_7.is-leaf.el-table__cell",
+        "left": 1309,
+        "right": 1419,
+        "w": 110
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_7.is-leaf.el-table__cell > div.cell",
+        "left": 1309,
+        "right": 1418,
+        "w": 109
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_8.is-leaf.el-table__cell",
+        "left": 1419,
+        "right": 1659,
+        "w": 240
+      },
+      {
+        "tag": "div",
+        "path": "table.el-table__header > thead > tr > th.el-table_1_column_8.is-leaf.el-table__cell > div.cell",
+        "left": 1419,
+        "right": 1658,
+        "w": 239
+      },
+      {
+        "tag": "th",
+        "path": "div.el-table__header-wrapper > table.el-table__header > thead > tr > th.el-table_1_column_9.is-leaf.el-table__cell",
+        "left": 1659,
+        "right": 1939,
+        "w": 280
+      }
+    ],
+    "hScrollers": [
+      {
+        "path": "html.dark > body > div",
+        "sw": 494,
+        "cw": 390,
+        "ox": "visible"
+      },
+      {
+        "path": "html.dark > body > div > div.flex.h-full.min-h-0",
+        "sw": 494,
+        "cw": 390,
+        "ox": "visible"
+      },
+      {
+        "path": "html.dark > body > div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center",
+        "sw": 494,
+        "cw": 390,
+        "ox": "visible"
+      },
+      {
+        "path": "body > div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1",
+        "sw": 160,
+        "cw": 40,
+        "ox": "visible"
+      },
+      {
+        "path": "div > div.flex.h-full.min-h-0 > header.flex.flex-wrap.items-center > div.ml-auto.min-w-0.flex-1 > div.flex.min-w-0.flex-wrap",
+        "sw": 160,
+        "cw": 40,
+        "ox": "visible"
+      },
+      {
+        "path": "body > div > div.flex.h-full.min-h-0 > div.flex.min-h-0.flex-1 > main.min-h-0.min-w-0.flex-1",
+        "sw": 153,
+        "cw": 130,
+        "ox": "auto"
+      },
+      {
+        "path": "div.flex.min-h-0.flex-1 > main.min-h-0.min-w-0.flex-1 > div.flex.flex-col.gap-4 > section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.flex.flex-wrap.gap-2",
+        "sw": 120,
+        "cw": 64,
+        "ox": "visible"
+      },
+      {
+        "path": "div.flex.flex-col.gap-4 > section.rounded-lg.border.border-[var(--color-hudi-border,#1f2937)] > div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__header-wrapper",
+        "sw": 1650,
+        "cw": 72,
+        "ox": "hidden"
+      },
+      {
+        "path": "div.el-table--fit.el-table--striped.el-table--border > div.el-table__inner-wrapper > div.el-table__body-wrapper > div.el-scrollbar > div.el-scrollbar__wrap.el-scrollbar__wrap--hidden-default",
+        "sw": 1650,
+        "cw": 72,
+        "ox": "auto"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_2.el-table__cell > div.cell.el-tooltip",
+        "sw": 370,
+        "cw": 258,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 391,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_2.el-table__cell > div.cell.el-tooltip",
+        "sw": 322,
+        "cw": 258,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 409,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 373,
+        "cw": 238,
+        "ox": "hidden"
+      },
+      {
+        "path": "table.el-table__body > tbody > tr.el-table__row.el-table__row--striped > td.el-table_1_column_8.el-table__cell > div.cell.el-tooltip",
+        "sw": 337,
+        "cw": 238,
+        "ox": "hidden"
+      }
+    ],
+    "headings": [
+      {
+        "tag": "h1",
+        "t": "证据库",
+        "size": 20,
+        "top": 314
+      },
+      {
+        "tag": "h2",
+        "t": "等级分布",
+        "size": 16,
+        "top": 1692
+      }
+    ]
+  }
+}

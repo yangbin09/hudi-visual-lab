@@ -1,0 +1,314 @@
+.lesson-page{
+--ac-green:#a9d7a0;--ac-red:#dc8b7f}
+.lesson-page button{
+font-family:inherit}
+.lesson-nav-link{
+font-size:12px;text-decoration:none;color:var(--vl-muted)!important;white-space:nowrap}
+.lesson-main{
+display:flex;flex:1;min-height:0;flex-direction:column;max-width:1600px;width:100%;box-sizing:border-box;padding:22px 36px 8px;margin:auto}
+.lesson-heading{
+display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;gap:20px;flex-shrink:0}
+.lesson-heading h1{
+font-size:27px;font-weight:600;letter-spacing:-.7px;margin:6px 0 0}
+.lesson-model{
+font-size:11px!important;color:var(--vl-muted)!important}
+.lesson-stage{
+display:flex;flex-direction:column;flex:1;min-height:0;border:1px solid var(--vl-line);border-radius:12px;overflow:hidden;background:var(--vl-panel)}
+.lesson-stage-bar{
+height:39px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--vl-line);color:var(--vl-muted);font-size:10px;flex-shrink:0}
+.lesson-stage-bar button{
+border:0;font-size:10px;padding:0}
+.lesson-canvas-area{
+flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+.lesson-canvas{
+width:100%;height:100%;color:var(--vl-muted)}
+.lesson-explanation{
+height:70px;display:flex;align-items:center;gap:17px;padding:0 22px;background:var(--vl-bg);border-top:1px solid var(--vl-line);flex-shrink:0}
+.lesson-step{
+font:27px ui-monospace,monospace;color:var(--vl-accent)}
+.lesson-explanation small{
+color:var(--vl-muted);font-size:11px}
+.lesson-explanation p{
+margin:5px 0 0;font-size:13px;line-height:1.6}
+.lesson-explanation>span:last-child{
+margin-left:auto;color:var(--vl-muted);font:11px ui-monospace,monospace;white-space:nowrap}
+.lesson-playbar{
+display:flex;align-items:center;gap:12px;height:65px;flex-shrink:0}
+.visual-lab .lesson-primary{
+background:var(--vl-accent);color:var(--vl-bg);font-weight:600;border:0}
+.lesson-playbar .lesson-primary{
+min-width:127px}
+.lesson-playbar>button:not(.lesson-primary){
+border:0}
+.lesson-playbar>input{
+flex:1;min-width:60px;height:4px;accent-color:#86b990}
+.lesson-playbar select,.lesson-settings input,.lesson-settings select{
+background:var(--vl-bg);color:var(--vl-ink);border:1px solid var(--vl-line);border-radius:5px;padding:7px;font-size:12px}
+.lesson-chapters{
+display:flex;gap:9px;flex-shrink:0;overflow-x:auto;padding:2px 0 11px;border-bottom:1px solid var(--vl-line)}
+.lesson-chapters button{
+display:flex;align-items:center;gap:8px;flex:1;font-size:11px;padding:8px 12px;justify-content:center}
+.lesson-chapters button>span{
+border-radius:50%;width:18px;height:18px;display:inline-grid;place-items:center;background:var(--vl-line);font:10px ui-monospace,monospace}
+.lesson-bottom{
+display:flex;align-items:center;justify-content:space-between;height:32px;flex-shrink:0;font-size:10px;color:var(--vl-muted);gap:10px}
+.lesson-bottom>div{
+display:flex;gap:23px;white-space:nowrap}
+.lesson-bottom a{
+text-decoration:none}
+.lesson-not-found{
+padding:60px;flex:1}
+.lesson-not-found h1{
+font-size:26px}
+.lesson-dialog h2{
+overflow-wrap:anywhere;font-size:18px}
+.lesson-settings{
+display:flex;flex-direction:column;gap:17px}
+.lesson-settings p{
+margin:0}
+.lesson-settings label{
+display:flex;justify-content:space-between;align-items:center;font-size:13px;gap:16px}
+.lesson-settings input,.lesson-settings select{
+width:230px;box-sizing:border-box}
+.lesson-settings .lesson-checkbox{
+justify-content:flex-start;color:var(--vl-muted);font-size:12px}
+.lesson-checkbox input{
+width:auto}
+.lesson-error{
+color:var(--ac-red)!important}
+.lesson-settings>button{
+align-self:flex-start;margin-top:10px;padding:12px 18px}
+.ac-section{
+font:12px sans-serif;fill:var(--vl-muted)}
+.ac-meta{
+font:11px ui-monospace,monospace;fill:var(--vl-muted)}
+.ac-large{
+font:600 20px ui-monospace,monospace;fill:var(--vl-ink)}
+.ac-worker-title{
+font:600 14px ui-monospace,'PingFang SC',sans-serif;fill:var(--vl-ink)}
+.ac-worker{
+fill:var(--vl-base-bg);stroke:#6f9d83;stroke-width:1.5}
+.ac-node{
+fill:var(--vl-panel);stroke:var(--vl-line);stroke-width:1.3}
+.ac-path{
+fill:none;stroke:var(--vl-muted);stroke-width:1.2;stroke-dasharray:4 6;opacity:.5}
+.ac-process-path{
+fill:none;stroke:var(--vl-line);stroke-width:3}
+.ac-selected-path{
+stroke:#87b590;opacity:1;stroke-width:2}
+.ac-blocked-path{
+opacity:.25;stroke-dasharray:5 8}
+.ac-token{
+fill:var(--ac-green);stroke:#487a55;stroke-width:1}
+.ac-message{
+fill:#bfe7b1;stroke:#6c9774;stroke-width:1}
+.ac-message-text{
+fill:#203b28;font:11px ui-monospace,monospace}
+.ac-error{
+stroke:var(--ac-red)!important;stroke-width:2}
+.ac-danger{
+fill:var(--ac-red);font:13px sans-serif}
+.ac-empty{
+font:14px sans-serif;fill:var(--vl-muted)}
+.ac-selected-node{
+fill:var(--vl-base-bg);stroke:#8aba9a;stroke-width:2}
+.ac-clickable{
+cursor:pointer;outline:none}
+.ac-clickable:hover>rect,.ac-clickable:focus>rect{
+stroke:var(--vl-ink);stroke-width:2}
+.ac-clickable:focus>circle{
+stroke:var(--vl-ink);stroke-width:3}
+.ac-base{
+fill:var(--vl-base-bg);stroke:#79a99a}
+.ac-log{
+fill:var(--vl-log-bg);stroke:#c5a565}
+.ac-result{
+fill:var(--vl-base-bg)}
+.ac-complete-dot{
+fill:#578365;stroke:#9ac599;stroke-width:1.5}
+.ac-pending-dot{
+fill:#8d703e;stroke:#d1b479;stroke-width:1.5}
+.ac-status-icon{
+fill:#fff;font:14px sans-serif}
+.ac-time-action{
+font-size:11px}
+.ac-before-bar{
+fill:var(--vl-line)}
+.ac-after-bar{
+fill:#84ac8b}
+.lesson-page.vl-light .ac-message{
+fill:#c8e4bd}
+.lesson-page.vl-light .ac-token{
+fill:#557e55}
+.lesson-page.vl-light .ac-after-bar{
+fill:#709a78}
+
+@media(min-width:851px) and (max-height:850px){
+.lesson-main{
+padding-top:13px}
+.lesson-heading{
+margin-bottom:12px}
+.lesson-heading h1{
+font-size:24px}
+.lesson-playbar{
+height:53px}
+.lesson-explanation{
+height:65px}
+.lesson-chapters{
+padding-bottom:8px}
+}
+
+@media(max-width:850px){
+.lesson-main{
+padding:16px}
+.lesson-heading h1{
+font-size:20px}
+.lesson-model{
+font-size:9px!important;padding:7px!important}
+.lesson-page .vl-breadcrumb{
+display:none}
+.lesson-nav-link{
+font-size:11px}
+.lesson-page .vl-nav{
+gap:16px}
+.lesson-page .vl-nav-actions{
+gap:0}
+.lesson-stage-bar>span:nth-child(2){
+display:none}
+.lesson-canvas-area{
+min-height:290px}
+.lesson-explanation{
+padding:0 14px;gap:10px;height:75px}
+.lesson-explanation p{
+font-size:12px}
+.lesson-playbar{
+gap:5px}
+.lesson-playbar>button{
+padding:7px!important;font-size:11px}
+.lesson-playbar .lesson-primary{
+min-width:110px}
+.lesson-bottom{
+font-size:9px}
+.lesson-chapters button{
+min-width:120px}
+.lesson-page .vl-footer>span:last-child{
+display:none}
+.lesson-heading{
+gap:8px}
+.lesson-settings input,.lesson-settings select{
+width:180px}
+}
+
+@media(max-width:550px){
+.lesson-page .vl-brand b{
+display:none}
+.lesson-page .vl-nav{
+padding:0 12px;gap:10px}
+.lesson-page .vl-brand{
+font-size:15px}
+.lesson-nav-link{
+font-size:10px}
+.lesson-page .vl-nav-actions button{
+font-size:10px;padding:7px}
+.lesson-main{
+padding:12px}
+.lesson-heading h1{
+font-size:18px}
+.lesson-model{
+max-width:110px;white-space:normal!important}
+.lesson-explanation>span:last-child{
+display:none}
+.lesson-playbar{
+flex-wrap:wrap;height:88px;padding:6px 0}
+.lesson-playbar>input{
+min-width:100px}
+.lesson-bottom{
+height:45px}
+.lesson-bottom>span{
+max-width:55%}
+.lesson-bottom>div{
+gap:9px}
+.lesson-dialog .vl-drawer{
+padding:18px}
+.lesson-settings label{
+align-items:flex-start;flex-direction:column;gap:6px}
+.lesson-settings input,.lesson-settings select{
+width:100%}
+.lesson-settings .lesson-checkbox{
+flex-direction:row}
+.lesson-settings .lesson-checkbox input{
+width:auto}
+}
+
+.ac-worker-title{
+font-size:16px}
+.ac-meta{
+font-size:12px}
+.ac-section{
+font-size:13px}
+.ac-time-action{
+font-size:12px}
+
+.ac-worker-title{
+font-size:17px}
+.ac-time-action{
+font-size:12px}
+.vl-light{
+--vl-delete-bg:#efd4c8}
+.vl-light .delete-label{
+fill:#9c4433}
+
+.visual-lab button.lesson-primary:hover,.visual-lab button.vl-primary:hover{
+background:var(--vl-accent);color:var(--vl-bg);filter:brightness(.96)}
+.file-glyph[aria-disabled=true]{
+cursor:default}
+
+.td-section{
+font:15px 'PingFang SC',sans-serif;fill:var(--vl-muted)}
+.td-title{
+font:600 17px ui-monospace,'PingFang SC',sans-serif;fill:var(--vl-ink)}
+.td-label{
+font:12px ui-monospace,'PingFang SC',sans-serif;fill:var(--vl-muted)}
+.td-value{
+font:14px ui-monospace,'PingFang SC',sans-serif;fill:var(--vl-ink)}
+.td-ts{
+font:11px ui-monospace,'PingFang SC',sans-serif;fill:var(--vl-muted)}
+.td-source{
+font:9px ui-monospace,monospace;fill:var(--vl-muted)}
+.td-file{
+fill:var(--vl-base-bg);stroke:#75a38b;stroke-width:1.5}
+.td-preserved{
+stroke-dasharray:6 4}
+.td-log-file{
+fill:var(--vl-log-bg);stroke:#bfa16c;stroke-width:1.5}
+.td-row{
+fill:var(--vl-panel)}
+.td-focus-row{
+fill:var(--vl-highlight,#426e58);stroke:#91be99;stroke-width:.8}
+.td-deleted-row{
+fill:var(--vl-delete-bg,#643e36)}
+.td-input{
+fill:var(--vl-panel);stroke:#96bd88;stroke-width:1.5}
+.td-comparison{
+fill:var(--vl-panel);stroke:var(--vl-line)}
+.td-arrow{
+stroke:var(--vl-muted);stroke-dasharray:4 5;fill:none;stroke-width:1.5}
+.td-summary{
+fill:var(--vl-bg);stroke:var(--vl-line)}
+.td-reason{
+font:12px 'PingFang SC',sans-serif;fill:var(--vl-ink)}
+.td-positive{
+font:12px 'PingFang SC',sans-serif;fill:#9cc5a0}
+.td-lost{
+font:11px 'PingFang SC',sans-serif;fill:#e4a28c}
+.td-reject-line{
+stroke:#d79a89;stroke-width:1.4}
+.td-moving-copy{
+fill:#bed8ed;stroke:#8da7c5}
+.td-moving-label{
+fill:#263f50;font:12px ui-monospace,monospace}
+.vl-light .td-positive{
+fill:#39724b}
+.vl-light .td-lost{
+fill:#a44f38}
+

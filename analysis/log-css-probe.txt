@@ -1,0 +1,71 @@
+﻿
+===== DESKTOP 1440x900 (dark) =====
+HOME: minFontDom=12 under12=0/92 taps=11/33(33%) svg[minDecl=undefined rendered=undefined scale=undefined box=undefinedxundefined] canvasArea=null canvas=null scrollH=2081/900 canY=true canX=false coarse=false theme=dark
+CATALOG: minFontDom=12 under12=0/761 taps=21/101(21%) svg[minDecl=undefined rendered=undefined scale=undefined box=undefinedxundefined] canvasArea=null canvas=null scrollH=9839/900 canY=true canX=false coarse=false theme=dark
+B05: minFontDom=11 under12=6/124 taps=47/47(100%) svg[minDecl=12 rendered=11.7 scale=0.972 box=1050x326] canvasArea={"w":1050,"h":327,"scrollW":1050,"overflowX":"visible"} canvas={"w":1050,"h":326} scrollH=2108/900 canY=true canX=false coarse=false theme=dark
+B05 structure: { body: 1, objective: 1, legend: 1, termcard: 4 }
+B05 keyBoxes: {"lessonStage":{"w":1052,"h":504,"minH":"504px","font":"14px"},"stageBar":{"w":1050,"h":40,"minH":"40px","font":"12px"},"stageBarBtn":{"w":64,"h":19,"minH":"auto","font":"12px"},"explanation":{"w":1050,"h":88,"minH":"88px","font":"14px"},"chapters":{"w":1368,"h":51,"minH":"auto","font":"14px"},"chapterBtn":{"w":266,"h":37,"minH":"auto","font":"12px"},"playbar":{"w":1368,"h":65,"minH":"auto","font":"14px"},"playbarBtn":{"w":127,"h":37,"minH":"auto","font":"13px"},"playbarNext":{"w":41,"h":37,"minH":"auto","font":"13px"},"model":{"w":92,"h":37,"minH":"auto","font":"12px"},"bottom":{"w":1368,"h":32,"minH":"32px","font":"12px"},"footerBtn":{"w":144,"h":19,"minH":"auto","font":"12px"},"navBtn":{"w":78,"h":37,"minH":"auto","font":"13px"},"objectiveBar":{"w":1368,"h":129,"minH":"auto","font":"13px"},"termCard":{"w":298,"h":240,"minH":"auto","font":"13px"},"legend":{"w":1050,"h":37,"minH":"auto","font":"12px"},"canvasArea":{"w":1050,"h":327,"scrollW":1050,"overflowX":"visible"},"canvas":{"w":1050,"h":326}}
+B05 under12 samples: [{"t":"第 1 题","fs":11,"cls":"mt-0.5 text-[11px] font-semibold text-[v"},{"t":"单选","fs":11,"cls":"rounded border border-[var(--color-hudi-"},{"t":"第 2 题","fs":11,"cls":"mt-0.5 text-[11px] font-semibold text-[v"},{"t":"单选","fs":11,"cls":"rounded border border-[var(--color-hudi-"},{"t":"第 3 题","fs":11,"cls":"mt-0.5 text-[11px] font-semibold text-[v"},{"t":"单选","fs":11,"cls":"rounded border border-[var(--color-hudi-"}]
+B05 tap under44: [{"tag":"a","t":"Hudi Visual Lab 首页","w":170,"h":31,"minH":"auto","minW":"auto"},{"tag":"a","t":"总览","w":44,"h":35,"minH":"auto","minW":"auto"},{"tag":"a","t":"全部主题","w":68,"h":35,"minH":"auto","minW":"auto"},{"tag":"a","t":"学习路径","w":68,"h":35,"minH":"auto","minW":"auto"},{"tag":"a","t":"术语表","w":56,"h":35,"minH":"auto","minW":"auto"},{"tag":"a","t":"学习进度","w":68,"h":35,"minH":"auto","minW":"auto"},{"tag":"a","t":"证据库","w":56,"h":35,"minH":"auto","minW":"auto"},{"tag":"a","t":"全部主题","w":48,"h":19,"minH":"auto","minW":"auto"},{"tag":"button","t":"基础模式","w":78,"h":37,"minH":"auto","minW":"auto"},{"tag":"button","t":"切换深浅主题","w":37,"h":37,"minH":"auto","minW":"auto"},{"tag":"button","t":"⚙ 参数","w":67,"h":37,"minH":"auto","minW":"auto"},{"tag":"button","t":"引擎驱动 ↗","w":92,"h":37,"minH":"auto","minW":"auto"},{"tag":"button","t":"B04 Base File / Log File / File Sl","w":231,"h":27,"minH":"auto","minW":"auto"},{"tag":"button","t":"MOR 的写入路径 ↗","w":130,"h":27,"minH":"auto","minW":"auto"},{"tag":"button","t":"技术详情 ↗","w":64,"h":19,"minH":"auto","minW":"auto"},{"tag":"button","t":"Base File定义","w":272,"h":27,"minH":"0px","minW":"0px"},{"tag":"button","t":"Log File定义","w":272,"h":27,"minH":"0px","minW":"0px"},{"tag":"button","t":"Instant定义","w":272,"h":27,"minH":"0px","minW":"0px"},{"tag":"button","t":"Compaction定义","w":272,"h":27,"minH":"0px","minW":"0px"},{"tag":"button","t":"播放演示","w":127,"h":37,"minH":"auto","minW":"127px"}]
+
+===== MOBILE 390x844 =====
+HOME: minFontDom=12 under12=0/91 taps=0/33(0%) svg[minDecl=undefined rendered=undefined scale=undefined box=undefinedxundefined] canvasArea=null canvas=null scrollH=3762/844 canY=true canX=false coarse=true theme=dark
+CATALOG: minFontDom=12 under12=0/759 taps=0/101(0%) svg[minDecl=undefined rendered=undefined scale=undefined box=undefinedxundefined] canvasArea=null canvas=null scrollH=28549/844 canY=true canX=false coarse=true theme=dark
+B05: minFontDom=11 under12=6/113 taps=0/46(0%) svg[minDecl=12 rendered=10 scale=0.833 box=900x279] canvasArea={"w":364,"h":290,"scrollW":924,"overflowX":"auto"} canvas={"w":900,"h":279} scrollH=3791/844 canY=true canX=false coarse=true theme=dark
+B05 keyBoxes: {"lessonStage":{"w":366,"h":515,"minH":"340px","font":"14px"},"stageBar":{"w":364,"h":53,"minH":"44px","font":"12px"},"stageBarBtn":{"w":80,"h":44,"minH":"44px","font":"12px"},"explanation":{"w":364,"h":98,"minH":"88px","font":"14px"},"chapters":{"w":366,"h":58,"minH":"auto","font":"14px"},"chapterBtn":{"w":120,"h":44,"minH":"44px","font":"12px"},"playbar":{"w":366,"h":101,"minH":"65px","font":"14px"},"playbarBtn":{"w":110,"h":44,"minH":"44px","font":"13px"},"playbarNext":{"w":44,"h":44,"minH":"44px","font":"13px"},"model":{"w":80,"h":44,"minH":"44px","font":"12px"},"bottom":{"w":366,"h":45,"minH":"45px","font":"12px"},"footerBtn":{"w":160,"h":44,"minH":"44px","font":"12px"},"navBtn":{"w":62,"h":44,"minH":"44px","font":"12px"},"objectiveBar":{"w":366,"h":223,"minH":"auto","font":"13px"},"termCard":{"w":306,"h":240,"minH":"auto","font":"13px"},"legend":{"w":364,"h":62,"minH":"auto","font":"12px"},"canvasArea":{"w":364,"h":290,"scrollW":924,"overflowX":"auto"},"canvas":{"w":900,"h":279}}
+B05 tap under44: []
+B05 scrollLeft: {"scrollLeft":200,"scrollW":924,"clientW":364}
+
+===== CONTRAST =====
+{
+ "desktopDark": {
+  "muted on bg": 8.48,
+  "muted on panel": 7.76,
+  "muted on base-bg": 5.73,
+  "muted on log-bg": 5.41,
+  "ink on bg": 14.05,
+  "ink on term-bg": 11.96,
+  "muted on surface-2": 6.93,
+  "muted on legend-bg": 7.49,
+  "focus on bg": 3.45,
+  "focus on bg(light)": 3.45
+ },
+ "desktopLight": {
+  "muted on bg": 5.24,
+  "muted on panel": null,
+  "muted on base-bg": 4.96,
+  "muted on log-bg": 5.04,
+  "ink on bg": 10.72,
+  "ink on term-bg": 10.7,
+  "muted on surface-2": 5.04,
+  "muted on legend-bg": 5.42,
+  "focus on bg": 4.59,
+  "focus on bg(light)": 4.59
+ },
+ "mobileDark": {
+  "muted on bg": 8.48,
+  "muted on panel": 7.76,
+  "muted on base-bg": 5.73,
+  "muted on log-bg": 5.41,
+  "ink on bg": 14.05,
+  "ink on term-bg": 11.96,
+  "muted on surface-2": 6.93,
+  "muted on legend-bg": 7.49,
+  "focus on bg": 3.45,
+  "focus on bg(light)": 3.45
+ },
+ "mobileLight": {
+  "muted on bg": 5.24,
+  "muted on panel": null,
+  "muted on base-bg": 4.96,
+  "muted on log-bg": 5.04,
+  "ink on bg": 10.72,
+  "ink on term-bg": 10.7,
+  "muted on surface-2": 5.04,
+  "muted on legend-bg": 5.42,
+  "focus on bg": 4.59,
+  "focus on bg(light)": 4.59
+ },
+ "b02MobileDark": null,
+ "b02MobileLight": null
+}
