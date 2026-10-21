@@ -13,6 +13,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_F_ENTRIES: CatalogEntry[] = [
   {
     id: 'S01',
+    difficulty: 'L3',
+    minutes: 7,
+    aliases: ['timeline', 'instant', '生命周期'],
     moduleId: 'F',
     title: 'Timeline 与 Instant 生命周期',
     summary:
@@ -24,6 +27,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S02',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['commit', 'delta commit'],
     moduleId: 'F',
     title: 'Commit 与 DeltaCommit',
     summary:
@@ -35,6 +41,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S03',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['compaction plan', '计划'],
     moduleId: 'F',
     title: 'Compaction Plan 生成',
     summary:
@@ -47,6 +56,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S04',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['compaction', '合并'],
     moduleId: 'F',
     title: 'Compaction 执行与文件合并',
     summary:
@@ -58,6 +70,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S05',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['异步 compaction', '调度'],
     moduleId: 'F',
     title: '异步 Compaction 调度',
     summary:
@@ -70,6 +85,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S06',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['clean', '清理', '保留窗口'],
     moduleId: 'F',
     title: 'Clean 策略与文件物理删除',
     summary:
@@ -82,6 +100,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S07',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['archive', '归档', 'archivelog'],
     moduleId: 'F',
     title: 'Archive Timeline 归档',
     summary:
@@ -93,6 +114,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S08',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['rollback', '回滚'],
     moduleId: 'F',
     title: 'Rollback 回滚',
     summary:
@@ -105,6 +129,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S09',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['restore', '恢复'],
     moduleId: 'F',
     title: 'Restore 恢复',
     summary:
@@ -117,6 +144,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S10',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['clustering', '聚类', 'replacecommit'],
     moduleId: 'F',
     title: 'Clustering 与 ReplaceCommit',
     summary:
@@ -129,6 +159,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S11',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['ttl', '过期'],
     moduleId: 'F',
     title: 'TTL 分区过期与清理',
     summary:
@@ -141,6 +174,9 @@ export const MODULE_F_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'S12',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['pending', '未完成', '文件引用'],
     moduleId: 'F',
     title: 'Pending Instant 与文件版本引用',
     summary:

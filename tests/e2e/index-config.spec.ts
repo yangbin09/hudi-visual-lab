@@ -27,7 +27,7 @@ test('E01 用具体配置解释差异，修改后策略与结论一起改变',as
   await page.getByRole('button',{name:'跳到结果',exact:true}).click()
   await expect(scene).toContainText('BUCKET ≠ SIMPLE · 不一致')
   await expect(scene).not.toContainText('✓ 配置一致')
-  await expect(page.locator('.lesson-explanation')).toContainText('点击“对齐为 BUCKET 并重演”')
+  await expect(page.locator('.lesson-explanation')).toContainText(/对齐为 BUCKET 并重演/)
   await page.getByRole('button',{name:'⚙ 参数'}).click()
   await expect(page.getByLabel('机制示意的阻断关口')).toHaveCount(0)
   await page.getByLabel('记录主键',{exact:true}).fill('1002')

@@ -25,8 +25,10 @@ export const routes: RouteRecordRaw[] = [
     meta: { title: '总览' },
   },
   { path: '/catalog', name: 'catalog', component: () => import('@/views/AnimatedCatalogView.vue'), meta: { title: '全部动画实验' } },
-  { path: '/experiment/B02', component: () => import('@/views/VisualLabView.vue'), meta: { title: 'COW 与 MOR · 动画实验' } },
-  { path: '/experiment/B03', component: () => import('@/views/VisualLabView.vue'), meta: { title: 'COW 与 MOR · 动画实验' } },
+  { path: '/path', name: 'path', component: () => import('@/views/PathView.vue'), meta: { title: '学习路径' } },
+  { path: '/glossary', name: 'glossary', component: () => import('@/views/GlossaryView.vue'), meta: { title: '术语表' } },
+  // 80 个主题统一走 LessonView：B02 / B03 在其中渲染为「双泳道对比」分支，
+  // 不再有第二套页面骨架（整改前它们走独立的 VisualLabView）。
   {
     path: '/experiment/:id',
     name: 'experiment',

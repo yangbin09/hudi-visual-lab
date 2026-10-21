@@ -12,6 +12,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_I_ENTRIES: CatalogEntry[] = [
   {
     id: 'A01',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['小文件', '文件大小'],
     moduleId: 'I',
     title: 'Hudi 文件大小与小文件问题',
     summary:
@@ -23,6 +26,9 @@ export const MODULE_I_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'A02',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['数据倾斜', 'bucket 倾斜'],
     moduleId: 'I',
     title: 'Bucket 数据倾斜',
     summary:
@@ -35,6 +41,9 @@ export const MODULE_I_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'A03',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['metadata table', '元数据表'],
     moduleId: 'I',
     title: 'Metadata Table',
     summary:
@@ -47,6 +56,9 @@ export const MODULE_I_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'A04',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['并发控制', 'occ', '锁'],
     moduleId: 'I',
     title: '并发控制、锁与多 Writer',
     summary:
@@ -59,6 +71,9 @@ export const MODULE_I_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'A05',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['compaction 吞吐', '策略'],
     moduleId: 'I',
     title: 'Compaction 策略与吞吐量分析',
     summary:
@@ -71,6 +86,9 @@ export const MODULE_I_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'A06',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['cleaner 保留', '存储成本'],
     moduleId: 'I',
     title: 'Cleaner 保留策略与存储成本',
     summary:
@@ -83,6 +101,9 @@ export const MODULE_I_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'A07',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['timeline 规模', '归档性能'],
     moduleId: 'I',
     title: 'Timeline 规模与归档性能',
     summary:
@@ -95,6 +116,9 @@ export const MODULE_I_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'A08',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['健康检查', '维护'],
     moduleId: 'I',
     title: 'Hudi 表健康检查与维护决策',
     summary:

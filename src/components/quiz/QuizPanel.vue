@@ -6,12 +6,24 @@
  * 多选题必须**完全匹配**才算答对（少选、多选都算错）—— 这是刻意的严格口径，
  * 界面上必须写清楚，否则使用者会以为「选对几个算几个分」。
  */
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 import type { QuizQuestion } from '@/models/simulation'
 
-const props = defineProps<{ questions: QuizQuestion[] }>()
-const emit = defineEmits<{ (e: 'submit', score: number): void }>()
+const props = defineProps<{
+  questions: QuizQuestion[]
+  /**
+   * 受控得分（可选）：
+   *  - 不传：保持原用法，组件内部记录提交状态，只通过 `submit` 事件抛出得分；
+   *  - 传 `null`：受控且「未作答」；
+   *  - 传数字：受控且「已提交」，组件展示外部传入的得分并允许外部重置为 `null`。
+   */
+  modelValue?: number | null
+}>()
+const emit = defineEmits<{
+  (e: 'submit', score: number): void
+  (e: 'update:modelValue', score: number | null): void
+}>()
 
 const questions = computed<QuizQuestion[]>(() => props.questions ?? [])
 
@@ -28,7 +40,7 @@ function isSelected(questionId: string, optionId: string): boolean {
 }
 
 function toggle(question: QuizQuestion, optionId: string): void {
-  if (submitted.value) return
+  if (graded.value) return
   const current = selectedOf(question.id)
   if (question.multiple) {
     const next = current.includes(optionId)
@@ -60,22 +72,54 @@ const score = computed<number>(() => {
   return Math.round((correctCount.value / questions.value.length) * 100)
 })
 
+/** 是否受控：父组件传了 modelValue（哪怕传 null 也算受控） */
+const controlled = computed<boolean>(() => props.modelValue !== undefined)
+
+/** 是否已批改：内部提交过，或受控方给出了分数 */
+const graded = computed<boolean>(() => {
+  if (submitted.value) return true
+  return controlled.value && typeof props.modelValue === 'number'
+})
+
+/** 展示用得分：受控时以父组件为准，否则用内部计算结果 */
+const displayScore = computed<number>(() => {
+  if (controlled.value && typeof props.modelValue === 'number') return props.modelValue
+  return score.value
+})
+
+/** 受控方把分数重置为 null 时，同步清空内部作答与批改状态 */
+watch(
+  () => props.modelValue,
+  (value) => {
+    if (value === null) {
+      answers.value = {}
+      submitted.value = false
+    } else if (typeof value === 'number') {
+      submitted.value = true
+    }
+  },
+)
+
 function submit(): void {
   if (submitted.value) return
   submitted.value = true
   emit('submit', score.value)
+  if (controlled.value) emit('update:modelValue', score.value)
 }
 
 function reset(): void {
   answers.value = {}
   submitted.value = false
+  if (controlled.value) emit('update:modelValue', null)
 }
+
+defineExpose({ submit, reset })
 
 /** 某个选项在批改后的状态 */
 type OptionMark = 'correct' | 'wrong-pick' | 'missed' | 'normal'
 
 function markOf(question: QuizQuestion, optionId: string): OptionMark {
-  if (!submitted.value) return 'normal'
+  if (!graded.value) return 'normal'
   const isAnswer = (question.answerIds ?? []).includes(optionId)
   const picked = isSelected(question.id, optionId)
   if (isAnswer && picked) return 'correct'
@@ -105,8 +149,8 @@ const MARK_TEXT: Record<OptionMark, string> = {
       <button
         type="button"
         class="rounded border border-[var(--color-hudi-border,#1f2937)] px-2 py-1 hover:bg-slate-700/60"
-        :disabled="submitted"
-        :class="submitted ? 'cursor-not-allowed opacity-50' : ''"
+        :disabled="graded"
+        :class="graded ? 'cursor-not-allowed opacity-50' : ''"
         @click="submit"
       >
         提交答案
@@ -119,14 +163,14 @@ const MARK_TEXT: Record<OptionMark, string> = {
         重做
       </button>
       <span
-        v-if="submitted"
-        class="rounded px-2 py-0.5 text-[11px] font-semibold"
+        v-if="graded"
+        class="rounded px-2 py-0.5 text-[12px] font-semibold"
         :style="{
           background: score >= 60 ? 'var(--color-ev-E4, #22c55e)' : 'var(--color-ev-E1, #3b82f6)',
           color: '#0b1120',
         }"
       >
-        得分 {{ score }} 分（{{ correctCount }} / {{ questions.length }}）
+        得分 {{ displayScore }} 分（{{ correctCount }} / {{ questions.length }}）
       </span>
     </div>
 
@@ -146,18 +190,18 @@ const MARK_TEXT: Record<OptionMark, string> = {
       :data-question-id="question.id"
     >
       <header class="mb-2 flex items-start gap-2">
-        <span class="mt-0.5 text-[11px] font-semibold text-[var(--color-hudi-muted,#94a3b8)]">
+        <span class="mt-0.5 text-[12px] font-semibold text-[var(--color-hudi-muted,#94a3b8)]">
           第 {{ qIdx + 1 }} 题
         </span>
         <h3 class="min-w-0 flex-1 text-sm font-medium leading-relaxed">{{ question.prompt }}</h3>
         <span
-          class="rounded border border-[var(--color-hudi-border,#1f2937)] px-1.5 py-0.5 text-[11px] text-[var(--color-hudi-muted,#94a3b8)]"
+          class="rounded border border-[var(--color-hudi-border,#1f2937)] px-1.5 py-0.5 text-[12px] text-[var(--color-hudi-muted,#94a3b8)]"
         >
           {{ question.multiple ? '多选' : '单选' }}
         </span>
         <span
-          v-if="submitted"
-          class="rounded px-1.5 py-0.5 text-[11px] font-semibold text-slate-900"
+          v-if="graded"
+          class="rounded px-1.5 py-0.5 text-[12px] font-semibold text-slate-900"
           :style="{
             background: isCorrect(question) ? 'var(--color-ev-E4, #22c55e)' : 'var(--color-ev-E1, #3b82f6)',
           }"
@@ -180,7 +224,7 @@ const MARK_TEXT: Record<OptionMark, string> = {
                   : markOf(question, option.id) === 'missed'
                     ? 'border-emerald-500/40 bg-emerald-500/5'
                     : 'border-[var(--color-hudi-border,#1f2937)]',
-              submitted ? 'cursor-default' : 'hover:bg-slate-700/40',
+              graded ? 'cursor-default' : 'hover:bg-slate-700/40',
             ]"
             @click="toggle(question, option.id)"
           >
@@ -198,8 +242,8 @@ const MARK_TEXT: Record<OptionMark, string> = {
               <b class="mr-1 font-mono">{{ option.id }}</b>{{ option.text }}
             </span>
             <span
-              v-if="submitted && markOf(question, option.id) !== 'normal'"
-              class="shrink-0 text-[11px]"
+              v-if="graded && markOf(question, option.id) !== 'normal'"
+              class="shrink-0 text-[12px]"
               :class="
                 markOf(question, option.id) === 'wrong-pick' ? 'text-rose-300' : 'text-emerald-300'
               "
@@ -211,8 +255,8 @@ const MARK_TEXT: Record<OptionMark, string> = {
       </ul>
 
       <!-- 批改结果 + 解析 -->
-      <div v-if="submitted" class="mt-2 rounded border border-[var(--color-hudi-border,#1f2937)] bg-black/25 p-2">
-        <div class="mb-1 flex flex-wrap items-center gap-3 text-[11px]">
+      <div v-if="graded" class="mt-2 rounded border border-[var(--color-hudi-border,#1f2937)] bg-black/25 p-2">
+        <div class="mb-1 flex flex-wrap items-center gap-3 text-[12px]">
           <span class="text-emerald-300">
             正确答案：{{ (question.answerIds ?? []).join('、') || '—' }}
           </span>
@@ -220,10 +264,10 @@ const MARK_TEXT: Record<OptionMark, string> = {
             你的选择：{{ selectedOf(question.id).join('、') || '未作答' }}
           </span>
         </div>
-        <p class="whitespace-pre-wrap text-[11px] leading-relaxed text-slate-300">
+        <p class="whitespace-pre-wrap text-[12px] leading-relaxed text-slate-300">
           {{ question.explanation }}
         </p>
-        <p v-if="question.multiple" class="mt-1 text-[11px] text-amber-300/90">
+        <p v-if="question.multiple" class="mt-1 text-[12px] text-amber-300/90">
           提示：多选题必须与正确答案完全一致（不多选、不少选）才算答对。
         </p>
       </div>

@@ -6,19 +6,27 @@ test('画布居中且控件首屏可见，复杂信息默认隐藏', async ({ pa
   await expect(page.getByRole('dialog')).not.toBeVisible()
   const geometry = await page.evaluate(() => {
     const stage = document.querySelector('.vl-stage')!.getBoundingClientRect()
-    const main = document.querySelector('.vl-main')!.getBoundingClientRect()
+    // 整改后所有主题共用 .lesson-main 外壳（B02/B03 也不再是另一套 .vl-main）
+    const main = document.querySelector('.lesson-main')!.getBoundingClientRect()
     const action = document.querySelector('.vl-action-bar')!.getBoundingClientRect()
-    return { ratio: stage.height / main.height, actionBottom: action.bottom, height: innerHeight, overflow: document.documentElement.scrollWidth > innerWidth }
+    return {
+      ratio: stage.height / main.height,
+      actionBottom: action.bottom,
+      height: innerHeight,
+      overflow: document.documentElement.scrollWidth > innerWidth,
+    }
   })
   expect(geometry.overflow).toBe(false)
   if (page.viewportSize()!.width >= 1366) {
+    // 操作条仍在首屏内
     expect(geometry.actionBottom).toBeLessThan(geometry.height)
-    expect(geometry.ratio).toBeGreaterThan(0.60)
+    // 画布仍占主区相当份额（整改后主区多了目标条 / 术语栏 / 详情区 / 小结）
+    expect(geometry.ratio).toBeGreaterThan(0.25)
   }
   await page.getByRole('button', { name: '切换深浅主题' }).click()
   await expect(page.locator('.visual-lab')).toHaveClass(/vl-light/)
-  await page.getByRole('button', { name: '技术详情 ↗', exact: true }).click()
-  await expect(page.getByRole('dialog')).toBeVisible()
-  await page.keyboard.press('Escape')
+  // 整改后详细视图是页内详情区（dock），不再是抽屉
+  await page.getByRole('button', { name: '数据 / 代码 / 依据 ↗' }).click()
+  await expect(page.locator('.lesson-dock')).toBeVisible()
   await expect(page.getByRole('dialog')).not.toBeVisible()
 })

@@ -9,6 +9,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_E_ENTRIES: CatalogEntry[] = [
   {
     id: 'Q01',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['snapshot', '快照读'],
     moduleId: 'E',
     title: 'Snapshot 快照查询',
     summary:
@@ -20,6 +23,9 @@ export const MODULE_E_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'Q02',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['read optimized', '读优化'],
     moduleId: 'E',
     title: 'Read Optimized 读优化查询',
     summary:
@@ -31,6 +37,9 @@ export const MODULE_E_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'Q03',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['incremental', '增量读'],
     moduleId: 'E',
     title: 'Incremental 增量查询',
     summary:
@@ -42,6 +51,9 @@ export const MODULE_E_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'Q04',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['time travel', '时间旅行', 'as.of.instant'],
     moduleId: 'E',
     title: 'Time Travel 时间旅行',
     summary:
@@ -53,6 +65,9 @@ export const MODULE_E_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'Q05',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['cow mor 查询', '可见性'],
     moduleId: 'E',
     title: 'COW / MOR 查询数据可见性对比',
     summary:
@@ -64,6 +79,9 @@ export const MODULE_E_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'Q06',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['分区裁剪', '扫描文件'],
     moduleId: 'E',
     title: '分区过滤与文件扫描',
     summary:
@@ -75,6 +93,9 @@ export const MODULE_E_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'Q07',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['_hoodie_', '元字段'],
     moduleId: 'E',
     title: '_hoodie_* 元数据字段',
     summary:
@@ -86,6 +107,9 @@ export const MODULE_E_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'Q08',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['cdc', '增量消费'],
     moduleId: 'E',
     title: 'CDC 与增量数据消费场景',
     summary:

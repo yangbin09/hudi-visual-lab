@@ -34,6 +34,32 @@
   --color-ev-E4: #3fb950;
 }
 
+/* ==========================================================================
+ * Visual Lab 视觉基线 token（契约，task-4）
+ * --------------------------------------------------------------------------
+ * 供 src/views 与 src/components/visual 下的新组件直接使用；命名固定：
+ *   --vl-fs-xs 12 / sm 13 / md 14 / lg 16 / xl 20
+ *   --vl-tap 44（触控目标下限）
+ *   --vl-focus（焦点环）
+ *   --vl-surface-2 / --vl-term-bg / --vl-legend-bg / --vl-border-strong
+ * 深色为默认值；浅色在 :root[data-theme='light'] 与 .vl-light 两处同步给全。
+ * ========================================================================== */
+:root {
+  --vl-fs-xs: 12px;
+  --vl-fs-sm: 13px;
+  --vl-fs-md: 14px;
+  --vl-fs-lg: 16px;
+  --vl-fs-xl: 20px;
+  --vl-tap: 44px;
+  --vl-focus: #2f7d5a;
+
+  /* 深色（默认）分层底色 */
+  --vl-surface-2: #222d33;
+  --vl-term-bg: #1f2a30;
+  --vl-legend-bg: #1d272c;
+  --vl-border-strong: #5d6f6a;
+}
+
 /* 浅色主题：覆盖同名变量即可，无需改动任何组件 */
 :root[data-theme='light'] {
   --color-hudi-bg: #f6f8fa;
@@ -42,6 +68,12 @@
   --color-hudi-text: #1f2328;
   --color-hudi-muted: #59636e;
   --color-hudi-accent: #0969da;
+
+  /* 视觉基线 token：浅色分层底色（与 src/styles/visual-lab.css 的 .vl-light 同值） */
+  --vl-surface-2: #eef2ec;
+  --vl-term-bg: #f3f6f1;
+  --vl-legend-bg: #f7faf5;
+  --vl-border-strong: #7f8d82;
 
   --color-hudi-success: #1a7f37;
   --color-hudi-warning: #9a6700;
@@ -115,7 +147,8 @@
     border: 1px solid transparent;
     border-radius: 9999px;
     padding: 0.1rem 0.5rem;
-    font-size: 0.7rem;
+    /* 字号下限 12px（--vl-fs-xs）：原 0.7rem = 11.2px，低于可读性基线 */
+    font-size: var(--vl-fs-xs, 12px);
     font-weight: 600;
     line-height: 1.4;
     white-space: nowrap;

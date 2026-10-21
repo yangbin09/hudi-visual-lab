@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import type { HudiPhysicalFile, HudiRecord } from '@/models/hudi'
 defineProps<{ file: HudiPhysicalFile; records: HudiRecord[]; x: number; y: number; fresh?: boolean; highlight?: boolean; disabled?: boolean; revealCount?: number; annotations?: Record<string,string> }>()
 defineEmits<{ select: [] }>()
@@ -17,5 +17,5 @@ defineEmits<{ select: [] }>()
   </g>
 </template>
 <style scoped>
-.file-glyph{cursor:pointer;outline:none;color:var(--vl-ink)}.file-glyph:focus .file-body,.file-glyph:hover .file-body{stroke:var(--vl-ink);stroke-width:2}.file-body{stroke-width:1.4}.base-body{fill:var(--vl-base-bg);stroke:#79a99a}.log-body{fill:var(--vl-log-bg);stroke:#c5a565}.file-type{font:600 12px ui-monospace,monospace;fill:var(--vl-ink)}.file-format{font:10px ui-monospace,monospace;fill:var(--vl-muted)}.record-text{font:11px ui-monospace,monospace;fill:var(--vl-ink)}.record-bg{fill:var(--vl-panel)}.record-highlight{fill:var(--vl-highlight)}.row-annotation{fill:var(--vl-copy-text,#9ac9e6);font-size:9px}.record-deleted{fill:var(--vl-delete-bg,#643e36)}.delete-label{fill:#eab5a5;font-weight:bold}.old{opacity:.43}.fresh .file-body{stroke:#38957a;stroke-width:2.5}
+.file-glyph{cursor:pointer;outline:none;color:var(--vl-ink)}.file-glyph:focus .file-body,.file-glyph:hover .file-body{stroke:var(--vl-ink);stroke-width:2}.file-body{stroke-width:1.4}.base-body{fill:var(--vl-base-bg);stroke:#79a99a}.log-body{fill:var(--vl-log-bg);stroke:#c5a565}.file-type{font:600 15px ui-monospace,monospace;fill:var(--vl-ink)}.file-format{font:13px ui-monospace,monospace;fill:var(--vl-muted)}.record-text{font:13px ui-monospace,monospace;fill:var(--vl-ink)}.record-bg{fill:var(--vl-panel)}.record-highlight{fill:var(--vl-highlight)}.row-annotation{fill:var(--vl-copy-text,#9ac9e6);font-size:12px}.record-deleted{fill:var(--vl-delete-bg,#643e36)}.delete-label{fill:#eab5a5;font-weight:bold}.old{opacity:.43}.fresh .file-body{stroke:#38957a;stroke-width:2.5}
 </style>

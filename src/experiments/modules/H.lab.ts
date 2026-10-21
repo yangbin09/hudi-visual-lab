@@ -15,6 +15,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_H_ENTRIES: CatalogEntry[] = [
   {
     id: 'E01',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['索引报错', 'bucket simple'],
     moduleId: 'H',
     title: 'BUCKET 索引写入时报 SIMPLE 错误',
     summary:
@@ -27,6 +30,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E02',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['默认分区', '跨分区', '重复数据'],
     moduleId: 'H',
     title: '默认分区写入与跨分区异常',
     summary:
@@ -39,6 +45,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E03',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['bulk insert 失败', 'bucket'],
     moduleId: 'H',
     title: 'BUCKET 表 Bulk Insert 失败',
     summary:
@@ -51,6 +60,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E04',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['schema 缺失', '元数据不完整'],
     moduleId: 'H',
     title: 'Hudi 无 Schema 或元数据不完整',
     summary:
@@ -63,6 +75,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E05',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['compaction 失败', 'yarn 成功'],
     moduleId: 'H',
     title: 'Compaction 失败但 YARN 显示成功',
     summary:
@@ -75,6 +90,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E06',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['requested', 'inflight', '残留'],
     moduleId: 'H',
     title: 'Compaction Requested / Inflight 残留',
     summary:
@@ -87,6 +105,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E07',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['rollback 残留', '文件残留'],
     moduleId: 'H',
     title: 'Rollback Requested 文件大量残留',
     summary:
@@ -99,6 +120,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E08',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['cleaner 阻塞', 'archive 阻塞'],
     moduleId: 'H',
     title: 'Cleaner / Archive 被异常状态阻塞',
     summary:
@@ -111,6 +135,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E09',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['flink 积压', '资源冲突'],
     moduleId: 'H',
     title: 'Flink 写入积压与 Compaction 资源冲突',
     summary:
@@ -123,6 +150,9 @@ export const MODULE_H_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'E10',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['kerberos 故障', 'hms 权限'],
     moduleId: 'H',
     title: 'Kerberos、HMS、HDFS 权限故障',
     summary:

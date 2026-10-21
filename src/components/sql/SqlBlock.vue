@@ -1,4 +1,4 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 /**
  * SqlBlock —— 单条 SQL / 命令模板的只读展示
  * ---------------------------------------------------------------------------
@@ -200,7 +200,7 @@ const copyText = computed<string>(() => {
 
 <template>
   <article
-    class="rounded-lg border border-[var(--color-hudi-border,#1f2937)] bg-[var(--color-hudi-panel,#111827)]"
+    class="min-w-0 rounded-lg border border-[var(--color-hudi-border,#1f2937)] bg-[var(--color-hudi-panel,#111827)]"
     :data-block-id="block.id"
     :data-status="block.status"
   >
@@ -292,14 +292,14 @@ const copyText = computed<string>(() => {
       class="border-t border-[var(--color-hudi-border,#1f2937)] px-3 py-2"
     >
       <span class="mr-1 text-[11px] font-semibold text-[var(--color-hudi-muted,#94a3b8)]">证据</span>
-      <span class="inline-flex flex-wrap gap-1 align-middle">
+      <span class="inline-flex min-w-0 max-w-full flex-wrap gap-1 align-middle">
         <template v-for="item in evidences" :key="item.evidenceId">
           <a
             v-if="item.documentUrl"
             :href="item.documentUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[11px] hover:underline"
+            class="inline-flex min-w-0 max-w-full items-center gap-1 rounded border px-1.5 py-0.5 text-[11px] hover:underline"
             :style="{
               borderColor: 'var(--color-ev-' + item.evidenceLevel + ', #64748b)',
               color: 'var(--color-ev-' + item.evidenceLevel + ', #94a3b8)',
@@ -307,11 +307,11 @@ const copyText = computed<string>(() => {
             :title="item.title"
           >
             <span class="font-semibold">{{ item.evidenceLevel }}</span>
-            <span class="max-w-[18rem] truncate">{{ item.title }}</span>
+            <span class="min-w-0 max-w-full truncate">{{ item.title }}</span>
           </a>
           <span
             v-else
-            class="inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[11px]"
+            class="inline-flex min-w-0 max-w-full items-center gap-1 rounded border px-1.5 py-0.5 text-[11px]"
             :style="{
               borderColor: 'var(--color-ev-' + item.evidenceLevel + ', #64748b)',
               color: 'var(--color-ev-' + item.evidenceLevel + ', #94a3b8)',
@@ -319,7 +319,7 @@ const copyText = computed<string>(() => {
             :title="item.title"
           >
             <span class="font-semibold">{{ item.evidenceLevel }}</span>
-            <span class="max-w-[18rem] truncate">{{ item.title }}</span>
+            <span class="min-w-0 max-w-full truncate">{{ item.title }}</span>
           </span>
         </template>
       </span>

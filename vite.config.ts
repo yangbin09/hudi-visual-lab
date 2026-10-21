@@ -21,6 +21,12 @@ export default defineConfig({
   server: {
     port: 5173,
     host: '127.0.0.1',
+    watch: {
+      // Windows 上编辑器原子写入会产生临时文件，fs.watch 偶发 EBUSY 让 dev server 崩掉；
+      // 轮询模式更稳（开发期文件量不大，开销可接受）。
+      usePolling: true,
+      interval: 400,
+    },
   },
   build: {
     // 把体积大且很少变动的第三方库拆成独立 chunk，便于浏览器缓存复用

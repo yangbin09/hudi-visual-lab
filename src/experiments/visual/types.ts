@@ -11,7 +11,20 @@ export interface VisualLesson {
   steps: LessonStep[]
   actionLabel: string
   controls: ('recordKey' | 'amount' | 'bucketCount' | 'partition' | 'retention' | 'failureAt' | 'tableType')[]
+  /** 兼容旧字段：单条边界说明 */
   limitation?: string
+  /** 一句话学习目标（学生视角："学完你能回答……"）；可选，缺失时渲染层应容忍 */
+  objective?: string
+  /** 前置知识 / 术语；可点击跳术语表 */
+  prerequisites?: string[]
+  /** 一句话关键结论 */
+  takeaway?: string
+  /** 本课术语卡（≤4 个），def ≤30 字 */
+  glossary?: { term: string; def: string }[]
+  /** 本主题边界：把正文里的免责话术集中到这里，1–2 条可执行信息 */
+  limitations?: string[]
+  /** 本主题对应的 SQL / Scala / Flink / Shell 模板 id（必须真实存在） */
+  templateIds?: string[]
 }
 export interface LessonParameters {
   recordKey: string; amount: number; bucketCount: number; partition: string; retention: number; failureAt: number; tableType: 'COPY_ON_WRITE' | 'MERGE_ON_READ'

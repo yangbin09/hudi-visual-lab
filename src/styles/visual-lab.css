@@ -1,6 +1,1324 @@
-.visual-lab,.visual-home{--vl-bg:#151c20;--vl-panel:#1b2429;--vl-ink:#e2eae4;--vl-muted:#93a49e;--vl-line:#34413f;--vl-base-bg:#203e35;--vl-log-bg:#423c2a;--vl-accent:#bfe7b1;min-height:100%;background:var(--vl-bg);color:var(--vl-ink);font-family:'PingFang SC',sans-serif}.vl-light{--vl-bg:#f4f6f0;--vl-panel:#fff;--vl-ink:#263d34;--vl-muted:#738178;--vl-line:#d9e1d7;--vl-base-bg:#e6f2e8;--vl-log-bg:#faf0d9;--vl-accent:#38634a}.visual-lab{height:100dvh;display:flex;flex-direction:column;overflow:hidden}.visual-lab button,.visual-home button,.visual-home a,.visual-lab a{color:inherit}.visual-lab button,.visual-home button{cursor:pointer;border:1px solid var(--vl-line);border-radius:7px;padding:8px 13px;background:transparent;font-size:12px;white-space:nowrap}.visual-lab button:hover,.visual-home button:hover{background:var(--vl-line)}.visual-lab button:disabled{opacity:.32;cursor:default}.visual-lab button:focus-visible,.visual-home a:focus-visible{outline:2px solid #77b48d;outline-offset:3px}.vl-nav{height:68px;flex-shrink:0;padding:0 36px;display:flex;align-items:center;border-bottom:1px solid var(--vl-line);gap:44px}.vl-brand{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:17px;font-weight:600;letter-spacing:-.5px}.vl-brand b{font-weight:400;color:var(--vl-muted)}.vl-logo{background:var(--vl-accent);color:var(--vl-bg);width:31px;height:31px;display:grid;place-items:center;border-radius:8px;font:700 25px Georgia;margin-right:6px}.vl-breadcrumb{font-size:12px;color:var(--vl-muted)}.vl-breadcrumb span{margin:0 15px;color:var(--vl-line)}.vl-nav-actions{margin-left:auto;display:flex;gap:8px}.vl-nav-actions button{border:0}.visual-lab button.active{background:var(--vl-line)}.vl-main{flex:1;min-height:0;display:flex;flex-direction:column;padding:22px 36px 14px;max-width:1680px;width:100%;margin:auto;box-sizing:border-box}.vl-title-row{display:flex;align-items:center;justify-content:space-between;flex-shrink:0;margin-bottom:19px}.vl-eyebrow{font:10px ui-monospace,monospace;color:var(--vl-muted);letter-spacing:2px}.vl-title-row h1{font-size:27px;font-weight:600;margin:7px 0 4px;letter-spacing:-.7px}.vl-title-row h1 span{color:var(--vl-accent)}.vl-title-row p{font-size:12px;color:var(--vl-muted);margin:0}.vl-details{align-self:center}.vl-stage{flex:1;min-height:0;display:flex;flex-direction:column;border:1px solid var(--vl-line);border-radius:12px;overflow:hidden;background:var(--vl-panel)}.vl-stage-top{height:40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--vl-line);font-size:10px;color:var(--vl-muted);flex-shrink:0}.vl-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#aad19e;margin-right:7px}.vl-stage-top>span:nth-child(2){color:#7ab49a}.vl-log-legend{color:#c5a565;margin-left:18px}.vl-old-legend{color:var(--vl-muted);margin-left:18px}.vl-canvas-wrap{flex:1;min-height:0;display:flex;justify-content:center;align-items:center}.vl-canvas{height:100%;width:100%;color:var(--vl-muted)}.vl-divider{stroke:var(--vl-line);stroke-dasharray:4 7}.vl-lane-title{font:600 29px ui-monospace,monospace;fill:var(--vl-ink)}.vl-svg-muted{font:12px ui-monospace,monospace;fill:var(--vl-muted)}.vl-strategy{fill:var(--vl-base-bg)}.vl-strategy-text{fill:var(--vl-ink);font:11px sans-serif}.vl-flow-path{stroke:var(--vl-muted);stroke-width:1.3;fill:none;stroke-dasharray:4 5;opacity:.6}.vl-input{stroke:var(--vl-line);fill:var(--vl-panel)}.vl-small-label{font:9px ui-monospace,monospace;fill:var(--vl-muted);letter-spacing:.3px}.vl-svg-code{font:12px ui-monospace,monospace;fill:var(--vl-ink)}.vl-writer{fill:var(--vl-base-bg);stroke:#75a58a;stroke-width:1.5}.vl-writer.working{stroke:#bfe7b1;stroke-width:3}.vl-writer-text{font:600 15px ui-monospace,monospace;fill:var(--vl-ink)}.vl-group{fill:transparent;stroke:var(--vl-line);stroke-dasharray:5 5}.vl-packet{fill:#bfe7b1;stroke:#6b9b75}.vl-packet-text{fill:#24452e;font:10px ui-monospace,monospace}.vl-merge-path{stroke:#91c5a0;stroke-width:3;fill:none}.vl-output-preview{fill:var(--vl-base-bg);stroke:#8dc0a0;opacity:.85}.vl-query-label{font:10px ui-monospace,monospace;fill:var(--vl-muted)}.vl-query-value{font-size:15px;fill:var(--vl-ink)}.vl-caption{height:73px;flex-shrink:0;border-top:1px solid var(--vl-line);display:flex;align-items:center;gap:18px;padding:0 24px;background:var(--vl-bg)}.vl-step-number{font:26px ui-monospace,monospace;color:var(--vl-accent)}.vl-caption small{font-size:10px;color:var(--vl-muted)}.vl-caption p{font-size:13px;margin:4px 0 0}.vl-caption-count{margin-left:auto;font:11px ui-monospace,monospace;color:var(--vl-muted)}.vl-controls{display:flex;align-items:center;height:59px;flex-shrink:0;gap:24px}.vl-playback{display:flex;align-items:center;gap:6px}.vl-playback button{border:0;font-size:15px;padding:6px 11px}.vl-playback .vl-play{border-radius:50%;width:34px;height:34px;padding:0;background:var(--vl-accent);color:var(--vl-bg)}.vl-playback select{background:var(--vl-panel);color:var(--vl-ink);border:1px solid var(--vl-line);border-radius:5px;padding:4px;font-size:11px}.vl-progress{display:flex;align-items:center;gap:20px;flex:1}.vl-progress input{width:100%;accent-color:#87b78e;height:3px}.vl-progress button,.vl-reset{border:0!important;color:var(--vl-muted)!important}.vl-action-bar{display:flex;justify-content:center;align-items:center;gap:9px;padding:14px 10px 0;border-top:1px solid var(--vl-line);flex-shrink:0}.vl-action-bar>span:first-child{font-size:11px;color:var(--vl-muted);margin-right:8px}.visual-lab .vl-primary{background:var(--vl-accent);color:var(--vl-bg);border-color:transparent;font-weight:600}.vl-action-divider{height:22px;border-left:1px solid var(--vl-line);margin:0 7px}.vl-footer{display:flex;align-items:center;justify-content:space-between;height:35px;flex-shrink:0;padding:0 36px;font-size:9px;color:var(--vl-muted)}.vl-footer button{border:0;font-size:9px;padding:0}.vl-footer>span:last-child{font-size:10px}.vl-footer span span{margin:0 8px}.vl-dialog{margin:0 0 0 auto;height:100dvh;max-height:100dvh;width:620px;max-width:94vw;box-sizing:border-box;padding:0;border:0;border-left:1px solid var(--vl-line);background:var(--vl-panel);color:var(--vl-ink)}.vl-dialog::backdrop{background:#08100fb3;backdrop-filter:blur(3px)}.vl-drawer{padding:26px}.vl-drawer>header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.vl-drawer h2{font-size:21px;margin:0}.vl-drawer h3{font-size:14px;margin-top:25px}.vl-drawer p{font-size:13px;line-height:1.9;color:var(--vl-muted)}.vl-drawer pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--vl-bg);padding:18px;border-radius:8px;font-size:11px;line-height:1.9}.vl-drawer table{width:100%;border-collapse:collapse;font:11px ui-monospace,monospace}.vl-drawer th,.vl-drawer td{border-bottom:1px solid var(--vl-line);padding:12px 7px;text-align:left}.vl-drawer-tabs{display:flex;flex-wrap:wrap;gap:6px}.vl-setting{display:flex;align-items:center;gap:14px;margin:25px 0;font-size:13px}.vl-setting input[type=number]{background:var(--vl-bg);border:1px solid var(--vl-line);padding:8px;color:var(--vl-ink);border-radius:6px;width:130px}.vl-file-name{overflow-wrap:anywhere}.vl-file-row{display:flex!important;align-items:center;text-align:left;white-space:normal!important;overflow-wrap:anywhere;width:100%;gap:12px;margin:6px 0}.vl-file-row small{color:var(--vl-muted);margin-left:auto;font-size:9px}.vl-reduced *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-@media(min-width:1600px){.vl-main{padding-top:32px;padding-bottom:22px}.vl-title-row{margin-bottom:28px}.vl-title-row h1{font-size:34px}.vl-action-bar{padding-top:22px}.vl-controls{height:70px}}
-@media(max-width:850px){.vl-nav{padding:0 16px;gap:10px}.vl-breadcrumb{display:none}.vl-main{padding:16px}.vl-title-row h1{font-size:22px}.vl-title-row p{font-size:11px}.vl-eyebrow{font-size:9px}.vl-stage-top>span:last-child{display:none}.vl-action-bar{flex-wrap:wrap;gap:7px}.vl-action-bar>span:first-child{display:none}.vl-action-bar button{padding:7px;font-size:10px}.vl-footer{padding:0 16px}.vl-footer>span:last-child{display:none}.vl-caption{padding:0 14px;gap:10px}.vl-caption p{font-size:11px}.vl-caption-count{display:none}.vl-controls{gap:10px}.vl-progress{gap:5px}.vl-controls button{padding:6px}.vl-canvas{min-height:260px}.visual-lab{overflow:auto;min-height:760px}.vl-canvas-wrap{min-height:260px}}
-.visual-lab{--vl-highlight:#426e58}.visual-lab.vl-light{--vl-highlight:#bcebd2}.vl-small-label{font-size:11px}.vl-query-label{font-size:12px}.vl-query-value{font-size:17px}.vl-svg-code{font-size:14px}.vl-svg-muted{font-size:14px}.vl-strategy-text{font-size:13px}.vl-output-preview{pointer-events:none}
-@media(min-width:851px) and (max-height:850px){.vl-main{padding-top:14px;padding-bottom:10px}.vl-title-row{margin-bottom:12px}.vl-title-row h1{font-size:25px;margin:5px 0 3px}.vl-controls{height:49px}.vl-caption{height:64px}.vl-action-bar{padding-top:10px}}
-.vl-light{--vl-copy-text:#396687}
+/* ==========================================================================
+ * Hudi Visual Lab · 视觉基线（task-4）
+ * --------------------------------------------------------------------------
+ * 契约 token（深浅两套在 main.css :root 与 .vl-light / [data-theme='light'] 都给全）：
+ *   --vl-fs-xs:12px  --vl-fs-sm:13px  --vl-fs-md:14px  --vl-fs-lg:16px  --vl-fs-xl:20px
+ *   --vl-tap:44px    --vl-focus:#2f7d5a
+ *   --vl-surface-2   --vl-term-bg    --vl-legend-bg   --vl-border-strong
+ *
+ * 字号下限：辅助信息 ≥12px（--vl-fs-xs），正文 ≥14px（--vl-fs-md），步骤旁白 15px。
+ * 本文件不再出现 9px / 10px / 11px 字号；组件内写死的 DOM 字号由文件末尾「兼容兜底」段覆盖。
+ * ========================================================================== */
+
+.visual-lab,
+.visual-home {
+  /* ---------------- 深色（默认） ---------------- */
+  --vl-bg: #151c20;
+  --vl-panel: #1b2429;
+  --vl-ink: #e2eae4;
+  /* 对比度：在 #151c20(8.9) / #1b2429(7.8) / #203e35(5.7) / #423c2a(5.4) 上均 ≥4.5:1
+     （改前 #93a49e 只有 4.46 / 4.21，彩色底上不达标） */
+  --vl-muted: #a8bab2;
+  --vl-line: #34413f;
+  --vl-base-bg: #203e35;
+  --vl-log-bg: #423c2a;
+  --vl-accent: #bfe7b1;
+  /* 基线新增层 */
+  --vl-surface-2: #222d33;
+  --vl-term-bg: #1f2a30;
+  --vl-legend-bg: #1d272c;
+  --vl-border-strong: #5d6f6a;
+  min-height: 100%;
+  background: var(--vl-bg);
+  color: var(--vl-ink);
+  font-family: 'PingFang SC', sans-serif;
+}
+
+.vl-light {
+  /* ---------------- 浅色 ---------------- */
+  --vl-bg: #f4f6f0;
+  --vl-panel: #fff;
+  --vl-ink: #263d34;
+  /* 对比度：在 #f4f6f0(5.24) / #fff(5.71) / #e6f2e8(4.95) / #faf0d9(5.04) 上均 ≥4.5:1
+     （改前 #738178 只有 3.75 / 4.09 / 3.55 / 3.61） */
+  --vl-muted: #5b6a61;
+  --vl-line: #d9e1d7;
+  --vl-base-bg: #e6f2e8;
+  --vl-log-bg: #faf0d9;
+  --vl-accent: #38634a;
+  --vl-surface-2: #eef2ec;
+  --vl-term-bg: #f3f6f1;
+  --vl-legend-bg: #f7faf5;
+  --vl-border-strong: #7f8d82;
+}
+
+/* data-theme 路径：与 .vl-light 类路径同值，保证新组件在任何挂载点都拿到正确浅色 token */
+:root[data-theme='light'] {
+  --vl-bg: #f4f6f0;
+  --vl-panel: #fff;
+  --vl-ink: #263d34;
+  --vl-muted: #5b6a61;
+  --vl-line: #d9e1d7;
+  --vl-base-bg: #e6f2e8;
+  --vl-log-bg: #faf0d9;
+  --vl-accent: #38634a;
+  --vl-surface-2: #eef2ec;
+  --vl-term-bg: #f3f6f1;
+  --vl-legend-bg: #f7faf5;
+  --vl-border-strong: #7f8d82;
+}
+
+/* 页面整体可滚动：目标条 / 术语卡 / 小结不再被裁掉（原 height:100dvh + overflow:hidden） */
+.visual-lab {
+  min-height: 100dvh;
+  height: auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.visual-lab button,
+.visual-home button,
+.visual-home a,
+.visual-lab a {
+  color: inherit;
+}
+
+.visual-lab button,
+.visual-home button {
+  cursor: pointer;
+  border: 1px solid var(--vl-line);
+  border-radius: 7px;
+  padding: 8px 13px;
+  background: transparent;
+  font-size: var(--vl-fs-sm);
+  white-space: nowrap;
+}
+
+.visual-lab button:hover,
+.visual-home button:hover {
+  background: var(--vl-line);
+}
+
+.visual-lab button:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.visual-lab button:focus-visible,
+.visual-home a:focus-visible {
+  outline: 2px solid var(--vl-focus);
+  outline-offset: 3px;
+}
+
+/* 统一焦点环：新组件（dock / 图例 / 术语卡 / 路径卡）复用 */
+.visual-lab :is(a, button, input, select, textarea, [tabindex]):focus-visible,
+.visual-home :is(a, button, input, select, textarea, [tabindex]):focus-visible,
+.vl-dock-tab:focus-visible {
+  outline: 2px solid var(--vl-focus);
+  outline-offset: 2px;
+}
+
+/* ---------------- 顶栏 ---------------- */
+.vl-nav {
+  height: 68px;
+  flex-shrink: 0;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--vl-line);
+  gap: 44px;
+}
+
+.vl-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.vl-brand b {
+  font-weight: 400;
+  color: var(--vl-muted);
+}
+
+.vl-logo {
+  background: var(--vl-accent);
+  color: var(--vl-bg);
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font: 700 25px Georgia;
+  margin-right: 6px;
+}
+
+/* ---------------- 面包屑（基线类） ---------------- */
+.vl-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+}
+
+.vl-breadcrumb span {
+  margin: 0 15px;
+  color: var(--vl-line);
+}
+
+.vl-nav-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.vl-nav-actions button {
+  border: 0;
+}
+
+.visual-lab button.active {
+  background: var(--vl-line);
+}
+
+/* ---------------- 页面骨架 ---------------- */
+.vl-main {
+  flex: 1;
+  min-height: calc(100dvh - 103px); /* 顶栏 68 + 页脚 35：保持 B02 画布页仍撑满一屏 */
+  display: flex;
+  flex-direction: column;
+  padding: 22px 36px 14px;
+  max-width: 1680px;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.vl-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  margin-bottom: 19px;
+}
+
+.vl-eyebrow {
+  font: var(--vl-fs-xs) ui-monospace, monospace;
+  color: var(--vl-muted);
+  letter-spacing: 1.2px;
+}
+
+.vl-title-row h1 {
+  font-size: 27px;
+  font-weight: 600;
+  margin: 7px 0 4px;
+  letter-spacing: -0.7px;
+}
+
+.vl-title-row h1 span {
+  color: var(--vl-accent);
+}
+
+.vl-title-row p {
+  font-size: var(--vl-fs-sm);
+  color: var(--vl-muted);
+  margin: 0;
+}
+
+.vl-details {
+  align-self: center;
+}
+
+/* ---------------- 舞台（B02 专用画布页） ---------------- */
+.vl-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--vl-line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--vl-panel);
+}
+
+.vl-stage-top {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  border-bottom: 1px solid var(--vl-line);
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+  flex-shrink: 0;
+}
+
+.vl-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #aad19e;
+  margin-right: 7px;
+}
+
+.vl-stage-top > span:nth-child(2) {
+  color: #7ab49a;
+}
+
+.vl-log-legend {
+  color: #c5a565;
+  margin-left: 18px;
+}
+
+.vl-old-legend {
+  color: var(--vl-muted);
+  margin-left: 18px;
+}
+
+.vl-canvas-wrap {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vl-canvas {
+  height: 100%;
+  width: 100%;
+  color: var(--vl-muted);
+}
+
+/* ---------------- B02 画布 SVG ---------------- */
+.vl-divider {
+  stroke: var(--vl-line);
+  stroke-dasharray: 4 7;
+}
+
+.vl-lane-title {
+  font: 600 29px ui-monospace, monospace;
+  fill: var(--vl-ink);
+}
+
+.vl-svg-muted {
+  font: 15px ui-monospace, monospace;
+  fill: var(--vl-muted);
+}
+
+.vl-strategy {
+  fill: var(--vl-base-bg);
+}
+
+.vl-strategy-text {
+  fill: var(--vl-ink);
+  font: 15px sans-serif;
+}
+
+.vl-flow-path {
+  stroke: var(--vl-muted);
+  stroke-width: 1.3;
+  fill: none;
+  stroke-dasharray: 4 5;
+  opacity: 0.6;
+}
+
+.vl-input {
+  stroke: var(--vl-line);
+  fill: var(--vl-panel);
+}
+
+.vl-small-label {
+  font: 13px ui-monospace, monospace;
+  fill: var(--vl-muted);
+  letter-spacing: 0.3px;
+}
+
+.vl-svg-code {
+  font: 15px ui-monospace, monospace;
+  fill: var(--vl-ink);
+}
+
+.vl-writer {
+  fill: var(--vl-base-bg);
+  stroke: #75a58a;
+  stroke-width: 1.5;
+}
+
+.vl-writer.working {
+  stroke: #bfe7b1;
+  stroke-width: 3;
+}
+
+.vl-writer-text {
+  font: 600 15px ui-monospace, monospace;
+  fill: var(--vl-ink);
+}
+
+.vl-group {
+  fill: transparent;
+  stroke: var(--vl-line);
+  stroke-dasharray: 5 5;
+}
+
+.vl-packet {
+  fill: #bfe7b1;
+  stroke: #6b9b75;
+}
+
+.vl-packet-text {
+  fill: #24452e;
+  font: 14px ui-monospace, monospace;
+}
+
+.vl-merge-path {
+  stroke: #91c5a0;
+  stroke-width: 3;
+  fill: none;
+}
+
+.vl-output-preview {
+  fill: var(--vl-base-bg);
+  stroke: #8dc0a0;
+  opacity: 0.85;
+}
+
+.vl-query-label {
+  font: 14px ui-monospace, monospace;
+  fill: var(--vl-muted);
+}
+
+.vl-query-value {
+  font-size: 15px;
+  fill: var(--vl-ink);
+}
+
+/* ---------------- 说明条 ---------------- */
+.vl-caption {
+  min-height: 88px;
+  height: auto;
+  flex-shrink: 0;
+  border-top: 1px solid var(--vl-line);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 24px;
+  background: var(--vl-bg);
+}
+
+.vl-step-number {
+  font: 26px ui-monospace, monospace;
+  color: var(--vl-accent);
+}
+
+.vl-caption small {
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+}
+
+.vl-caption p {
+  font-size: 15px;
+  margin: 4px 0 0;
+  line-height: 1.55;
+}
+
+.vl-caption-count {
+  margin-left: auto;
+  font: var(--vl-fs-xs) ui-monospace, monospace;
+  color: var(--vl-muted);
+}
+
+/* ---------------- 播放控件（B02） ---------------- */
+.vl-controls {
+  display: flex;
+  align-items: center;
+  height: 59px;
+  flex-shrink: 0;
+  gap: 24px;
+}
+
+.vl-playback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vl-playback button {
+  border: 0;
+  font-size: 15px;
+  padding: 6px 11px;
+}
+
+.vl-playback .vl-play {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: var(--vl-accent);
+  color: var(--vl-bg);
+}
+
+.vl-playback select {
+  background: var(--vl-panel);
+  color: var(--vl-ink);
+  border: 1px solid var(--vl-line);
+  border-radius: 5px;
+  padding: 4px;
+  font-size: var(--vl-fs-xs);
+}
+
+.vl-progress {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.vl-progress input {
+  width: 100%;
+  accent-color: #87b78e;
+  height: 4px;
+}
+
+.vl-progress button,
+.vl-reset {
+  border: 0 !important;
+  color: var(--vl-muted) !important;
+}
+
+.vl-action-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 10px 0;
+  border-top: 1px solid var(--vl-line);
+  flex-shrink: 0;
+}
+
+.vl-action-bar > span:first-child {
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+  margin-right: 8px;
+}
+
+.visual-lab .vl-primary {
+  background: var(--vl-accent);
+  color: var(--vl-bg);
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.vl-action-divider {
+  height: 22px;
+  border-left: 1px solid var(--vl-line);
+  margin: 0 7px;
+}
+
+/* ---------------- 页脚 ---------------- */
+.vl-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+  flex-shrink: 0;
+  padding: 0 36px;
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+}
+
+.vl-footer button {
+  border: 0;
+  font-size: var(--vl-fs-xs);
+  padding: 0;
+}
+
+.vl-footer > span:last-child {
+  font-size: var(--vl-fs-xs);
+}
+
+.vl-footer span span {
+  margin: 0 8px;
+}
+
+/* ---------------- 抽屉 ---------------- */
+.vl-dialog {
+  margin: 0 0 0 auto;
+  height: 100dvh;
+  max-height: 100dvh;
+  width: 620px;
+  max-width: 94vw;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--vl-line);
+  background: var(--vl-panel);
+  color: var(--vl-ink);
+}
+
+.vl-dialog::backdrop {
+  background: #08100fb3;
+  backdrop-filter: blur(3px);
+}
+
+.vl-drawer {
+  padding: 26px;
+}
+
+.vl-drawer > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.vl-drawer h2 {
+  font-size: 21px;
+  margin: 0;
+}
+
+.vl-drawer h3 {
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+.vl-drawer p {
+  font-size: var(--vl-fs-md);
+  line-height: 1.9;
+  color: var(--vl-muted);
+}
+
+.vl-drawer pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--vl-bg);
+  padding: 18px;
+  border-radius: 8px;
+  font-size: var(--vl-fs-xs);
+  line-height: 1.9;
+}
+
+.vl-drawer table {
+  width: 100%;
+  border-collapse: collapse;
+  font: var(--vl-fs-xs) ui-monospace, monospace;
+}
+
+.vl-drawer th,
+.vl-drawer td {
+  border-bottom: 1px solid var(--vl-line);
+  padding: 12px 7px;
+  text-align: left;
+}
+
+.vl-drawer-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vl-setting {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 25px 0;
+  font-size: var(--vl-fs-md);
+}
+
+.vl-setting input[type='number'] {
+  background: var(--vl-bg);
+  border: 1px solid var(--vl-line);
+  padding: 8px;
+  color: var(--vl-ink);
+  border-radius: 6px;
+  width: 130px;
+}
+
+.vl-file-name {
+  overflow-wrap: anywhere;
+}
+
+.vl-file-row {
+  display: flex !important;
+  align-items: center;
+  text-align: left;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  width: 100%;
+  gap: 12px;
+  margin: 6px 0;
+}
+
+.vl-file-row small {
+  color: var(--vl-muted);
+  margin-left: auto;
+  font-size: var(--vl-fs-xs);
+}
+
+.vl-reduced * {
+  scroll-behavior: auto !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ==========================================================================
+ * 基线组件类（新组件复用；类名固定，勿改名）
+ * ========================================================================== */
+
+/* 页头目标条：一句话目标 + 预计时长 + 证据等级 chips */
+.vl-objective-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--vl-border-strong);
+  border-radius: 10px;
+  background: var(--vl-surface-2);
+  font-size: var(--vl-fs-sm);
+  line-height: 1.55;
+  color: var(--vl-ink);
+}
+
+.vl-objective-bar .vl-objective-title,
+.vl-objective-bar strong {
+  font-size: var(--vl-fs-md);
+  font-weight: 600;
+  color: var(--vl-ink);
+}
+
+.vl-objective-bar small {
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+}
+
+/* 术语卡：「本步涉及的词」 */
+.vl-term-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vl-term-card {
+  flex: 1 1 240px;
+  min-width: 200px;
+  padding: 12px 14px;
+  border: 1px solid var(--vl-line);
+  border-radius: 10px;
+  background: var(--vl-term-bg);
+  color: var(--vl-ink);
+  font-size: var(--vl-fs-sm);
+  line-height: 1.65;
+}
+
+.vl-term-card dt,
+.vl-term-card .vl-term-name,
+.vl-term-card > strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: var(--vl-fs-md);
+  font-weight: 600;
+  color: var(--vl-ink);
+}
+
+.vl-term-card dd,
+.vl-term-card p {
+  margin: 0;
+  font-size: var(--vl-fs-sm);
+  color: var(--vl-muted);
+}
+
+.vl-term-card .vl-term-en {
+  margin-left: 6px;
+  font: var(--vl-fs-xs) ui-monospace, monospace;
+  color: var(--vl-muted);
+}
+
+/* 画布图例 */
+.vl-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--vl-line);
+  border-radius: 8px;
+  background: var(--vl-legend-bg);
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-ink);
+}
+
+.vl-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-ink);
+}
+
+.vl-legend-item::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid var(--vl-line);
+  background: var(--vl-base-bg);
+  flex-shrink: 0;
+}
+
+.vl-legend-item.is-base::before {
+  background: var(--vl-base-bg);
+  border-color: #79a99a;
+}
+
+.vl-legend-item.is-log::before {
+  background: var(--vl-log-bg);
+  border-color: #c5a565;
+}
+
+.vl-legend-item.is-old::before,
+.vl-legend-item.is-superseded::before {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--vl-muted);
+}
+
+.vl-legend-item small {
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+}
+
+/* 页内详情 dock（替代抽屉的常驻详情区） */
+.vl-dock {
+  border: 1px solid var(--vl-line);
+  border-radius: 12px;
+  background: var(--vl-surface-2);
+  overflow: hidden;
+}
+
+.vl-dock-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--vl-line);
+  background: var(--vl-term-bg);
+}
+
+.vl-dock-tab {
+  padding: 8px 12px;
+  min-height: 32px;
+  border: 1px solid var(--vl-line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--vl-muted);
+  font-size: var(--vl-fs-xs);
+  cursor: pointer;
+}
+
+.vl-dock-tab:hover {
+  color: var(--vl-ink);
+  border-color: var(--vl-border-strong);
+}
+
+.vl-dock-tab.active,
+.vl-dock-tab[aria-selected='true'] {
+  background: var(--vl-accent);
+  border-color: transparent;
+  color: var(--vl-bg);
+  font-weight: 600;
+}
+
+.vl-dock-body {
+  padding: 14px 16px;
+  font-size: var(--vl-fs-md);
+  line-height: 1.7;
+  color: var(--vl-ink);
+}
+
+.vl-dock-body p,
+.vl-dock-body li {
+  font-size: var(--vl-fs-md);
+  color: var(--vl-ink);
+}
+
+.vl-dock-body small,
+.vl-dock-body .vl-dock-note {
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+}
+
+.vl-dock-body pre {
+  margin: 8px 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--vl-bg);
+  font-size: var(--vl-fs-xs);
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* 学习路径卡 */
+.vl-path-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--vl-line);
+  border-radius: 12px;
+  background: var(--vl-panel);
+  color: var(--vl-ink);
+  text-decoration: none;
+  font-size: var(--vl-fs-sm);
+  line-height: 1.6;
+}
+
+.vl-path-card:hover {
+  border-color: var(--vl-border-strong);
+  background: var(--vl-surface-2);
+}
+
+.vl-path-card .vl-path-index {
+  flex-shrink: 0;
+  font: 600 var(--vl-fs-sm) ui-monospace, monospace;
+  color: var(--vl-accent);
+}
+
+.vl-path-card strong,
+.vl-path-card .vl-path-title {
+  font-size: var(--vl-fs-md);
+  font-weight: 600;
+}
+
+.vl-path-card small {
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+}
+
+/* 术语表条目 */
+.vl-glossary-item {
+  display: grid;
+  grid-template-columns: minmax(96px, 170px) 1fr;
+  gap: 4px 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--vl-line);
+  font-size: var(--vl-fs-sm);
+  line-height: 1.65;
+}
+
+.vl-glossary-item .vl-glossary-term,
+.vl-glossary-item dt {
+  font-size: var(--vl-fs-md);
+  font-weight: 600;
+  color: var(--vl-ink);
+}
+
+.vl-glossary-item dd {
+  margin: 0;
+  color: var(--vl-muted);
+  font-size: var(--vl-fs-sm);
+}
+
+/* 画布横向滚动提示条（移动端） */
+.vl-canvas-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 4px 12px;
+  border-top: 1px dashed var(--vl-line);
+  background: var(--vl-legend-bg);
+  font-size: var(--vl-fs-xs);
+  color: var(--vl-muted);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+ * 响应式
+ * ========================================================================== */
+
+/* ≥1600 */
+@media (min-width: 1600px) {
+  .vl-main {
+    padding-top: 32px;
+    padding-bottom: 22px;
+  }
+  .vl-title-row {
+    margin-bottom: 28px;
+  }
+  .vl-title-row h1 {
+    font-size: 34px;
+  }
+  .vl-action-bar {
+    padding-top: 22px;
+  }
+  .vl-controls {
+    height: 70px;
+  }
+}
+
+/* ≤850 */
+@media (max-width: 850px) {
+  .vl-nav {
+    padding: 0 16px;
+    gap: 10px;
+  }
+  .vl-breadcrumb {
+    display: none;
+  }
+  .vl-main {
+    padding: 16px;
+  }
+  .vl-title-row h1 {
+    font-size: 22px;
+  }
+  .vl-title-row p {
+    font-size: var(--vl-fs-sm);
+  }
+  .vl-eyebrow {
+    font-size: var(--vl-fs-xs);
+  }
+  .vl-stage-top > span:last-child {
+    display: none;
+  }
+  .vl-action-bar {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .vl-action-bar > span:first-child {
+    display: none;
+  }
+  .vl-action-bar button {
+    padding: 7px;
+    font-size: var(--vl-fs-xs);
+  }
+  .vl-footer {
+    padding: 0 16px;
+  }
+  .vl-footer > span:last-child {
+    display: none;
+  }
+  .vl-caption {
+    padding: 0 14px;
+    gap: 10px;
+  }
+  .vl-caption p {
+    font-size: 15px;
+  }
+  .vl-caption-count {
+    display: none;
+  }
+  .vl-controls {
+    gap: 10px;
+  }
+  .vl-progress {
+    gap: 5px;
+  }
+  .vl-controls button {
+    padding: 6px;
+  }
+  .vl-canvas {
+    min-height: 260px;
+  }
+  .visual-lab {
+    overflow: auto;
+    min-height: 760px;
+  }
+  .vl-canvas-wrap {
+    min-height: 260px;
+  }
+}
+
+/* ≤900：VisualNav 的 6 个导航链接换到第二行（组件侧 order:3;width:100%），
+   顶栏因此必须允许换行，否则品牌会被挤成多行 */
+@media (max-width: 900px) {
+  .vl-nav {
+    height: auto;
+    min-height: 68px;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+    gap: 8px 12px;
+  }
+  .vl-brand {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .vl-nav-links {
+    min-width: 0;
+    flex-wrap: nowrap;
+  }
+  .vl-nav-actions {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+}
+
+/* ≤550：画布横向滚动（900px 宽 = viewBox 1080 的 0.83 倍，配合组件侧 15/16px 字号
+   渲染约 12.5–13.3px），左右 24px 渐隐提示 */
+@media (max-width: 550px) {
+  .vl-canvas-wrap {
+    overflow-x: auto;
+    justify-content: flex-start;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 12px;
+    scrollbar-width: thin;
+  }
+  .vl-canvas-wrap > .vl-canvas {
+    min-width: 900px;
+    width: 900px;
+    height: auto;
+    flex: 0 0 900px;
+    scroll-snap-align: center;
+  }
+  .vl-canvas-hint {
+    display: flex;
+  }
+  .vl-canvas-fade {
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 24px,
+      #000 calc(100% - 24px),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0,
+      #000 24px,
+      #000 calc(100% - 24px),
+      transparent 100%
+    );
+  }
+}
+
+/* 对比度补充 */
+.visual-lab {
+  --vl-highlight: #426e58;
+}
+.visual-lab.vl-light {
+  --vl-highlight: #bcebd2;
+}
+
+/* B02 画布 SVG 字号（放在最后，避免被前面的小字号规则覆盖） */
+.vl-small-label {
+  font-size: 13px;
+}
+.vl-query-label {
+  font-size: 14px;
+}
+.vl-query-value {
+  font-size: 17px;
+}
+.vl-svg-code {
+  font-size: 15px;
+}
+.vl-svg-muted {
+  font-size: 15px;
+}
+.vl-strategy-text {
+  font-size: 15px;
+}
+.vl-output-preview {
+  pointer-events: none;
+}
+
+/* 中等高度桌面 */
+@media (min-width: 851px) and (max-height: 850px) {
+  .vl-main {
+    padding-top: 14px;
+    padding-bottom: 10px;
+  }
+  .vl-title-row {
+    margin-bottom: 12px;
+  }
+  .vl-title-row h1 {
+    font-size: 25px;
+    margin: 5px 0 3px;
+  }
+  .vl-controls {
+    height: 49px;
+  }
+  .vl-caption {
+    min-height: 88px;
+    height: auto;
+  }
+  .vl-action-bar {
+    padding-top: 10px;
+  }
+}
+
+.vl-light {
+  --vl-copy-text: #396687;
+}
+
+/* ==========================================================================
+ * 触控目标（pointer:coarse）：主要可点元素 ≥ 44×44
+ * 只加 padding / min-*，不改变布局语义
+ * ========================================================================== */
+@media (pointer: coarse) {
+  /* 文字链接只要高度 44；只有图标按钮需要 44×44 */
+  .vl-nav a,
+  .vl-nav button {
+    min-height: var(--vl-tap);
+  }
+
+  .vl-nav-actions button,
+  .vl-nav-actions .vl-mode-toggle {
+    min-height: var(--vl-tap);
+    min-width: var(--vl-tap);
+  }
+
+  .vl-playback button,
+  .vl-controls button,
+  .vl-progress button,
+  .vl-reset {
+    min-height: var(--vl-tap);
+    min-width: var(--vl-tap);
+  }
+
+  .vl-playback .vl-play {
+    width: var(--vl-tap);
+    height: var(--vl-tap);
+  }
+
+  .vl-progress input {
+    height: var(--vl-tap);
+    padding: 20px 0;
+    box-sizing: border-box;
+  }
+
+  .vl-footer button {
+    min-height: var(--vl-tap);
+    padding: 0 8px;
+  }
+
+  /* B02 画布页的舞台条 / 速度选择 / 进度条 */
+  .vl-stage-top {
+    min-height: var(--vl-tap);
+    height: auto;
+    padding: 4px 22px;
+  }
+  .vl-stage-top button {
+    min-height: var(--vl-tap);
+    padding: 0 8px;
+  }
+  .vl-playback select {
+    min-height: var(--vl-tap);
+  }
+  .vl-progress input {
+    min-width: 80px;
+  }
+
+  .vl-file-row {
+    min-height: var(--vl-tap);
+  }
+
+  .vl-drawer-tabs button,
+  .vl-dock-tab {
+    min-height: var(--vl-tap);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .vl-action-bar button,
+  .catalog-filters button,
+  .catalog-search {
+    min-height: var(--vl-tap);
+  }
+
+  /* 新首页 / 目标条 / 术语卡内的文字型入口 */
+  .vh-more {
+    min-height: var(--vl-tap);
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .vl-objective-bar a,
+  .vl-objective-bar button,
+  .vl-term-card a,
+  .vl-term-card button {
+    min-height: var(--vl-tap);
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .catalog-card {
+    min-height: var(--vl-tap);
+  }
+}
+
+/* ==========================================================================
+ * 兼容兜底：组件内写死的 9/10/11px DOM 字号
+ * 说明：views/components 由其他同学维护；本段用 !important 兜底，组件侧改好后可删除。
+ * SVG 内部文字（file-format / record-text / ic-footnote 等）由组件侧统一提升，本文件不覆盖。
+ * ========================================================================== */
+.vh-topics .vl-eyebrow {
+  font-size: var(--vl-fs-xs) !important;
+  letter-spacing: 0.5px;
+}
+.vh-topics h3 {
+  font-size: var(--vl-fs-md) !important;
+}
+.catalog-card-meta {
+  font-size: var(--vl-fs-xs) !important;
+}
+.catalog-card-bottom {
+  font-size: var(--vl-fs-xs) !important;
+}
+.catalog-filters button {
+  font-size: var(--vl-fs-xs) !important;
+}
+.catalog-filters button span {
+  font: var(--vl-fs-xs) / 1.2 ui-monospace, monospace !important;
+  opacity: 0.75;
+}
+.catalog-status,
+.catalog-status select {
+  font-size: var(--vl-fs-xs) !important;
+}
+.catalog-search input {
+  font-size: var(--vl-fs-sm) !important;
+}
+.catalog-heading p {
+  font-size: var(--vl-fs-sm) !important;
+}
+.catalog-footnote {
+  font-size: var(--vl-fs-xs) !important;
+  line-height: 1.6;
+}
+.catalog-card h2 {
+  font-size: 15px !important;
+}
+.vl-all-animations {
+  font-size: var(--vl-fs-sm) !important;
+}
+
+/* 触控目标补充：目录搜索框 / 范围选择 / 首页「全部 80 个动画」链接 */
+@media (pointer: coarse) {
+  .catalog-search input {
+    min-height: var(--vl-tap);
+    padding: 0;
+  }
+  .catalog-status select {
+    min-height: var(--vl-tap);
+  }
+  .vh-all-topics,
+  .vh-topics-head > span {
+    min-height: var(--vl-tap);
+    display: inline-flex;
+    align-items: center;
+  }
+}

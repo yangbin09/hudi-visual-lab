@@ -14,8 +14,10 @@ import { MODULE_I_ENTRIES } from './modules/I.advanced'
 /**
  * 实验目录（需求 §4）。
  *
- * 本文件是「课程大纲」的唯一来源：DashboardView 用它渲染模块卡片，
- * ExperimentView 用 `getExperimentById` 找到可交互实验定义。
+ * 本文件是「课程大纲」的唯一来源：
+ *   - 目录页 / 学习路径 / 学习进度用 `CATALOG` 渲染主题列表与模块分组；
+ *   - 动画主题页用 `visualLesson(id)` 拿场景定义，用 `getExperimentById` 拿
+ *     旧实验定义（B02 的学习目标与自测题仍来自那里）。
  *
  * ── 证据等级口径（本目录统一执行） ──────────────────────────────────────
  * `evidenceLevel` = 该条目**核心结论**所依据的最高证据等级：
@@ -56,6 +58,12 @@ export interface CatalogEntry {
   evidenceIds?: string[]
   /** 证据缺口 / 需要 r26 实测才能确认的点 */
   note?: string
+  /** 学习难度：L1 入门（基础原理/建表/写入）、L2 进阶（索引/查询）、L3 高级（表服务/集成/故障/高级专题） */
+  difficulty?: 'L1' | 'L2' | 'L3'
+  /** 建议学习时长（分钟，按步骤数 3–8 估算） */
+  minutes?: number
+  /** 目录搜索别名（中文/英文同义词，用于搜索命中也算命中本条目） */
+  aliases?: string[]
 }
 
 /** 九个模块的目录元数据 */

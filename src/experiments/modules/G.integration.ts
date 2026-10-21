@@ -12,6 +12,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_G_ENTRIES: CatalogEntry[] = [
   {
     id: 'F01',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['spark sql', '建表写入'],
     moduleId: 'G',
     title: 'Spark SQL 创建与写入 Hudi',
     summary:
@@ -23,6 +26,9 @@ export const MODULE_G_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'F02',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['scala', 'dataframe'],
     moduleId: 'G',
     title: 'Scala DataFrame Writer',
     summary:
@@ -34,6 +40,9 @@ export const MODULE_G_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'F03',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['flink', '实时写入'],
     moduleId: 'G',
     title: 'Flink SQL 实时写入',
     summary:
@@ -45,6 +54,9 @@ export const MODULE_G_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'F04',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['checkpoint', 'flink 提交'],
     moduleId: 'G',
     title: 'Flink Checkpoint 与 Hudi 提交',
     summary:
@@ -57,6 +69,9 @@ export const MODULE_G_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'F05',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['flink compaction', '异步'],
     moduleId: 'G',
     title: 'Flink 写入与 Spark 异步 Compaction',
     summary:
@@ -68,6 +83,9 @@ export const MODULE_G_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'F06',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['并行度', 'bucket'],
     moduleId: 'G',
     title: 'Flink 并行度与 Bucket 分配',
     summary:
@@ -80,6 +98,9 @@ export const MODULE_G_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'F07',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['kerberos', '权限', 'keytab'],
     moduleId: 'G',
     title: 'Kerberos、HDFS、HMS 权限链路',
     summary:
@@ -92,6 +113,9 @@ export const MODULE_G_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'F08',
+    difficulty: 'L3',
+    minutes: 6,
+    aliases: ['spark flink 兼容'],
     moduleId: 'G',
     title: 'Hudi 表的 Spark / Flink 兼容性',
     summary:

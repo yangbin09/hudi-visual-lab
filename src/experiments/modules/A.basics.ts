@@ -9,6 +9,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_A_ENTRIES: CatalogEntry[] = [
   {
     id: 'B01',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['普通 parquet 表', 'hive 表区别'],
     moduleId: 'A',
     title: 'Hudi 与 Hive 普通 Parquet 表的区别',
     summary:
@@ -20,6 +23,9 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'B02',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['cow', 'copy on write', '写时复制'],
     moduleId: 'A',
     title: 'COW 表的数据写入与文件重写',
     summary:
@@ -33,6 +39,9 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'B03',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['mor', 'merge on read', '读时合并'],
     moduleId: 'A',
     title: 'MOR 表的数据写入与 Log 合并',
     summary:
@@ -46,6 +55,9 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'B04',
+    difficulty: 'L1',
+    minutes: 7,
+    aliases: ['文件组', 'file group', 'file slice', 'file id'],
     moduleId: 'A',
     title: 'File Group、File ID、File Slice 结构',
     summary:
@@ -57,6 +69,9 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'B05',
+    difficulty: 'L1',
+    minutes: 7,
+    aliases: ['base file', 'log file', '文件版本'],
     moduleId: 'A',
     title: 'Base File 与 Log File 的版本关系',
     summary:
@@ -68,6 +83,9 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'B06',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['主键', 'record key', 'hoodiekey', '分区路径'],
     moduleId: 'A',
     title: 'Record Key、Partition Path、HoodieKey',
     summary:
@@ -79,6 +97,9 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'B07',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['mvcc', '快照可见性', 'snapshot'],
     moduleId: 'A',
     title: 'Hudi 的 MVCC 与 Snapshot 可见性',
     summary:
@@ -90,6 +111,9 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'B08',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['.hoodie', '目录结构', 'hdfs'],
     moduleId: 'A',
     title: 'Hudi 表在 HDFS 中的完整目录结构',
     summary:

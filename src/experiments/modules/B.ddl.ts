@@ -9,6 +9,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_B_ENTRIES: CatalogEntry[] = [
   {
     id: 'T01',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['建表', 'create table', 'cow', 'mor'],
     moduleId: 'B',
     title: '华为 Spark SQL 创建 COW / MOR 表',
     summary:
@@ -21,6 +24,9 @@ export const MODULE_B_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'T02',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['主键', 'precombine', '预合并'],
     moduleId: 'B',
     title: 'Hudi 主键与 Precombine 配置',
     summary:
@@ -32,6 +38,9 @@ export const MODULE_B_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'T03',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['分区', '多级分区', 'partition'],
     moduleId: 'B',
     title: 'Hudi 单分区与多级分区',
     summary:
@@ -43,6 +52,9 @@ export const MODULE_B_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'T04',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['默认分区', 'null 分区', '异常分区'],
     moduleId: 'B',
     title: '默认分区、Null 分区与异常分区值',
     summary:
@@ -54,6 +66,9 @@ export const MODULE_B_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'T05',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['hive style', '分区列', 'partitioning'],
     moduleId: 'B',
     title: 'Hive Style Partitioning',
     summary:
@@ -65,6 +80,9 @@ export const MODULE_B_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'T06',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['hms', 'hive metastore', 'hive sync'],
     moduleId: 'B',
     title: 'Hive Metastore 同步与分区元数据',
     summary:
@@ -77,6 +95,9 @@ export const MODULE_B_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'T07',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['hoodie.properties', '表配置'],
     moduleId: 'B',
     title: 'Hudi 表配置与 .hoodie/hoodie.properties',
     summary:
@@ -88,6 +109,9 @@ export const MODULE_B_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'T08',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['schema 演进', '加列', '删列'],
     moduleId: 'B',
     title: '建表、写入与 Schema 演进限制',
     summary:

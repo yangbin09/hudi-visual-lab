@@ -1,4 +1,5 @@
 import type { Effect, LessonOperation, LessonStep, SceneKind, VisualLesson } from './types'
+import { CAPTION_OVERRIDES, LESSON_META, toGlossary } from './lesson-content'
 const s = (title: string, caption: string, effect: Effect = 'highlight', operation?: LessonOperation, focus?: number): LessonStep => ({ title, caption, effect, operation, focus })
 const make = (id: string, kind: SceneKind, seed: VisualLesson['seed'], nodes: string[], steps: LessonStep[], model: VisualLesson['model'] = 'engine', controls: VisualLesson['controls'] = ['recordKey', 'amount']): VisualLesson => ({ id, kind, seed, nodes, steps, model, actionLabel: model === 'concept' ? '开始探索' : '开始演示', controls })
 const writeNodes = ['输入记录', 'Writer', '定位 File Group', '写入文件', '提交 Timeline']
@@ -85,7 +86,24 @@ export const VISUAL_LESSONS: Record<string, VisualLesson> = Object.fromEntries([
   make('A06', 'metrics', 'small', ['旧版本文件', '保留窗口', '可回收集合', '存储占用'], [s('生成旧版本', '先更新一条已有记录。', 'write', 'upsert'), s('推进边界', '再添加提交，使窗口有可淘汰历史。', 'write', 'insert'), s('按窗口清理', '调整保留数后重新演示，比较文件占用。', 'remove', 'clean'), s('数据可见性不变', '实际文件数和估算字节数来自引擎。', 'read', 'snapshot')], 'engine', ['retention']),
   make('A07', 'timeline', 'small', ['活跃 Instant', '保留数量', 'Archive', '较短 Timeline'], [s('观察多次提交', '初始小批写入生成多个 Instant。', 'observe'), s('设置保留数量', '窗口决定迁移到 Archive 的范围。', 'highlight'), s('执行归档', '只迁移元数据，不移动 Parquet 文件。', 'archive', 'archive'), s('查看分区数据', '查询结果与归档前一致，耗时不代表真实集群。', 'read', 'snapshot')], 'engine', ['retention']),
   make('A08', 'metrics', 'updates', ['文件数量', 'Log 堆积', 'Pending', '维护决策'], [s('扫描表状态', '从模拟状态统计文件数、Log、旧版本和 pending。', 'read'), s('为 Log 生成计划', '看到 Log 堆积，选择安排合并。', 'route', 'schedule'), s('执行维护', '实际文件结果由引擎计算。', 'merge', 'compact'), s('核对维护后指标', '维护建议不能替代真实集群健康诊断。', 'read', 'snapshot')]),
-].map(lesson => [lesson.id, lesson]))
+].map(lesson => {
+  // 内容层（目标 / 前置 / 结论 / 术语卡 / 边界 / 模板 / 旁白覆盖）集中在 lesson-content.ts，
+  // 这里按主题 id 合并；缺失时自动降级为旧行为（字段全部可选）。
+  const meta = LESSON_META[lesson.id]
+  const captions = CAPTION_OVERRIDES[lesson.id]
+  const steps = captions ? lesson.steps.map((step, index) => ({ ...step, caption: captions[index] ?? step.caption })) : lesson.steps
+  const content: Partial<VisualLesson> = meta
+    ? {
+        objective: meta.objective,
+        prerequisites: meta.prerequisites,
+        takeaway: meta.takeaway,
+        glossary: toGlossary(meta.glossary),
+        limitations: meta.limitations,
+        templateIds: meta.templateIds,
+      }
+    : {}
+  return [lesson.id, { ...lesson, steps, ...content }]
+}))
 
 export function visualLesson(id: string): VisualLesson | undefined { return VISUAL_LESSONS[id] }
 export const MODEL_LABEL = { engine: '引擎驱动', mixed: '引擎 + 机制示意', concept: '机制示意' } as const

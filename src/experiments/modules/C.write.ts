@@ -9,6 +9,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_C_ENTRIES: CatalogEntry[] = [
   {
     id: 'W01',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['insert', '插入'],
     moduleId: 'C',
     title: 'Insert 写入全过程',
     summary:
@@ -20,6 +23,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W02',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['upsert', '更新'],
     moduleId: 'C',
     title: 'Upsert 更新全过程',
     summary:
@@ -31,6 +37,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W03',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['delete', '删除', 'tombstone'],
     moduleId: 'C',
     title: 'Delete 删除全过程',
     summary:
@@ -42,6 +51,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W04',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['bulk insert', '初始化'],
     moduleId: 'C',
     title: 'Bulk Insert 数据初始化',
     summary:
@@ -53,6 +65,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W05',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['insert overwrite', '分区覆盖'],
     moduleId: 'C',
     title: 'Insert Overwrite 分区覆盖',
     summary:
@@ -64,6 +79,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W06',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['overwrite table', '整表覆盖'],
     moduleId: 'C',
     title: 'Insert Overwrite Table 整表覆盖',
     summary:
@@ -75,6 +93,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W07',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['savemode', 'append', 'overwrite'],
     moduleId: 'C',
     title: 'DataFrame SaveMode 四种模式',
     summary:
@@ -86,6 +107,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W08',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['precombine', '主键冲突', '多版本'],
     moduleId: 'C',
     title: 'Precombine 与相同主键冲突处理',
     summary:
@@ -97,6 +121,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W09',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['spark sql', 'dataframe'],
     moduleId: 'C',
     title: 'Spark SQL 与 DataFrame 写入差异',
     summary:
@@ -108,6 +135,9 @@ export const MODULE_C_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'W10',
+    difficulty: 'L1',
+    minutes: 4,
+    aliases: ['幂等', '重复写入'],
     moduleId: 'C',
     title: '重复写入、错误配置与幂等性分析',
     summary:

@@ -5,7 +5,13 @@ import { defineConfig, devices } from '@playwright/test'
  *
  * 需求 §3.1 要求站点适配 1920×1080 / 1440×900 / 1366×768 三种分辨率，
  * 使用四种 viewport 验证动画画布、控件与抽屉的适配。
+ *
+ * 浏览器：默认用 Playwright 自带的 chromium；若本机没下载内核
+ * （`npx playwright install chromium`），可用环境变量 PW_CHANNEL 改用系统浏览器，
+ * 例如 `PW_CHANNEL=msedge npx playwright test`。
  */
+const channel = process.env.PW_CHANNEL as 'msedge' | 'chrome' | undefined
+
 export default defineConfig({
   testDir: './tests/e2e',
   timeout: 30000,
@@ -17,6 +23,7 @@ export default defineConfig({
     baseURL: 'http://127.0.0.1:5173',
     trace: 'retain-on-failure',
     locale: 'zh-CN',
+    ...(channel ? { channel } : {}),
   },
   webServer: {
     command: 'npm run dev',

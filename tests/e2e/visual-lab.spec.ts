@@ -6,7 +6,8 @@ test('双路径更新、暂停、回退和合并保持引擎状态一致', async
   await page.goto('/experiment/B02')
   await expect(page.getByRole('heading', { name: '更新一条记录，文件会怎样变化？' })).toBeVisible()
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
-  if (page.viewportSize()!.width >= 1366) expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight)).toBe(true)
+  // 整改后 B02 页与其它主题页一致：同一条纵向流里含目标条 / 术语栏 / 小结，允许纵向滚动
+  expect(await page.evaluate(() => document.documentElement.scrollHeight >= innerHeight)).toBe(true)
   const original = await page.locator('.file-glyph').count()
   await page.getByRole('button', { name: '↑ Upsert 更新记录' }).click()
   await expect(page.getByRole('button', { name: '暂停', exact: true })).toBeVisible()
@@ -45,29 +46,36 @@ test('双路径更新、暂停、回退和合并保持引擎状态一致', async
   expect(errors).toEqual([])
 })
 
-test('减少动态效果与工程师抽屉', async ({ page }) => {
+test('减少动态效果与工程师模式（详情区从抽屉搬进页内）', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/experiment/B03')
   await page.getByRole('button', { name: '↑ Upsert 更新记录' }).click()
   await expect(page.locator('.vl-query-value').first()).toHaveText('¥ 200')
+  // 工程师模式：与全站共用同一个开关
   await page.getByRole('button', { name: '基础模式' }).click()
-  await page.getByRole('button', { name: 'SQL / HDFS / Timeline' }).click()
-  await page.getByRole('button', { name: 'SQL', exact: true }).click()
-  await expect(page.locator('dialog pre')).toContainText('MERGE')
-  await page.getByRole('button', { name: 'Timeline', exact: true }).click()
-  await expect(page.locator('dialog')).toContainText('DELTA_COMMIT')
-  await page.keyboard.press('Escape')
+  await expect(page.getByRole('button', { name: '工程师模式' })).toBeVisible()
+  // 详情区：代码分区展示 SQL，数据分区展示 Timeline
+  await page.getByRole('button', { name: '数据 / 代码 / 依据 ↗' }).click()
+  const dock = page.locator('.lesson-dock')
+  await expect(dock).toBeVisible()
+  await dock.getByRole('tab', { name: /^代码/ }).click()
+  await expect(dock).toContainText('MERGE')
+  await dock.getByRole('tab', { name: /^数据/ }).click()
+  // Timeline 里能看到 DeltaCommit 这类提交类型（页面用小写文件名呈现，故忽略大小写）
+  await expect(dock).toContainText(/DELTA_COMMIT/i)
   await page.getByRole('button', { name: '① Schedule' }).click()
   await page.getByRole('button', { name: '模拟失败' }).click()
   await expect(page.locator('.vl-query-value').nth(3)).toHaveText('¥ 100.5')
-  await page.getByRole('button', { name: 'SQL / HDFS / Timeline' }).click()
-  await page.getByRole('button', { name: 'Timeline', exact: true }).click()
-  await expect(page.locator('dialog')).toContainText('INFLIGHT')
+  await page.getByRole('button', { name: '数据 / 代码 / 依据 ↗' }).click()
+  await dock.getByRole('tab', { name: /^数据/ }).click()
+  await expect(dock).toContainText(/INFLIGHT/i)
 })
 
 test('主题首页保留完整目录入口', async ({ page }) => {
   await page.goto('/')
-  await expect(page.getByRole('link', { name: '完整实验目录 ↗' })).toBeVisible()
+  // 整改后统一导航提供「全部主题」入口
+  await expect(page.getByRole('link', { name: '全部主题' })).toBeVisible()
+  await expect(page.getByRole('link', { name: /精选实验/ })).toBeVisible()
   await page.getByRole('link', { name: /精选实验/ }).click()
   await expect(page.locator('.vl-canvas')).toBeVisible()
 })

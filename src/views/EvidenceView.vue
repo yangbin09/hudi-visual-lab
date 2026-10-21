@@ -10,6 +10,7 @@ import { computed, ref } from 'vue'
 
 import { EVIDENCE_REPOSITORY, EVIDENCE_STATS, hasFieldVerifiedEvidence } from '@/evidence'
 import type { Evidence, EvidenceLevel } from '@/models/evidence'
+import VisualNav from '@/components/visual/VisualNav.vue'
 
 const keyword = ref('')
 const levelFilter = ref<string>('')
@@ -101,6 +102,8 @@ function resetFilters(): void {
 
 <template>
   <div class="flex flex-col gap-4 p-4 text-[var(--color-hudi-text,#e2e8f0)]">
+    <VisualNav :crumbs="[{ text: '证据库' }]" />
+    <main class="flex flex-col gap-4">
     <header class="flex flex-wrap items-center justify-between gap-2">
       <div>
         <h1 class="text-xl font-semibold">证据库</h1>
@@ -222,5 +225,20 @@ function resetFilters(): void {
         </el-table-column>
       </el-table>
     </section>
+    </main>
   </div>
 </template>
+
+<style scoped>
+/* 触屏：Element Plus 的小按钮与链接也要达到 44×44 */
+@media (pointer: coarse) {
+  :deep(.el-button) {
+    min-height: 44px;
+  }
+  :deep(.el-link) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+</style>

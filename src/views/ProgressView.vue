@@ -1,296 +1,366 @@
 <script setup lang="ts">
 /**
- * ProgressView —— 学习进度
+ * ProgressView —— 学习进度（视觉实验室版）
  * ---------------------------------------------------------------------------
- * 数据全部来自 store 的 progress（Record<实验 id, {done, visited, quizScore}>）。
- * 页面只做统计与展示，不产生任何学习行为；「重做」通过跳回实验页完成。
+ * 整改前：这一页挂在旧 MainLayout 里，数据来自一个**永远为空**的 store.progress
+ * （80 个动画主题从不写入进度），而且视觉页里没有任何入口能到这一页。
+ *
+ * 现在：
+ *   · 数据来自 useLessonStore（打开即写、看完即写、自测及格即写）；
+ *   · 页面与其它视觉页面同一套外壳与设计语言；
+ *   · 提供「继续学习」与「回到学习路径」两个出口。
  */
 import { computed } from 'vue'
 
-import { useLabStore } from '@/app/stores/lab'
-import type { ExperimentDefinition, QuizQuestion } from '@/models/simulation'
-import { CATALOG, MODULES, getAllExperiments, getCatalogEntry } from '@/experiments/catalog'
+import { CATALOG, MODULES } from '@/experiments/catalog'
+import { useLessonStore } from '@/app/stores/lesson'
+import VisualNav from '@/components/visual/VisualNav.vue'
 
-const lab = useLabStore()
+const lessonStore = useLessonStore()
 
-/* -------------------------------------------------------------------------- */
-/* 目录                                                                          */
-/* -------------------------------------------------------------------------- */
-
-/**
- * getAllExperiments() 返回的实验定义里，moduleId 已按目录编号归一化，
- * 因此这里可以直接按 moduleId 归组统计。
- */
-const experiments = computed<ExperimentDefinition[]>(() => getAllExperiments())
-const modules = computed(() => MODULES)
-const experimentById = computed(() => {
-  const map = new Map<string, ExperimentDefinition>()
-  experiments.value.forEach((e) => map.set(e.id, e))
-  return map
-})
-
-/* -------------------------------------------------------------------------- */
-/* 统计                                                                          */
-/* -------------------------------------------------------------------------- */
-
-interface ProgressEntry {
+interface Row {
   id: string
   title: string
-  moduleId: string
+  module: string
   difficulty: string
-  done: boolean
+  minutes: number
   visited: boolean
+  watched: boolean
+  mastered: boolean
   quizScore: number
+  lastSeen: number
+  step: number
 }
 
-const entries = computed<ProgressEntry[]>(() => {
-  const progress = (lab.progress ?? {}) as Record<
-    string,
-    { done?: boolean; visited?: boolean; quizScore?: number }
-  >
-  return Object.entries(progress).map(([id, p]) => {
-    const def = experimentById.value.get(id)
-    const catalogEntry = getCatalogEntry(id)
+const rows = computed<Row[]>(() =>
+  CATALOG.map((entry) => {
+    const p = lessonStore.entry(entry.id)
+    const module = MODULES.find((m) => m.id === entry.moduleId)
     return {
-      id,
-      title: def?.title ?? catalogEntry?.title ?? id,
-      moduleId: def?.moduleId ?? catalogEntry?.moduleId ?? '—',
-      difficulty: def?.difficulty ?? '—',
-      done: Boolean(p?.done),
-      visited: Boolean(p?.visited),
-      quizScore: typeof p?.quizScore === 'number' ? p.quizScore : 0,
+      id: entry.id,
+      title: entry.title,
+      module: module?.shortTitle ?? '—',
+      difficulty: entry.difficulty ?? '—',
+      minutes: entry.minutes ?? 0,
+      visited: p.visited,
+      watched: p.watched,
+      mastered: p.mastered,
+      quizScore: p.quizScore,
+      lastSeen: p.lastSeen,
+      step: p.step,
     }
-  })
-})
+  }),
+)
 
-const visitedCount = computed(() => entries.value.filter((e) => e.visited).length)
-const doneCount = computed(() => entries.value.filter((e) => e.done).length)
-const attempted = computed(() => entries.value.filter((e) => e.visited && e.quizScore > 0))
-const averageScore = computed(() => {
-  if (!attempted.value.length) return 0
-  return Math.round(attempted.value.reduce((n, e) => n + e.quizScore, 0) / attempted.value.length)
-})
-const perfectCount = computed(() => attempted.value.filter((e) => e.quizScore >= 100).length)
+const touched = computed(() => rows.value.filter((r) => r.visited))
+const finished = computed(() => rows.value.filter((r) => r.watched))
+const mastered = computed(() => rows.value.filter((r) => r.mastered))
 
-interface ModuleProgress {
-  id: string
-  title: string
-  total: number
-  done: number
-  percent: number
+/** 最近 10 个访问过的主题 */
+const recent = computed(() => [...touched.value].sort((a, b) => b.lastSeen - a.lastSeen).slice(0, 10))
+
+function timeAgo(ts: number): string {
+  if (!ts) return '—'
+  const diff = Date.now() - ts
+  const min = Math.round(diff / 60000)
+  if (min < 1) return '刚刚'
+  if (min < 60) return `${min} 分钟前`
+  const hour = Math.round(min / 60)
+  if (hour < 24) return `${hour} 小时前`
+  return `${Math.round(hour / 24)} 天前`
 }
 
-const moduleProgress = computed<ModuleProgress[]>(() => {
-  const byModule = new Map<string, ModuleProgress>()
-  const touch = (moduleId: string): ModuleProgress => {
-    let item = byModule.get(moduleId)
-    if (!item) {
-      const def = modules.value.find((m) => m.id === moduleId)
-      item = { id: moduleId, title: def?.title ?? moduleId, total: 0, done: 0, percent: 0 }
-      byModule.set(moduleId, item)
-    }
-    return item
+function reset(): void {
+  if (typeof window !== 'undefined' && window.confirm('清空全部学习记录？此操作不可撤销。')) {
+    lessonStore.resetProgress()
   }
-
-  // 分母：需求目录里该模块的全部实验条目；分子：progress 里标记为 done 的实验
-  CATALOG.forEach((e) => {
-    touch(e.moduleId).total += 1
-    const p = lab.progress?.[e.id]
-    if (p?.done) touch(e.moduleId).done += 1
-  })
-  // 只在 progress 里出现、但目录里还没有的实验（实验 id 与目录编号可能不同）
-  entries.value.forEach((e) => {
-    if (CATALOG.some((c) => c.id === e.id)) return
-    touch(e.moduleId).total += 1
-    if (e.done) touch(e.moduleId).done += 1
-  })
-  // 目录里还没有条目的模块：分母取已实现的实验数
-  experiments.value.forEach((e) => {
-    const item = byModule.get(e.moduleId)
-    if (item) return
-    touch(e.moduleId).total += 1
-    if (lab.progress?.[e.id]?.done) touch(e.moduleId).done += 1
-  })
-
-  return [...byModule.values()]
-    .map((m) => ({ ...m, percent: m.total ? Math.round((m.done / m.total) * 100) : 0 }))
-    .sort((a, b) => a.id.localeCompare(b.id))
-})
-
-/* -------------------------------------------------------------------------- */
-/* 错题回顾                                                                      */
-/* -------------------------------------------------------------------------- */
-
-/**
- * store 只记录「每个实验的练习得分」，不记录逐题正确率。
- * 因此这里的「错题回顾」= 练习得分 < 100 的实验里需要重做的题目，
- * 并给出正确答案与解析。
- */
-interface ReviewItem {
-  experimentId: string
-  question: QuizQuestion
-  correctText: string
 }
-
-const reviewItems = computed<ReviewItem[]>(() => {
-  const items: ReviewItem[] = []
-  entries.value
-    .filter((e) => e.visited && e.quizScore > 0 && e.quizScore < 100)
-    .forEach((entry) => {
-      const def = experimentById.value.get(entry.id)
-      ;(def?.quiz ?? []).forEach((q) => {
-        const correct = q.options.filter((o) => q.answerIds.includes(o.id)).map((o) => o.text)
-        items.push({
-          experimentId: entry.id,
-          question: q,
-          correctText: correct.join('；') || '（见解析）',
-        })
-      })
-    })
-  return items
-})
-
-const pendingExperiments = computed(() => entries.value.filter((e) => e.visited && !e.done))
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 p-4 text-[var(--color-hudi-text,#e2e8f0)]">
-    <header>
-      <h1 class="text-xl font-semibold">学习进度</h1>
-      <p class="mt-1 text-sm text-[var(--color-hudi-muted,#94a3b8)]">
-        进度数据保存在浏览器本地（store.progress），不依赖任何后端。
-      </p>
-    </header>
+  <div class="visual-home progress-page">
+    <VisualNav :crumbs="[{ text: '学习进度' }]" />
 
-    <!-- ============================ 概览 ============================ -->
-    <section class="grid grid-cols-2 gap-3 lg:grid-cols-4">
-      <div
-        v-for="card in [
-          { label: '已访问实验', value: visitedCount, suffix: '个' },
-          { label: '已完成实验', value: doneCount, suffix: '个' },
-          { label: '平均练习得分', value: averageScore, suffix: '分' },
-          { label: '练习满分实验', value: perfectCount, suffix: '个' },
-        ]"
-        :key="card.label"
-        class="rounded-lg border border-[var(--color-hudi-border,#1f2937)] bg-[var(--color-hudi-panel,#111827)] p-3"
-      >
-        <div class="text-xs text-[var(--color-hudi-muted,#94a3b8)]">{{ card.label }}</div>
-        <div class="mt-1 text-2xl font-semibold">
-          {{ card.value }}<span class="ml-1 text-xs font-normal text-[var(--color-hudi-muted,#94a3b8)]">{{ card.suffix }}</span>
+    <main class="progress-main">
+      <header class="progress-head">
+        <div>
+          <span class="vl-eyebrow">进度保存在浏览器本地</span>
+          <h1>学习进度</h1>
+          <p>打开主题会记「已访问」，播放到末尾记「已看完」，自测 60 分以上记「已掌握」。</p>
         </div>
-      </div>
-    </section>
+        <RouterLink class="progress-path-btn" to="/path">按学习路径继续 →</RouterLink>
+      </header>
 
-    <!-- ============================ 模块完成率 ============================ -->
-    <section
-      class="rounded-lg border border-[var(--color-hudi-border,#1f2937)] bg-[var(--color-hudi-panel,#111827)] p-4"
-    >
-      <h2 class="mb-3 text-base font-semibold">各模块完成率</h2>
-      <div v-if="!moduleProgress.length" class="text-sm text-[var(--color-hudi-muted,#94a3b8)]">
-        还没有任何学习记录。
-      </div>
-      <div v-else class="space-y-3">
-        <div v-for="m in moduleProgress" :key="m.id">
-          <div class="mb-1 flex items-center justify-between text-xs">
-            <span>
-              <span class="mr-2 font-mono text-[var(--color-hudi-muted,#94a3b8)]">{{ m.id }}</span>
-              {{ m.title }}
-            </span>
-            <span class="text-[var(--color-hudi-muted,#94a3b8)]">{{ m.done }} / {{ m.total }}</span>
-          </div>
-          <el-progress :percentage="m.percent" :stroke-width="8" />
+      <section class="progress-kpis">
+        <div class="progress-kpi">
+          <b>{{ touched.length }}</b><span>已访问主题</span>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================ 实验列表 ============================ -->
-    <section
-      class="rounded-lg border border-[var(--color-hudi-border,#1f2937)] bg-[var(--color-hudi-panel,#111827)] p-4"
-    >
-      <h2 class="mb-3 text-base font-semibold">实验清单与练习得分</h2>
-      <el-table :data="entries" size="small" border stripe class="w-full">
-        <el-table-column prop="id" label="实验" width="90">
-          <template #default="{ row }">
-            <router-link class="underline" :to="`/experiment/${row.id}`">{{ row.id }}</router-link>
-          </template>
-        </el-table-column>
-        <el-table-column prop="title" label="标题" min-width="260" show-overflow-tooltip />
-        <el-table-column prop="moduleId" label="模块" width="90" />
-        <el-table-column prop="difficulty" label="难度" width="80" />
-        <el-table-column label="状态" width="100">
-          <template #default="{ row }">
-            <el-tag size="small" :type="row.done ? 'success' : row.visited ? 'warning' : 'info'">
-              {{ row.done ? '已完成' : row.visited ? '进行中' : '未开始' }}
-            </el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column label="练习得分" width="120">
-          <template #default="{ row }">
-            <span :class="row.quizScore >= 100 ? 'text-emerald-400' : row.quizScore > 0 ? 'text-amber-400' : ''">
-              {{ row.quizScore > 0 ? `${row.quizScore} 分` : '未作答' }}
-            </span>
-          </template>
-        </el-table-column>
-        <el-table-column label="操作" width="110">
-          <template #default="{ row }">
-            <router-link :to="`/experiment/${row.id}`">
-              <el-button size="small" plain>{{ row.done ? '复习' : '继续' }}</el-button>
-            </router-link>
-          </template>
-        </el-table-column>
-      </el-table>
-      <p v-if="!entries.length" class="mt-2 text-sm text-[var(--color-hudi-muted,#94a3b8)]">
-        还没有任何学习记录 —— 先去
-        <router-link class="underline" to="/experiment/B02">B02（COW vs MOR）</router-link>
-        走一遍。
-      </p>
-    </section>
-
-    <!-- ============================ 错题回顾 ============================ -->
-    <section
-      class="rounded-lg border border-[var(--color-hudi-border,#1f2937)] bg-[var(--color-hudi-panel,#111827)] p-4"
-    >
-      <div class="mb-3 flex items-center justify-between">
-        <h2 class="text-base font-semibold">错题回顾</h2>
-        <span class="text-xs text-[var(--color-hudi-muted,#94a3b8)]">
-          练习得分未满分的实验需要重做；store 只记录实验级得分，因此这里列出这些实验的全部题目与解析
-        </span>
-      </div>
-
-      <div v-if="!reviewItems.length" class="text-sm text-[var(--color-hudi-muted,#94a3b8)]">
-        暂无需要重做的题目（要么还没作答，要么都已满分）。
-      </div>
-
-      <div v-else class="space-y-3">
-        <article
-          v-for="(item, idx) in reviewItems"
-          :key="`${item.experimentId}-${item.question.id}-${idx}`"
-          class="rounded border border-[var(--color-hudi-border,#1f2937)] p-3"
-        >
-          <div class="mb-1 flex flex-wrap items-center gap-2 text-xs">
-            <router-link class="font-mono underline" :to="`/experiment/${item.experimentId}`">
-              {{ item.experimentId }}
-            </router-link>
-            <el-tag size="small" :type="item.question.multiple ? 'warning' : 'info'">
-              {{ item.question.multiple ? '多选题' : '单选题' }}
-            </el-tag>
-          </div>
-          <p class="text-sm">{{ item.question.prompt }}</p>
-          <p class="mt-1 text-xs text-emerald-400">正确答案：{{ item.correctText }}</p>
-          <p class="mt-1 whitespace-pre-wrap text-xs leading-relaxed text-[var(--color-hudi-muted,#94a3b8)]">
-            {{ item.question.explanation }}
-          </p>
-        </article>
-      </div>
-
-      <div v-if="pendingExperiments.length" class="mt-4 border-t border-[var(--color-hudi-border,#1f2937)] pt-3">
-        <h3 class="mb-2 text-sm font-semibold">进行中的实验</h3>
-        <div class="flex flex-wrap gap-2">
-          <router-link v-for="e in pendingExperiments" :key="e.id" :to="`/experiment/${e.id}`">
-            <el-button size="small" plain>{{ e.id }} {{ e.title }}</el-button>
-          </router-link>
+        <div class="progress-kpi">
+          <b>{{ finished.length }}</b><span>已看完</span>
         </div>
+        <div class="progress-kpi">
+          <b>{{ mastered.length }}</b><span>已掌握</span>
+        </div>
+        <div class="progress-kpi">
+          <b>{{ lessonStore.averageScore }}</b><span>自测平均分</span>
+        </div>
+      </section>
+
+      <section v-if="recent.length" class="progress-recent">
+        <h2>最近学过</h2>
+        <ul>
+          <li v-for="row in recent" :key="row.id">
+            <RouterLink :to="`/experiment/${row.id}`">
+              <span class="progress-recent-id">{{ row.id }}</span>
+              <span class="progress-recent-title">{{ row.title }}</span>
+              <span class="progress-recent-meta">
+                {{ row.mastered ? '已掌握' : row.watched ? '已看完' : `第 ${row.step + 1} 步` }} · {{ timeAgo(row.lastSeen) }}
+              </span>
+            </RouterLink>
+          </li>
+        </ul>
+      </section>
+
+      <section class="progress-table-wrap">
+        <h2>全部主题</h2>
+        <table class="progress-table">
+          <thead>
+            <tr>
+              <th>编号</th>
+              <th>主题</th>
+              <th>模块</th>
+              <th>难度</th>
+              <th>时长</th>
+              <th>状态</th>
+              <th>自测</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="row in rows" :key="row.id" :class="{ 'is-visited': row.visited }">
+              <td>{{ row.id }}</td>
+              <td class="progress-cell-title">{{ row.title }}</td>
+              <td>{{ row.module }}</td>
+              <td>{{ row.difficulty }}</td>
+              <td>{{ row.minutes ? `${row.minutes} 分钟` : '—' }}</td>
+              <td>
+                <span v-if="row.mastered" class="progress-badge is-done">已掌握</span>
+                <span v-else-if="row.watched" class="progress-badge is-watched">已看完</span>
+                <span v-else-if="row.visited" class="progress-badge is-visited">已访问</span>
+                <span v-else class="progress-badge">未开始</span>
+              </td>
+              <td>{{ row.quizScore ? `${row.quizScore} 分` : '—' }}</td>
+              <td>
+                <RouterLink :to="`/experiment/${row.id}`">
+                  {{ row.visited ? '继续' : '开始' }} →
+                </RouterLink>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="progress-reset">
+        <button @click="reset">清空学习记录</button>
       </div>
-    </section>
+    </main>
+
+    <footer class="vl-footer">
+      <span>HUAWEI MRS r26 · 纯浏览器模拟</span>
+      <span>学习进度保存在浏览器本地</span>
+    </footer>
   </div>
 </template>
+
+<style src="../styles/visual-lab.css"></style>
+
+<style scoped>
+.progress-main {
+  max-width: 1160px;
+  margin: auto;
+  padding: 42px 32px 60px;
+}
+.progress-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.progress-head h1 {
+  font-size: 34px;
+  letter-spacing: -1px;
+  margin: 10px 0 8px;
+}
+.progress-head p {
+  margin: 0;
+  color: var(--vl-muted);
+  font-size: var(--vl-fs-md, 14px);
+}
+.progress-path-btn {
+  background: var(--vl-accent);
+  color: var(--vl-bg);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: var(--vl-fs-sm, 13px);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.progress-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.progress-kpi {
+  background: var(--vl-panel);
+  border: 1px solid var(--vl-line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.progress-kpi b {
+  font-size: 28px;
+  color: var(--vl-ink);
+}
+.progress-kpi span {
+  font-size: var(--vl-fs-xs, 12px);
+  color: var(--vl-muted);
+}
+.progress-recent h2,
+.progress-table-wrap h2 {
+  font-size: var(--vl-fs-lg, 16px);
+  margin: 0 0 12px;
+}
+.progress-recent ul {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 8px;
+}
+.progress-recent a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--vl-panel);
+  border: 1px solid var(--vl-line);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+.progress-recent a:hover {
+  border-color: var(--vl-accent);
+}
+.progress-recent-id {
+  font-family: ui-monospace, monospace;
+  font-size: var(--vl-fs-xs, 12px);
+  color: var(--vl-accent);
+}
+.progress-recent-title {
+  font-size: var(--vl-fs-sm, 13px);
+  color: var(--vl-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.progress-recent-meta {
+  margin-left: auto;
+  font-size: var(--vl-fs-xs, 12px);
+  color: var(--vl-muted);
+  white-space: nowrap;
+}
+.progress-table-wrap {
+  overflow-x: auto;
+}
+.progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--vl-fs-sm, 13px);
+}
+.progress-table th,
+.progress-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--vl-line);
+  white-space: nowrap;
+}
+.progress-table th {
+  color: var(--vl-muted);
+  font-weight: 500;
+  font-size: var(--vl-fs-xs, 12px);
+}
+.progress-cell-title {
+  white-space: normal;
+  min-width: 220px;
+  color: var(--vl-ink);
+}
+.progress-table tr.is-visited .progress-cell-title {
+  color: var(--vl-ink);
+}
+.progress-badge {
+  font-size: var(--vl-fs-xs, 12px);
+  color: var(--vl-muted);
+  border: 1px solid var(--vl-line);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+.progress-badge.is-visited {
+  color: var(--vl-ink);
+}
+.progress-badge.is-watched {
+  color: var(--vl-ink);
+  border-color: var(--vl-accent);
+}
+.progress-badge.is-done {
+  background: var(--vl-accent);
+  border-color: transparent;
+  color: var(--vl-bg);
+}
+.progress-table a {
+  color: var(--vl-accent);
+  text-decoration: none;
+}
+.progress-reset {
+  margin-top: 20px;
+}
+.progress-reset button {
+  background: none;
+  border: 1px solid var(--vl-line);
+  color: var(--vl-muted);
+  font-size: var(--vl-fs-xs, 12px);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@media (max-width: 850px) {
+  .progress-main {
+    padding: 28px 18px 50px;
+  }
+}
+/* 触屏：可点元素不小于 44×44 */
+@media (pointer: coarse) {
+  .progress-path-btn,
+  .progress-reset button,
+  .progress-table td a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 12px;
+  }
+  .progress-table th,
+  .progress-table td {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .progress-recent a {
+    min-height: 44px;
+  }
+}
+</style>

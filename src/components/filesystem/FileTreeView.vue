@@ -42,7 +42,11 @@ const props = withDefaults(
     /**
      * 可选扩展（契约 §6 的必需 props 完全不变）：
      * 传入 timeline / pending 后，.hoodie 目录才能按真实 action + state 展示 instant 文件。
-     * 不传时自动降级为「仅展示由 File Group / 物理文件推导出的 instant」。
+     *
+     * 语义（复用给 LessonDock 时很重要）：
+     *  - **省略**（undefined）→ 回退到 lab store 的当前实验状态（旧用法兼容）；
+     *  - **显式传入数组**（包括空数组）→ 只使用传入值，不再读 store。
+     *    这样页内 dock 可以显示"这个主题自己的状态"，不会被全局实验状态污染。
      */
     timeline?: HudiInstant[]
     pending?: HudiInstant[]
@@ -50,9 +54,6 @@ const props = withDefaults(
   }>(),
   {
     selectedFile: '',
-    timeline: () => [],
-    pending: () => [],
-    archived: () => [],
   },
 )
 
@@ -162,14 +163,23 @@ const storeTimeline = computed<HudiInstant[]>(() => fromStore((st) => st?.timeli
 const storePending = computed<HudiInstant[]>(() => fromStore((st) => st?.pendingInstants))
 const storeArchived = computed<HudiInstant[]>(() => fromStore((st) => st?.archivedInstants))
 
+/**
+ * 显式传入数组时优先使用 props；只在**省略** prop 时回退到 store。
+ * 不能用「空数组 = 未传」的旧口径：LessonDock 传入的正是"这个主题此刻"的 Timeline，
+ * 空数组本身就是有效信息（例如刚建表还没有 instant）。
+ */
+const hasTimelineProp = computed<boolean>(() => props.timeline !== undefined)
+const hasPendingProp = computed<boolean>(() => props.pending !== undefined)
+const hasArchivedProp = computed<boolean>(() => props.archived !== undefined)
+
 const timelineInstants = computed<HudiInstant[]>(() =>
-  props.timeline?.length ? props.timeline : storeTimeline.value,
+  hasTimelineProp.value ? props.timeline ?? [] : storeTimeline.value,
 )
 const pendingInstants = computed<HudiInstant[]>(() =>
-  props.pending?.length ? props.pending : storePending.value,
+  hasPendingProp.value ? props.pending ?? [] : storePending.value,
 )
 const archivedInstants = computed<HudiInstant[]>(() =>
-  props.archived?.length ? props.archived : storeArchived.value,
+  hasArchivedProp.value ? props.archived ?? [] : storeArchived.value,
 )
 
 interface InstantMeta {

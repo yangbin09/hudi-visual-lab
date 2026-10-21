@@ -12,6 +12,9 @@ import type { CatalogEntry } from '../catalog'
 export const MODULE_D_ENTRIES: CatalogEntry[] = [
   {
     id: 'I01',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['simple 索引', '索引定位'],
     moduleId: 'D',
     title: 'SIMPLE 索引定位原理',
     summary:
@@ -23,6 +26,9 @@ export const MODULE_D_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'I02',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['bloom', '布隆', '索引'],
     moduleId: 'D',
     title: 'BLOOM 索引定位原理',
     summary:
@@ -34,6 +40,9 @@ export const MODULE_D_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'I03',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['bucket', '桶', '分桶', '哈希'],
     moduleId: 'D',
     title: 'BUCKET 索引与哈希分桶',
     summary:
@@ -46,6 +55,9 @@ export const MODULE_D_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'I04',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['分区桶', 'bucket 分区'],
     moduleId: 'D',
     title: 'BUCKET 索引与分区路径',
     summary:
@@ -58,6 +70,9 @@ export const MODULE_D_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'I05',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['桶数', 'file group 分配'],
     moduleId: 'D',
     title: 'BUCKET 数量与 File Group 分配',
     summary:
@@ -70,6 +85,9 @@ export const MODULE_D_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'I06',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['global 索引', '全局索引'],
     moduleId: 'D',
     title: 'GLOBAL 索引与非 GLOBAL 索引',
     summary:
@@ -82,6 +100,9 @@ export const MODULE_D_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'I07',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['兼容性', '索引矩阵'],
     moduleId: 'D',
     title: '索引类型与写入操作兼容性',
     summary:
@@ -94,6 +115,9 @@ export const MODULE_D_ENTRIES: CatalogEntry[] = [
   },
   {
     id: 'I08',
+    difficulty: 'L2',
+    minutes: 5,
+    aliases: ['索引异常', '排查'],
     moduleId: 'D',
     title: '索引异常诊断实验',
     summary:
