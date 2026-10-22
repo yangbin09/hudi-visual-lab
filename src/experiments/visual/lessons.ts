@@ -89,6 +89,15 @@ export const VISUAL_LESSONS: Record<string, VisualLesson> = Object.fromEntries([
 ].map(lesson => {
   // 内容层（目标 / 前置 / 结论 / 术语卡 / 边界 / 模板 / 旁白覆盖）集中在 lesson-content.ts，
   // 这里按主题 id 合并；缺失时自动降级为旧行为（字段全部可选）。
+  if (['F04','A04'].includes(lesson.id)) {
+    lesson.controls=[]
+    lesson.steps=lesson.steps.map(step=>({...step,moments:[
+      {at:.12,title:'观察输入',explanation:step.caption},
+      {at:.38,title:'追踪状态',explanation:step.caption},
+      {at:.62,title:'检查条件',explanation:step.caption},
+      {at:.86,title:'核对结果',explanation:step.caption},
+    ]}))
+  }
   const meta = LESSON_META[lesson.id]
   const captions = CAPTION_OVERRIDES[lesson.id]
   const steps = captions ? lesson.steps.map((step, index) => ({ ...step, caption: captions[index] ?? step.caption })) : lesson.steps

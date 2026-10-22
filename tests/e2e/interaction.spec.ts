@@ -1,12 +1,14 @@
 import { expect, test } from '@playwright/test'
 
-test('离开实验再返回不残留修改；B02 与 B03 进入同一原型', async ({ page }) => {
+test('离开实验后恢复本课历史；B02 与 B03 的状态各自独立', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/experiment/B02')
   await page.getByRole('button', { name: '↑ Upsert 更新记录' }).click()
   await expect(page.locator('.vl-query-value').first()).toHaveText('¥ 200')
   await page.getByRole('link', { name: 'h. Hudi Visual Lab' }).click()
   await page.getByRole('link', { name: /精选实验/ }).click()
+  await expect(page.locator('.vl-query-value').first()).toHaveText('¥ 200')
+  await page.getByRole('button',{name:'重置实验',exact:true}).click()
   await expect(page.locator('.vl-query-value').first()).toHaveText('¥ 100.5')
   await page.goto('/experiment/B03')
   await expect(page.locator('.vl-query-value').first()).toHaveText('¥ 100.5')

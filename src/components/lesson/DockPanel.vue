@@ -90,7 +90,7 @@ withDefaults(
 }
 
 .dock-panel-hint {
-  ont-size: 12px;
+  font-size: 12px;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
 

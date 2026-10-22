@@ -7,6 +7,7 @@ import type { SimulationEvent } from '@/models/simulation'
 
 export interface Scene { cow: HudiTableState; mor: HudiTableState }
 export type Operation = 'update' | 'schedule' | 'compact' | 'clean' | 'snapshot' | 'failure'
+export interface ComparisonBookmark { operations: {kind: Operation; amount: number}[]; position: number; nextAmount?: number }
 export interface Sequence { kind: Operation; before: Scene; after: Scene; events: SimulationEvent[]; amount: number; actions: Partial<Record<'cow'|'mor',SimulationAction>>; captions: string[] }
 function initial(): Scene {
   const mor = createMorState()
@@ -87,6 +88,15 @@ export function useVisualTimeline() {
     sequences.value = [...sequences.value.slice(0, index.value + 1), { kind, before, after: { cow, mor }, events, amount, actions, captions: finalCaptions }]
     index.value++; position.value = 0; play()
   }
+  function bookmark(): ComparisonBookmark {
+    return {operations:sequences.value.slice(0,index.value+1).map(s=>({kind:s.kind,amount:s.amount})),position:position.value}
+  }
+  function restore(saved: ComparisonBookmark) {
+    reset()
+    // Replay the action history against the same deterministic engine, never a stored table blob.
+    for(const op of saved.operations){run(op.kind,op.amount);skip()}
+    pause();position.value=Math.max(0,Math.min(duration.value,saved.position))
+  }
   onBeforeUnmount(() => { pause(); media.removeEventListener('change', onReduce) })
-  return { scene, sequences, sequence, position, duration, step, settled, playing, speed, reduced, caption, run, play, pause, skip, next, back, reset }
+  return { bookmark, restore, scene, sequences, sequence, position, duration, step, settled, playing, speed, reduced, caption, run, play, pause, skip, next, back, reset }
 }

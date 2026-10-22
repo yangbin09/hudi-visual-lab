@@ -1017,3 +1017,11 @@
     align-items: center;
   }
 }
+
+/* Inline experiment inputs have their own natural height; never squeeze them behind
+   the status bar or explanation on short displays. */
+.lesson-stage:has(.lesson-canvas-controls){min-height:0;max-height:none}
+.lesson-canvas-area.lesson-canvas-controls{display:block;flex:none;min-height:0;align-items:stretch}
+.lesson-canvas-controls .mechanism-case,.lesson-canvas-controls .index-case{height:auto;display:block}
+.lesson-canvas-controls .lesson-canvas{display:block;height:auto;min-height:0;min-width:0;width:100%;flex:none}
+@media(max-width:550px){.lesson-canvas-controls .mechanism-case,.lesson-canvas-controls .index-case{width:900px;min-width:900px}}

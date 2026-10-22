@@ -20,6 +20,7 @@ import { useRoute, useRouter } from 'vue-router'
 
 import { CATALOG, getCatalogEntry, getExperimentById, MODULES } from '@/experiments/catalog'
 import { MODEL_LABEL, visualLesson } from '@/experiments/visual/lessons'
+import { lessonQuiz } from '@/experiments/visual/quiz'
 import { compareLesson } from '@/experiments/visual/compareLessons'
 import { buildLessonRun, defaultParameters, fileRecords, stateMetrics } from '@/engine/visual/scenarios'
 import { useLessonPlayer } from '@/animation/useLessonPlayer'
@@ -37,11 +38,14 @@ import LessonDock from '@/components/lesson/LessonDock.vue'
 import type { DockTab } from '@/components/lesson/types'
 import LessonCanvas from '@/components/visual/LessonCanvas.vue'
 import CompareLesson from '@/components/visual/CompareLesson.vue'
+import { MECHANISM_IDS, mechanismCaption } from '@/engine/visual/mechanisms'
+import MechanismWalkthrough from '@/components/visual/MechanismWalkthrough.vue'
 import IndexConfigWalkthrough from '@/components/visual/IndexConfigWalkthrough.vue'
 import TeachingInspector from '@/components/visual/TeachingInspector.vue'
 import EvidencePanel from '@/components/evidence/EvidencePanel.vue'
 
 import type { HudiTableState } from '@/models/hudi'
+import type { ComparisonBookmark } from '@/animation/useVisualTimeline'
 import type { LessonParameters } from '@/experiments/visual/types'
 
 const route = useRoute()
@@ -57,7 +61,7 @@ const compare = compareLesson(id)
 const isCompare = computed(() => !!compare)
 
 /** 场景快照（可被参数重置重建） */
-const run = shallowRef(lesson ? buildLessonRun(lesson, defaultParameters(lesson)) : undefined)
+const run = shallowRef(lesson ? buildLessonRun(lesson, lessonStore.entry(id).parameters ?? defaultParameters(lesson)) : undefined)
 const player = run.value ? useLessonPlayer(() => run.value!) : undefined
 const params = ref<LessonParameters | undefined>(run.value?.parameters)
 const draft = ref<LessonParameters | undefined>(params.value ? { ...params.value } : undefined)
@@ -65,9 +69,10 @@ const draft = ref<LessonParameters | undefined>(params.value ? { ...params.value
 /** 对比主题的状态与旁白（由 CompareLesson 回传，供详情区与统一讲解条使用） */
 const compareState = ref<HudiTableState | null>(null)
 const compareCaption = ref('')
-const compareAmount = ref(compare?.amount ?? 200)
-/** 对比主题的自测题沿用旧实验定义里已写好的 5 题 */
-const compareQuiz = computed(() => (id === 'B02' ? (getExperimentById('B02')?.quiz ?? []) : []))
+const compareAmount = ref(lessonStore.entry(id).comparison?.nextAmount ?? compare?.amount ?? 200)
+/** 对比主题与普通主题均使用审校过的原理题。 */
+const compareQuiz = computed(() => lessonQuiz(id))
+const questions = computed(() => lessonQuiz(id, lesson, run.value))
 const compareObjectives = computed(() => (id === 'B02' ? (getExperimentById('B02')?.learningObjectives ?? []) : []))
 
 const notice = ref('')
@@ -75,9 +80,10 @@ const drawer = ref('')
 const inspection = ref<{ title: string; value: unknown }>()
 const dialog = ref<HTMLDialogElement>()
 const errorMessage = ref('')
-const jobIndex = ref<'SIMPLE' | 'BUCKET'>('SIMPLE')
+const jobIndex = ref<'SIMPLE' | 'BUCKET'>(lessonStore.entry(id).jobIndex ?? 'SIMPLE')
 /** 页内详情区（dock）的当前分区与展开状态——写进 URL，便于分享与回退 */
-const dockTab = ref<DockTab>((route.query.tab as DockTab) || 'explain')
+const asDockTab=(value:unknown):DockTab => ['explain','data','code','evidence'].includes(String(value)) ? value as DockTab : 'explain'
+const dockTab = ref<DockTab>(asDockTab(route.query.tab))
 const dockOpen = ref(true)
 const dockEl = ref<HTMLElement>()
 const canvasArea = ref<HTMLElement>()
@@ -144,6 +150,7 @@ const stepCaption = computed(() => {
   if (isCompare.value) return compareCaption.value
   if (!player) return ''
   if (!player.started.value) return `点击「${lesson?.actionLabel ?? '开始演示'}」，先观察${lesson?.steps[0]?.title ?? '第一步'}。`
+  if (MECHANISM_IDS.includes(id) && params.value) return mechanismCaption(id,params.value,current.value,player.fraction.value)
   if (id === 'E01') return configCaption.value
   if (frame.value?.error) return `本次被引擎拒绝：${frame.value.error}`
   return teachingMoment.value?.explanation ?? frame.value?.step.caption ?? ''
@@ -322,6 +329,14 @@ function applyParameters(): void {
   }
 }
 
+function changeMechanism(patch:Partial<LessonParameters>):void {
+  if(!lesson || !params.value || !player)return
+  player.reset()
+  const updated=buildLessonRun(lesson,{...params.value,...patch})
+  run.value=updated;params.value=updated.parameters;notice.value=''
+  player.play()
+}
+
 function applyCompareParameters(): void {
   const amount = Number(compareAmount.value)
   if (!Number.isFinite(amount) || amount < 0 || amount > 999999) {
@@ -394,18 +409,33 @@ watch(dockTab, (tab) => {
   void router.replace({ query: { ...route.query, tab } })
 })
 
+watch(()=>route.query.tab,value=>{dockTab.value=asDockTab(value)})
+
 /** 自测得分 → 进度 */
-function onScored(score: number): void {
-  lessonStore.setQuizScore(id, score)
-  notice.value = score >= 60 ? `自测 ${score} 分，本主题已记为「已掌握」。` : `自测 ${score} 分，再看一遍要点就能过。`
+function onScored(score: number, masteryReady: boolean): void {
+  lessonStore.setQuizScore(id, score, masteryReady)
+  notice.value = masteryReady && score >= 60 ? `自测 ${score} 分，本主题已记为「已掌握」。` : `自测 ${score} 分；需达到 60 分且原理题答对，再核对原因。`
 }
 
 /* -------------------------------------------------------------------------- */
 /* 进度写入                                                                    */
 /* -------------------------------------------------------------------------- */
 
+function saveBookmark(): void {
+  if (lesson && player) lessonStore.saveBookmark(id, {position:player.position.value,step:player.current.value,parameters:params.value ? {...params.value} : undefined,jobIndex:jobIndex.value})
+}
+function saveWhenHidden(): void { if(document.visibilityState==='hidden')saveBookmark() }
+function saveComparison(comparison:ComparisonBookmark):void {
+  lessonStore.saveBookmark(id,{position:comparison.position,step:Math.floor(comparison.position),comparison})
+}
+// Save pause, seek and completion immediately; avoid localStorage writes on every animation frame.
+watch(()=>player?.position.value,()=>{if(player && !player.playing.value)saveBookmark()})
+watch(()=>player?.playing.value,(playing)=>{if(!playing)saveBookmark()})
+
 onMounted(() => {
   window.addEventListener('keydown', keyboard)
+  window.addEventListener('pagehide', saveBookmark)
+  document.addEventListener('visibilitychange', saveWhenHidden)
   if (isCompare.value) {
     // 对比类主题同样写入访问进度
     lessonStore.markVisited(id)
@@ -415,9 +445,7 @@ onMounted(() => {
     lessonStore.markVisited(id)
     const saved = lessonStore.entry(id)
     // 有上次进度时恢复到那一步（不自动播放）
-    if (saved.step > 0 && saved.step < (player?.total.value ?? 0)) {
-      player?.seek(saved.step + 0.99)
-    }
+    if (saved.position > 0) player?.seek(saved.position)
   }
   // 移动端画布是 900px 宽的横向滚动容器：默认停在画布中部（内容最密集的地方）
   void nextTick(() => {
@@ -429,9 +457,9 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', keyboard)
-  if (lesson && player) {
-    lessonStore.savePosition(id, player.position.value, player.current.value)
-  }
+  window.removeEventListener('pagehide', saveBookmark)
+  document.removeEventListener('visibilitychange', saveWhenHidden)
+  saveBookmark()
 })
 
 // 播放到末尾 → 记为「看完」
@@ -471,6 +499,8 @@ watch(
         <div class="lesson-stage-col">
           <CompareLesson
             :topic-id="id"
+            :saved="lessonStore.entry(id).comparison"
+            @bookmark="saveComparison"
             :question="compare.question"
             :subtitle="compare.subtitle"
             :amount="compareAmount"
@@ -561,7 +591,7 @@ watch(
             <button @click="openDock('data')">数据 / 代码 / 依据 ↗</button>
           </div>
 
-          <div ref="canvasArea" class="lesson-canvas-area">
+          <div ref="canvasArea" class="lesson-canvas-area" :class="{'lesson-canvas-controls':id==='E01'||MECHANISM_IDS.includes(id)}">
             <IndexConfigWalkthrough
               v-if="id === 'E01'"
               :job-index="jobIndex"
@@ -571,6 +601,11 @@ watch(
               :parameters="params"
               @change="changeJobIndex"
               @inspect="inspect"
+            />
+            <MechanismWalkthrough
+              v-else-if="MECHANISM_IDS.includes(id)"
+              :id="id" :parameters="params" :current="current" :progress="player.fraction.value" :started="player.started.value"
+              @change="changeMechanism" @inspect="inspect"
             />
             <LessonCanvas
               v-else
@@ -593,7 +628,7 @@ watch(
               <small>{{ explanationTitle }}</small>
               <p>{{ stepCaption }}</p>
             </div>
-            <ul class="lesson-metrics">
+            <ul v-if="lesson.model!=='concept'" class="lesson-metrics">
               <li><b>{{ stats.records }}</b><span>可见记录</span></li>
               <li><b>{{ stats.active }}</b><span>有效文件</span></li>
               <li><b>{{ stats.logs }}</b><span>Log</span></li>
@@ -601,7 +636,7 @@ watch(
           </div>
         </section>
         <p class="vl-canvas-hint">← 左右滑动查看完整画布 →</p>
-        <LessonLegend class="lesson-legend" />
+        <LessonLegend v-if="lesson.model!=='concept'" class="lesson-legend" />
         </div>
 
         <aside class="lesson-side">
@@ -675,6 +710,8 @@ watch(
       </section>
 
       <LessonSummary
+        :key="JSON.stringify(params)"
+        :questions="questions"
         :lesson="lesson"
         :lesson-id="id"
         :previous-id="previousLesson?.id"

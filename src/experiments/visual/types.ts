@@ -27,5 +27,8 @@ export interface VisualLesson {
   templateIds?: string[]
 }
 export interface LessonParameters {
+  checkpointOffset?: number
+  writerTarget?: 'same' | 'different'
+  occRetry?: boolean
   recordKey: string; amount: number; bucketCount: number; partition: string; retention: number; failureAt: number; tableType: 'COPY_ON_WRITE' | 'MERGE_ON_READ'
 }

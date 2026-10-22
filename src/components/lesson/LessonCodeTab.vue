@@ -183,7 +183,7 @@ const languageCount = computed<number>(() => new Set(blocks.value.map((block) =>
 }
 
 .source-note {
-  ont-size: 12px;
+  font-size: 12px;
   line-height: 1.7;
   color: var(--vl-muted, var(--color-hudi-muted));
   overflow-wrap: anywhere;

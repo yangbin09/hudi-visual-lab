@@ -7,7 +7,7 @@
  *
  * 本组件提供三层收尾：
  *   1. 一句话结论（takeaway）与三个关键步骤；
- *   2. 自测：从本课步骤自动生成理解题（也可由内容侧提供 quiz），
+ *   2. 自测：使用内容审校过的题目与本次引擎快照，
  *      答完即判定，并把得分写进学习进度；
  *   3. 本主题边界（limitations）：把「待验证 / 未实现」从讲解正文收拢到这里，
  *      不再打断理解链。
@@ -31,43 +31,9 @@ const props = defineProps<{
   limitations?: string[]
 }>()
 
-const emit = defineEmits<{ scored: [score: number] }>()
+const emit = defineEmits<{ scored: [score: number, masteryReady: boolean] }>()
 
-/** 稳定排序：按字符串码点做确定性打散，避免每次渲染顺序抖动 */
-function stableShuffle<T>(items: T[]): T[] {
-  return items
-    .map((item, index) => ({ item, key: `${index}-${String(item)}` }))
-    .sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0))
-    .map((entry) => entry.item)
-}
-
-/** 自动生成的理解题：问「第 N 步做了什么」，选项是本课其它步骤的标题 */
-const generated = computed<QuizQuestion[]>(() => {
-  const steps = props.lesson?.steps ?? []
-  if (steps.length < 2) return []
-  const picked = steps.slice(0, Math.min(3, steps.length))
-  return picked.map((step, index) => {
-    const distractors = steps
-      .filter((s) => s.title !== step.title)
-      .slice(0, 2)
-      .map((s) => s.title)
-    const options = stableShuffle([step.title, ...distractors]).map((text, i) => ({
-      id: `opt-${index}-${i}`,
-      text,
-    }))
-    return {
-      id: `auto-${index}`,
-      prompt: `第 ${index + 1} 步「${step.title}」之后，发生了什么？`,
-      options,
-      answerIds: [options.find((o) => o.text === step.title)!.id],
-      explanation: step.caption,
-    }
-  })
-})
-
-const questions = computed<QuizQuestion[]>(() =>
-  props.questions?.length ? props.questions : generated.value,
-)
+const questions = computed<QuizQuestion[]>(() => props.questions ?? [])
 
 /** 一句话结论：优先用主题自带的，其次用外部传入的 */
 const takeawayText = computed(() => props.lesson?.takeaway ?? props.takeaway ?? '')
@@ -95,11 +61,11 @@ const limitList = computed<string[]>(() => props.lesson?.limitations ?? props.li
 
     <details v-if="questions.length" class="lesson-selfcheck">
       <summary>
-        <span class="lesson-selfcheck-title">自测：这一步你记住了吗</span>
-        <span class="lesson-selfcheck-count">{{ questions.length }} 题 · 60 分以上记为「已掌握」</span>
+        <span class="lesson-selfcheck-title">自测：预测结果并解释原因</span>
+        <span class="lesson-selfcheck-count">{{ questions.length }} 题 · 60 分以上且原理题正确记为「已掌握」</span>
       </summary>
       <p class="lesson-selfcheck-hint">答完给出得分，结果会写进学习进度。</p>
-      <QuizPanel :questions="questions" @submit="(score) => emit('scored', score)" />
+      <QuizPanel :questions="questions" @result="result => emit('scored', result.score, result.masteryReady)" />
     </details>
 
     <div v-if="limitList.length" class="lesson-limits">

@@ -1,4 +1,7 @@
 import { defineStore } from 'pinia'
+import type { LessonParameters } from '@/experiments/visual/types'
+import type { ComparisonBookmark } from '@/animation/useVisualTimeline'
+import { ASSESSMENT_VERSION } from '@/experiments/visual/assessment-version'
 
 /**
  * useLessonStore —— 动画主题的学习进度与显示模式
@@ -35,6 +38,10 @@ export interface LessonProgressEntry {
   step: number
   /** 最后一次访问时间戳（毫秒） */
   lastSeen: number
+  parameters?: LessonParameters
+  jobIndex?: 'SIMPLE' | 'BUCKET'
+  comparison?: ComparisonBookmark
+  assessmentVersion?: number
 }
 
 export type LessonMode = 'basic' | 'engineer'
@@ -79,10 +86,14 @@ function readProgress(): Record<string, LessonProgressEntry> {
       out[id] = {
         visited: Boolean(v.visited),
         watched: Boolean(v.watched),
-        mastered: Boolean(v.mastered),
-        quizScore: typeof v.quizScore === 'number' ? v.quizScore : 0,
-        position: typeof v.position === 'number' ? v.position : 0,
-        step: typeof v.step === 'number' ? v.step : 0,
+        mastered: v.assessmentVersion === ASSESSMENT_VERSION && Boolean(v.mastered),
+        quizScore: v.assessmentVersion === ASSESSMENT_VERSION && Number.isFinite(v.quizScore) ? Math.max(0, Math.min(100, v.quizScore!)) : 0,
+        position: Number.isFinite(v.position) ? Math.max(0, v.position!) : 0,
+        step: Number.isFinite(v.step) ? Math.max(0, Math.floor(v.step!)) : 0,
+        parameters: validParameters(v.parameters) ? v.parameters : undefined,
+        jobIndex: v.jobIndex === 'BUCKET' ? 'BUCKET' : 'SIMPLE',
+        comparison: validComparison(v.comparison) ? v.comparison : undefined,
+        assessmentVersion: v.assessmentVersion,
         lastSeen: typeof v.lastSeen === 'number' ? v.lastSeen : 0,
       }
     })
@@ -90,6 +101,17 @@ function readProgress(): Record<string, LessonProgressEntry> {
   } catch {
     return {}
   }
+}
+
+function validParameters(p: unknown): p is LessonParameters {
+  if (!p || typeof p !== 'object') return false
+  const v=p as LessonParameters
+  return typeof v.recordKey==='string' && v.recordKey.trim().length>0 && v.recordKey.length<=40 && typeof v.partition==='string' && v.partition.trim().length>0 && v.partition.length<=80 && Number.isFinite(v.amount) && v.amount>=0 && Number.isInteger(v.bucketCount) && v.bucketCount>=1 && v.bucketCount<=12 && Number.isInteger(v.retention) && v.retention>=1 && v.retention<=10 && Number.isInteger(v.failureAt) && v.failureAt>=-1 && v.failureAt<=12 && ['COPY_ON_WRITE','MERGE_ON_READ'].includes(v.tableType) && (v.checkpointOffset===undefined || [101,102,103].includes(v.checkpointOffset)) && (v.writerTarget===undefined || ['same','different'].includes(v.writerTarget)) && (v.occRetry===undefined || typeof v.occRetry==='boolean')
+}
+function validComparison(value: unknown): value is ComparisonBookmark {
+  if(!value || typeof value!=='object')return false
+  const v=value as ComparisonBookmark
+  return Number.isFinite(v.position) && v.position>=0 && (v.nextAmount===undefined || Number.isFinite(v.nextAmount)&&v.nextAmount>=0&&v.nextAmount<=999999) && Array.isArray(v.operations) && v.operations.length<=100 && v.operations.every(op=>op && ['update','schedule','compact','clean','snapshot','failure'].includes(op.kind) && Number.isFinite(op.amount) && op.amount>=0 && op.amount<=999999)
 }
 
 function readMode(): LessonMode {
@@ -115,7 +137,7 @@ export const useLessonStore = defineStore('lesson', {
     masteredCount: (s) => Object.values(s.progress).filter((e) => e.mastered).length,
     /** 自测平均分 */
     averageScore: (s) => {
-      const scored = Object.values(s.progress).filter((e) => e.quizScore > 0)
+      const scored = Object.values(s.progress).filter((e) => e.assessmentVersion === ASSESSMENT_VERSION)
       if (!scored.length) return 0
       return Math.round(scored.reduce((sum, e) => sum + e.quizScore, 0) / scored.length)
     },
@@ -157,18 +179,25 @@ export const useLessonStore = defineStore('lesson', {
       this.persist()
     },
 
-    /** 记录自测得分；达到及格线即视为掌握 */
-    setQuizScore(id: string, score: number): void {
+    saveBookmark(id: string, bookmark: Pick<LessonProgressEntry, 'position' | 'step' | 'parameters' | 'jobIndex' | 'comparison'>): void {
+      if(!id)return
+      this.progress = {...this.progress, [id]: {...(this.progress[id] ?? EMPTY_ENTRY), ...bookmark, visited:true, lastSeen:Date.now()}}
+      this.persist()
+    },
+
+    /** 记录当前测验得分；及格且通过原理题门槛才授予掌握。 */
+    setQuizScore(id: string, score: number, masteryReady = false): void {
       if (!id) return
       const previous = this.progress[id] ?? { ...EMPTY_ENTRY }
-      const normalized = Math.max(0, Math.min(100, Math.round(score)))
+      const normalized = Number.isFinite(score) ? Math.max(0, Math.min(100, Math.round(score))) : 0
       this.progress = {
         ...this.progress,
         [id]: {
           ...previous,
           visited: true,
           quizScore: normalized,
-          mastered: normalized >= 60 || previous.mastered,
+          assessmentVersion: ASSESSMENT_VERSION,
+          mastered: (normalized >= 60 && masteryReady) || previous.mastered,
           lastSeen: Date.now(),
         },
       }

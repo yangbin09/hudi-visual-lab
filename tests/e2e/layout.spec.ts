@@ -10,7 +10,7 @@ test('画布居中且控件首屏可见，复杂信息默认隐藏', async ({ pa
     const main = document.querySelector('.lesson-main')!.getBoundingClientRect()
     const action = document.querySelector('.vl-action-bar')!.getBoundingClientRect()
     return {
-      ratio: stage.height / main.height,
+      canvasHeight: document.querySelector('.vl-canvas')!.getBoundingClientRect().height,
       actionBottom: action.bottom,
       height: innerHeight,
       overflow: document.documentElement.scrollWidth > innerWidth,
@@ -20,8 +20,8 @@ test('画布居中且控件首屏可见，复杂信息默认隐藏', async ({ pa
   if (page.viewportSize()!.width >= 1366) {
     // 操作条仍在首屏内
     expect(geometry.actionBottom).toBeLessThan(geometry.height)
-    // 画布仍占主区相当份额（整改后主区多了目标条 / 术语栏 / 详情区 / 小结）
-    expect(geometry.ratio).toBeGreaterThan(0.25)
+    // 画布像素高度应足够阅读，不用整张长页面的高度作为分母。
+    expect(geometry.canvasHeight).toBeGreaterThan(180)
   }
   await page.getByRole('button', { name: '切换深浅主题' }).click()
   await expect(page.locator('.visual-lab')).toHaveClass(/vl-light/)

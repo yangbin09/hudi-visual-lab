@@ -206,7 +206,7 @@ function onInstantSelect(instant: HudiInstant): void {
 
 .data-subtitle {
   margin: 0 0 6px;
-  ont-size: 12px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
@@ -249,13 +249,13 @@ function onInstantSelect(instant: HudiInstant): void {
   border: 1px solid var(--vl-line, var(--color-hudi-border));
   border-radius: 4px;
   padding: 0 6px;
-  ont-size: 12px;
+  font-size: 12px;
   line-height: 16px;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
 
 .plan-stat {
-  ont-size: 12px;
+  font-size: 12px;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
 
@@ -268,7 +268,7 @@ function onInstantSelect(instant: HudiInstant): void {
 .plan-table {
   width: 100%;
   border-collapse: collapse;
-  ont-size: 12px;
+  font-size: 12px;
 }
 
 .plan-table th,

@@ -86,7 +86,7 @@ function reset(): void {
         <div>
           <span class="vl-eyebrow">进度保存在浏览器本地</span>
           <h1>学习进度</h1>
-          <p>打开主题会记「已访问」，播放到末尾记「已看完」，自测 60 分以上记「已掌握」。</p>
+          <p>打开主题会记「已访问」，播放到末尾记「已看完」，自测 60 分以上且原理题正确记「已掌握」。</p>
         </div>
         <RouterLink class="progress-path-btn" to="/path">按学习路径继续 →</RouterLink>
       </header>

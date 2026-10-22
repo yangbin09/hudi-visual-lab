@@ -62,7 +62,7 @@ test('减少动态效果与工程师模式（详情区从抽屉搬进页内）',
   await expect(dock).toContainText('MERGE')
   await dock.getByRole('tab', { name: /^数据/ }).click()
   // Timeline 里能看到 DeltaCommit 这类提交类型（页面用小写文件名呈现，故忽略大小写）
-  await expect(dock).toContainText(/DELTA_COMMIT/i)
+  await expect(dock).toContainText(/DELTA COMMIT/i)
   await page.getByRole('button', { name: '① Schedule' }).click()
   await page.getByRole('button', { name: '模拟失败' }).click()
   await expect(page.locator('.vl-query-value').nth(3)).toHaveText('¥ 100.5')

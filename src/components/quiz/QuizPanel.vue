@@ -22,6 +22,7 @@ const props = defineProps<{
 }>()
 const emit = defineEmits<{
   (e: 'submit', score: number): void
+  (e: 'result', result: {score:number;masteryReady:boolean}):void
   (e: 'update:modelValue', score: number | null): void
 }>()
 
@@ -104,6 +105,7 @@ function submit(): void {
   if (submitted.value) return
   submitted.value = true
   emit('submit', score.value)
+  emit('result',{score:score.value,masteryReady:score.value>=60 && questions.value.filter(q=>q.requiredForMastery).every(isCorrect)})
   if (controlled.value) emit('update:modelValue', score.value)
 }
 
@@ -197,7 +199,7 @@ const MARK_TEXT: Record<OptionMark, string> = {
         <span
           class="rounded border border-[var(--color-hudi-border,#1f2937)] px-1.5 py-0.5 text-[12px] text-[var(--color-hudi-muted,#94a3b8)]"
         >
-          {{ question.multiple ? '多选' : '单选' }}
+          {{ question.requiredForMastery ? '原理题 · 掌握必答对' : question.multiple ? '多选' : '单选' }}
         </span>
         <span
           v-if="graded"

@@ -14,9 +14,9 @@
  *   · emit('watched')               —— 一次演示完整播完
  *   · emit('caption', text)         —— 当前这一步的旁白（交给统一讲解条）
  */
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 
-import { useVisualTimeline, type Operation } from '@/animation/useVisualTimeline'
+import { useVisualTimeline, type Operation, type ComparisonBookmark } from '@/animation/useVisualTimeline'
 import { buildTeachingTrace } from '@/engine/visual/teachingTrace'
 import type { TeachingTrace } from '@/engine/visual/teachingTrace'
 import { runQuery } from '@/engine/queries'
@@ -34,6 +34,7 @@ const props = defineProps<{
   amount: number
   /** 工程师模式：显示「模拟失败」 */
   engineer: boolean
+  saved?: ComparisonBookmark
 }>()
 
 const emit = defineEmits<{
@@ -41,6 +42,7 @@ const emit = defineEmits<{
   state: [state: HudiTableState]
   watched: []
   caption: [text: string]
+  bookmark: [value: ComparisonBookmark]
 }>()
 
 const tl = useVisualTimeline()
@@ -142,6 +144,22 @@ function selectFile(state: HudiTableState, file: HudiPhysicalFile) {
   emit('inspect', file.fileName, { ...file, records: recordsFor(state, file) })
 }
 
+function saveBookmark(){emit('bookmark',{...tl.bookmark(),nextAmount:props.amount})}
+function saveWhenHidden(){if(document.visibilityState==='hidden')saveBookmark()}
+onMounted(()=>{
+  if(props.saved)tl.restore(props.saved)
+  window.addEventListener('pagehide',saveBookmark)
+  document.addEventListener('visibilitychange',saveWhenHidden)
+})
+onBeforeUnmount(()=>{
+  saveBookmark()
+  window.removeEventListener('pagehide',saveBookmark)
+  document.removeEventListener('visibilitychange',saveWhenHidden)
+})
+watch(position,()=>{if(!playing.value)saveBookmark()})
+watch(playing,(v)=>{if(!v)saveBookmark()})
+watch(()=>props.amount,saveBookmark)
+
 /* 状态与旁白同步给外层（详情区 / 统一讲解条） */
 watch(
   () => scene.value.mor,
@@ -166,6 +184,17 @@ watch(
       </div>
       <span class="cmp-status"><i class="vl-dot"></i>{{ busy ? '正在演示' : '交互画布' }}</span>
     </header>
+
+    <div class="vl-action-bar">
+      <span>现在试试看</span>
+      <button class="vl-primary" :disabled="busy" @click="start('update')">↑ Upsert 更新记录</button>
+      <button :disabled="busy" @click="start('snapshot')">Snapshot 读取</button>
+      <span class="vl-action-divider"></span>
+      <button :disabled="busy || !hasLogs || hasPlan" @click="start('schedule')">① Schedule</button>
+      <button :disabled="busy || !hasPlan" @click="start('compact')">② Compaction</button>
+      <button :disabled="busy" @click="start('clean')">Cleaner</button>
+      <button v-if="engineer" :disabled="busy || !hasPlan" @click="start('failure')">模拟失败</button>
+    </div>
 
     <div class="cmp-canvas-wrap">
       <svg viewBox="0 0 1120 290" class="vl-canvas" role="img" aria-label="COW 重写 Base，MOR 追加 Log 的双路径动画">
@@ -341,30 +370,21 @@ watch(
       </div>
       <div class="vl-progress">
         <input
-          v-model.number="position"
           type="range"
           min="0"
           :max="duration"
+          :value="position"
           step="0.01"
           aria-label="动画进度"
           :disabled="!sequence"
-          @input="tl.pause()"
+          @input="tl.pause(); position = Number(($event.target as HTMLInputElement).value)"
         />
         <button :disabled="!busy" @click="tl.skip">跳过动画</button>
       </div>
       <button class="vl-reset" @click="tl.reset">重置实验</button>
     </div>
 
-    <div class="vl-action-bar">
-      <span>现在试试看</span>
-      <button class="vl-primary" :disabled="busy" @click="start('update')">↑ Upsert 更新记录</button>
-      <button :disabled="busy" @click="start('snapshot')">Snapshot 读取</button>
-      <span class="vl-action-divider"></span>
-      <button :disabled="busy || !hasLogs || hasPlan" @click="start('schedule')">① Schedule</button>
-      <button :disabled="busy || !hasPlan" @click="start('compact')">② Compaction</button>
-      <button :disabled="busy" @click="start('clean')">Cleaner</button>
-      <button v-if="engineer" :disabled="busy || !hasPlan" @click="start('failure')">模拟失败</button>
-    </div>
+
   </section>
 </template>
 
@@ -377,6 +397,7 @@ watch(
   overflow: hidden;
   background: var(--vl-panel);
 }
+.cmp-stage > .vl-action-bar {padding:10px; border-top:0; border-bottom:1px solid var(--vl-line);flex-wrap:wrap}
 .cmp-stage-head {
   display: flex;
   align-items: flex-start;

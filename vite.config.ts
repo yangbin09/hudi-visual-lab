@@ -29,20 +29,19 @@ export default defineConfig({
     },
   },
   build: {
+    manifest: true,
     // 把体积大且很少变动的第三方库拆成独立 chunk，便于浏览器缓存复用
-    chunkSizeWarningLimit: 900,
+    chunkSizeWarningLimit: 350,
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor-vue': ['vue', 'vue-router', 'pinia'],
-          'vendor-element': ['element-plus'],
           'vendor-codemirror': [
             '@codemirror/state',
             '@codemirror/view',
             '@codemirror/lang-sql',
             '@codemirror/theme-one-dark',
           ],
-          'vendor-echarts': ['echarts'],
         },
       },
     },

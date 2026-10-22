@@ -4,6 +4,7 @@ import { performWrite } from '@/engine/operations/writes'
 import { runQuery } from '@/engine/queries'
 import { HuaweiMRS350R26Profile } from '@/engine/versions/HuaweiMRS350R26Profile'
 import { bucketOf } from '@/engine/indexes/bucket'
+import { MECHANISM_IDS, mechanismCaption } from './mechanisms'
 import { buildTeachingTrace, type TeachingTrace } from './teachingTrace'
 export { fileRecords } from './records'
 import { buildB02Table } from '@/experiments/basics/B02CowVsMor'
@@ -111,7 +112,12 @@ function execute(state: HudiTableState, operation: LessonOperation, p: LessonPar
 export function buildLessonRun(lesson: VisualLesson, p: LessonParameters): LessonRun {
   const initial = seedLesson(lesson, p)
   let state = initial
-  const frames = lesson.steps.map((step, index): LessonFrame => {
+  const frames = lesson.steps.map((authoredStep, index): LessonFrame => {
+    const step = MECHANISM_IDS.includes(lesson.id) ? {
+      ...authoredStep,
+      caption: mechanismCaption(lesson.id,p,index,.86),
+      moments: authoredStep.moments?.map(moment=>({...moment,explanation:mechanismCaption(lesson.id,p,index,moment.at)})),
+    } : authoredStep
     const before = state
     const result = step.operation ? execute(state, step.operation, p, index, initial) : { state, events: [], logs: [] }
     state = result.state

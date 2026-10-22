@@ -79,6 +79,7 @@ export interface QuizQuestion {
   prompt: string
   options: QuizOption[]
   multiple?: boolean
+  requiredForMastery?: boolean
   answerIds: string[]
   explanation: string
 }

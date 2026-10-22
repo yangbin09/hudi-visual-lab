@@ -308,7 +308,7 @@ const modelNote = computed<string>(() => {
 
 .explain-kicker {
   margin: 0 0 4px;
-  ont-size: 12px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--vl-muted, var(--color-hudi-muted));
@@ -377,7 +377,7 @@ const modelNote = computed<string>(() => {
 .moment-index {
   margin-right: 6px;
   font-family: ui-monospace, monospace;
-  ont-size: 12px;
+  font-size: 12px;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
 
@@ -391,7 +391,7 @@ const modelNote = computed<string>(() => {
 
 .explain-model {
   margin: 10px 0 0;
-  ont-size: 12px;
+  font-size: 12px;
   line-height: 1.7;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
@@ -416,7 +416,7 @@ const modelNote = computed<string>(() => {
 }
 
 .metric-table thead th {
-  ont-size: 12px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
@@ -472,7 +472,7 @@ const modelNote = computed<string>(() => {
 
 .mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  ont-size: 12px;
+  font-size: 12px;
   overflow-wrap: anywhere;
 }
 
@@ -484,7 +484,7 @@ const modelNote = computed<string>(() => {
 
 .file-change-title {
   margin: 0 0 4px;
-  ont-size: 12px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--vl-muted, var(--color-hudi-muted));
 }

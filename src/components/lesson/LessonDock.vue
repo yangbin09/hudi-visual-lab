@@ -18,11 +18,11 @@
  *
  * 只使用 --vl-* 设计变量（缺省回退到全局 --color-hudi-*），不写死色值。
  */
-import { computed, nextTick, ref } from 'vue'
+import { computed, defineAsyncComponent, nextTick, ref } from 'vue'
 import DockPanel from './DockPanel.vue'
 import LessonExplainTab from './LessonExplainTab.vue'
-import LessonDataTab from './LessonDataTab.vue'
-import LessonCodeTab from './LessonCodeTab.vue'
+const LessonDataTab = defineAsyncComponent(() => import('./LessonDataTab.vue'))
+const LessonCodeTab = defineAsyncComponent(() => import('./LessonCodeTab.vue'))
 import QuizPanel from '@/components/quiz/QuizPanel.vue'
 import EvidencePanel from '@/components/evidence/EvidencePanel.vue'
 import type { SqlBlock } from '@/engine/templates/types'
@@ -401,7 +401,7 @@ const lastTab = DOCK_TABS[DOCK_TABS.length - 1] ?? firstTab
 }
 
 .dock-sub {
-  ont-size: 12px;
+  font-size: 12px;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
 
@@ -411,7 +411,7 @@ const lastTab = DOCK_TABS[DOCK_TABS.length - 1] ?? firstTab
   border-radius: 6px;
   background: transparent;
   padding: 4px 10px;
-  ont-size: 12px;
+  font-size: 12px;
   color: var(--vl-muted, var(--color-hudi-muted));
   cursor: pointer;
 }
@@ -459,7 +459,7 @@ const lastTab = DOCK_TABS[DOCK_TABS.length - 1] ?? firstTab
 }
 
 .dock-tab-hint {
-  ont-size: 12px;
+  font-size: 12px;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
 
@@ -509,7 +509,7 @@ const lastTab = DOCK_TABS[DOCK_TABS.length - 1] ?? firstTab
   border: 1px solid var(--vl-line, var(--color-hudi-border));
   border-radius: 999px;
   padding: 2px 8px;
-  ont-size: 12px;
+  font-size: 12px;
   line-height: 1.6;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
@@ -528,7 +528,7 @@ const lastTab = DOCK_TABS[DOCK_TABS.length - 1] ?? firstTab
 
 .evidence-limit-title {
   margin: 0 0 4px;
-  ont-size: 12px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--vl-muted, var(--color-hudi-muted));
 }
@@ -555,7 +555,7 @@ const lastTab = DOCK_TABS[DOCK_TABS.length - 1] ?? firstTab
 
 .evidence-source-list code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  ont-size: 12px;
+  font-size: 12px;
   color: var(--vl-ink, var(--color-hudi-text));
   overflow-wrap: anywhere;
 }
