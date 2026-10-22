@@ -56,7 +56,7 @@ export const LESSON_META: Record<string, LessonMeta> = {
   B05: {
     objective: '解释同一个 File Group 里 Base 与多个 Log 的版本关系，以及 Compaction 如何收束版本',
     prerequisites: ['B04 Base File / Log File / File Slice', 'MOR 的写入路径'],
-    takeaway: '每次写入追加一个 Log 并留下 instant；Compaction 把 Base+Log 归并成新 Base，换引用不删文件',
+    takeaway: '本课模型把增量写入 Log 并留下 instant；Compaction 把 Base+Log 归并成新 Base，换引用不删文件',
     glossary: ['Base File', 'Log File', 'Instant', 'Compaction'],
     limitations: ['一个 File Slice 引用哪些文件由引擎决定；本页按教学模型演示版本替换'],
     templateIds: ['spark-compaction-plan-only', 'spark-compaction-inline', 'shell-hudi-cli-table-info'],
@@ -72,9 +72,9 @@ export const LESSON_META: Record<string, LessonMeta> = {
   B07: {
     objective: '用两个 instant 的 Checkpoint 讲清快照读为什么看到"提交时刻的完整状态"',
     prerequisites: ['Timeline 上每个 instant 对应一次提交', 'File Slice 的文件引用'],
-    takeaway: '快照读 = 最新 instant + 它引用的文件清单；历史读取靠保留的 Checkpoint，不靠倒推数据',
+    takeaway: '快照读选择最新已提交版本的有效文件；历史读取选择指定时刻的版本及其仍可用的文件',
     glossary: ['Checkpoint', 'Snapshot Read', 'Time Travel'],
-    limitations: ['历史快照依赖 Timeline 保留的 instant；Archive/Clean 之后旧版本不可见（S07/S06）'],
+    limitations: ['历史读取依赖所需元数据与数据文件仍可用；Archive 不等于删除数据文件，Clean 可能回收历史文件'],
     templateIds: ['spark-query-snapshot', 'spark-query-time-travel'],
   },
   B08: {

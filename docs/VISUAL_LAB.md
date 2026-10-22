@@ -1,6 +1,6 @@
 # Hudi Visual Lab
 
-运行 `npm run dev`。首页 `/` 从八个问题进入对应主题，`/catalog` 提供全部 80 个动画入口、模块筛选、范围筛选和搜索。`/experiment/B02` 与 `/experiment/B03` 保留双路径比较，其余 78 个主题进入各自场景。默认只展示画布、当前步骤的一两句话和播放控件。
+运行 `npm run dev`。首页 `/` 从八个问题进入对应主题，`/catalog` 提供全部 80 个动画入口、模块筛选、范围筛选和搜索。`/experiment/B02` 与 `/experiment/B03` 使用独立的 COW 文件重写与 MOR 版本归并画布，其余 78 个主题进入各自场景。默认只展示画布、当前步骤的一两句话和播放控件。
 
 ## 交互
 
@@ -8,11 +8,11 @@
 - 单击文件、Bucket、查询结果、Instant、配置或流程节点，打开模态详情。打开时自动暂停；Escape 关闭后恢复触发按钮的焦点，不自动恢复播放。
 - 参数在抽屉内编辑，点击“应用参数并重置”后才重新生成场景。无播放中途的数据替换。Bucket 数变化重新计算教学映射，保留数影响实际模拟 Cleaner/Archive。
 - 系统减少动态效果时使用手动逐步观察；设置也可开启。键盘空格播放/暂停，左右箭头单步，输入框和模态操作不被快捷键劫持。
-- 预览中的新文件明确标注“尚未提交”且不可点击；提交阶段文件与 Timeline 同时切换为精确引擎快照。
+- 预览中的新文件明确标注“尚未提交”；基础原理画布允许检查候选记录并标明其未提交身份，其他画布在提交前禁用新文件。提交阶段文件与 Timeline 同时切换为精确引擎快照。
 
 ## 代码
 
-- `src/experiments/visual/lessons.ts`：78 个逐主题步骤定义，包含场景类型、初始条件、操作、教学说明和参数。B02/B03 使用原有独立对比场景。
+- `src/experiments/visual/lessons.ts`：78 个逐主题步骤定义，包含场景类型、初始条件、操作、教学说明和参数。B02/B03 共享操作回放协议，使用各自独立的教学画布。
 - `src/engine/visual/scenarios.ts`：调用 `applyAction`、`performWrite`、`runQuery` 和已有分桶函数；生成不可变的操作前后快照、文件变化与查询结果。Bulk Insert 调用已有公共 `performWrite`，不引入新的 UI 写入规则。
 - `src/animation/useLessonPlayer.ts`：统一时钟与状态选择器。seek/back/replay 不重复运行操作。
 - `src/components/visual/Animated*.vue`：文件流动、索引分配、查询归并、Timeline、配置结构、组件链路与指标变化七类画布。双 Writer 汇合、Metadata 两条路径、SaveMode 四分支、Checkpoint 屏障有单独结构。
@@ -71,3 +71,18 @@
 - 移除 Element Plus 和 ECharts 依赖，证据库保留原有搜索/筛选/文档链接并使用语义 HTML；数据、代码详情异步加载，CodeMirror 不进入首页或课程首屏静态依赖。带控件画布按自然高度布局，避免矮屏重叠。
 - `npm run verify` 包含源文件控制字符/CSS 检查、单测、类型检查与构建、manifest 静态依赖体积检查；首页 gzip 上限 100 KiB，课程 220 KiB，单个 JS 文件 350 KiB，并禁止首屏静态加载代码编辑器。体积是压缩产物的静态依赖合计，不代表真实网络耗时。
 - GitHub Actions 在 main push / PR 上运行上述检查及四种视口的完整 Playwright 套件；失败保留 trace。`learning-flow.spec.ts` 覆盖路径进入、切课、回退、刷新续播、参数、比较实验、原理题门槛、进度、机制对照及按需加载。
+
+## 基础原理八课的教学画布
+
+- B01：Parquet / Hudi 对照，区分数据文件与事务版本管理，不把普通 Parquet 更新一概描述为整表覆盖。
+- B02：旧 Base、输入 ts 比较、逐行复制、新 Base、完成提交。只提供 COW 相关操作，详情区同步 COW 状态。
+- B03：Base、多个 Log、Snapshot / Read Optimized 双读取路径与 Compaction 候选。详情区同步 MOR 状态。
+- B04：分区 → File Group → File Slice → Base + Logs 的嵌套结构，显示稳定 File ID 与候选文件。
+- B05：基于真实 Checkpoint / 当前状态投影文件版本；连续两次更新同一主键，第二次金额增加 100。分别显示 Log version、写入 instant、Slice base instant 与物理保留状态。
+- B06：Record Key + Partition Path 组合身份，两个分区的 HoodieKey 与记录存在性并排比较。
+- B07：历史时刻与最新已提交时刻两个读者，提交前后的路由与金额对照；可以独立突出读取路径。本地 Checkpoint 只是模拟引擎的历史保存机制。
+- B08：可用点击及键盘展开的逻辑目录树，展示实际物理文件与 Timeline 状态；真实目录布局与命名需按版本核对。
+
+`basics-story.ts` 提供六个普通基础课逐步编写的微节拍；B02/B03 使用各自的动作旁白。所有移动、候选透明度与行复制均由播放器位置驱动，暂停和拖动不会继续运行独立 CSS 动画。画布异步加载，手机使用画布内横向滚动。
+
+验证：`tests/unit/basics-principles.spec.ts` 核对版本投影、文件身份、归并结果与历史隔离；`tests/e2e/basics-principles.spec.ts` 核对八种结构、提交可见性、连续更新、键盘目录交互、暂停与画布边界。

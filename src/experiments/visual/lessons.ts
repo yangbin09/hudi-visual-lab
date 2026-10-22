@@ -1,4 +1,5 @@
 import type { Effect, LessonOperation, LessonStep, SceneKind, VisualLesson } from './types'
+import { BASIC_STORIES } from './basics-story'
 import { CAPTION_OVERRIDES, LESSON_META, toGlossary } from './lesson-content'
 const s = (title: string, caption: string, effect: Effect = 'highlight', operation?: LessonOperation, focus?: number): LessonStep => ({ title, caption, effect, operation, focus })
 const make = (id: string, kind: SceneKind, seed: VisualLesson['seed'], nodes: string[], steps: LessonStep[], model: VisualLesson['model'] = 'engine', controls: VisualLesson['controls'] = ['recordKey', 'amount']): VisualLesson => ({ id, kind, seed, nodes, steps, model, actionLabel: model === 'concept' ? '开始探索' : '开始演示', controls })
@@ -10,7 +11,7 @@ const queryNodes = ['读取请求', '选择文件', '归并版本', '返回记�
 export const VISUAL_LESSONS: Record<string, VisualLesson> = Object.fromEntries([
   make('B01', 'files', 'cow', ['更新记录', 'Hudi Writer', '文件版本', 'Timeline'], [s('同一份数据', '普通 Parquet 文件不携带 Hudi 的事务 Timeline。', 'observe'), s('写入更新', '让更新记录进入 Hudi 写入路径。', 'route'), s('生成新版本', '本次只更新目标 File Group，保留旧文件。', 'write', 'upsert'), s('提交快照', 'Timeline 与当前 File Slice 一起指向新版本。', 'read', 'snapshot')]),
   make('B04', 'files', 'mor', ['分区', 'File Group', 'Base File', 'Log File'], [s('找到分区', '先从分区进入一个 File Group。', 'route'), s('查看 File Slice', '当前 File Slice 引用一个 Base 与零个或多个 Log。', 'highlight'), s('追加新版本', '更新追加为 Log，仍属于当前 File Group。', 'write', 'upsert'), s('重建 Slice', '先生成计划。', 'route', 'schedule'), s('切换 Base', '执行计划，新的 Base 取代旧 Slice 中的文件引用。', 'merge', 'compact')]),
-  make('B05', 'files', 'mor', ['Base instant', 'Log v1', 'Log v2', '新 Base'], [s('初始 Base', 'Base 已由引擎的初始 Compaction 建立。', 'observe'), s('追加一版 Log', 'Log 携带本次更新记录与写入 Instant。', 'write', 'upsert'), s('追加更多记录', '第二次写入又增加一版 Log。', 'write', 'insert'), s('计划合并', '计划记录待合并的 File Group。', 'route', 'schedule'), s('产生新 Base', '旧文件仍物理存在，当前 Slice 已引用新文件。', 'merge', 'compact')]),
+  make('B05', 'files', 'mor', ['Base instant', 'Log v1', 'Log v2', '新 Base'], [s('初始 Base', '本课由教学引擎通过 Bulk Insert 建立初始 Base。', 'observe'), s('追加一版 Log', 'Log 携带本次更新记录与写入 Instant。', 'write', 'upsert'), s('再更新同一记录', '同一个主键写入更新的版本，观察 Log 与提交时间的关系。', 'write', 'upsert'), s('计划合并', '计划记录待合并的 File Group。', 'route', 'schedule'), s('产生新 Base', '旧文件仍物理存在，当前 Slice 已引用新文件。', 'merge', 'compact')]),
   make('B06', 'index', 'cow', ['Record Key', 'Partition Path', 'HoodieKey', 'File Group'], [s('记录是谁', '主键区分记录，分区路径限定定位范围。', 'route'), s('组合定位信息', '观察主键和分区路径一起进入定位过程。', 'highlight'), s('修改分区', '本地非全局索引示例向另一个分区写入同名主键。', 'write', 'cross-partition'), s('查看两个分区', '同名主键在两个分区形成不同定位信息。', 'read', 'snapshot')], 'engine', ['recordKey', 'partition']),
   make('B07', 'query', 'cow', queryNodes, [s('保留旧快照', '初始提交的 Checkpoint 记录旧文件版本。', 'observe'), s('产生更新', '当前版本改为新的金额。', 'write', 'upsert'), s('读取当前版本', 'Snapshot 读取当前 File Slice。', 'read', 'snapshot'), s('读取历史版本', '选择初始 Checkpoint，查看更新前的值。', 'read', 'history')]),
   make('B08', 'schema', 'cow', ['表根目录', '分区目录', '数据文件', '.hoodie'], [s('展开根目录', '根目录同时容纳数据目录与 Hudi 元数据目录。', 'route'), s('进入分区', '分区路径来自当前表的分区字段。', 'highlight'), s('增加文件', '写入产生数据文件，并增加提交信息。', 'write', 'insert'), s('查看元数据', '文件清单与 Timeline 可在技术详情中核对。', 'read', 'metadata')]),
@@ -100,7 +101,8 @@ export const VISUAL_LESSONS: Record<string, VisualLesson> = Object.fromEntries([
   }
   const meta = LESSON_META[lesson.id]
   const captions = CAPTION_OVERRIDES[lesson.id]
-  const steps = captions ? lesson.steps.map((step, index) => ({ ...step, caption: captions[index] ?? step.caption })) : lesson.steps
+  let steps = captions ? lesson.steps.map((step, index) => ({ ...step, caption: captions[index] ?? step.caption })) : lesson.steps
+  if (BASIC_STORIES[lesson.id]) steps = steps.map((step,index)=>({...step, caption:BASIC_STORIES[lesson.id]![index]![2]!, moments:BASIC_STORIES[lesson.id]![index]!.map((explanation,i)=>({at:[.14,.48,.86][i]!,title:['观察对象','追踪变化','核对结果'][i]!,explanation}))}))
   const content: Partial<VisualLesson> = meta
     ? {
         objective: meta.objective,

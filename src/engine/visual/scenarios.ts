@@ -119,7 +119,8 @@ export function buildLessonRun(lesson: VisualLesson, p: LessonParameters): Lesso
       moments: authoredStep.moments?.map(moment=>({...moment,explanation:mechanismCaption(lesson.id,p,index,moment.at)})),
     } : authoredStep
     const before = state
-    const result = step.operation ? execute(state, step.operation, p, index, initial) : { state, events: [], logs: [] }
+    const stepParameters = lesson.id==='B05' && index===2 ? {...p, amount:p.amount+100} : p
+    const result = step.operation ? execute(state, step.operation, stepParameters, index, initial) : { state, events: [], logs: [] }
     state = result.state
     const priorNames = new Set(before.physicalFiles.map(f => f.fileName))
     const afterNames = new Set(state.physicalFiles.map(f => f.fileName))

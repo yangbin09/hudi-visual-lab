@@ -16,7 +16,7 @@ function initial(): Scene {
   if (!plan.success || !base.success) throw new Error('无法通过引擎建立 MOR Base')
   return { cow: createCowState(), mor: base.nextState as HudiTableState }
 }
-export function useVisualTimeline() {
+export function useVisualTimeline(topicId = 'B02') {
   const origin = initial()
   const sequences = shallowRef<Sequence[]>([])
   const index = ref(-1)
@@ -33,12 +33,12 @@ export function useVisualTimeline() {
   const settled = computed(() => position.value >= duration.value)
   // Output files and Timeline always switch together to the exact engine snapshot.
   const scene = computed(() => !sequence.value ? origin : position.value >= duration.value - 1 ? sequence.value.after : sequence.value.before)
-  const caption = computed(() => sequence.value?.captions[step.value] ?? '准备好了吗？更新同一条记录，观察两种文件策略。')
+  const caption = computed(() => sequence.value?.captions[step.value] ?? (topicId==='B02'?'更新一条记录，展开 COW 如何复制旧行并生成完整新 Base。':'连续更新同一主键，观察 Log 累积和两种读取结果。'))
   let raf = 0
   let previous = 0
   function tick(now: number) {
     if (!playing.value) return
-    if (previous) position.value = Math.min(duration.value, position.value + (now - previous) / 2300 * speed.value)
+    if (previous) position.value = Math.min(duration.value, position.value + (now - previous) / 3600 * speed.value)
     previous = now
     if (settled.value) { playing.value = false; previous = 0; return }
     raf = requestAnimationFrame(tick)
@@ -83,6 +83,13 @@ export function useVisualTimeline() {
     } else if (kind === 'schedule') apply('mor', { type: 'SCHEDULE_COMPACTION', deltaCommits: 1 })
     else if (kind === 'compact' || kind === 'failure') apply('mor', { type: 'RUN_COMPACTION', failWith: kind === 'failure' ? 'SPARK_TASK_FAILED' : 'NONE' })
     else if (kind === 'clean') { apply('cow', { type: 'RUN_CLEAN', commitsRetained: 1 }); apply('mor', { type: 'RUN_CLEAN', commitsRetained: 1 }) }
+    if(topicId==='B02'){
+      captions.update=['更新主键 1001：先定位它所属的 File Group。','打开旧 Base，保留未修改的记录，比较更新行的 ts。','较新的输入替换同键旧值；其余行保持原值，但也要写入新文件。','逐行复制 1002、1003，和新 1001 一起生成完整的新 Base。','完成提交，当前引用切换到新 Base；旧文件仍保留，等待 Cleaner。']
+      captions.snapshot=['从最新完成的提交选择当前 Base。','COW 直接读取 Base 中已合并的完整记录。','读取返回当前已提交金额；不会把旧文件中的版本重复读入。']
+    }else{
+      captions.update=['输入主键 1001 的新版本，先定位原来的 File Group。','Base 保持原样，本次更新准备写入 Log。','增量只携带变化的记录，不复制 Base 中的其他行。','把新版本追加到 Log，提交前仍不能作为最新快照返回。','完成 Delta Commit：Snapshot 归并 Base 与 Log；Read Optimized 仍只读 Base。']
+      captions.snapshot=['分别观察 Snapshot 与 Read Optimized 两条读取路径。','Snapshot 按主键和 ts 归并 Base 与 Log；Read Optimized 跳过 Log。','读取文件范围不同，所以未合并更新时，两种读法可能返回不同金额。']
+    }
     const failed = events.find(e => !e.success)
     const finalCaptions = failed ? [captions[kind][0]!, failed.error ?? failed.explanation] : captions[kind]
     sequences.value = [...sequences.value.slice(0, index.value + 1), { kind, before, after: { cow, mor }, events, amount, actions, captions: finalCaptions }]

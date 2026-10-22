@@ -40,9 +40,9 @@ export const COMPARE_LESSONS: Record<string, CompareLessonDef> = {
     id: 'B02',
     title: 'COW 表的数据写入与文件重写',
     question: '更新一条记录，文件会怎样变化？',
-    subtitle: '同一份数据，两种策略。亲手写入，看见区别。',
+    subtitle: '展开一份 Base，追踪更新行与原样复制的行，直到提交生效。',
     objective:
-      '看懂 COW 与 MOR 在「同一次更新」上的不同落点：COW 重写整个 File Group 并产生新 parquet，MOR 只追加一条 Log；并知道读优化查询为什么会读到旧值。',
+      '追踪一次 COW 更新：按主键比较版本，复制未修改的行，生成完整的新 Base，并在提交后切换当前引用。',
     prerequisites: ['File Group', 'File Slice', 'Base File'],
     takeaway:
       'COW 用「重写文件」换「读时简单」：更新后旧文件仍在 HDFS 上等着 Cleaner，而 Snapshot 读已经能拿到新值；MOR 用「追加 Log」换「写入快」，代价是读的时候要归并。',
@@ -61,10 +61,10 @@ export const COMPARE_LESSONS: Record<string, CompareLessonDef> = {
   B03: {
     id: 'B03',
     title: 'MOR 表的数据写入与 Log 合并',
-    question: '同一次更新，为什么 MOR 的旧文件还在？',
-    subtitle: '追加 Log、延迟合并：先写快，还是先读快？',
+    question: '更新先进入 Log，两种读法为什么得到不同金额？',
+    subtitle: '连续写入，积累版本；比较读取路径，再执行后台合并。',
     objective:
-      '看懂 MOR 的写入与合并节奏：一次更新只追加一条 Log、Base 原封不动，直到执行 Compaction 才产生新 Base；并由此解释读优化查询为什么可能读到旧值。',
+      '看懂更新如何进入 Log、Snapshot 如何归并，以及 Compaction 为什么让两种读法重新一致。',
     prerequisites: ['Log File', 'File Slice', 'Compaction'],
     takeaway:
       'MOR 把「合并」推迟到后台：写入时只追加 Log，Snapshot 读时归并 Base 与 Log 得到新值，而 Read Optimized 只看 Base，所以它读到的仍是旧值——直到 Compaction 产生新 Base。',

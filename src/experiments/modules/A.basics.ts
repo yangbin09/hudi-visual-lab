@@ -15,7 +15,7 @@ export const MODULE_A_ENTRIES: CatalogEntry[] = [
     moduleId: 'A',
     title: 'Hudi 与 Hive 普通 Parquet 表的区别',
     summary:
-      '用同一份数据对比「Hudi 表的增量提交 + 快照读」与「Hive 普通 Parquet 表的整表覆盖」，讲清 Hudi 在数据文件之外多出来的那条 Timeline。',
+      '用同一份数据对比「Hudi 表的增量提交 + 快照读」与「普通 Parquet 文件及其外部发布流程」，讲清 Hudi 在数据文件之外多出来的那条 Timeline。',
     implemented: false,
     evidenceLevel: 'E1',
     supportState: 'supported',

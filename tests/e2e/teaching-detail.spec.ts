@@ -57,19 +57,17 @@ test('旧文件仍在保留窗口时，清理动画解释保留而不是强行�
   await expect(detail).toContainText('本次删除 0 个文件')
 })
 
-test('双画布逐行对比：COW 输出三行，MOR 只追加一行',async({page})=>{
+test('COW 独立画布逐行复制，两条未修改记录与更新行分别可追踪',async({page})=>{
   await page.goto('/experiment/B02')
   await page.getByRole('button',{name:'↑ Upsert 更新记录'}).click()
-  await page.getByRole('slider',{name:'动画进度'}).fill('3.9')
-  const details=page.locator('[data-detail="cow-mor-row-copy"]')
-  await expect(details).toHaveCount(2)
-  await expect(details.nth(0).locator('.record-text')).toHaveCount(3)
-  await expect(details.nth(1).locator('.record-text')).toHaveCount(1)
-  await expect(details.nth(0)).toContainText('复制')
+  await page.getByRole('slider',{name:'动画进度'}).fill('3.55')
+  const detail=page.locator('[data-detail="cow-mor-row-copy"]')
+  await expect(detail.locator('text')).toHaveCount(3)
+  await expect(page.locator('.vl-canvas')).toContainText('其中 2 条原样复制')
   await expect(page.locator('.vl-canvas')).toContainText('Base 不改写')
-  const initial=await details.nth(0).textContent()
+  const initial=await detail.innerHTML()
   await page.waitForTimeout(120)
-  expect(await details.nth(0).textContent()).toBe(initial)
+  expect(await detail.innerHTML()).toBe(initial)
 })
 
 test('Hash 节点可展开真实逐字符计算，不只显示一个桶号',async({page})=>{

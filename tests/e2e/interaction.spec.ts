@@ -24,6 +24,6 @@ test('自定义输入通过同一引擎传播到文件和 Snapshot', async ({ pa
   await page.getByRole('button', { name: '↑ Upsert 更新记录' }).click()
   // reducedMotion 下动画直接落定，不需要「跳过动画」
   await expect(page.locator('.vl-query-value').first()).toHaveText('¥ 350')
-  await page.locator('.file-glyph.fresh').last().click()
+  await page.getByRole('button', { name: '查看新 Base · 完整记录', exact: true }).click()
   await expect(page.getByRole('cell', { name: '350', exact: true })).toBeVisible()
 })

@@ -15,7 +15,7 @@
  *   · 「基础模式 / 工程师模式」是**真开关**：它同时改变讲解、画布、参数、详情默认页与失败模拟；
  *   · 详细的 HDFS / Timeline / 记录 / SQL / 证据从抽屉搬进页内 dock（见 LessonDock）。
  */
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import { CATALOG, getCatalogEntry, getExperimentById, MODULES } from '@/experiments/catalog'
@@ -37,6 +37,8 @@ import LessonSummary from '@/components/visual/LessonSummary.vue'
 import LessonDock from '@/components/lesson/LessonDock.vue'
 import type { DockTab } from '@/components/lesson/types'
 import LessonCanvas from '@/components/visual/LessonCanvas.vue'
+const BasicPrinciples = defineAsyncComponent(() => import('@/components/visual/basics/BasicPrinciples.vue'))
+const basicIds = ['B01','B04','B05','B06','B07','B08']
 import CompareLesson from '@/components/visual/CompareLesson.vue'
 import { MECHANISM_IDS, mechanismCaption } from '@/engine/visual/mechanisms'
 import MechanismWalkthrough from '@/components/visual/MechanismWalkthrough.vue'
@@ -207,7 +209,7 @@ const templates = computed<SqlBlock[]>(() => {
       tablePath: t.tablePath,
       partitionValue: '2024-01-01',
     })
-    return ['spark-create-table-mor', 'spark-upsert', 'spark-query-snapshot', 'spark-compaction-plan-only', 'spark-compaction-inline']
+    return (id==='B02'?['spark-create-table-cow','spark-upsert','spark-query-snapshot','shell-hdfs-ls']:['spark-create-table-mor', 'spark-upsert', 'spark-query-snapshot', 'spark-compaction-plan-only', 'spark-compaction-inline'])
       .map((templateId) => {
         const template = findTemplate(templateId)
         return template ? { ...template, code: buildSql(template.language, templateId, ctx) } : undefined
@@ -528,7 +530,7 @@ watch(
             <p class="vl-side-text">
               物理文件 {{ pageState?.physicalFiles.length ?? 0 }} 个 ·
               Timeline Instant {{ pageState?.timeline.length ?? 0 }} 条<br />
-              数据分区展示 MOR 泳道；COW 泳道在画布左侧并列对照。
+              数据分区与本课 {{ id==='B02'?'COW':'MOR' }} 画布展示同一份引擎状态。
             </p>
           </section>
         </aside>
@@ -543,7 +545,7 @@ watch(
           :lesson-id="id"
           :templates="templates"
           :evidence-ids="evidenceIds"
-          :model-label="'双路径对比'"
+          :model-label="id==='B02'?'COW 文件重写':'MOR 版本归并'"
           :evidence-level="entry?.evidenceLevel"
           :support-state="entry?.supportState"
           :note="entry?.note"
@@ -563,7 +565,7 @@ watch(
 
       <div class="lesson-bottom">
         <span v-if="notice" role="status" data-testid="lesson-notice">{{ notice }}</span>
-        <span v-else>双路径对比 · 同一份数据、同一动作，看 COW 与 MOR 怎么落盘</span>
+        <span v-else>{{ id==='B02'?'COW · 跟踪记录复制、文件重写与提交可见性':'MOR · 跟踪增量版本、读时归并与后台合并' }}</span>
         <div>
           <RouterLink v-if="previousLesson" :to="`/experiment/${previousLesson.id}`">← 上一主题</RouterLink>
           <RouterLink v-if="nextLesson" :to="`/experiment/${nextLesson.id}`">下一主题 →</RouterLink>
@@ -591,7 +593,7 @@ watch(
             <button @click="openDock('data')">数据 / 代码 / 依据 ↗</button>
           </div>
 
-          <div ref="canvasArea" class="lesson-canvas-area" :class="{'lesson-canvas-controls':id==='E01'||MECHANISM_IDS.includes(id)}">
+          <div ref="canvasArea" class="lesson-canvas-area" :class="{'lesson-canvas-controls':id==='E01'||MECHANISM_IDS.includes(id)||basicIds.includes(id)}">
             <IndexConfigWalkthrough
               v-if="id === 'E01'"
               :job-index="jobIndex"
@@ -607,6 +609,7 @@ watch(
               :id="id" :parameters="params" :current="current" :progress="player.fraction.value" :started="player.started.value"
               @change="changeMechanism" @inspect="inspect"
             />
+            <BasicPrinciples v-else-if="basicIds.includes(id) && run" :id="id" :frame="frame" :run="run" :state="state" :parameters="params" :current="current" :progress="player.fraction.value" :started="player.started.value" @inspect="inspect"/>
             <LessonCanvas
               v-else
               :lesson="lesson"
